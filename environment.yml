@@ -1,5 +1,5 @@
-name: myvenv
+name: open_plan_py36
 dependencies:
 - python=3.6
 - pip:
-   - -r requirements.txt
+   - -r requirements/default.txt

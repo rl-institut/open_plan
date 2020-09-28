@@ -15,6 +15,26 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
+
+def parse_requirements_file(filename):
+    with open(filename, encoding="utf-8") as fid:
+        requires = []
+        for line in fid.readlines():
+            if line:
+                # requirements for those browsing PyPI
+                requires.append(line.strip())
+    return requires
+
+
+# Read the requirement files
+req_path = path.join(here, "requirements")
+INSTALL_REQUIRES = parse_requirements_file(path.join(req_path, "default.txt"))
+EXTRA_REQUIRES = {
+    dep: parse_requirements_file(path.join(req_path, dep + ".txt"))
+    for dep in ["docs", "tests"]
+}
+
+
 # Arguments marked as "Required" below must be included for upload to PyPI.
 # Fields marked as "Optional" may be commented out.
 
@@ -72,7 +92,7 @@ setup(
     author="Reiner Lemoine Institut",  # Optional
     # This should be a valid email address corresponding to the author listed
     # above.
-    # author_email='pypa-dev@googlegroups.com',  # Optional
+    author_email="pypi@rl-institut.de",  # Optional
     # Classifiers help users find your project by categorizing it.
     #
     # For a list of valid classifiers, see https://pypi.org/classifiers/
@@ -127,7 +147,7 @@ setup(
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=[],  # Optional
+    install_requires=INSTALL_REQUIRES,  # Optional
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
     # syntax, for example:
@@ -136,7 +156,7 @@ setup(
     #
     # Similar to `install_requires` above, these must be valid existing
     # projects.
-    extras_require={"dev": [], "test": []},  # Optional
+    extras_require=EXTRA_REQUIRES,  # Optional
     # If there are data files included in your packages that need to be
     # installed, specify them here.
     #
