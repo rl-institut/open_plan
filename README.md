@@ -1,11 +1,13 @@
 # open_plan
-Template repository for creating new projects under the RLI's umbrella
+
+
+https://reiner-lemoine-institut.de/en/open-plan-bottom-up-energy-transition/
 
 ## Get started
 
 1. clone the repository
 
-    `git clone https://github.com/rl-institut/oep-pyam.git`
+    `git clone https://github.com/rl-institut/open_plan.git`
 
 2. move to the repository
 
