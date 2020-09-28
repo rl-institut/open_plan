@@ -12,8 +12,8 @@ python:
 
 # command to install dependencies
 install:
-  - pip install -r requirements.txt
-  - pip install -r tests/test_requirements.txt
+  - pip install -r requirements/default.txt
+  - pip install -r requirements/tests.txt
 
 # commands to run tests 
 script:
