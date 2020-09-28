@@ -96,3 +96,102 @@ more information look at Travis
 [doc](https://docs.travis-ci.com/user/languages/python/) for python.
 
 
+## Release protocol
+
+Once you are ready to publish a release, branch off from `dev`
+    ```bash
+    git checkout -b release/vX.Y.Z dev
+    ```
+For meaning of X, Y and Z version numbers, please refer to this [semantic versioning guidelines](https://semver.org/spec/v2.0.0.html).
+
+In this branch, you should normally only update the version number in the `src/mvs_eland/version.py` and in the `CHANGELOG.md` files, respecting the indicated formats. Commit the first one with "Bump version number" as commit message.
+
+Your `CHANGELOG.md` file could look like this before the release
+```
+## [unreleased]
+
+### Added
+- feature 1
+- feature 2
+### Changed 
+- thing 1
+- thing 2
+### Removed
+- some stuff
+```
+
+Simply replace `unreleased` by `X.Y.Z` and add the date of release in [ISO format](https://xkcd.com/1179/), then add the structure for a new `unreleased` version
+
+```
+## [unreleased]
+
+### Added
+-
+### Changed 
+-
+### Removed
+-
+
+## [X.Y.Z] - 20**-**-**
+### Added
+- feature 1
+- feature 2
+### Changed 
+- thing 1
+- thing 2
+### Removed
+- some stuff
+```
+Commit this with "Update changelog" as commit message.
+
+After pushing these changes, create a pull request from `release/vX.Y.Z` towards `master` and merge it in `master`.
+
+Locally, merge `release/vX.Y.Z` into `dev`
+```
+git checkout release/vX.Y.Z
+```
+
+```
+git pull
+```
+    
+```
+git checkout dev
+```
+
+```
+git merge release/vX.Y.Z
+```
+And push your these updates to the remote version of dev
+```
+git push
+```
+
+The idea behind this procedure is to avoid creating a merge commit in `dev` (because `master` would otherwise have two merge commit for this release once you merge the next release).
+
+Finally, [create a release](https://help.github.com/en/github/administering-a-repository/creating-releases) on github. Please choose master as the target for the tag and format the tag as `vX.Y.Z`. In the description field simply copy-paste the content of the `CHANGELOG`descriptions for this release and you're done!
+
+## Contributing to Readthedocs
+
+You need to first install the required packages
+
+```bash
+pip install -r requirements/docs.txt
+```
+
+Readthedocs of the MVS is compiled with the content of folder "docs". After editing, execute
+
+    cd docs
+
+and then
+
+    make html
+
+To update the html pages of readthedocs. You will find the html files them under `docs/_build/html`
+and can open them in your favorite browser. After you are done editing, you can commit, push and
+ pull it like normal code.
+
+Note: the compilation of certain docstrings requires latex amsmath package, if it is not
+ available on your local computer, the math expression will not render nicely.
+
+An introduction to creating the readthedocs with Sphinx is given here: https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html.
