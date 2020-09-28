@@ -1,6 +1,11 @@
 # open_plan
 
 
+
+[![Coverage Status](https://coveralls.io/repos/github/rl-institut/open_plan/badge.svg?branch=dev)](https://coveralls.io/github/rl-institut/open_plan?branch=dev)
+
+
+
 https://reiner-lemoine-institut.de/en/open-plan-bottom-up-energy-transition/
 
 ## Get started
