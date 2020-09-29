@@ -1,9 +1,11 @@
-==========================
+.. _tool_interface:
+
+**************************
 Tool interface description
-==========================
+**************************
 
 Concepts definition
--------------------
+===================
 
 In order to describe the interface, a few definitions are required at first.
 
@@ -18,11 +20,34 @@ In order to describe the interface, a few definitions are required at first.
 
 
 View-component definition
--------------------------
+=========================
+
+.. contents::
+   :local:
+   :depth: 1
+
+----
 
 .. include:: view_components/flow_chart.rst
+
+----
+
 .. include:: view_components/menu_bar.rst
+
+----
+
 .. include:: view_components/welcome.rst
+
+----
+
 .. include:: view_components/energy_system_schema.rst
+
+----
+
 .. include:: view_components/energy_system_component.rst
+
+----
+
 .. include:: view_components/energy_system_sector_selector.rst
+
+
