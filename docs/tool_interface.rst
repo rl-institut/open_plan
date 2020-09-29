@@ -15,3 +15,14 @@ In order to describe the interface, a few definitions are required at first.
 
 * **view-rendering**
     How will the a *view* or *component-view* be rendered on the screen. This belongs to frontend and is where the details about color, size, font, placement on screen matter. For example a menu bar which is a *view-component* can have many different *view-rendering* (horizontal with buttons, expandable vertically only on hover, etc.)
+
+
+View-component definition
+-------------------------
+
+.. include:: view_components/flow_chart.rst
+.. include:: view_components/menu_bar.rst
+.. include:: view_components/welcome.rst
+.. include:: view_components/energy_system_schema.rst
+.. include:: view_components/energy_system_component.rst
+.. include:: view_components/energy_system_sector_selector.rst
