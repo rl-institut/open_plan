@@ -1,6 +1,9 @@
-=================
+
+.. _about_project:
+
+*****************
 About the Project
-=================
+*****************
 
 
 Project open_plan
