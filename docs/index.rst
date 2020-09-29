@@ -4,17 +4,18 @@
    contain the root `toctree` directive.
 
 Welcome to open_plan's documentation!
-========================================
+#####################################
+
+
+
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
    project_description
    tool_interface
 
 
 Indices and tables
-==================
+##################
 
 * :ref:`genindex`
 * :ref:`modindex`
