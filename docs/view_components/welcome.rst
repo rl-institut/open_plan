@@ -32,3 +32,7 @@ Actions
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: docs/assets/welcome_popup.png
+   :width: 400
+   :alt: A snapshot of the proposed welcome pop-up window
