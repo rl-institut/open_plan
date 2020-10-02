@@ -8,25 +8,35 @@ Energy System network
 Attributes
 ^^^^^^^^^^
 
-#. **list of energy busses**
+#. **list of energy busses `es_bus_list`**
     properties:
         - each bus has a unique id
         - each bus has an associated :ref:`energy-type-def`
 
-#. **button `add bus`**
+#. **button `add_es_bus`**
 
-#. **button `remove bus`**
+#. **button `remove_es_bus`**
 
-#. **list of energy system component**
+#. **list of energy system component `es_component_list`**
     properties:
         - each energy system component has a unique id
         - each energy system component has a list of associated :ref:`energy-type-def`
         - each energy system component can have in and/or out connection to one of the energy busses or one of the other energy system components
         - each energy system component has a type (sink, source, transformer, storage)
 
-#. **button `add energy system component`**
+#. **button `add_es_component`**
 
-#. **button `remove energy system component`**
+#. **button `remove_es_component`**
+
+#. **draw area `network_schema`**
+    properties:
+        -
+
+#. **text area `error_log`**
+    displays potential error messages arising from wrong configuration of energy system network or single energy system component
+
+
+
 
 Actions
 ^^^^^^^
