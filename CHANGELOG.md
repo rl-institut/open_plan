@@ -10,7 +10,11 @@ Here is a template for new release sections
 ## [_._._] - 20XX-MM-DD
 
 ### Added
+<<<<<<< HEAD
 - Add description of the structure of the welcome view-component (#7)
+=======
+- Descripion of the design and rendering of the view-component flow chart (#10)
+>>>>>>> 6030238... Update the CHANGELOG file
 
 ### Changed
 -
