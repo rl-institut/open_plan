@@ -2,9 +2,9 @@
 
 Flow-chart
 ----------
-The flow chart is a map of all the sequential steps of the simulation in one view-component. The below sections present the proposed structure for this view-component.
+The flow chart is a view component that shows all the sequential steps of the tool in order to get results.
 
-The following are the advantages of the flow chart view-component:
+A flow chart view-component has a number of advantages:
 
 * Helps in sequentially progressing through the modeling and simulation process
 * Allows the user to jump between different steps of the simulation
@@ -14,7 +14,7 @@ The following are the advantages of the flow chart view-component:
 Attributes
 ^^^^^^^^^^
 
-* Clickable, identical buttons
+* Clickable buttons that are identical throughout the different views
 * Ribbon shaped, clickable icons/buttons placed sequentially as per the simulation progression order.
 * Each button is a step in the simulation process
 * Each step has to be completed one at a time. Once a step has met its minimum requirements, the button of the next step becomes clickable. Therefore, the user can come back to the steps he has already seen but he cannot click a random step. 
