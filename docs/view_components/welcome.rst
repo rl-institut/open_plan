@@ -9,7 +9,7 @@ The welcome window serves as an orientation point for the user and let them know
 Attributes
 ^^^^^^^^^^
 
-#. **Welcome message on the pop-up**
+#. **Welcome message**
     * A single line text message
 
 #. **Video intro message**
