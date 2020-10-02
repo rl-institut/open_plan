@@ -22,8 +22,9 @@ Attributes
 Actions
 ^^^^^^^
 
-* Clicking on the active (orange color) buttons alters the view to the corresponding view-component of the simulation. E.g.: Clicking on 'Project Setup' will alter to a view with the options to enter values for various project parameters.
-* Clicking on the greyed-out (inactive) buttons does not elicit any response.
+* To make the next step of the flowchart clickable, the user has to fulfill the requirements of the current step. Each step has various mandatory and optional fields.
+* Clicking on the steps of the flowchart that have been fulfilled already allows the user to make modifications. 
+* Clicking on the steps that are not clickable make a small text buble appear saying the previous step needs to be fulfilled first.
 
 Requirement
 ^^^^^^^^^^^
