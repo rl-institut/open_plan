@@ -9,6 +9,7 @@ The following are the advantages of the flow chart view-component:
 * Helps in sequentially progressing through the modeling and simulation process
 * Allows the user to jump between different steps of the simulation
 * Brings a design consistency and uniformity to the UI of the tool
+* Splits the tool in different views which increases the user friendliness 
 
 Attributes
 ^^^^^^^^^^
