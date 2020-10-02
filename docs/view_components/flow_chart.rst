@@ -1,11 +1,34 @@
-Component title
----------------
+.. _flowchart-label:
+
+Flow-chart
+----------
+The flow chart is a map of all the sequential steps of the simulation in one view-component. The below sections present the proposed structure for this view-component.
+
+The following are the advantages of the flow chart view-component:
+
+* Helps in sequentially progressing through the modeling and simulation process
+* Allows the user to jump between different steps of the simulation
+* Brings a design consistency and uniformity to the UI of the tool
 
 Attributes
 ^^^^^^^^^^
 
+* Clickable, identical buttons
+* Ribbon shaped, clickable icons/buttons placed sequentially as per the simulation progression order.
+* Each button is a step in the simulation process
+* Initially, only the first step (or button) is highlighted in a certain color, which notifies the user that the view associated with that step has to be fulfilled (provided with values for the parameters in that view-component) before they can progress to further steps.
+* Rest of the buttons are greyed out.
+* All the buttons for which the requirements of the associated simulation steps have been fulfilled turn green (or a different color).
+
 Actions
 ^^^^^^^
 
+* Clicking on the active (orange color) buttons alters the view to the corresponding view-component of the simulation. E.g.: Clicking on 'Project Setup' will alter to a view with the options to enter values for various project parameters.
+* Clicking on the greyed-out (inactive) buttons does not elicit any response.
+
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: docs/assets/flow_chart.png
+   :width: 400
+   :alt: An example of the proposed rendering of the flow chart
