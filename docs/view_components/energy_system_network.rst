@@ -41,9 +41,12 @@ Attributes
 Actions
 ^^^^^^^
 
-#. The user should be able to add a bus or an energy system component to the energy system network by clicking on the `add bus`/`add component` button resp.
-#. The user should be able to remove a selected bus or energy system component from the energy system network by clicking on the `remove bus`/`remove component` button resp.
-#. The user should be able to select a bus or an energy system component and this should allow visualisation or edition of the properties in another view-component displaying.
+#. Clicking on the `add bus`/`add component` button adds a bus or an energy system component to the energy system network, respectively.
+#. Clicking on the `remove_es_bus`/`remove_es_component` button removes the currently selected bus or energy system component from the energy system network, respectively.
+#. Clicking on the `remove_es_bus`/`remove_es_component` button when no bus or energy system component is currently selected sends a log message to the `error_log`.
+#. Selecting a bus or an energy system component in `es_bus_list`, `es_component_list` or in `network_schema` allows the user to visualise and/or edit its properties in another view-component.
+#. When a the user add a bus or an energy system component by clicking on the `add_es_bus`/`add_es_component`, they can visualise and/or edit its properties in another view-component.
+#. When a the user add a bus or an energy system component by clicking on the `add_es_bus`/`add_es_component`, they can to see it in the `network_schema`.
 
 Requirements
 ^^^^^^^^^^^^
