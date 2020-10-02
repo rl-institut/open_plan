@@ -29,6 +29,16 @@ Actions
 * The user could later re-enable the appearance of the pop-up window through *Display* or *Preferences* menu in *Settings*
 * Clicking on the hyperlinks will open the respective topic in a separate tab on the browser (e.g.: GitHub repo)
 
+Requirement
+^^^^^^^^^^^
+
+* If the user ticks the check-box *Do not show again*, the pop-up should not appear during the subsequent launch of the tool
+
+Link with other view-components
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Only connected to the landing view, which appears everytime the tool is launched
+
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
