@@ -53,6 +53,7 @@ Requirements
 
 * each energy bus needs to be connected to at least one energy system component of type source
 * if the user does not provide an energy system component of type sink for an energy bus, the latter is created automatically
+* notifications informing the user about potential problems with their energy system should be displayed in the `error_log` text area. Problems could be such as a failure to meet any of the other requirements, an undefined property value of an energy system component, or a bus connected to no energy system component
 
 
 Link with other view-components
@@ -61,3 +62,5 @@ Link with other view-components
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The buttons need to be visible at all time, as the selection of energy system components or busses can be done either from the lists `es_bus_list`, `es_component_list` or from `network_schema`, they do not necessarily need to be seen at the same time (they could be side by side or accessible via tabs)
