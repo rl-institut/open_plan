@@ -5,7 +5,6 @@ Welcome page
 
 The welcome window serves as an orientation point for the user and let them know, in as brief words (and other audiovisual content) as possible, what to expect from the tool. It is also the launch point from where the user begins their energy systems simulation.
 
-The welcome page is to be implemented as an optional pop-up that springs up on the landing page when the user launches the tool. In this section, a structure for the welcome page is proposed, subject to further discussion with the stakeholders.
 
 Attributes
 ^^^^^^^^^^
