@@ -26,6 +26,12 @@ Actions
 * Clicking on the active (orange color) buttons alters the view to the corresponding view-component of the simulation. E.g.: Clicking on 'Project Setup' will alter to a view with the options to enter values for various project parameters.
 * Clicking on the greyed-out (inactive) buttons does not elicit any response.
 
+Requirement
+^^^^^^^^^^^
+
+Link with other view-components
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
