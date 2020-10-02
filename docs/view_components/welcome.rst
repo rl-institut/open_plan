@@ -24,7 +24,7 @@ Attributes
 Actions
 ^^^^^^^
 
-* Pop-up that springs up everytime the software is launched freshly
+* Pop-up that springs up everytime the software is started
 * Checking the tick-box would disable the pop-up from appearing everytime the software is launched
 * The user could later re-enable the appearance of the pop-up window through *Display* or *Preferences* menu in *Settings*
 * Clicking on the hyperlinks will open the respective topic in a separate tab on the browser (e.g.: GitHub repo)
