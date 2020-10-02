@@ -17,9 +17,7 @@ Attributes
 * Clickable, identical buttons
 * Ribbon shaped, clickable icons/buttons placed sequentially as per the simulation progression order.
 * Each button is a step in the simulation process
-* Initially, only the first step (or button) is highlighted in a certain color, which notifies the user that the view associated with that step has to be fulfilled (provided with values for the parameters in that view-component) before they can progress to further steps.
-* Rest of the buttons are greyed out.
-* All the buttons for which the requirements of the associated simulation steps have been fulfilled turn green (or a different color).
+* Each step has to be completed one at a time. Once a step has met its minimum requirements, the button of the next step becomes clickable. Therefore, the user can come back to the steps he has already seen but he cannot click a random step. 
 
 Actions
 ^^^^^^^
