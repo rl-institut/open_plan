@@ -10,7 +10,8 @@ Here is a template for new release sections
 ## [_._._] - 20XX-MM-DD
 
 ### Added
--
+- Add description of the design of the welcome pop-up view-component (#7)
+
 ### Changed
 -
 ### Removed
