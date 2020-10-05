@@ -25,7 +25,7 @@ view-component
 
 view-rendering
 --------------
-    How will the a *view* or *component-view* be rendered on the screen. This belongs to frontend and is where the details about color, size, font, placement on screen matter. For example a menu bar which is a *view-component* can have many different *view-rendering* (horizontal with buttons, expandable vertically only on hover, etc.)
+    Description of how a *view* or *component-view* will be rendered on the screen. This belongs to frontend and is where the details about color, size, font, placement on screen matter. For example a menu bar which is a *view-component* can have many different *view-rendering* (horizontal with buttons, expandable vertically only on hover, etc.)
 
 .. _energy-type-def:
 
@@ -33,8 +33,6 @@ energy type
 -----------
     Energy type linked to the different energy sectors: heat, electricity, gas, biomass, H2O
 
-View-component definition
-=========================
 .. _main-window-def:
 
 main window
@@ -51,6 +49,19 @@ widget
 
 
 
+Views definition
+================
+
+.. contents::
+   :local:
+   :depth: 1
+
+----
+
+.. include:: views/landing.rst
+
+View-components definition
+==========================
 
 .. contents::
    :local:
