@@ -1,7 +1,7 @@
 .. reference for this view-component
 .. you can refer to this component using :ref:`<component_name>-label`
 
-.. _<view_name>-label:
+.. _landing-label:
 
 
 Landing
@@ -9,6 +9,7 @@ Landing
 
 Attributes
 ^^^^^^^^^^
+There are no attributes specific to the landing view.
 
 Active view-components
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -20,21 +21,22 @@ Active view-components
 
 Actions
 ^^^^^^^
+There are no actions specific to the landing view, the possible actions are already defined in the various view-components
 
 Requirement
 ^^^^^^^^^^^
-
-- the very first time the user see this view, the ref:`welcome-label` view-component should be displayed (popup, or integrated to the view)
+- the very first time the user sees this view, the ref:`welcome-label` view-component should be displayed (popup, or integrated to the view)
 
 Link with other views
 ^^^^^^^^^^^^^^^^^^^^^
+TBD
 
 Rendering of the view
 ^^^^^^^^^^^^^^^^^^^^^
 There are currently 2 types of rendering proposed:
 
 minimalistic:
-    The user does sees a message
+    The user is only prompted to "build your own energy cell"
 
 engineer style:
     Most of the menu and flow charts are displayed in widget windows
