@@ -95,3 +95,6 @@ View-components definition
 
 .. include:: view_components/project_parameters.rst
 
+----
+
+.. include:: view_components/scenarios.rst
