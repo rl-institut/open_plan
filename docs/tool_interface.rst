@@ -35,6 +35,22 @@ energy type
 
 View-component definition
 =========================
+.. _main-window-def:
+
+main window
+-----------
+    The window from which the user can interact with the open_plan tool on their computer
+
+
+.. _widget-def:
+
+widget
+------
+    Smaller window within the tool's ref:`main-window-def`.
+    A *widget* can be moved around by the user within the ref:`main-window-def` and collapsed into another *widget* (then each *widget* is accessible via tabs).
+
+
+
 
 .. contents::
    :local:
