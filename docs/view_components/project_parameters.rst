@@ -1,7 +1,7 @@
 .. reference for this view-component
 .. you can refer to this component using :ref:`<component_name>-label`
 
-.. _<project_parameters>-label:
+.. _project_parameters-label:
 
 
 Project parameters
@@ -43,7 +43,7 @@ Rendering of the view-component
 - Project lifetime
     Input number box or a pull down menu with list of possible length in years.
 - Weighted Average Cost of Capital
-    Input nummber box or a pull down menu with list of possible WACC in percentage.
+    Input number box or a pull down menu with list of possible WACC in percentage.
 - Project name
     Input text box
 - Project description (optional)
