@@ -38,5 +38,5 @@ There are currently 2 types of rendering proposed:
 minimalistic:
     The user is only prompted to "build your own energy cell"
 
-engineer style:
+expert mode:
     Most of the menu and flow charts are displayed in widget windows
