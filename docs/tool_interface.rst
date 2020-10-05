@@ -81,7 +81,7 @@ View-components definition
 
 ----
 
-.. include:: view_components/energy_system_schema.rst
+.. include:: view_components/energy_system_network.rst
 
 ----
 
