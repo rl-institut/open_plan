@@ -2,7 +2,6 @@
 
 Project parameters
 ------------------
-| In this section we describe the basic project parameters.
 | Project parameters are basic inputs to set the context of the project.
 
 
