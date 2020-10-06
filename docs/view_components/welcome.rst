@@ -3,7 +3,7 @@
 Welcome page
 ------------
 
-The welcome window serves as an orientation point for the user and let them know, in as brief words (and other audiovisual content) as possible, what to expect from the tool. It is also the launch point from where the user begins their energy systems simulation.
+The welcome window serves as an orientation point or introduction for the user and let them know, in as brief words (and other audiovisual content) as possible, what to expect from the tool.
 
 
 Attributes
@@ -24,20 +24,21 @@ Attributes
 Actions
 ^^^^^^^
 
-* Pop-up that springs up everytime the software is started
 * Checking the tick-box would disable the pop-up from appearing everytime the software is launched
-* The user could later re-enable the appearance of the pop-up window through *Display* or *Preferences* menu in *Settings*
 * Clicking on the hyperlinks will open the respective topic in a separate tab on the browser (e.g.: GitHub repo)
 
 Requirement
 ^^^^^^^^^^^
 
+* Pop-up that springs up everytime the software is started
 * If the user ticks the check-box *Do not show again*, the pop-up should not appear during the subsequent launch of the tool
+* The user could later re-enable the appearance of the pop-up window through *Display* or *Preferences* menu in *Settings*
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Only connected to the landing view, which appears everytime the tool is launched
+* Connected to the landing view, which appears everytime the tool is launched
+* Connected also to the file menu; user can re-enable appearance of the welcome view-component through options within the file menu
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
