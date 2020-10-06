@@ -8,6 +8,8 @@
   Documentation requirements
 - [tests.txt](test.txt)
   Requirements for running test suite
+- [website.txt](website.txt)
+  Requirements for open_plan website
 
 ## Examples
 
