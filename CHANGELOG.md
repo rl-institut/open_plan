@@ -19,7 +19,7 @@ Here is a template for new release sections
 ## [Unreleased]
 
 ### Added
-- one thing
+- Basic website structure (#14)
 
 ### Changed
 - another thing
