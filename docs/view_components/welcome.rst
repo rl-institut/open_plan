@@ -9,16 +9,16 @@ The welcome window serves as an orientation point or introduction for the user a
 Attributes
 ^^^^^^^^^^
 
-#. **Welcome message**
+* **Welcome message**
     * A text
 
-#. **Video intro message**
+* **Video intro message**
     * A short, 3 minute video clip that provides the important information such as tool features, capabilities, where to find help, etc., very briefly
     * This clip is embedded into the welcome pop-up. The user can view it on YouTube (or Vimeo) on a separate tab of the browser by clicking on a link on the video
 
-#. **Check-box to disable the welcome pop-up**
+* **Check-box to disable the welcome pop-up**
 
-#. **Hyperlinks**
+* **Hyperlinks**
     * Clickable links to read more, documentation, examples, use-cases, video tutorials, code-base (GitHub repo) and contact us
 
 Actions
