@@ -37,9 +37,12 @@ Actions
 Requirement
 ^^^^^^^^^^^
 
+* The user has to progress through the progression bar in order to successfully carry out the modeling and simulation
+
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+* The progression bar is linked to one other view-component, the :ref:`menu_tool-label`
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -47,6 +50,7 @@ Rendering of the view-component
 * Clickable buttons on the progression bar placed sequentially as per the simulation progression order
 * Different coloring of the buttons depending on the simulation steps performed
 * Horizontally placed just below the top margin of the view
+* The progression bar or flow chart is present on every view of the tool UI
 
 .. image:: docs/assets/flow_chart.png
    :width: 400
