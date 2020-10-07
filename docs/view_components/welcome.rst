@@ -37,7 +37,8 @@ Requirement
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Connected to the landing view, which appears everytime the tool is launched
+ref:`landing-view`:
+
 * Connected also to the file menu; user can re-enable appearance of the welcome view-component through options within the file menu
 
 Rendering of the view-component
