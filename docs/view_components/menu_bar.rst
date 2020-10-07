@@ -38,7 +38,7 @@ Attributes
 Actions
 ^^^^^^^
 
-* Clicking on any of the tabs/menus results in a drop-down list of sub-menus
+* Clicking on any of the menus' option results in a drop-down list of sub-menu's options
 * The menu/submenu's options that are not applicable are greyed out or inactive and thus, nothing happens when clicked upon
 
 Requirement
