@@ -39,7 +39,7 @@ Actions
 ^^^^^^^
 
 * Clicking on any of the tabs/menus results in a drop-down list of sub-menus
-* The menus that are not applicable are greyed out or inactive and thus, nothing happens when clicked upon
+* The menu/submenu's options that are not applicable are greyed out or inactive and thus, nothing happens when clicked upon
 
 Requirement
 ^^^^^^^^^^^
