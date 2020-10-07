@@ -31,7 +31,7 @@ Requirement
 ^^^^^^^^^^^
 
 * By default, the welcome view-component should be displayed to the user everytime the software is started
-* If the user ticks the check-box *Do not show again*, the pop-up should not appear during the subsequent launch of the tool
+* If the user ticks the check-box *Do not show again*, the welcome view-component should not appear to the user during any subsequent launch of the tool
 * The user could later re-enable the appearance of the pop-up window through *Display* or *Preferences* menu in *Settings*
 
 Link with other view-components
