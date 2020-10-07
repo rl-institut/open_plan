@@ -25,7 +25,7 @@ Attributes
 Actions
 ^^^^^^^
 
-* Checking the tick-box would disable the pop-up from appearing everytime the software is launched
+* Checking the `Do not show again` check-box would disable the pop-up from appearing everytime the software is launched
 * Clicking on the hyperlinks will open the respective topic in a separate tab on the browser (e.g.: GitHub repo)
 
 Requirement
