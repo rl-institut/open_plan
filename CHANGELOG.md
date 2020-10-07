@@ -10,7 +10,8 @@ Here is a template for new release sections
 ## [_._._] - 20XX-MM-DD
 
 ### Added
--
+- Add description of the structure of the welcome view-component (#7)
+
 ### Changed
 -
 ### Removed
@@ -26,5 +27,4 @@ Here is a template for new release sections
 
 ### Removed
 - yet another thing
-
 
