@@ -21,6 +21,7 @@ Here is a template for new release sections
 
 ### Added
 - Basic website structure (#14, #16)
+- Description of the design and rendering of the view-component Progression bar (#15)
 
 ### Changed
 - another thing
