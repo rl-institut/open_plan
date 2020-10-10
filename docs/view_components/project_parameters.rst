@@ -1,8 +1,4 @@
-.. reference for this view-component
-.. you can refer to this component using :ref:`<component_name>-label`
-
 .. _project_parameters-label:
-
 
 Project parameters
 ------------------
