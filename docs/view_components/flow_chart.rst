@@ -1,4 +1,4 @@
-.. _flowchart-label:
+.. _progression_bar-label:
 
 Progression Bar
 ---------------
@@ -42,7 +42,7 @@ Requirement
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* :ref:`menu_tool-label`
+* :ref:`menu_bar-label`
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
