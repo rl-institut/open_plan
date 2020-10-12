@@ -46,6 +46,7 @@ ref:`landing-view`:
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The welcome view component could be either a popup on top of the ref`:landing-view`, a part of the landing view or a view on its own.
-.. image:: docs/assets/welcome_popup.png
-   :width: 400
-   :alt: A snapshot of the proposed welcome pop-up window
+    .. image:: _files/welcome_popup.png
+        :target: _images/welcome_popup.png
+        :width: 400
+        :alt: A snapshot of the proposed welcome pop-up window
