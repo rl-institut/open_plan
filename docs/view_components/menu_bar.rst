@@ -28,6 +28,10 @@ Attributes
     ....
     ....
     Scenario-N
+*Scenario comparison* has the following submenus:
+    I. Import scenario
+    II. Save comparison
+    III. Export comparison
 * *Preferences* has the following submenus:
     I. Language
     II. Display
