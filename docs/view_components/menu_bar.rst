@@ -24,10 +24,8 @@ Attributes
     I. New scenario
     II. Load scenario
     III. ---- (separating horizontal line)
-    Scenario-I
-    ....
-    ....
-    Scenario-N
+    IV. List of scenarios in the system
+
 * *Preferences* has the following submenus:
     I. Language
     II. Display
