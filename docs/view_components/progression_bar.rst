@@ -55,6 +55,5 @@ Rendering of the view-component
 * The progression bar or Progression bar is present on every view of the tool UI
 
 .. image:: _files/flow_chart.png
-    :target: _images/flow_chart.png
     :width: 400
     :alt: An example of the proposed rendering of the Progression bar
