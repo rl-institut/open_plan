@@ -69,7 +69,7 @@ View-components definition
 
 ----
 
-.. include:: view_components/flow_chart.rst
+.. include:: view_components/progression_bar.rst
 
 ----
 
