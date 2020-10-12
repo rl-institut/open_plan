@@ -91,4 +91,10 @@ View-components definition
 
 .. include:: view_components/energy_system_sector_selector.rst
 
+----
 
+.. include:: view_components/project_parameters.rst
+
+----
+
+.. include:: view_components/scenarios.rst
