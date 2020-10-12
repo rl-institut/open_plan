@@ -69,17 +69,25 @@ View-components definition
 
 ----
 
+.. _progression_bar-label:
+
 .. include:: view_components/progression_bar.rst
 
 ----
+
+.. _menu_bar-label:
 
 .. include:: view_components/menu_bar.rst
 
 ----
 
+.. _welcome-label:
+
 .. include:: view_components/welcome.rst
 
 ----
+
+.. _es-network-label:
 
 .. include:: view_components/energy_system_network.rst
 
@@ -92,6 +100,8 @@ View-components definition
 .. include:: view_components/energy_system_sector_selector.rst
 
 ----
+
+.. _project_parameters-label:
 
 .. include:: view_components/project_parameters.rst
 

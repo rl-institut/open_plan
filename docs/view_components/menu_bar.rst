@@ -1,5 +1,3 @@
-.. _menu_bar-label:
-
 Menu Bar
 --------
 
