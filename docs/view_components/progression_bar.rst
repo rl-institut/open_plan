@@ -1,5 +1,3 @@
-.. _flowchart-label:
-
 Progression Bar
 ---------------
 
@@ -42,7 +40,7 @@ Requirement
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* :ref:`menu_tool-label`
+* :ref:`menu_bar-label`
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -54,6 +52,6 @@ Rendering of the view-component
 * Horizontally placed just below the top margin of the view
 * The progression bar or Progression bar is present on every view of the tool UI
 
-.. image:: docs/assets/flow_chart.png
-   :width: 400
-   :alt: An example of the proposed rendering of the Progression bar
+.. image:: _files/flow_chart.png
+    :width: 400
+    :alt: An example of the proposed rendering of the Progression bar

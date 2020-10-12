@@ -1,6 +1,3 @@
-.. _es-network-label:
-
-
 Energy System network
 ---------------------
 

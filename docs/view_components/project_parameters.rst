@@ -1,5 +1,3 @@
-.. _project_parameters-label:
-
 Project parameters
 ------------------
 | Project parameters are basic inputs to set the context of the project.

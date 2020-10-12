@@ -1,9 +1,7 @@
-.. _menu_bar-label:
+Menu Bar
+--------
 
-Progression Bar
----------------
-
-Progression bar is a tab with a set of menus namely File, Scenarios, Preferences and Help.
+Menu bar is a set of options linked to actions, or submenus.
 
 Attributes
 ^^^^^^^^^^
@@ -24,10 +22,8 @@ Attributes
     I. New scenario
     II. Load scenario
     III. ---- (separating horizontal line)
-    Scenario-I
-    ....
-    ....
-    Scenario-N
+    IV. List of scenarios in the system
+
 * *Preferences* has the following submenus:
     I. Language
     II. Display
@@ -66,7 +62,7 @@ Link with other view-components
 * :ref:`welcome-label`:
     The welcome view-component can be re-enabled if it was disabled by the user from appearing everytime the tool is launched.
 
-* :ref:`flow_chart-label`
+* :ref:`progression_bar-label`
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

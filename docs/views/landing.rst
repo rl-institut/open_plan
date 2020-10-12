@@ -14,9 +14,9 @@ There are no attributes specific to the landing view.
 Active view-components
 ^^^^^^^^^^^^^^^^^^^^^^
 
-- ref:`menu_bar-label`
-- ref:`flow_chart-label`
-- ref:`welcome-label`
+- :ref:`menu_bar-label`
+- :ref:`progression_bar-label`
+- :ref:`welcome-label`
 
 
 Actions
