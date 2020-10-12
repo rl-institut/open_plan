@@ -1,9 +1,9 @@
 .. _menu_bar-label:
 
-Progression Bar
----------------
+Menu Bar
+--------
 
-Progression bar is a tab with a set of menus namely File, Scenarios, Preferences and Help.
+Menu bar is a set of options linked to actions, or submenus.
 
 Attributes
 ^^^^^^^^^^

@@ -40,7 +40,7 @@ Link with other view-components
 
 ref:`landing-view`:
 
-* ref:`file menu`:
+* ref:`menu_bar-label`:
      user can re-enable appearance of the welcome view-component through options within the file menu
 
 Rendering of the view-component
