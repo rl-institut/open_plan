@@ -15,17 +15,10 @@ Attributes
 * Financial
 * Ecological
 
-
-**Save comparison**
-
-**Export comparison**
-
-**Import scenario**
-
 Active view-components
 ^^^^^^^^^^^^^^^^^^^^^^
 
-* Possible to compare two or more scenarios with each other.
+* :ref:`menu_bar-label`
 
 Actions
 ^^^^^^^
@@ -41,7 +34,7 @@ Actions
 
 **Save comparison**
 
-* Allows the user to save his comparison in the tool.
+* Allows the user to save their comparison in the tool.
 * Makes a pop up appear where the user has to select a name for his comparison.
 
 **Export comparison**
