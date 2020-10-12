@@ -62,7 +62,7 @@ Link with other view-components
 * :ref:`welcome-label`:
     The welcome view-component can be re-enabled if it was disabled by the user from appearing everytime the tool is launched.
 
-* :ref:`flow_chart-label`
+* :ref:`progression_bar-label`
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
