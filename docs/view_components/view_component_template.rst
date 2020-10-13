@@ -1,7 +1,10 @@
-.. reference for this view-component
-.. you can refer to this component using :ref:`<component_name>-label`
+.. Refer to a component using :ref:`<component_name>-label`
 
 .. _view_component_template-label:
+
+****************************
+Template for view components
+****************************
 
 Component title
 ---------------
@@ -13,9 +16,9 @@ Attributes
 **Atttribute A**
     Description
 
-        Property:
-            * Property 1
-            * Property n
+    Property:
+        * Property 1
+        * Property n
 
 **Atttribute B**
     Description
