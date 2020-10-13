@@ -2,9 +2,9 @@
 
 .. _view_component_template-label:
 
-****************************
 Template for view components
-****************************
+----------------------------
+.. Adapt tp your view component from here
 
 Component title
 ---------------
@@ -13,48 +13,53 @@ Attributes
 ^^^^^^^^^^
 .. The properties should be filled in only if applicable.
 
-**Atttribute A**
+**Attribute A**
     Description
 
-    Property:
+    Properties:
         * Property 1
         * Property n
 
-**Atttribute B**
+    Action index:
+
+    Requirement index:
+
+.. [One liner] corresponding indexes from the Actions and Requirements paragraph
+
+**Attribute B**
     Description
 
-        Property:
-            * Property 1
-            * Property n
+    Properties:
+        * Property 1
+        * Property n
 
+    Action index:
 
+    Requirement index:
+
+.. [One liner] corresponding indexes from the Actions and Requirements paragraph
 
 Actions
 ^^^^^^^
-**Atttribute A**
-    * Action 1
-    * Action 2
-
-**Atttribute B**
-    * Action 1
-    * Action 2
+1. Action 1
+2. Action n
 
 Requirement
 ^^^^^^^^^^^
-**Atttribute A**
-    * Requirement 1
-    * Requirement 2
+1. Requirement 1
+2. Requirement n
 
-**Atttribute B**
-    * Requirement 1
-    * Requirement 2
-
-Link with other views and view-components
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Link with views
+^^^^^^^^^^^^^^^^^^^^^
 **View**
     Description of the link
 
-**View component**
+Link with other view-components
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**View component A**
+    Description of the link
+
+**View component B**
     Description of the link
 
 Rendering of the view-component
