@@ -6,6 +6,8 @@ Template for view components
 ----------------------------
 .. Adapt tp your view component from here
 
+------------------------------------------------------
+
 Component title
 ---------------
 
@@ -20,9 +22,9 @@ Attributes
         * Property 1
         * Property n
 
-    Action index:
+    Actions index:
 
-    Requirement index:
+    Requirements index:
 
 .. [One liner] corresponding indexes from the Actions and Requirements paragraph
 
@@ -33,9 +35,9 @@ Attributes
         * Property 1
         * Property n
 
-    Action index:
+    Actions index:
 
-    Requirement index:
+    Requirements index:
 
 .. [One liner] corresponding indexes from the Actions and Requirements paragraph
 
@@ -51,7 +53,10 @@ Requirement
 
 Link with views
 ^^^^^^^^^^^^^^^^^^^^^
-**View**
+**View A**
+    Description of the link
+
+**View B**
     Description of the link
 
 Link with other view-components
