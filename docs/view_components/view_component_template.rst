@@ -10,12 +10,14 @@ Attributes
 ^^^^^^^^^^
 **Atttribute A**
     text
+
         Property:
             * Property 1
             * Property n
 
 **Atttribute N**
     text
+
         Property:
             * Property 1
             * Property n
