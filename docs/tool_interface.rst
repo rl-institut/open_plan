@@ -108,7 +108,3 @@ View-components definition
 ----
 
 .. include:: view_components/scenarios.rst
-
-----
-
-.. include:: view_components/view_component_template.rst
