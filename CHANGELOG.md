@@ -23,6 +23,7 @@ Here is a template for new release sections
 - Basic website structure (#14, #16)
 - Description of the design and rendering of the view-component menu bar (#15)
 - Description of the design and rendering of the view-component progression bar (#10)
+- Template for view-component (#24)
 
 ### Changed
 - another thing
