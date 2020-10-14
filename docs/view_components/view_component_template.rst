@@ -18,6 +18,7 @@
 
 Attributes
 ^^^^^^^^^^
+.. Please refer to the definition of what an attribute is in the tool_interface.rst fileg
 .. The properties should be filled in only if applicable.
 
 **Attribute A**
@@ -44,21 +45,34 @@ Attributes
 
     Requirements index:
 
-.. [One liner] corresponding indexes from the Actions and Requirements paragraph
+.. [One liner] corresponding indexes from the Actions and Requirements paragraph below
 
 Actions
 ^^^^^^^
+..
+    an action is something one can perform directly from the view-component
+    (i.e. "clicking on this attribute should update this other attribute")
+
 1. Action 1
 2. Action n
 
 Requirements
 ^^^^^^^^^^^^
+..
+    a requirement is a binding rule which cannot be described directly by an action
+    or which describes redundant actions
+    (i.e. "it should not be possible to click on this attribute while the value of this other
+    attribute is not defined", or "after changing the value of an already defined attribute,
+    one should see a difference in the rendering of the attribute"
+
 1. Requirement 1
 2. Requirement n
 
 Link with views
 ^^^^^^^^^^^^^^^^^^^^^
 **View A**
+.. use :ref:`<view>-label` to cross link to the view's description directly
+
     Description of the link
 
 **View B**
@@ -67,6 +81,8 @@ Link with views
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **View component A**
+.. use :ref:`<view_component>-label` to cross link to the view-component's description directly
+
     Description of the link
 
 **View component B**
