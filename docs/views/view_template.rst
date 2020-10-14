@@ -12,28 +12,17 @@ Attributes
 ^^^^^^^^^^
 .. The properties should be filled in only if applicable.
 
-`**Attribute A**`
+**Attribute A**
+    Description
 
-Description
-
-    `Properties:`
-
-    * Property 1
-    * Property n
+    Properties:
+        * Property 1
+        * Property n
 
     Actions index:
 
     Requirements index:
-
 .. [One liner] corresponding indexes from the Actions and Requirements paragraph
-
-Active view-components
-^^^^^^^^^^^^^^^^^^^^^^
-
-:guilabel:`&Cancel`
-
-* View component A
-* View component B
 
 Actions
 ^^^^^^^
@@ -44,6 +33,12 @@ Requirement
 ^^^^^^^^^^^
 1. Requirement 1
 2. Requirement n
+
+Active view-components
+^^^^^^^^^^^^^^^^^^^^^^
+* View component A
+* View component B
+.. Actions and requirements of active view components are described in the view component description
 
 Link with other views
 ^^^^^^^^^^^^^^^^^^^^^
