@@ -26,19 +26,21 @@ Attributes
 
     Properties:
         * Property 1
+        * ...
         * Property n
 
     Actions index:
 
     Requirements index:
 
-.. [One liner] corresponding indexes from the Actions and Requirements paragraph
+.. [One liner] corresponding indexes from the Actions and Requirements paragraph below
 
 **Attribute B**
     Description
 
     Properties:
         * Property 1
+        * ...
         * Property n
 
     Actions index:
@@ -54,7 +56,7 @@ Actions
     (i.e. "clicking on this attribute should update this other attribute")
 
 1. Action 1
-2. Action n
+2. Action 2
 
 Requirements
 ^^^^^^^^^^^^
@@ -66,7 +68,7 @@ Requirements
     one should see a difference in the rendering of the attribute"
 
 1. Requirement 1
-2. Requirement n
+2. Requirement 2
 
 Link with views
 ^^^^^^^^^^^^^^^^^^^^^
