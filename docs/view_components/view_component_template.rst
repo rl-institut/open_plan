@@ -70,22 +70,22 @@ Requirements
 
 Link with views
 ^^^^^^^^^^^^^^^^^^^^^
-**View A**
 .. use :ref:`<view>-label` to cross link to the view's description directly
 
+**:ref:`<view1>-label`**
     Description of the link
 
-**View B**
+**:ref:`<view2>-label`**
     Description of the link
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**View component A**
 .. use :ref:`<view_component>-label` to cross link to the view-component's description directly
 
+**:ref:`<view_component1>-label`**
     Description of the link
 
-**View component B**
+**:ref:`<view_component2>-label`**
     Description of the link
 
 Rendering of the view-component
