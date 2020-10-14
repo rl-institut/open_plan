@@ -1,15 +1,20 @@
-.. Refer to a component using :ref:`<component_name>-label`
+..
+    To insert the view component into the ReadTheDocs structure, please rename the file
+    and replace <view_component> by the name of this file in the two lines below.
+     _<view_component>-label:
+    .. include:: view_components/<view_component>.rst
+..
+    Then move them to the file tool_interface.rst in the list under the title "
+    View-components definition"
+..
+    one can then cross link to this view component by using
+    :ref:`<view_component>-label`
 
-.. _view_component_template-label:
+..  change the title of your view component, make sure the number of "-" below matches exactly
+    the number of character taken by your title
 
-Template for view components
-----------------------------
-.. Adapt tp your view component from here
-
-------------------------------------------------------
-
-Component title
----------------
+<Component title>
+-----------------
 
 Attributes
 ^^^^^^^^^^
