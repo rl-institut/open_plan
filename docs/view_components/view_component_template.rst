@@ -18,7 +18,7 @@
 
 Attributes
 ^^^^^^^^^^
-.. Please refer to the definition of what an attribute is in the tool_interface.rst fileg
+.. Please refer to the definition of what an attribute is in the tool_interface.rst file
 .. The properties should be filled in only if applicable.
 
 **Attribute A**
