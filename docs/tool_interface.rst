@@ -108,3 +108,10 @@ View-components definition
 ----
 
 .. include:: view_components/scenarios.rst
+
+Abstract-components Definition
+==============================
+
+.. _scenario-label:
+
+.. include:: view_components/scenario.rst
