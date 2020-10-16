@@ -107,11 +107,32 @@ View-components definition
 
 ----
 
+.. _load_scenario-label:
+
+.. include:: view_components/load_scenario.rst
+
+----
+
+.. need to rename this
+
+.. _scenarios-label:
+
 .. include:: view_components/scenarios.rst
+
 
 Abstract-components Definition
 ==============================
 
+
+.. contents::
+   :local:
+   :depth: 1
+
+----
+
 .. _scenario-label:
 
-.. include:: view_components/scenario.rst
+.. include:: abstract_components/scenario.rst
+
+
+
