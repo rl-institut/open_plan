@@ -1,3 +1,5 @@
+.. _progression-bar-label:
+
 Progression Bar
 ---------------
 
@@ -13,7 +15,7 @@ A Progression bar view-component has a number of advantages:
 Attributes
 ^^^^^^^^^^
 
-* The steps that constitute the progression bar are as follows:
+**Several simulation steps constitute the progression bar**
     #. Project Setup
     #. Inputs
     #. System Inputs
@@ -21,26 +23,32 @@ Attributes
     #. Constraints
     #. Simulations
     #. Results
-* Each step has an associated index, with the progression being bar considered as an array
-* The current state of the view depends on the index of the current step
+**Each step has an associated index, with the progression being bar considered as an array**
+** The current state of the view depends on the index of the current step**
 
 Actions
 ^^^^^^^
 
-* To make the next step of the Progression bar clickable, the user has to fulfill the requirements of the current step. Each step has various mandatory and optional fields.
-* Clicking on the steps of the flowchart that have been fulfilled already allows the user to make modifications. 
-* Clicking on the steps that are not clickable make a small text bubble appear saying the previous step needs to be fulfilled first.
+1. To make the next step of the Progression bar clickable, the user has to fulfill the requirements of the current step. Each step has various mandatory and optional fields.
+2. Clicking on the steps of the Progression bar that have been fulfilled already allows the user to make modifications.
+3. Clicking on the steps that are not clickable make a small text bubble appear saying the previous step needs to be fulfilled first.
 
 Requirement
 ^^^^^^^^^^^
 
-* The user has to progress through the progression bar in order to successfully carry out the modeling and simulation
-* Each step has to be completed one at a time. Once a step has met its minimum requirements, the button of the next step becomes clickable. Therefore, the user can come back to the steps they have already seen but they cannot click on a random step.
+1. The user has to progress through the progression bar in order to successfully carry out the modeling and simulation
+2. Each step has to be completed one at a time. Once a step has met its minimum requirements, the button of the next step becomes clickable. Therefore, the user can come back to the steps they have already seen but they cannot click on a random step.
+
+Link with views
+^^^^^^^^^^^^^^^
+
+.. TBD
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* :ref:`menu_bar-label`
+**:ref:`menu_bar-label`**
+.. TBD
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
