@@ -31,7 +31,7 @@ Here is a template for new release sections
 - Description of energy_system_component view-component (#32)
 
 ### Changed
-- another thing
+- Modified the view-components according to the changed template (#35)
 
 ### Removed
 - yet another thing
