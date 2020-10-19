@@ -97,6 +97,8 @@ View-components definition
 
 ----
 
+.. _es-sector-selector-label:
+
 .. include:: view_components/energy_system_sector_selector.rst
 
 ----

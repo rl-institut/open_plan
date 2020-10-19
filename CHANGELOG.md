@@ -26,6 +26,7 @@ Here is a template for new release sections
 - Template for view-component (#24)
 - Description of load_scenario view component (#29)
 - Template for views (#33)
+- Description of energy_system_sector_selector view component (#38)
 
 ### Changed
 - another thing
