@@ -1,9 +1,3 @@
-.. reference for this view-component
-.. you can refer to this component using :ref:`<component_name>-label`
-
-.. _landing-label:
-
-
 Landing
 -------
 

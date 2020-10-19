@@ -1,7 +1,5 @@
-.. _scenarios-label:
-
-Scenarios
----------
+Scenario parameters
+-------------------
 * This component depends a lot on the tool mechanism which has not been discussed deeply yet.
 * Each project consists of a model that is run in a simulation following a specific scenario.
 
