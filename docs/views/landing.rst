@@ -19,7 +19,7 @@ There are no actions specific to the landing view, the possible actions are alre
 
 Requirement
 ^^^^^^^^^^^
-- the very first time the user sees this view, the ref:`welcome-label` view-component should be displayed (popup, or integrated to the view)
+- the very first time the user sees this view, the :ref:`welcome-label` view-component should be displayed (popup, or integrated to the view)
 
 Link with other views
 ^^^^^^^^^^^^^^^^^^^^^

@@ -44,8 +44,8 @@ main window
 
 widget
 ------
-    Smaller window within the tool's ref:`main-window-def`.
-    A *widget* can be moved around by the user within the ref:`main-window-def` and collapsed into another *widget* (then each *widget* is accessible via tabs).
+    Smaller window within the tool's :ref:`main-window-def`.
+    A *widget* can be moved around by the user within the :ref:`main-window-def` and collapsed into another *widget* (then each *widget* is accessible via tabs).
 
 
 
