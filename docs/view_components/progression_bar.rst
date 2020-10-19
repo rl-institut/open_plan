@@ -47,7 +47,7 @@ Link with views
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**:ref:`menu_bar-label`**
+:ref:`menu_bar-label`
 .. TBD
 
 Rendering of the view-component

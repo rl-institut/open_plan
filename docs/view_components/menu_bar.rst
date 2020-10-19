@@ -65,10 +65,10 @@ Link with views
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**:ref:`welcome-label`**
+:ref:`welcome-label`
     The welcome view-component can be re-enabled if it was disabled by the user from appearing everytime the tool is launched.
 
-**:ref:`progression_bar-label`**
+:ref:`progression_bar-label`
 .. TDB
 
 Rendering of the view-component
