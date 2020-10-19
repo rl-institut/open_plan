@@ -1,6 +1,8 @@
 Energy sector selector
 ----------------------
 
+The user can choose which :ref:`energy-type-def` they would like to use in their energy system. This choice will impact which components of the energy system are available for example.
+
 Attributes
 ^^^^^^^^^^
 
