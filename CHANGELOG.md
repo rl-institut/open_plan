@@ -25,6 +25,7 @@ Here is a template for new release sections
 - Description of the design and rendering of the view-component progression bar (#10)
 - Template for view-component (#24)
 - Description of load_scenario view component (#29)
+- Template for views (#33)
 
 ### Changed
 - another thing
