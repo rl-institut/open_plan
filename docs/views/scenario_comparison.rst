@@ -1,5 +1,3 @@
-.. _<view_name>-label: scenario_comparison
-
 Scenario Comparison
 -------------------
 

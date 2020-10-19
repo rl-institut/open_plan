@@ -1,15 +1,20 @@
-.. To insert the view into the ReadTheDocs structure, please use this template and replace <view_name> by the name of your file when copying the following line in tool_interface.rst.:
-    .. include:: views/<view_name>.rst
+..
+    To insert the view into the ReadTheDocs structure, please rename the file
+    and replace <view> by the name of this file in the two lines below.
+     _<view>-label:
+    .. include:: views/<view>.rst
+..
+    Then move them to the file tool_interface.rst in the list under the title "
+    View-components definition"
+..
+    one can then cross link to this view component by using
+    :ref:`<view>-label`
 
-.. Refer to this view using :ref:`<view_name>-label`
-.. Change <view_template> for the title of your view
-
-.. _view_template-label:
-
-View template
--------------
-.. Put the name of your view here instead of <view_template>. Make sure the number of "-" below matches exactly
+..  change the title of your view, make sure the number of "-" below matches exactly
     the number of character taken by your title
+
+<View template>
+---------------
 
 Attributes
 ^^^^^^^^^^
@@ -20,6 +25,7 @@ Attributes
 
     Properties:
         * Property 1
+        * ...
         * Property n
 
     Actions index:
@@ -33,7 +39,7 @@ Actions
     (i.e. "clicking on this attribute should update this other attribute")
 
 1. Action 1
-2. Action n
+2. Action 2
 
 Requirement
 ^^^^^^^^^^^
@@ -44,22 +50,26 @@ Requirement
     one should see a difference in the rendering of the attribute"
 
 1. Requirement 1
-2. Requirement n
+2. Requirement 2
 
 Active view-components
 ^^^^^^^^^^^^^^^^^^^^^^
 .. use :ref:`<view_component>-label` to cross link to the view-component's description directly
 .. Actions and requirements of active view components are described in the view component description
 
-* View component A
-* View component B
+* :ref:`<view_component1>-label`
+* :ref:`<view_component2>-label`
 
-Link with other views
-^^^^^^^^^^^^^^^^^^^^^
-.. use :ref:`<view>-label` to cross link to the view's detailed description directly
+Link with views
+^^^^^^^^^^^^^^^
+.. use :ref:`<view>-label` to cross link to the view's description directly
 
-**View A**
+:ref:`<view1>-label`
     Description of the link
+
+:ref:`<view2>-label`
+    Description of the link
+
 
 Rendering of the view
 ^^^^^^^^^^^^^^^^^^^^^

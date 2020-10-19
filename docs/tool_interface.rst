@@ -44,8 +44,8 @@ main window
 
 widget
 ------
-    Smaller window within the tool's ref:`main-window-def`.
-    A *widget* can be moved around by the user within the ref:`main-window-def` and collapsed into another *widget* (then each *widget* is accessible via tabs).
+    Smaller window within the tool's :ref:`main-window-def`.
+    A *widget* can be moved around by the user within the :ref:`main-window-def` and collapsed into another *widget* (then each *widget* is accessible via tabs).
 
 
 
@@ -58,7 +58,17 @@ Views definition
 
 ----
 
+.. _landing-label:
+
 .. include:: views/landing.rst
+
+
+----
+
+.. _scenario_comparison-label:
+
+.. include:: views/scenario_comparison.rst
+
 
 View-components definition
 ==========================
@@ -68,6 +78,13 @@ View-components definition
    :depth: 1
 
 .. it is important to have a blank line before and after the ----, otherwise the reference does not work!
+
+
+----
+
+.. _welcome-label:
+
+.. include:: view_components/welcome.rst
 
 ----
 
@@ -83,9 +100,15 @@ View-components definition
 
 ----
 
-.. _welcome-label:
+.. _scenario_parameters-label:
 
-.. include:: view_components/welcome.rst
+.. include:: view_components/scenario_parameters.rst
+
+----
+
+.. _project_parameters-label:
+
+.. include:: view_components/project_parameters.rst
 
 ----
 
@@ -107,23 +130,10 @@ View-components definition
 
 ----
 
-.. _project_parameters-label:
-
-.. include:: view_components/project_parameters.rst
-
-----
-
 .. _load_scenario-label:
 
 .. include:: view_components/load_scenario.rst
 
-----
-
-.. need to rename this
-
-.. _scenarios-label:
-
-.. include:: view_components/scenarios.rst
 
 
 Abstract-components Definition
@@ -139,6 +149,5 @@ Abstract-components Definition
 .. _scenario-label:
 
 .. include:: abstract_components/scenario.rst
-
 
 

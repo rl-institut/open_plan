@@ -1,6 +1,8 @@
 Energy system component
 -----------------------
 
+Define the view a user has when creating or editing a component of its energy system
+
 Attributes
 ^^^^^^^^^^
 .. Please refer to the definition of what an attribute is in the tool_interface.rst fileg
@@ -16,7 +18,7 @@ Attributes
 
 
 **Unique id**
-    A positive integer number to identify the component uniquely within the list of energy system component of the :ref:`es-network-label`
+    A positive integer number to identify the component uniquely within the list of energy system components of the :ref:`es-network-label`
 
 
 **Icon**
@@ -63,7 +65,7 @@ Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 :ref:`es-network-label`
-    Description of the link
+   The component is inserted within the energy system described in this other view-component
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

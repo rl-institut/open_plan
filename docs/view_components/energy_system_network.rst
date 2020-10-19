@@ -1,15 +1,13 @@
 Energy System network
 ---------------------
 
+This view-component will help the user to define their energy system.
+
 
 Attributes
 ^^^^^^^^^^
 
 **list of energy busses `es_bus_list`**
-    Definition:
-        Say something about the attribute
-    Name in code:
-        es_bus_list
     properties:
         - each bus has a unique id
         - each bus has an associated :ref:`energy-type-def`
@@ -20,11 +18,15 @@ Attributes
 
 **button `add_es_bus`**
 
+    Linked to the action of adding a bus to the `es_bus_list`
+
     Actions index: 1, 5, 6
 
     Requirements index:
 
 **button `remove_es_bus`**
+
+    Linked to the action of removing a bus from the `es_bus_list`
 
     Actions index: 2, 3
 
@@ -43,17 +45,24 @@ Attributes
 
 **button `add_es_component`**
 
+    Linked to the action of adding an energy system component to the `es_component_list`
+
     Actions index: 1, 5, 6
 
     Requirements index:
 
 **button `remove_es_component`**
 
+    Linked to the action of removing an energy system component from the `es_component_list`
+
     Actions index: 2, 3
 
     Requirements index:
 
 **draw area `network_schema`**
+
+    Area where the user could drag and drop components and connect them, or simply see a rendering
+    of the energy system graph withtout being able to interact with it
 
     Actions index: 4.
 
