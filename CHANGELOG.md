@@ -23,7 +23,7 @@ Here is a template for new release sections
 - Basic website structure (#14, #16)
 - Description of the design and rendering of the view-component menu bar (#15)
 - Description of the design and rendering of the view-component progression bar (#10)
-- Template for view-component (#24)
+- Template for view-component (#24, #42)
 - Description of load_scenario view component (#29)
 - Template for views (#33)
 - Description of energy_system_sector_selector view component (#38)
