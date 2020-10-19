@@ -15,7 +15,7 @@ A Progression bar view-component has a number of advantages:
 Attributes
 ^^^^^^^^^^
 
-**Several simulation steps constitute the progression bar**
+**List of simulation steps below constitute the progression bar**
     #. Project Setup
     #. Inputs
     #. System Inputs
@@ -23,8 +23,9 @@ Attributes
     #. Constraints
     #. Simulations
     #. Results
-**Each step has an associated index, with the progression being bar considered as an array**
-** The current state of the view depends on the index of the current step**
+
+    Properties:
+        *Each step has an associated index, corresponding to its position in the list of steps
 
 Actions
 ^^^^^^^
