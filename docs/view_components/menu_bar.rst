@@ -38,7 +38,7 @@ Attributes
 Actions
 ^^^^^^^
 
-;askdjf;lkadhf;lkadjhfl;ahjdgo;iahjwoivrnavj;cjvk;ajsdf;ojv;oiwjdv
+;askdjf;lkadhf;lkadjhfl;ahjdgo;
 * Clicking on *File* would show a drop-down list with the following submenus or options:
     I. Load project
     II. New project
@@ -46,7 +46,7 @@ Actions
     IV. Save project as
     V. Export project
     VI. Exit open_plan
-* clicking on *Preferences* would show aadasdsaddasdd ist with the following submenus or options:
+* clicking on *Preferences* would show pop-up window with the following submenus or options:
     I. Language
     II. Display
 * User can change the scenario by clicking on the specific scenario under the *Scenarios* menu or load their own scenario as well, or create a new scenario
@@ -67,6 +67,6 @@ Link with other view-components
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Rectanguladasdasdadadadada above the flow chart ribbon
+* above the flow chart ribbon
 * Rendered on every view of the tool UI
 * The current scenario is highlighted in the drop-down list which results when the *Scenarios* menu is clicked
