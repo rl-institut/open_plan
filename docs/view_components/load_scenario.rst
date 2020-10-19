@@ -34,20 +34,20 @@ Link with views
 ^^^^^^^^^^^^^^^
 .. use :ref:`<view>-label` to cross link to the view's description directly
 
-**:ref:`<view1>-label`**
+:ref:`<view1>-label`
     Description of the link
 
-**:ref:`<view2>-label`**
+:ref:`<view2>-label`
     Description of the link
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. use :ref:`<view_component>-label` to cross link to the view-component's description directly
 
-**:ref:`<view_component1>-label`**
+:ref:`<view_component1>-label`
     Description of the link
 
-**:ref:`<view_component2>-label`**
+:ref:`<view_component2>-label`
     Description of the link
 
 Rendering of the view-component
