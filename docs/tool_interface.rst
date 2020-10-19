@@ -88,13 +88,13 @@ View-components definition
 
 ----
 
-.. _progression_bar-label:
+.. _progression-bar-label:
 
 .. include:: view_components/progression_bar.rst
 
 ----
 
-.. _menu_bar-label:
+.. _menu-bar-label:
 
 .. include:: view_components/menu_bar.rst
 
