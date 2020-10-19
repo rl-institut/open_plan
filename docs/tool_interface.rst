@@ -67,6 +67,8 @@ View-components definition
    :local:
    :depth: 1
 
+.. it is important to have a blank line before and after the ----, otherwise the reference does not work!
+
 ----
 
 .. _progression_bar-label:
@@ -92,6 +94,8 @@ View-components definition
 .. include:: view_components/energy_system_network.rst
 
 ----
+
+.. _es-component-label:
 
 .. include:: view_components/energy_system_component.rst
 

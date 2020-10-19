@@ -28,6 +28,7 @@ Here is a template for new release sections
 - Template for views (#33)
 - Description of energy_system_sector_selector view component (#38)
 - Description of energy_system_network view-component (#11, #40)
+- Description of energy_system_component view-component (#32)
 
 ### Changed
 - another thing
