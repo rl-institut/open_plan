@@ -16,7 +16,7 @@ Attributes
 
     Requirements index:
 
-**button `add_es_bus`**
+**button** :guilabel:`&add_es_bus` 
 
     Linked to the action of adding a bus to the `es_bus_list`
 
@@ -24,7 +24,7 @@ Attributes
 
     Requirements index:
 
-**button `remove_es_bus`**
+**button** :guilabel:`&remove_es_bus`
 
     Linked to the action of removing a bus from the `es_bus_list`
 
@@ -43,7 +43,7 @@ Attributes
     Actions index: 1, 2, 4
 
 
-**button `add_es_component`**
+**button** :guilabel:`&add_es_component` 
 
     Linked to the action of adding an energy system component to the `es_component_list`
 
@@ -51,7 +51,7 @@ Attributes
 
     Requirements index:
 
-**button `remove_es_component`**
+**button** :guilabel:`&remove_es_component`
 
     Linked to the action of removing an energy system component from the `es_component_list`
 
