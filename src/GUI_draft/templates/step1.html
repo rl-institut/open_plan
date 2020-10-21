@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
+{% block content %}
+
+
+<div class="grid-x">
+    <div class="cell">
+        {% import "progression_bar.html" as progression_bar %}
+        <!-- this is just an example, you can complete the dict with all the steps -->
+        {{ progression_bar.input(step_idx=1, step_map={"/step1": "Project Setup", "/step2": "Inputs"})}}
+    </div>
+    <h2 class="cell">Project setup</h2>
+
+    Describe the view of the step 1 here
+
+
+    <a class="cell" href="/step2">Next</a>
+</div>
+
+{% endblock content %}
