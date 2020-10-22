@@ -174,4 +174,8 @@ Abstract-components Definition
 
 .. include:: abstract_components/scenario.rst
 
+.. _input-field-label:
+
+.. include:: abstract_components/input_parameter_field.rst
+
 
