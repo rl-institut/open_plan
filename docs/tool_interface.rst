@@ -141,6 +141,11 @@ View-components definition
 
 .. include:: view_components/load_scenario.rst
 
+----
+
+.. _export_project-label:
+
+.. include:: view_components/export_project.rst
 
 
 Abstract-components Definition
