@@ -137,6 +137,12 @@ View-components definition
 
 ----
 
+.. _es_sector_selector-label:
+
+.. include:: view_components/energy_system_sector_selector.rst
+
+----
+
 .. _es_network-label:
 
 .. include:: view_components/energy_system_network.rst
@@ -146,13 +152,6 @@ View-components definition
 .. _es_component-label:
 
 .. include:: view_components/energy_system_component.rst
-
-----
-
-.. _es_sector_selector-label:
-
-.. include:: view_components/energy_system_sector_selector.rst
-
 
 ----
 
