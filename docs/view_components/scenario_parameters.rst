@@ -1,44 +1,39 @@
 Scenario parameters
 -------------------
-* This component depends a lot on the tool mechanism which has not been discussed deeply yet.
-* Each project consists of a model that is run in a simulation following a specific scenario.
+Inputs parameters to describe a :ref:`scenario-label`. The do not contain the information about the energy system, which is defined in the :ref:`es_network` view-component.
+
 
 Attributes
 ^^^^^^^^^^
-*This section will be filled automatically with the input/output excel sheet, here is one example:*
 
-**Source power mix**
+**List of input parameters**
 
-* Percentage of each source of power (inclusive % from Grid)
+    Each input parameter will be available to the user via :ref:`input_parameter_field-label`
+
+    Properties of each input:
+        - Input type
+        - Input default value
+        - Help text
+        - If it is mandatory or optional
+        - Link in documentation
+
+
+As the parameters in this list should also be accessible in a more general parameter documentation in ReadTheDocs, they will be automatically listed here from either a .yml or csv file.
+
 
 Actions
 ^^^^^^^
-**Source power mix**
-
-* The user can view and edit the default value
-* The user can click on a "?" icon next to the attribute to learn more about it and explains the requirements.
+1. User can edit the value of the input parameters manually.
+2. User can edit the value of the input parameters by loading a scenario from :ref:`load_scenario-label`
 
 
 Requirement
 ^^^^^^^^^^^
-**Source power mix**
-
-* The input value needs to be in % and the sum of all input fields for this attribute need to make 100%. If these requirements are not met, the input field should be highlighted in red.
+1. The requirements of :ref:`input_parameter_field-label` apply for each input parameter
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Source power mix**
-
-* Each Source power mix depends on the technologies put in the model by the user
-
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Source power mix**
-
-* Input number box as % for each technology+
-* All boxes are displayed vertically like:
-
-+-----------------+---------------+------------+
-| Technology 1:   |  input box    |  "?" icon  |
-+-----------------+---------------+------------+
+The rendering of :ref:`input_parameter_field-label` apply for each input parameter
