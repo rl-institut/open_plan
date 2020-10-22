@@ -1,7 +1,3 @@
-..
-    one can then cross link to this view component by using
-    :ref:`create_scenario-label`
-
 Create Scenario
 ---------------
 
