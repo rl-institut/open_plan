@@ -1,13 +1,13 @@
-..
-    To insert the view component into the ReadTheDocs structure, please rename the file
+.. To insert the view component into the ReadTheDocs structure, please rename the file
     and replace <view_component> by the name of this file in the two lines below.
-     _<view_component>-label:
+    .. _<view_component>-label:
     .. include:: view_components/<view_component>.rst
-..
-    Then move them to the file tool_interface.rst in the list under the title "
+    Make sure there is a line break between these two lines (follow the pattern in the tool_interface.rst file
+
+.. Then move them to the file tool_interface.rst in the list under the title "
     View-components definition"
-..
-    one can then cross link to this view component by using
+
+.. one can then cross link to this view component by using
     :ref:`<view_component>-label`
 
 ..  change the title of your view component, make sure the number of "-" below matches exactly
