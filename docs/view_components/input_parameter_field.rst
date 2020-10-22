@@ -78,3 +78,13 @@ Link with views
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. TBD
+
+Rendering of the view-component
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Rectangular box with the label placed above, and the helper text placed below
+* Icon linking to docs placed next to the label above the rectangular input field
+* In case of non-scalar inputs, 'Upload' button is placed to the right of the input field
+
