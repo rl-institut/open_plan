@@ -1,12 +1,30 @@
 Project parameters
 ------------------
-| Project parameters are basic inputs to set the context of the project.
+
+Inputs parameters to set the context of the project.
 
 
 Attributes
 ^^^^^^^^^^
+
+**List of input parameters**
+
+    Each input parameter will be available to the user via :ref:`input_parameter_field-label`
+
+    Properties of each input:
+        - Input type
+        - Input default value
+        - Help text
+        - If it is mandatory or optional
+        - Link in documentation
+
+
+As the parameters in this list should also be accessible in a more general parameter documentation in ReadTheDocs, they will be automatically listed here from either a .yml or csv file.
+
+The following inputs stay here for the moment and will be reformated then
+
 - Localisation
-    | The georaphical localisation of the project.
+    | The geographical localisation of the project.
     | This can allow to download appropriate dataset.
 - Project lifetime
      This can be used for calculations?
@@ -19,25 +37,17 @@ Attributes
 
 Actions
 ^^^^^^^
-- Localisation
-    Select on a map or type location in a search bar.
+1. User can edit the value of the input parameters manually.
+2. User can edit the value of the input parameters by loading a project from :ref:`load_project-label`
 
 
 Requirement
 ^^^^^^^^^^^
-- Localisation
-    Need an in-tool world map component.
+1. The requirements of :ref:`input_parameter_field-label` apply for each input parameter
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Project lifetime
-    Input number box or a pull down menu with list of possible length in years.
-- Weighted Average Cost of Capital
-    Input number box or a pull down menu with list of possible WACC in percentage.
-- Project name
-    Input text box
-- Project description (optional)
-    Input text box
+The rendering of :ref:`input_parameter_field-label` apply for each input parameter

@@ -48,6 +48,7 @@ widget
     A *widget* can be moved around by the user within the :ref:`main-window-def` and collapsed into another *widget* (then each *widget* is accessible via tabs).
 
 
+.. _views-label:
 
 Views definition
 ================
@@ -88,21 +89,39 @@ View-components definition
 
 ----
 
-.. _progression-bar-label:
+.. _progression_bar-label:
 
 .. include:: view_components/progression_bar.rst
 
 ----
 
-.. _menu-bar-label:
+.. _menu_bar-label:
 
 .. include:: view_components/menu_bar.rst
+
+----
+
+.. _create_project-label:
+
+.. include:: view_components/create_project.rst
+
+----
+
+.. _load_project-label:
+
+.. include:: view_components/load_project.rst
 
 ----
 
 .. _create_scenario-label:
 
 .. include:: view_components/create_scenario.rst
+
+----
+
+.. _load_scenario-label:
+
+.. include:: view_components/load_scenario.rst
 
 ----
 
@@ -118,28 +137,27 @@ View-components definition
 
 ----
 
-.. _es-network-label:
-
-.. include:: view_components/energy_system_network.rst
-
-----
-
-.. _es-component-label:
-
-.. include:: view_components/energy_system_component.rst
-
-----
-
-.. _es-sector-selector-label:
+.. _es_sector_selector-label:
 
 .. include:: view_components/energy_system_sector_selector.rst
 
 ----
 
-.. _load_scenario-label:
+.. _es_network-label:
 
-.. include:: view_components/load_scenario.rst
+.. include:: view_components/energy_system_network.rst
 
+----
+
+.. _es_component-label:
+
+.. include:: view_components/energy_system_component.rst
+
+----
+
+.. _export_project-label:
+
+.. include:: view_components/export_project.rst
 
 
 Abstract-components Definition

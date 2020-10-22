@@ -115,7 +115,7 @@ Requirements
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:ref:`es-component-label`
+:ref:`es_component-label`
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

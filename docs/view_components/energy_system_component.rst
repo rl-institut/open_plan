@@ -18,7 +18,7 @@ Attributes
 
 
 **Unique id**
-    A positive integer number to identify the component uniquely within the list of energy system components of the :ref:`es-network-label`
+    A positive integer number to identify the component uniquely within the list of energy system components of the :ref:`es_network-label`
 
 
 **Icon**
@@ -64,9 +64,9 @@ It is currently not directly linked to a view
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:ref:`es-network-label`
+:ref:`es_network-label`
    The component is inserted within the energy system described in this other view-component
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This energy system component can be rendered as a list item within :ref:`es-network-label`'s `es_component_list` attribute or via its icon within :ref:`es-network-label`'s `network_schema` attribute.
+This energy system component can be rendered as a list item within :ref:`es_network-label`'s `es_component_list` attribute or via its icon within :ref:`es_network-label`'s `network_schema` attribute.
