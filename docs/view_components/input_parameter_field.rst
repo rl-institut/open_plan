@@ -65,12 +65,9 @@ Attributes
 
     Actions index: 2
 
-    Requirements index:
-
 **Boolean Mandatory Input**
     If true, the parameter must be defined by the user
 
-    Actions index:
 
     Requirements index: 2, 3
 
