@@ -101,9 +101,27 @@ View-components definition
 
 ----
 
+.. _create_project-label:
+
+.. include:: view_components/create_project.rst
+
+----
+
+.. _load_project-label:
+
+.. include:: view_components/load_project.rst
+
+----
+
 .. _create_scenario-label:
 
 .. include:: view_components/create_scenario.rst
+
+----
+
+.. _load_scenario-label:
+
+.. include:: view_components/load_scenario.rst
 
 ----
 
@@ -135,11 +153,6 @@ View-components definition
 
 .. include:: view_components/energy_system_sector_selector.rst
 
-----
-
-.. _load_scenario-label:
-
-.. include:: view_components/load_scenario.rst
 
 ----
 
