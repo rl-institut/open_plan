@@ -7,8 +7,9 @@ This view-component will help the user to define their energy system.
 Attributes
 ^^^^^^^^^^
 
-**list of energy busses `es_bus_list`**
-    properties:
+**list of energy busses**
+    Properties:
+        - id: `es_bus_list`
         - each bus has a unique id
         - each bus has an associated :ref:`energy-type-def`
 
@@ -16,24 +17,31 @@ Attributes
 
     Requirements index:
 
-**button** :guilabel:`&add_es_bus` 
+**button** :guilabel:`&Add bus`
 
     Linked to the action of adding a bus to the `es_bus_list`
+
+    Properties:
+        - id `add_es_bus`
 
     Actions index: 1, 5, 6
 
     Requirements index:
 
-**button** :guilabel:`&remove_es_bus`
+**button** :guilabel:`&Remove bus`
 
     Linked to the action of removing a bus from the `es_bus_list`
+
+    Properties:
+        - id `remove_es_bus`
 
     Actions index: 2, 3
 
     Requirements index:
 
-**list of energy system component `es_component_list`**
+**list of energy system component**
     properties:
+        - id: `es_component_list`
         - each energy system component has a unique id
         - each energy system component has a list of associated :ref:`energy-type-def`
         - each energy system component can have in and/or out connection to one of the energy busses or one of the other energy system components
@@ -43,35 +51,46 @@ Attributes
     Actions index: 1, 2, 4
 
 
-**button** :guilabel:`&add_es_component` 
+**button** :guilabel:`&Add component`
 
     Linked to the action of adding an energy system component to the `es_component_list`
+
+    Properties:
+        - id `add_es_component`
 
     Actions index: 1, 5, 6
 
     Requirements index:
 
-**button** :guilabel:`&remove_es_component`
+**button** :guilabel:`&Remove component`
 
     Linked to the action of removing an energy system component from the `es_component_list`
+
+    Properties:
+        - id `remove_es_component`
 
     Actions index: 2, 3
 
     Requirements index:
 
-**draw area `network_schema`**
+**Draw area**
 
     Area where the user could drag and drop components and connect them, or simply see a rendering
     of the energy system graph withtout being able to interact with it
+
+    Properties:
+    - id `network_schema`
 
     Actions index: 4.
 
     Requirements index:
 
 
-
-**text area `error_log`**
+**Text area**
     displays potential error messages arising from wrong configuration of energy system network or single energy system component
+
+    Properties:
+    - id `error_log`
 
 
 
