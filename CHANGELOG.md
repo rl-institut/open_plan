@@ -38,6 +38,7 @@ Here is a template for new release sections
 
 ### Changed
 - Modified the view-components according to the changed template (#35)
+- Unify description and cross-reference of view-components (#51)
 
 ### Removed
 - yet another thing
