@@ -29,6 +29,7 @@ Attributes
 ***Preferences* has the following submenus:**
     I. Language
     II. Display
+    III. Display welcome view
 ***Help* has the following submenus:**
     I. Read documentation
     II. Examples and use cases
@@ -58,6 +59,7 @@ Scenarios
 Preferences
     I. Language: not sure whether this will be implemented
     II. Display
+    III. Display welcome view: display :ref:`welcome-label`
 Help
     I. Read documentation: redirect to `ReadTheDocs documentation <https://open-plan.readthedocs.io/en/latest/?badge=latest>`_
     II. Examples and use cases: redirect to ReadTheDocs usecases TODO: add link
