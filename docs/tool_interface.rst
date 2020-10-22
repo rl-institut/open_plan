@@ -88,13 +88,13 @@ View-components definition
 
 ----
 
-.. _progression-bar-label:
+.. _progression_bar-label:
 
 .. include:: view_components/progression_bar.rst
 
 ----
 
-.. _menu-bar-label:
+.. _menu_bar-label:
 
 .. include:: view_components/menu_bar.rst
 
@@ -118,19 +118,19 @@ View-components definition
 
 ----
 
-.. _es-network-label:
+.. _es_network-label:
 
 .. include:: view_components/energy_system_network.rst
 
 ----
 
-.. _es-component-label:
+.. _es_component-label:
 
 .. include:: view_components/energy_system_component.rst
 
 ----
 
-.. _es-sector-selector-label:
+.. _es_sector_selector-label:
 
 .. include:: view_components/energy_system_sector_selector.rst
 

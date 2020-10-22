@@ -32,7 +32,7 @@ Requirement
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:ref:`es-network-label`
+:ref:`es_network-label`
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

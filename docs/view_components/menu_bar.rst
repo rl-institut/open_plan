@@ -1,4 +1,4 @@
-.. _menu-bar-label:
+.. _menu_bar-label:
 
 Menu Bar
 --------

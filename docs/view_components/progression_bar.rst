@@ -1,4 +1,4 @@
-.. _progression-bar-label:
+.. _progression_bar-label:
 
 Progression Bar
 ---------------
