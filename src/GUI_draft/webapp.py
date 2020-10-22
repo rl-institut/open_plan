@@ -34,6 +34,10 @@ def landing_page(request: Request) -> Response:
 def menu_bar(request: Request) -> Response:
     return templates.TemplateResponse("menu_bar.html", {"request": request})
 
+@app.get("/welcomepage")
+def menu_bar(request: Request) -> Response:
+    return templates.TemplateResponse("welcome_pop_up.html", {"request": request})
+
 @app.get("/step1")
 def step1(request: Request) -> Response:
     return templates.TemplateResponse("step1.html", {"request": request})
