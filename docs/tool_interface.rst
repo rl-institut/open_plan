@@ -125,6 +125,12 @@ View-components definition
 
 ----
 
+.. _input_parameter_field-label:
+
+.. include:: view_components/input_parameter_field.rst
+
+----
+
 .. _scenario_parameters-label:
 
 .. include:: view_components/scenario_parameters.rst
@@ -174,7 +180,4 @@ Abstract-components Definition
 
 .. include:: abstract_components/scenario.rst
 
-.. _input_parameter_field-label:
-
-.. include:: abstract_components/input_parameter_field.rst
 
