@@ -100,6 +100,12 @@ View-components definition
 
 ----
 
+.. _create_scenario-label:
+
+.. include:: view_components/create_scenario.rst
+
+----
+
 .. _scenario_parameters-label:
 
 .. include:: view_components/scenario_parameters.rst
