@@ -3,19 +3,19 @@
 Progression Bar
 ---------------
 
-The Progression Bar is a view component that shows all the sequential steps of the tool in order to get results.
+The Progression Bar displays the sequential steps the user should go through, in order to provide the input parameters required to describe an energy system and a :ref:`scenario-label` to simulate with this energy system
 
-A Progression bar view-component has a number of advantages:
+This view-component allows the user to:
 
-* Helps in sequentially progressing through the modeling and simulation process
-* Allows the user to jump between different steps of the simulation
-* Brings a design consistency and uniformity to the UI of the tool
-* Splits the tool in different views which increases the user friendliness 
+* Sequentially progress through the modeling and definition of their :ref:`scenario-label`
+* Jump directly to previous steps to edit input parameters
 
 Attributes
 ^^^^^^^^^^
 
-**List of simulation steps below constitute the progression bar**
+**List of steps**
+
+    For example the following steps:
     #. Project Setup
     #. Inputs
     #. System Inputs
@@ -25,41 +25,52 @@ Attributes
     #. Results
 
     Properties:
-        *Each step has an associated index, corresponding to its position in the list of steps
+        - Each step has an associated index (starting from 1), corresponding to its position in the list of steps
+        - Each step in the progression bar is a link to a :ref:`view <views-label>`
+
+    Actions index: 1, 2
+
+**Current step index**
+
+    The index of the currently selected step
+
+    Requirements index: 1
+
 
 Actions
 ^^^^^^^
 
-1. To make the next step of the Progression bar clickable, the user has to fulfill the requirements of the current step. Each step has various mandatory and optional fields.
-2. Clicking on the steps of the Progression bar that have been fulfilled already allows the user to make modifications.
-3. Clicking on the steps that are not clickable make a small text bubble appear saying the previous step needs to be fulfilled first.
+1. Clicking on a step that has already been fulfilled, allows the user to make modifications to the inputs within this field
+2. Clicking on a step which is disabled, make a small text bubble appear next to the step explaining why the user cannot click on that step
 
 Requirement
 ^^^^^^^^^^^
 
-1. The user has to progress through the progression bar in order to successfully carry out the modeling and simulation
-2. Each step has to be completed one at a time. Once a step has met its minimum requirements, the button of the next step becomes clickable. Therefore, the user can come back to the steps they have already seen but they cannot click on a random step.
+1. To enable the next step, the user has to fulfill the requirements of the current step. Each step's requirements are defined in its respective :ref:`view <views-label>`
 
 Link with views
 ^^^^^^^^^^^^^^^
 
-.. TBD
+Here will be a link to the views of each steps
+
+:ref:`landing-label`
+    It is not sure yet whether this view-component should be visible from start, join the on-going discussion `here <https://github.com/rl-institut/open_plan/issues/48>`_
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 :ref:`menu_bar-label`
-.. TBD
+
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Ribbon-like display of the progression bar or Progression bar; identical throughout the different views
-* Clickable buttons on the progression bar placed sequentially as per the simulation progression order
-* Each button signifies a step in the simulation process
-* Different coloring of the buttons depending on the simulation steps performed
-* Horizontally placed just below the top margin of the view
-* The progression bar or Progression bar is present on every view of the tool UI
+* Ribbon-like display of the progression bar where each step is delimited by an individual blob, the structure is identical throughout the different views. The term blob is employed to signify that the shape is up to a decision (non-exhaustive list of examples: a rectangle, an ellipse, a circle, an arrow)
+* Indication of the steps order could be with arrow shaped blob, or with arrow symbols between the blobs
+* Color coding of the blobs backgrounds can be used to indicate whether the step has already be visited, is not fulfilled yet, disabled or enabled
+* The progression bar could be horizontal or vertical (it is assumed from left to right and top to bottom, but this can be debated)
+
+Here is an example of one possible rendering, please note that this is not a final design, only an example
 
 .. image:: _files/flow_chart.png
     :width: 400

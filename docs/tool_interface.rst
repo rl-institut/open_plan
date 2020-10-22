@@ -48,6 +48,7 @@ widget
     A *widget* can be moved around by the user within the :ref:`main-window-def` and collapsed into another *widget* (then each *widget* is accessible via tabs).
 
 
+.. _views-label:
 
 Views definition
 ================
