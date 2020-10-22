@@ -47,7 +47,9 @@ widget
     Smaller window within the tool's :ref:`main-window-def`.
     A *widget* can be moved around by the user within the :ref:`main-window-def` and collapsed into another *widget* (then each *widget* is accessible via tabs).
 
-
+Attribute
+---------
+    The attributes are the inherent features of a component of a view. The elements listed under **Attributes** are visible element that the user can see on screen. They can have certain *requirements* and *actions*.
 
 Views definition
 ================
