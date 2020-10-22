@@ -47,3 +47,19 @@ def step1(request: Request) -> Response:
 @app.get("/step2")
 def step2(request: Request) -> Response:
     return templates.TemplateResponse("step2.html", {"request": request})
+
+@app.get("/step3")
+def step2(request: Request) -> Response:
+    return templates.TemplateResponse("step3.html", {"request": request})
+
+@app.get("/step4")
+def step2(request: Request) -> Response:
+    return templates.TemplateResponse("step4.html", {"request": request})
+
+@app.get("/step5")
+def step2(request: Request) -> Response:
+    return templates.TemplateResponse("step5.html", {"request": request})
+
+@app.get("/step6")
+def step2(request: Request) -> Response:
+    return templates.TemplateResponse("step6.html", {"request": request})
