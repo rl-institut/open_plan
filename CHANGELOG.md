@@ -36,6 +36,8 @@ Here is a template for new release sections
 - Description of energy_system_component view-component (#32)
 - GUI draft for interactive views (#45)
 - Add input parameter field view-component to docs (#49)
+- Create landing page for GUI draft (#47)
+
 
 ### Changed
 - Modified the view-components according to the changed template (#35)
