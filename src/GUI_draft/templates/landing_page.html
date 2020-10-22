@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 
-
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
 {% block content %}
 
@@ -9,8 +8,7 @@
 <div class="cell">
     {% import "progression_bar.html" as progression_bar %}
             <!-- this is just an example, you can complete the dict with all the steps -->
-    {{ progression_bar.input(step_idx=1, step_map={"/step1": "Project Setup", "/step2": "Inputs", "/step3": "System Setup",
-    "/step4": "Visualization", "/step5": "Constraints", "/step6": "Results"})}}
+    {{ progression_bar.input(step_idx=1, step_map=step_map) }}
 
 </div>
 </div>
