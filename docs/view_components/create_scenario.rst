@@ -1,55 +1,73 @@
 Create Scenario
 ---------------
 
-Create scenario view-component enables the user to create a new scenario object where the energy system can be implemented.
+This view-component enables the user to create a new :ref:`scenario-label`.
 
 Attributes
 ^^^^^^^^^^
 
-**Combination of a text field and Create button**
-    The user can create a new scenario through this.
+**Scenario name text input**
+    The user can provide a file path for the scenario they want to create
 
-    Requirements index: 1
+    Actions index: 2
 
-**Each scenario gets an unique ID**
-    Alphanumeric string, can be used to reference the scenario object in other locations.
+    Requirements index: 1, 2, 3
 
-    Requirements index: 1
+**button** :guilabel:`&Browse`
+    Triggers the selection the scenario name text input via a graphical file structure
+
+    Actions index: 1
+
+    Requirements index: 1, 2, 3
+
+
+**button** :guilabel:`&Create`
+    The user triggers the creation of the scenario
+
+    Actions index: 3
+
+    Requirements index: 4, 5, 6
+
 
 Actions
 ^^^^^^^
 
-1. Allows user to navigate through the file system either graphically or through text inputs
-2. Allows user to name the scenario object and write it to a chosen location in the computer's file system
+1. User can navigate through the file system either graphically to input scenario name by clicking on :guilabel:`&Browse`
+2. User can input scenario name in the input text
+3. After clicking on :guilabel:`&Create`, a scenario is created in the backend, in the file system and the user is redirected to the view corresponding to the first step in the :ref:`progression-bar-label`
 
 Requirements
 ^^^^^^^^^^^^
 
-1. User must provide a string containing the correct file path that leads to the folder that holds the scenario file(s)
-2. After the user creates a scenario, they must be able to create another scenario following the same procedure, through this view-component
-3. When a new scenario is created, it should appear in the the list of available scenarios within the :ref:project-label in the scenarios view
-4. When a new scenario is created, it should be assigned with a unique ID
+1. If user only provided a name and not a file path, then the scenario file/folder is created in a default location
+2. If user provided a scenario file/folder path which does not exist yet, the missing folders in the path should be created
+3. If user provided a scenario file/folder path which exists already, it should be warned and given the option ot overwrite or not
+4. After the user clicked on :guilabel:`&Create`, they must still be able to create another scenario through this view-component if they wish it
+5. When a new scenario is created, it should be assigned a unique id in the backend
+6. When a new scenario is created, it should be possible for the user to access and edit its input parameters
 
 Link with views
 ^^^^^^^^^^^^^^^
 .. use :ref:`<view>-label` to cross link to the view's description directly
 
-**:ref:`<view1>-label`**
-    Description of the link
+:ref:`landing-label`
+    It should be possible to trigger the display of this view-component from the landing view
 
-**:ref:`<view2>-label`**
-    Description of the link
+
+:ref:`<view1>-label`
+    After clicking on :guilabel:`&Create`, the user is redirected to the view corresponding to the first step in the :ref:`progression-bar-label`
+    TODO add link to this view
+
+
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. use :ref:`<view_component>-label` to cross link to the view-component's description directly
 
-**:ref:`<view_component1>-label`**
-    Description of the link
+:ref:`menu-bar-label`
+    It should be possible to trigger the display of this view-component from a sub-menu of the :ref:`menu-bar-label`
 
-**:ref:`<view_component2>-label`**
-    Description of the link
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. TBD
+:guilabel:`&Browse` is on the right of the text input, the :guilabel:`&Create` is centered on the next line below
