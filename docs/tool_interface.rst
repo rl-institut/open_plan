@@ -125,6 +125,18 @@ View-components definition
 
 ----
 
+.. _input_parameter_field-label:
+
+.. include:: view_components/input_parameter_field.rst
+
+----
+
+.. _load_input_parameter-label:
+
+.. include:: view_components/load_input_parameter.rst
+
+----
+
 .. _scenario_parameters-label:
 
 .. include:: view_components/scenario_parameters.rst
