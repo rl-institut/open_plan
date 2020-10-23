@@ -35,9 +35,14 @@ Here is a template for new release sections
 - Description of create scenario view-component (#31)
 - Description of energy_system_component view-component (#32)
 - GUI draft for interactive views (#45)
+- Add input parameter field view-component to docs (#49)
+- Create landing page for GUI draft (#47)
+- Create `Attribute` definition (#52)
+
 
 ### Changed
 - Modified the view-components according to the changed template (#35)
+- Unify description and cross-reference of view-components (#51)
 
 ### Removed
 - yet another thing

@@ -21,6 +21,12 @@ view-component
 --------------
     A *view-component* is a part of a *view* which can be described independently from the view and could be reused in different *views* (a menu bar for example). A *view-component* is described in terms of its attributes and its actions. For example a menu bar has a nested list of items (each item can itself be a list of item: submenus). Each item, if not itself a list, consists of a label (what the user will see) and an action (what will be done upon clicking/selecting the item.)
 
+.. _attribute-def:
+
+Attribute
+---------
+    The attributes contain the essential information needed to characterize and render a :ref:`view-def` or a :ref:`view-component-def`. Some attributes might be rendered themselves in the :ref:`view-def` or :ref:`view-component-def` but it is not required. Some attributes can be bound to :ref:`requirement-def` of :ref:`action-def`.
+
 .. _view-rendering-def:
 
 view-rendering
@@ -50,6 +56,8 @@ widget
 Attribute
 ---------
     The attributes are the inherent features of a component of a view. The elements listed under **Attributes** are visible element that the user can see on screen. They can have certain *requirements* and *actions*.
+
+.. _views-label:
 
 Views definition
 ================
@@ -90,21 +98,51 @@ View-components definition
 
 ----
 
-.. _progression-bar-label:
+.. _progression_bar-label:
 
 .. include:: view_components/progression_bar.rst
 
 ----
 
-.. _menu-bar-label:
+.. _menu_bar-label:
 
 .. include:: view_components/menu_bar.rst
+
+----
+
+.. _create_project-label:
+
+.. include:: view_components/create_project.rst
+
+----
+
+.. _load_project-label:
+
+.. include:: view_components/load_project.rst
 
 ----
 
 .. _create_scenario-label:
 
 .. include:: view_components/create_scenario.rst
+
+----
+
+.. _load_scenario-label:
+
+.. include:: view_components/load_scenario.rst
+
+----
+
+.. _input_parameter_field-label:
+
+.. include:: view_components/input_parameter_field.rst
+
+----
+
+.. _load_input_parameter-label:
+
+.. include:: view_components/load_input_parameter.rst
 
 ----
 
@@ -120,28 +158,27 @@ View-components definition
 
 ----
 
-.. _es-network-label:
-
-.. include:: view_components/energy_system_network.rst
-
-----
-
-.. _es-component-label:
-
-.. include:: view_components/energy_system_component.rst
-
-----
-
-.. _es-sector-selector-label:
+.. _es_sector_selector-label:
 
 .. include:: view_components/energy_system_sector_selector.rst
 
 ----
 
-.. _load_scenario-label:
+.. _es_network-label:
 
-.. include:: view_components/load_scenario.rst
+.. include:: view_components/energy_system_network.rst
 
+----
+
+.. _es_component-label:
+
+.. include:: view_components/energy_system_component.rst
+
+----
+
+.. _export_project-label:
+
+.. include:: view_components/export_project.rst
 
 
 Abstract-components Definition
@@ -157,5 +194,4 @@ Abstract-components Definition
 .. _scenario-label:
 
 .. include:: abstract_components/scenario.rst
-
 

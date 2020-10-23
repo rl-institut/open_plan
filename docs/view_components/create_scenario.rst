@@ -34,7 +34,7 @@ Actions
 
 1. User can navigate through the file system either graphically to input scenario name by clicking on :guilabel:`&Browse`
 2. User can input scenario name in the input text
-3. After clicking on :guilabel:`&Create`, a scenario is created in the backend, in the file system and the user is redirected to the view corresponding to the first step in the :ref:`progression-bar-label`
+3. After clicking on :guilabel:`&Create`, a scenario is created in the backend, in the file system and the user is redirected to the view corresponding to the first step in the :ref:`progression_bar-label`
 
 Requirements
 ^^^^^^^^^^^^
@@ -55,7 +55,7 @@ Link with views
 
 
 :ref:`<view1>-label`
-    After clicking on :guilabel:`&Create`, the user is redirected to the view corresponding to the first step in the :ref:`progression-bar-label`
+    After clicking on :guilabel:`&Create`, the user is redirected to the view corresponding to the first step in the :ref:`progression_bar-label`
     TODO add link to this view
 
 
@@ -64,8 +64,8 @@ Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. use :ref:`<view_component>-label` to cross link to the view-component's description directly
 
-:ref:`menu-bar-label`
-    It should be possible to trigger the display of this view-component from a sub-menu of the :ref:`menu-bar-label`
+:ref:`menu_bar-label`
+    It should be possible to trigger the display of this view-component from a sub-menu of the :ref:`menu_bar-label`
 
 
 Rendering of the view-component

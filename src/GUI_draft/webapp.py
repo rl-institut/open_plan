@@ -25,5 +25,45 @@ templates = Jinja2Templates(directory=os.path.join(SERVER_ROOT, "templates"))
 
 
 @app.get("/")
-def landing(request: Request) -> Response:
-    return templates.TemplateResponse("index.html", {"request": request})
+def landing_page(request: Request) -> Response:
+    return templates.TemplateResponse("landing_page.html", {"request": request})
+
+
+@app.get("/menubar")
+def menu_bar(request: Request) -> Response:
+    return templates.TemplateResponse("menu_bar.html", {"request": request})
+
+
+@app.get("/welcomepage")
+def menu_bar(request: Request) -> Response:
+    return templates.TemplateResponse("welcome_pop_up.html", {"request": request})
+
+
+@app.get("/step1")
+def step1(request: Request) -> Response:
+    return templates.TemplateResponse("step1.html", {"request": request})
+
+
+@app.get("/step2")
+def step2(request: Request) -> Response:
+    return templates.TemplateResponse("step2.html", {"request": request})
+
+
+@app.get("/step3")
+def step2(request: Request) -> Response:
+    return templates.TemplateResponse("step3.html", {"request": request})
+
+
+@app.get("/step4")
+def step2(request: Request) -> Response:
+    return templates.TemplateResponse("step4.html", {"request": request})
+
+
+@app.get("/step5")
+def step2(request: Request) -> Response:
+    return templates.TemplateResponse("step5.html", {"request": request})
+
+
+@app.get("/step6")
+def step2(request: Request) -> Response:
+    return templates.TemplateResponse("step6.html", {"request": request})

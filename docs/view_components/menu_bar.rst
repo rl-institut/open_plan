@@ -1,4 +1,4 @@
-.. _menu-bar-label:
+.. _menu_bar-label:
 
 Menu Bar
 --------
@@ -23,11 +23,13 @@ Attributes
 ***Scenarios* has the following submenus:**
     I. New scenario
     II. Load scenario
-    III. ---- (separating horizontal line)
-    IV. List of scenarios in the system
+    III. Compare scenarios
+    IV. ---- (separating horizontal line)
+    V. List of scenarios in the system
 ***Preferences* has the following submenus:**
     I. Language
     II. Display
+    III. Display welcome view
 ***Help* has the following submenus:**
     I. Read documentation
     II. Examples and use cases
@@ -39,18 +41,33 @@ Attributes
 Actions
 ^^^^^^^
 
-1. Clicking on any of the menus' option results in a drop-down list of sub-menu's options
-2. Clicking on *File* would show a drop-down list with the following submenus or options:
+Clicking on any of the menus' option results in a drop-down list of sub-menu's options if applicable, otherwise trigger an action
+
+File
     I. Load project
     II. New project
     III. Save project
     IV. Save project as
-    V. Export project
+    V. Export project: display :ref:`export_project-label`
     VI. Exit open_plan
-3. clicking on *Preferences* would show a drop-down list with the following submenus or options:
-    I. Language
+Scenarios
+    I. New scenario: display :ref:`create_scenario-label`
+    II. Load scenario: display :ref:`load_scenario-label`
+    III. Compare scenarios: display view :ref:`scenario_comparison-label`
+    IV. ---- (separating horizontal line)
+    V. List of scenarios in the system
+Preferences
+    I. Language: not sure whether this will be implemented
     II. Display
-4. User can change the scenario by clicking on the specific scenario under the *Scenarios* menu or load their own scenario as well, or create a new scenario
+    III. Display welcome view: display :ref:`welcome-label`
+Help
+    I. Read documentation: redirect to `ReadTheDocs documentation <https://open-plan.readthedocs.io/en/latest/?badge=latest>`_
+    II. Examples and use cases: redirect to ReadTheDocs usecases TODO: add link
+    III. Contact developers: redirect to `Github issues <https://github.com/rl-institut/open_plan/issues/new/choose>`_
+    IV. Feedback redirect to `Github issues <https://github.com/rl-institut/open_plan/issues/new/choose>`_
+    V. License information: redirect to `Github license <https://github.com/rl-institut/open_plan/blob/dev/LICENSE>`_
+    VI. About open_plan...: redirect to open_plan website TODO: add link
+
 
 Requirement
 ^^^^^^^^^^^
@@ -60,7 +77,8 @@ Requirement
 Link with views
 ^^^^^^^^^^^^^^^
 
-.. TBD
+:ref:`scenario_comparison-label`
+
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -69,11 +87,17 @@ Link with other view-components
     The welcome view-component can be re-enabled if it was disabled by the user from appearing everytime the tool is launched.
 
 :ref:`progression_bar-label`
-.. TDB
+
+:ref:`export_project-label`
+
+:ref:`create_scenario-label`
+
+:ref:`load_scenario-label`
+
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Rectangular drop-down menu buttons present on a horizontal bar above the flow chart ribbon
+* Rectangular drop-down menu buttons present on a horizontal bar on top of the :ref:`main-window-def`
 * Rendered on every view of the tool UI
 * The current scenario is highlighted in the drop-down list which results when the *Scenarios* menu is clicked
