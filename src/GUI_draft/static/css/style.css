@@ -7,3 +7,8 @@ div {
     display: flex;
     justify-content: center;
 }
+
+.progression_bar a {
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+}

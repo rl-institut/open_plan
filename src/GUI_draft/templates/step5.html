@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
+{% block content %}
+
+<div class="grid-x">
+    <div class="cell">
+        {% import "progression_bar.html" as progression_bar %}
+        {{ progression_bar.input(step_idx=5, step_map=step_map) }}
+    </div>
+    <h2 class="cell">Constraints</h2>
+
+    <p>Describe the view of the step 5 here</p>
+
+    <a class="cell" href="/step4">Previous</a>
+
+    <a class="cell" href="/step6">Next</a>
+</div>
+
+{% endblock content %}
