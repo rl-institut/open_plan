@@ -11,15 +11,15 @@ In order to describe the interface, a few definitions are required at first.
 
 .. _view-def:
 
-view
+View
 ----
-    Description of a given state of the user interface: what should the user be able to interact with in that *view*, which other *view* can the user visit from the current *view*. The collection of *views* form together the user interface. Note: the view does not describe how the interface looks like to the user, this is described in the *view-rendering*
+    Description of a given state of the user interface: what should the user be able to interact with in that *view*, which other *view* can the user visit from the current *view*. The collection of *views* form together the user interface. Note: the view does not describe how the interface looks like to the user, this is described in the *view-rendering*.
 
 .. _view-component-def:
 
-view-component
+View-component
 --------------
-    A *view-component* is a part of a *view* which can be described independently from the view and could be reused in different *views* (a menu bar for example). A *view-component* is described in terms of its attributes and its actions. For example a menu bar has a nested list of items (each item can itself be a list of item: submenus). Each item, if not itself a list, consists of a label (what the user will see) and an action (what will be done upon clicking/selecting the item.)
+    A *view-component* is a part of a *view* which can be described independently from the view and could be reused in different *views* (a menu bar for example). A *view-component* is described in terms of its attributes and its actions. For example a menu bar has a nested list of items (each item can itself be a list of item: submenus). Each item, if not itself a list, consists of a label (what the user will see) and an action (what will be done upon clicking/selecting the item).
 
 .. _attribute-def:
 
@@ -41,29 +41,31 @@ _Requirement
 
 .. _view-rendering-def:
 
-view-rendering
+View-rendering
 --------------
-    Description of how a *view* or *component-view* will be rendered on the screen. This belongs to frontend and is where the details about color, size, font, placement on screen matter. For example a menu bar which is a *view-component* can have many different *view-rendering* (horizontal with buttons, expandable vertically only on hover, etc.)
+    Description of how a *view* or *component-view* will be rendered on the screen. This belongs to frontend and is where the details about color, size, font, placement on screen matter. For example a menu bar which is a *view-component* can have many different *view-rendering* (horizontal with buttons, expandable vertically only on hover, etc.).
 
 .. _energy-type-def:
 
-energy type
+Energy type
 -----------
-    Energy type linked to the different energy sectors: heat, electricity, gas, biomass, H2O
+    An energy type is represented by a bus. It describes the energy carrier for an energy sector: heat, electricity, gas, biomass, H2O.
 
 .. _main-window-def:
 
-main window
+Main window
 -----------
-    The window from which the user can interact with the open_plan tool on their computer
+    It is the window from which the user can interact with the open_plan tool on their computer.
 
 
 .. _widget-def:
 
-widget
+Widget
 ------
     Smaller window within the tool's :ref:`main-window-def`.
     A *widget* can be moved around by the user within the :ref:`main-window-def` and collapsed into another *widget* (then each *widget* is accessible via tabs).
+
+.. _views-label:
 
 Views definition
 ================
