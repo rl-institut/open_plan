@@ -33,6 +33,12 @@ Action
 ------
     An action describes what the user can do in a certain :ref:`view-def` or :ref:`view-component-def`. Each action has an index which is used to link it to an :ref:`attribute-def`.
 
+.. _requirement-def:
+
+_Requirement
+------------
+    A requirement describes necessary features of a :ref:`view-def`, a :ref:`view-component-def` or a :ref:`action-def`. A requirement can specify required actions by the user as well as describing what happens if a requirement is not met. Each action has an index which is used to link it to an :ref:`attribute-def`.
+
 .. _view-rendering-def:
 
 view-rendering
