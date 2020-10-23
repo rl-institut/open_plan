@@ -1,6 +1,8 @@
 Input table
 -----------
 
+Inputs are necessary values for the optimization. All inputs have default values that can be replaced by the user if desired.
+
 .. csv-table:: Inputs
        :header: "Input name", "Input category", "unit", "Linked to"
 
@@ -33,4 +35,5 @@ Input table
             Project lifetime	,	Technical	,		,
 
 
-**Could be also specified for each if a project input or a scneario input**
+**Could also be  specified for each if it is a project input or a scenario input**
+**Could also be a chance to explain the default value for each input**
