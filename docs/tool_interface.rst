@@ -21,6 +21,12 @@ view-component
 --------------
     A *view-component* is a part of a *view* which can be described independently from the view and could be reused in different *views* (a menu bar for example). A *view-component* is described in terms of its attributes and its actions. For example a menu bar has a nested list of items (each item can itself be a list of item: submenus). Each item, if not itself a list, consists of a label (what the user will see) and an action (what will be done upon clicking/selecting the item.)
 
+.. _attribute-def:
+
+Attribute
+---------
+    The attributes contain the essential information needed to characterize and render a :ref:`view-def` or a :ref:`view-component-def`. Some attributes might be rendered themselves in the :ref:`view-def` or :ref:`view-component-def` but it is not required. Some attributes can be bound to :ref:`requirement-def` of :ref:`action-def`.
+
 .. _view-rendering-def:
 
 view-rendering
@@ -46,6 +52,7 @@ widget
 ------
     Smaller window within the tool's :ref:`main-window-def`.
     A *widget* can be moved around by the user within the :ref:`main-window-def` and collapsed into another *widget* (then each *widget* is accessible via tabs).
+
 
 
 .. _views-label:
@@ -185,5 +192,4 @@ Abstract-components Definition
 .. _scenario-label:
 
 .. include:: abstract_components/scenario.rst
-
 
