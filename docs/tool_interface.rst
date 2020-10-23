@@ -50,7 +50,7 @@ widget
 
 Attribute
 ---------
-    The attributes are the inherent features of a component of a view. The elements listed under **Attributes** are visible element that the user can see on screen. They can have certain *requirements* and *actions*.
+    The attributes contain the essential information needed to characterize and render a :ref:`view-def` or a :ref:`view-component-def`. Some attributes might be rendered themselves in the :ref:`view-def` or :ref:`view-component-def` but it is not required. Some attributes can be bound to :ref:`requirement-def` of :ref:`action-def`.
 
 
 .. _views-label:
@@ -190,5 +190,4 @@ Abstract-components Definition
 .. _scenario-label:
 
 .. include:: abstract_components/scenario.rst
-
 
