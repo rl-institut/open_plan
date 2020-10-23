@@ -25,7 +25,7 @@ view-component
 
 Attribute
 ---------
-    The attributes contain the essential information needed to characterize and render a :ref:`view-def` or a :ref:`view-component-def`. Some attributes might be rendered themselves in the :ref:`view-def` or :ref:`view-component-def` but it is not required. Some attributes can be bound to :ref:`requirement-def` of :ref:`action-def`.
+    An attribute contains the essential information needed to characterize and render a :ref:`view-def` or a :ref:`view-component-def`. An attribute might be visible in the :ref:`view-def` or :ref:`view-component-def` but it can also just be information. An attribute can be linked to a certain number of :ref:`action-def` and to certain :ref:`requirement-def`.
 
 .. _view-rendering-def:
 
@@ -52,12 +52,6 @@ widget
 ------
     Smaller window within the tool's :ref:`main-window-def`.
     A *widget* can be moved around by the user within the :ref:`main-window-def` and collapsed into another *widget* (then each *widget* is accessible via tabs).
-
-Attribute
----------
-    The attributes are the inherent features of a component of a view. The elements listed under **Attributes** are visible element that the user can see on screen. They can have certain *requirements* and *actions*.
-
-.. _views-label:
 
 Views definition
 ================
