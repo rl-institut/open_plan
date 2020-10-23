@@ -27,6 +27,12 @@ Attribute
 ---------
     An attribute contains the essential information needed to characterize and render a :ref:`view-def` or a :ref:`view-component-def`. An attribute might be visible in the :ref:`view-def` or :ref:`view-component-def` but it can also just be information. An attribute can be linked to a certain number of :ref:`action-def` and to certain :ref:`requirement-def`.
 
+.. _action-def:
+
+Action
+------
+    An action describes what the user can do in a certain :ref:`view-def` or :ref:`view-component-def`. Each action has an index which is used to link it to an :ref:`attribute-def`.
+
 .. _view-rendering-def:
 
 view-rendering
