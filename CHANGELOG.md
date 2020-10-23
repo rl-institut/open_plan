@@ -37,6 +37,7 @@ Here is a template for new release sections
 - GUI draft for interactive views (#45)
 - Add input parameter field view-component to docs (#49)
 - Create landing page for GUI draft (#47)
+- Create `Attribute` definition (#52)
 
 
 ### Changed
