@@ -43,6 +43,7 @@ Here is a template for new release sections
 ### Changed
 - Modified the view-components according to the changed template (#35)
 - Unify description and cross-reference of view-components (#51)
+- Adjust ReadTheDocs template to enable max-width when reeading the documentation (#61)
 
 ### Removed
 - yet another thing
