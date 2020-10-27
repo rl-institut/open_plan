@@ -1,0 +1,3 @@
+,:Default:,:Definition:,:Example:,:Restrictions:,:Type:,:Unit:,label,ref,:Category:
+0, None, The number of years the asset has already been in operation., 10, Natural numbers, Numeric,€,Maximum investment budget,max_inv_budget-label, Financial
+1, None, Name of the country where the project is being deployed, Norway, None, str,€,Current price of CO2 emission certificates,cO2_prices-label, Financial
