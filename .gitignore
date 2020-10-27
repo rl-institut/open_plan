@@ -114,3 +114,5 @@ venv.bak/
 # Local input folders, eg. for pilots
 
 website/static/css/style.css
+docs/*.inc
+docs/_files/input_parameters_list_short.csv
