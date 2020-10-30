@@ -1,80 +1,67 @@
 View Specific Documentation
 ---------------------------
 
+This view-component lets the user access the specific sections of the documentation directly from within the tool UI.
+
 Attributes
 ^^^^^^^^^^
-.. Please refer to the definition of what an attribute is in the tool_interface.rst file
-.. The properties should be filled in only if applicable.
 
-**Attribute A**
-    Description
+**Scroll Bar**
+    This bar lets the user navigate the documentation content
 
-    Properties:
-        * Property 1
-        * ...
-        * Property n
-
-    Actions index:
+    Actions index: 1
 
     Requirements index:
 
-.. [One liner] corresponding indexes from the Actions and Requirements paragraph below
+**Side navigation pane**
+    This navigation pane is akin to a table of contents and lets the user jump to other sections of the documentation quickly
 
-**Attribute B**
-    Description
+    Actions index: 2
 
-    Properties:
-        * Property 1
-        * ...
-        * Property n
+**Content**
+    Content of the documentation such as text, images, hyperlinks, etc., to be rendered
 
-    Actions index:
+**Download PDF**
+    A button
+
+    Actions index: 3
 
     Requirements index:
-
-.. [One liner] corresponding indexes from the Actions and Requirements paragraph below
 
 Actions
 ^^^^^^^
-..
-    an action is something one can perform directly from the view-component
-    (i.e. "clicking on this attribute should update this other attribute")
 
-1. Action 1
-2. Action 2
+1. User can scroll through the documentation using the scroll bar
+2. User can jump to other sections of the documentation using the links in the navigation pane
+3. User can click on the Download PDF button to obtain a local copy of the documentation
 
 Requirements
 ^^^^^^^^^^^^
-..
-    a requirement is a binding rule which cannot be described directly by an action
-    or which describes redundant actions
-    (i.e. "it should not be possible to click on this attribute while the value of this other
-    attribute is not defined", or "after changing the value of an already defined attribute,
-    one should see a difference in the rendering of the attribute"
 
-1. Requirement 1
-2. Requirement 2
+1. User must be able to open this view-component through clicking on links next to various elements in other views/view-components
 
 Link with views
 ^^^^^^^^^^^^^^^
 .. use :ref:`<view>-label` to cross link to the view's description directly
 
-:ref:`<view1>-label`
-    Description of the link
-
-:ref:`<view2>-label`
-    Description of the link
-
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. use :ref:`<view_component>-label` to cross link to the view-component's description directly
 
-:ref:`<view_component1>-label`
-    Description of the link
+:ref:`welcome-label`
+    First view-component on the landing view of the tool, seen by the user. Contains link to documentation
 
-:ref:`<view_component2>-label`
-    Description of the link
+:ref:`input_parameter_field-label`
+    Generic view-component that describes the fields where user inputs are necessary
+
+:ref:`load_input_parameter-label`
+
+:ref:`scenario_parameters-label`
+    View-component where the user inputs the scenario-specific parameters
+
+:ref:`project_parameters-label`
+    View-component where the user inputs the project parameters
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. TBD
+
+This view-component could either be a pop-up on top of the view the user is currently in, or as a new tab on a browser window opening relevant sections of readthedocs directly
