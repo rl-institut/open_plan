@@ -38,6 +38,7 @@ Here is a template for new release sections
 - Add input parameter field view-component to docs (#49)
 - Create landing page for GUI draft (#47)
 - Create `Attribute` definition (#52)
+- Add description for the view-component to access specific sections of the docs (#63)
 
 
 ### Changed
