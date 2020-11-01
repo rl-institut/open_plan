@@ -21,7 +21,7 @@ Attributes
 **Content**
     Content of the documentation such as text, images, hyperlinks, etc., to be rendered
 
-**Download PDF**
+**button** :guilabel:`&Download PDF`
     A button
 
     Actions index: 3
