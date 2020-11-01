@@ -178,6 +178,10 @@ View-components definition
 
 .. include:: view_components/export_project.rst
 
+.. _view_specific_documentation-label:
+
+.. include:: view_components/view_specific_documentation.rst
+
 
 Abstract-components Definition
 ==============================
@@ -192,4 +196,3 @@ Abstract-components Definition
 .. _scenario-label:
 
 .. include:: abstract_components/scenario.rst
-
