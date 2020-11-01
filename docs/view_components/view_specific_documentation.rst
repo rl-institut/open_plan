@@ -1,7 +1,7 @@
 View Specific Documentation
 ---------------------------
 
-This view-component lets the user access the specific sections of the documentation directly from within the tool UI.
+This view-component lets the user access the specific sections of the documentation directly from within the tool UI. It serves as a tooltip for input parameters.
 
 Attributes
 ^^^^^^^^^^
@@ -22,7 +22,7 @@ Attributes
     Content of the documentation such as text, images, hyperlinks, etc., to be rendered
 
 **button** :guilabel:`&Download PDF`
-    A button
+    Clicking this triggers the download of a pdf of the documentation
 
     Actions index: 3
 
@@ -54,6 +54,7 @@ Link with other view-components
     Generic view-component that describes the fields where user inputs are necessary
 
 :ref:`load_input_parameter-label`
+    Description of the link
 
 :ref:`scenario_parameters-label`
     View-component where the user inputs the scenario-specific parameters
