@@ -182,6 +182,10 @@ View-components definition
 
 .. include:: view_components/view_specific_documentation.rst
 
+.. _visualize_dataseries-label:
+
+.. include:: view_components/visualize_dataseries.rst
+
 
 Abstract-components Definition
 ==============================
