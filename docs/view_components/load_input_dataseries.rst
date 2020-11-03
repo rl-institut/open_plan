@@ -44,8 +44,8 @@ Actions
 ^^^^^^^
 
 1. User can directly provide the path of the file to be loaded as text in the text field
-2. Clicking on Load File button will open a pop-up window (link the vc component here)
-3. Clicking on the Visualize Data button will open a pop-up window with a table and plot of the data-series
+2. Clicking on Load File button will open a pop-up window **(link the vc (TBD) link here)**
+3. Clicking on the Visualize Data button will open a pop-up window with a table and plot of the data-series :ref:`visualize_dataseries-label`
 4. User can choose unit amongst a list of generic units, or input it by typing it in. (this is known as an editable combo box)
 
 Requirements
@@ -59,7 +59,6 @@ Requirements
 
 Link with views
 ^^^^^^^^^^^^^^^
-.. use :ref:`<view>-label` to cross link to the view's description directly
 
 :ref:`<view1>-label`
     Description of the link
@@ -71,11 +70,14 @@ Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. use :ref:`<view_component>-label` to cross link to the view-component's description directly
 
-:ref:`<view_component1>-label`
-    Description of the link
+:ref:`input_parameter_field-label`
+    Both the view-components share some attributes
 
 :ref:`<view_component2>-label`
-    Description of the link
+    .. TBD (Link to the VC to browse and select files to be loaded)
+
+:ref:`visualize_dataseries-label`
+    A pop-up window displaying a sample of the input data-series file with a plot of the data alongside
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

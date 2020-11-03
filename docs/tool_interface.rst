@@ -140,7 +140,7 @@ View-components definition
 
 .. _load_input_dataseries-label:
 
-.. include:: view_components/load_input_parameter.rst
+.. include:: view_components/load_input_dataseries.rst
 
 ----
 
