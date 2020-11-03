@@ -34,11 +34,10 @@ Attributes
              float, Text input
              str, Text input
              str, Text input
-             array, :ref:`load_input_parameter-label`
-             matrix, :ref:`load_input_parameter-label`
-             timeseries, :ref:`load_input_parameter-label`
-             csv file, :ref:`load_input_parameter-label`
-
+             array, :ref:`load_input_dataseries-label`
+             matrix, :ref:`load_input_dataseries-label`
+             timeseries, :ref:`load_input_dataseries-label`
+             csv file, :ref:`load_input_dataseries-label`
 
     Requirements index: 1
 
@@ -68,9 +67,7 @@ Attributes
 **Boolean Mandatory Input**
     If true, the parameter must be defined by the user
 
-
     Requirements index: 2, 3
-
 
 Actions
 ^^^^^^^
@@ -104,5 +101,5 @@ Rendering of the view-component
 
 The label is placed above the input field and the helper icon to the right of the label. The helper text is displayed in a tooltip when user hover over the helper icon.
 The link to documentation should be at the bottom of the tooltip with the text "More details...".
-The rendering of the input field is either a text input or a :ref:`load_input_parameter-label`. The parameter unit editable combobox is placed next to the input field.
+The rendering of the input field is either a text input or a :ref:`load_input_dataseries-label`. The parameter unit editable combobox is placed next to the input field.
 An asterisk is placed next to the label (between label and helper icon) if the parameter input is mandatory.
