@@ -11,41 +11,23 @@ Attributes
     Properties:
         * First few rows and columns of the data-series are displayed in a tabular form
 
-    Actions index:
-
-    Requirements index:
-
 **Plot of the data-series**
 
     Properties:
         * Rendered as an image alongside the table showing the first few columns and rows of the data-series
 
-    Actions index:
-
-    Requirements index:
-
 
 Actions
 ^^^^^^^
 
-1. Action 1
-2. Action 2
 
 Requirements
 ^^^^^^^^^^^^
-..
-    a requirement is a binding rule which cannot be described directly by an action
-    or which describes redundant actions
-    (i.e. "it should not be possible to click on this attribute while the value of this other
-    attribute is not defined", or "after changing the value of an already defined attribute,
-    one should see a difference in the rendering of the attribute"
 
-1. Requirement 1
-2. Requirement 2
+1. User should be able to close the pop-up window and re-open it by clicking on "Visualize Data" button in view-component :ref:`load_input_dataseries-label`
 
 Link with views
 ^^^^^^^^^^^^^^^
-.. use :ref:`<view>-label` to cross link to the view's description directly
 
 :ref:`<view1>-label`
     Description of the link
@@ -55,14 +37,12 @@ Link with views
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. use :ref:`<view_component>-label` to cross link to the view-component's description directly
 
-:ref:`<view_component1>-label`
-    Description of the link
+:ref:`load_input_dataseries-label`
+    Current view-component is only accessible through attributes of the linked view-component
 
-:ref:`<view_component2>-label`
-    Description of the link
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. TBD
+
+Rendered as a pop-up window
