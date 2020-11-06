@@ -43,4 +43,11 @@ templates = Jinja2Templates(directory=os.path.join(SERVER_ROOT, "templates"))
 
 @app.get("/")
 def landing(request: Request) -> Response:
+    convert_scss_to_css(
+        [
+            os.path.join(SERVER_ROOT, STATIC_FOLDER, "css", f)
+            for f in os.listdir(os.path.join(SERVER_ROOT, STATIC_FOLDER, "css"))
+            if f.endswith("scss")
+        ]
+    )
     return templates.TemplateResponse("index.html", {"request": request})
