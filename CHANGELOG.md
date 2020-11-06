@@ -40,6 +40,7 @@ Here is a template for new release sections
 - Create `Attribute` definition (#52)
 - Add description for the view-component to access specific sections of the docs (#63)
 - Add descriptions for the view-components to input a data-series and visualize it (#65)
+- Add scss compiler for the website (#68)
 
 
 ### Changed
