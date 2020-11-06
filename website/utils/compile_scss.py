@@ -1,9 +1,9 @@
 import warnings
+
 # Disable a FutureWarning
 with warnings.catch_warnings():
     warnings.filterwarnings(action="ignore", category=FutureWarning)
     from scss import Compiler
-
 
 
 def convert_scss_to_css(file_name):
