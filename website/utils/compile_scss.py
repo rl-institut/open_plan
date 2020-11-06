@@ -1,9 +1,13 @@
-from scss import Compiler
-import os
+import warnings
+# Disable a FutureWarning
+with warnings.catch_warnings():
+    warnings.filterwarnings(action="ignore", category=FutureWarning)
+    from scss import Compiler
+
 
 
 def convert_scss_to_css(file_name):
-    """
+    """Use pyScss to convert scss files to css files
 
     Parameters
     ----------
@@ -19,6 +23,7 @@ def convert_scss_to_css(file_name):
             convert_scss_to_css(file)
     else:
 
+        # Check that the file type is scss and raise an error if it is not the case
         if file_name.endswith("scss") is False:
             raise TypeError(
                 f"The file {file_name} is not of type scss, please verify its extension"
