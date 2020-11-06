@@ -138,9 +138,9 @@ View-components definition
 
 ----
 
-.. _load_input_parameter-label:
+.. _load_input_dataseries-label:
 
-.. include:: view_components/load_input_parameter.rst
+.. include:: view_components/load_input_dataseries.rst
 
 ----
 
@@ -178,9 +178,17 @@ View-components definition
 
 .. include:: view_components/export_project.rst
 
+----
+
 .. _view_specific_documentation-label:
 
 .. include:: view_components/view_specific_documentation.rst
+
+----
+
+.. _visualize_dataseries-label:
+
+.. include:: view_components/visualize_dataseries.rst
 
 
 Abstract-components Definition
