@@ -11,7 +11,6 @@ Attributes
 
 
 **Input field**
-
     Actions index: 1
 
     Requirements index:
@@ -24,13 +23,11 @@ Attributes
     Requirements index: 2
 
 **Load File button**
-
     Actions index: 2
 
     Requirements index:
 
 **Visualize Data button**
-
     Actions index: 3
 
     Requirements index:
