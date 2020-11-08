@@ -28,7 +28,7 @@ Actions
 ^^^^^^^
 
 1. Checking the `Do not show again` check-box would disable the display of this view component everytime the software is launched
-2.  Clicking on the hyperlinks will open the respective topic in separate tabs of the browser
+2. Clicking on the hyperlinks will open the respective topic in separate tabs of the browser
 
 Requirement
 ^^^^^^^^^^^
@@ -37,6 +37,9 @@ Requirement
 2. If the user ticks the check-box *Do not show again*, the welcome view-component should not appear to the user during any subsequent launch of the tool
 3. The user could later re-enable the appearance of the pop-up window through *Display* or *Preferences* menu in *Settings*
 
+Link with other views .. isn't this missing here?
+^^^^^^^^^^^^^^^^^^^^^
+
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -44,7 +47,7 @@ Link with other view-components
 
 
 :ref:`menu_bar-label`
-     User can re-enable appearance of the welcome view-component through options within the file menu
+     User can re-enable appearance of the welcome view-component through options within the *Display* or *Preferences* menu ..to allow for consitency with point 3. in Requirements 
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -54,4 +57,4 @@ The welcome message should be centered and not contain very long text, but rathe
 
 Below the welcome message the hyperlinks could be listed and centered.
 
-The `Do not show again` check-box can be displayed on the bottom of the view-component (bottom-left?) with larger fontsize such that the user cannot miss it. It should be unticked by default.
+The *Do not show again* check-box can be displayed on the bottom of the view-component (bottom-left?) with larger fontsize such that the user cannot miss it. It should be unticked by default.
