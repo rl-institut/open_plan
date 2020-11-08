@@ -18,8 +18,8 @@ Attributes
     Disable/enable the display of the welcome view-component when tool is started.
 
     Properties:
-        - id `cb_welcome_show_again`
-        - unticked by default
+        * id `cb_welcome_show_again`
+        * unticked by default
 
 **List of Hyperlinks**
     Clickable links to read more, documentation, examples, use-cases, video tutorials, code-base (GitHub repo) and contact us
