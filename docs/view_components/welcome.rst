@@ -40,8 +40,8 @@ Requirement
 Link with other views 
 ^^^^^^^^^^^^^^^^^^^^^
 
-This window is displayed on top of the first step of the pregression bar every time the tool is launched.
-^^^^^^^^^^^^^^^^^^^^^
+This window is displayed on top of the first step of the progression bar every time the tool is launched.
+
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
