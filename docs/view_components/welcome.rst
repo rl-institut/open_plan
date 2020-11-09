@@ -50,7 +50,7 @@ Link with other view-components
 
 
 :ref:`menu_bar-label`
-     User can re-enable appearance of the welcome view-component through options within the *Display* or *Preferences* menu ..to allow for consitency with point 3. in Requirements 
+     User can re-enable appearance of the welcome view-component through options within the *Display* or *Preferences* menu
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
