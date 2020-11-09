@@ -9,6 +9,15 @@ $heading-color: $primary-color;
 $text-color: $secondary-color;
 $anchor-color: $primary-color;
 
+$font-size-xxlarge: 3rem;
+$font-size-xlarge: 1.95rem;
+$font-size-large: 1.55rem;
+$font-size-medium: 1.25rem;
+$font-size-text: 1rem;
+$font-size-mobile-xlarge: 1.7rem;
+$font-size-mobile-large: 1.3rem;
+$font-size-mobile-text: .875rem;
+
 /* lato-300 - latin */
 @font-face {
   font-family: 'Lato';
@@ -64,10 +73,6 @@ a:focus {
 	color: $anchor-color;
 }
 
-p {
- color: $text-color;
-}
-
 /* ----------------- General ---------------- */
 body {
     background-color: $white;
@@ -75,3 +80,57 @@ body {
 		font-family: Lato, Helvetica, sans-serif;
 }
 
+html {
+	font-size: 16px;
+}
+
+/* ----------------- HEADER SECTION ---------------- */
+.header {
+	width: 100%;
+	background-image: url(../assets/open_plan_hero_hexagon_MOB.svg);
+	background-size: cover;
+	height: auto;
+
+	@media screen and (min-width: 640px) {
+		background-image: url(../assets/open_plan_hero_hexagon_v2.svg);
+		background-size: auto;
+		height: 58rem;
+	}
+	
+	&__wrap {
+		padding: 2rem 1rem 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__logo {
+		width: 100%;
+		text-align: center;
+		img {
+			width: 4.5rem;
+		}
+	}
+
+	&__heading {
+		h1 {
+			padding-top: 1rem;
+			text-align: center;
+			font-size: $font-size-mobile-xlarge;
+			line-height: 1.95rem;
+
+			@media screen and (min-width: 640px) {
+				text-align: left;
+				font-size: $font-size-xxlarge;
+			}
+		}
+
+		p {
+			padding-top: .5rem;
+			text-align: center;
+			font-size: $font-size-mobile-large;
+			line-height: 1.75rem;
+			font-weight: 300;
+			color: $heading-color;
+		}
+	}
+}

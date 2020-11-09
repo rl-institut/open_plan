@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>open_plan</title>
   <link
     rel="stylesheet"
@@ -11,9 +12,21 @@
   <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
 </head>
 <body>
-<h1>heading</h1>
-<p>text</p>
-<a href="#">anchor</a>
+<main class="landing-page">
+
+  <section class="header">
+    <div class="header__wrap">
+      <div class="header__logo">
+        <img src="../static/assets/open_plan_logo.png" alt="open_plan logo">
+      </div>
+      <div class="header__heading">
+        <h1>We plan energy systems from a cellular perspective</h1>
+        <p>In close collaboration with practitioners and project developers we are developing an open-source planning tool</p>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 {% block content %}
 {% endblock content %}
