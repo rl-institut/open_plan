@@ -113,3 +113,4 @@ venv.bak/
 
 # Local input folders, eg. for pilots
 
+website/static/css/style.css
