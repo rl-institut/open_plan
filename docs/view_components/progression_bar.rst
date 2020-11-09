@@ -3,7 +3,7 @@
 Progression Bar
 ---------------
 
-The Progression Bar displays the sequential steps the user should go through, in order to provide the input parameters required to describe an energy system and a :ref:`scenario-label` to simulate with this energy system
+The Progression Bar displays the sequential steps the user should go through, in order to provide the input parameters required to describe an energy system and a :ref:`scenario-label` to simulate with this energy system model
 
 This view-component allows the user to:
 
@@ -14,8 +14,8 @@ Attributes
 ^^^^^^^^^^
 
 **List of steps**
-
     For example the following steps:
+    
     #. Project Setup
     #. Inputs
     #. System Inputs
@@ -25,13 +25,12 @@ Attributes
     #. Results
 
     Properties:
-        - Each step has an associated index (starting from 1), corresponding to its position in the list of steps
-        - Each step in the progression bar is a link to a :ref:`view <views-label>`
+        * Each step has an associated index (starting from 1), corresponding to its position in the list of steps
+        * Each step in the progression bar is a link to a :ref:`view <views-label>`
 
     Actions index: 1, 2
 
 **Current step index**
-
     The index of the currently selected step
 
     Requirements index: 1
