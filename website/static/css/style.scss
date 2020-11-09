@@ -73,6 +73,30 @@ a:focus {
 	color: $anchor-color;
 }
 
+/* ----------------- Buttons ---------------- */
+a.btn {
+	display: block;
+	text-align: center;
+	padding: .6rem;
+	width: 10rem;
+	font-size: $font-size-mobile-text;
+	font-weight: 700;
+
+	@media screen and (min-width: 640px) {
+		font-size: $font-size-text;
+	}
+
+	&--full {
+		background-color: $primary-color;
+		color: $white;
+	}
+
+	&--hollow {
+		border: 1px solid $primary-color;
+		color: $primary-color;
+	}
+}
+
 /* ----------------- General ---------------- */
 body {
     background-color: $white;
@@ -131,6 +155,16 @@ html {
 			line-height: 1.75rem;
 			font-weight: 300;
 			color: $heading-color;
+		}
+	}
+
+	&__btn {
+		padding-top: .5rem;
+		a {
+			margin: 0 auto;
+			@media screen and (min-width: 640px) {
+				margin: 0;
+			}
 		}
 	}
 }
