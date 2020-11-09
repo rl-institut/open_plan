@@ -1,8 +1,34 @@
-body {
-    background-color: yellow;
-    color: green;
+/* ----------------- Colors ---------------- */
+$primary-color: #1F567D;
+$secondary-color: #495965;
+$white: #fff;
+$black: #000;
+
+/* ----------------- Typography ---------------- */
+$heading-color: $primary-color;
+$text-color: $secondary-color;
+$anchor-color: $primary-color;
+
+h1, h2, h3, h4, h5, h6 {
+	color: $heading-color;
 }
 
-a {
- color: blue;
+a,
+a:link,
+a:hover,
+a:active,
+a:visited,
+a:focus {
+	color: $anchor-color;
 }
+
+p {
+ color: $text-color;
+}
+
+/* ----------------- General ---------------- */
+body {
+    background-color: $white;
+    color: $text-color;
+}
+
