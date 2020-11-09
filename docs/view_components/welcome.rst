@@ -37,7 +37,10 @@ Requirement
 2. If the user ticks the check-box *Do not show again*, the welcome view-component should not appear to the user during any subsequent launch of the tool
 3. The user could later re-enable the appearance of the pop-up window through *Display* or *Preferences* menu in *Settings*
 
-Link with other views .. isn't this missing here?
+Link with other views 
+^^^^^^^^^^^^^^^^^^^^^
+
+This window is displayed on top of the first step of the pregression bar every time the tool is launched.
 ^^^^^^^^^^^^^^^^^^^^^
 
 Link with other view-components
