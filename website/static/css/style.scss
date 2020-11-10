@@ -1,3 +1,18 @@
+/* ----------------- Mixins ---------------- */
+@mixin section-wrap($desktop-width) {
+	padding: 2rem 1rem 0;
+	display: flex;
+	flex-direction: column;
+
+	@media screen and (min-width: 640px) {
+		padding: 4rem 2rem 0;
+	}
+	@media screen and (min-width: 1280px) {
+		max-width: $desktop-width;
+		margin: 0 auto;
+	}
+}
+
 /* ----------------- Colors ---------------- */
 $primary-color: #1F567D;
 $secondary-color: #495965;
@@ -17,6 +32,23 @@ $font-size-text: 1rem;
 $font-size-mobile-xlarge: 1.7rem;
 $font-size-mobile-large: 1.3rem;
 $font-size-mobile-text: .875rem;
+
+h2 {
+	font-size: $font-size-mobile-large;
+	@media screen and (min-width: 640px) {
+		font-size: $font-size-large;
+	}
+	@media screen and (min-width: 1280px) {
+		font-size: $font-size-xlarge;
+	}
+}
+
+p {
+	font-size: $font-size-mobile-text;
+	@media screen and (min-width: 640px) {
+		font-size: $font-size-text;
+	}
+}
 
 /* lato-300 - latin */
 @font-face {
@@ -112,15 +144,15 @@ html {
 .header {
 	width: 100%;
 	background-image: url(../assets/open_plan_hero_hexagon_MOB.svg);
-	background-size: cover;
-	height: 100vh;
+	background-size: contain;
+	height: auto;
+	padding-bottom: 3rem;
 
 	@media screen and (min-width: 640px) {
 		background-image: url(../assets/open_plan_hero_hexagon.svg);
-		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center center;
-		height: auto;
+		padding-bottom: 0;
 	}
 
 	@media screen and (min-width: 1024px) {
@@ -134,17 +166,7 @@ html {
 	}
 	
 	&__wrap {
-		padding: 2rem 1rem 0;
-		display: flex;
-		flex-direction: column;
-
-		@media screen and (min-width: 640px) {
-			padding: 4rem 2rem 0;
-		}
-		@media screen and (min-width: 1280px) {
-			max-width: 1280px;
-			margin: 0 auto;
-		}
+		@include section-wrap(1280px);
 	}
 
 	&__logo {
@@ -210,6 +232,63 @@ html {
 				margin: 0;
 				font-size: $font-size-medium;
 			}
+		}
+	}
+}
+
+/* ----------------- EC EXPLAINED SECTION ---------------- */
+.energy-cell {
+	width: 100%;
+
+	&__wrap {
+		@include section-wrap(1024px);
+	}
+
+	&__heading {
+		h2 {
+			text-align: center;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		@media screen and (min-width: 640px) {
+			flex-direction: row;
+		}
+	}
+
+	&__img {
+		width: 100%;
+		text-align: center;
+		@media screen and (min-width: 640px) {
+			width: 50%;
+		}
+		.helper {
+			display: none;
+			@media screen and (min-width: 640px) {
+				height: 100%;
+				vertical-align: middle;
+			}
+		}
+		img {
+			width: 80%;
+			padding: 2rem 0;
+			@media screen and (min-width: 640px) {
+				padding-bottom: 0;
+				width: 18rem;
+				height: 100%;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	&__text {
+		width: 100%;
+		@media screen and (min-width: 640px) {
+			width: 50%;
+			padding: 2rem 0 0 1rem;
 		}
 	}
 }
