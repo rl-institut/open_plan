@@ -113,29 +113,55 @@ html {
 	width: 100%;
 	background-image: url(../assets/open_plan_hero_hexagon_MOB.svg);
 	background-size: cover;
-	height: auto;
+	height: 100vh;
 
 	@media screen and (min-width: 640px) {
-		background-image: url(../assets/open_plan_hero_hexagon_v2.svg);
-		background-size: auto;
-		height: 58rem;
+		background-image: url(../assets/open_plan_hero_hexagon.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+		height: auto;
+	}
+
+	@media screen and (min-width: 1024px) {
+		min-height: 35rem;
+	}
+
+	@media screen and (min-width: 1280px) {
+		background-position: center top;
+		max-height: 44rem;
+		padding: 6rem 0;
 	}
 	
 	&__wrap {
 		padding: 2rem 1rem 0;
 		display: flex;
 		flex-direction: column;
+
+		@media screen and (min-width: 640px) {
+			padding: 4rem 2rem 0;
+		}
+		@media screen and (min-width: 1280px) {
+			max-width: 1280px;
+			margin: 0 auto;
+		}
 	}
 
 	&__logo {
 		width: 100%;
 		text-align: center;
+		@media screen and (min-width: 640px) {
+			text-align: left;
+		}
 		img {
 			width: 4.5rem;
 		}
 	}
 
 	&__heading {
+		@media screen and (min-width: 640px) {
+			width: 55%;
+		}
 		h1 {
 			padding-top: 1rem;
 			text-align: center;
@@ -144,7 +170,12 @@ html {
 
 			@media screen and (min-width: 640px) {
 				text-align: left;
+				font-size: $font-size-xlarge;
+				line-height: 2.5rem;
+			}
+			@media screen and (min-width: 1280px) {
 				font-size: $font-size-xxlarge;
+				line-height: 3.75rem;
 			}
 		}
 
@@ -155,15 +186,29 @@ html {
 			line-height: 1.75rem;
 			font-weight: 300;
 			color: $heading-color;
+
+			@media screen and (min-width: 640px) {
+				text-align: left;
+				font-size: $font-size-large;
+				line-height: 2.15rem;
+			}
+			@media screen and (min-width: 1280px) {
+				font-size: $font-size-xlarge;
+				line-height: 2.75rem;
+			}
 		}
 	}
 
 	&__btn {
 		padding-top: .5rem;
+		@media screen and (min-width: 640px) {
+			padding-top: 1rem;
+		}
 		a {
 			margin: 0 auto;
 			@media screen and (min-width: 640px) {
 				margin: 0;
+				font-size: $font-size-medium;
 			}
 		}
 	}
