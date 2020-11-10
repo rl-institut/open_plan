@@ -8,17 +8,16 @@ Attributes
 .. Please refer to the definition of what an attribute is in the tool_interface.rst fileg
 .. The properties should be filled in only if applicable.
 
-:ref:`energy-type-def`
-
-    Energy type linked to the different energy sectors (e.g. heat, electricity, ...)
+**Energy type**
+    ref:`energy-type-def` linked to the different energy sectors (e.g. heat, electricity, ...)
 
 
 **Component type**
-    Can be one of (Source, sink, transformer, storage, bus)
+    Can be one of [Source, Sink, Transformer, Storage, Bus, ...] .. we propably not going to only use oemof.solph basic components in the tool, so list needs to be extended
 
 
 **Unique id**
-    A positive integer number to identify the component uniquely within the list of energy system components of the :ref:`es_network-label`
+    A positive integer number to identify the component uniquely within the list of energy system components of the :ref:`es_network-label` .. why unique integer, rather than string label?
 
 
 **Icon**
@@ -31,12 +30,12 @@ Attributes
 
     Requirements index:
 
-**Inward energy connection**
+**Input energy flow**
     A list of other components's ids which are connected to this component and provide it with energy
 
     Requirements index: 1, 5, 6
 
-**Outward energy connection**
+**Output energy flow**
     A list of other components's ids which are connected to this component and drain energy from it
 
     Requirements index: 1, 5, 6
@@ -44,16 +43,18 @@ Attributes
 Actions
 ^^^^^^^
 
-1. Double-clicking on the rendering of the energy system component allow the user to edit its attributes (except id)
+1. Double-clicking on the rendering of the *energy system component* allow the user to edit its attributes (except id)
+2. As long as the *energy system component* is not connected correctly to another *energy system component* the Icon-frame is displayed in another colour
 
 Requirements
 ^^^^^^^^^^^^
-1. An energy system component cannot de defined without being connected to another energy system component
-2. A component of type Source cannot be connected to a component of type Sink
-3. A component which is not of type bus, should have at least one connection to component of type bus bus
-4. A component which is of bus type, should have at least one source and one sink type connected to it
-5. A component of type Sink do not have Outward energy connection
-6. A component of type Source do not have Inward energy connection
+1. An *energy system component* cannot be defined without being connected to another *energy system component* .. what about the first component you define?
+2. An *energy system component* which is not of *component type* Bus can not be connected to another *energy system component*, which is not of *component type* Bus
+3. An *energy system component* which is not of *component type* Bus, should have at least one connection to an *energy system component* of *component type* Bus
+4. An *energy system component* which is of *component type* Bus, should have at least one Source and one Sink *component type* connected to it .. I would delete this one, you can connect to buses with a Transformer, imagine you have an ac-electricity bus and an dc-electricity bus and you want to connect connect those two, you would e.g. connect via a Transfomer
+5. An *energy system component* of *component type* Sink has a connection to *Input energy flow*, but no connection to *Output energy flow*
+6. An *energy system component* of *component type* Source has a connection *Output Energy flow*, but no connection to *Input energy flow*
+7. ... .. to indicate that there are more requirements to be added, if more component types are introduced
 
 
 Link with views
@@ -65,8 +66,8 @@ Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 :ref:`es_network-label`
-   The component is inserted within the energy system described in this other view-component
+   The component is inserted within the energy system model described in this other view-component
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This energy system component can be rendered as a list item within :ref:`es_network-label`'s `es_component_list` attribute or via its icon within :ref:`es_network-label`'s `network_schema` attribute.
+This *energy system component* can be rendered as a list item within :ref:`es_network-label`'s `es_component_list` attribute or via its icon within :ref:`es_network-label`'s `network_schema` attribute.
