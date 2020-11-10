@@ -39,7 +39,6 @@ Requirement
 
 1. By default, the welcome view-component should be displayed to the user everytime the software is started.
 2. If the user ticks the check-box *Do not show again*, the welcome view-component should not appear to the user during any subsequent launch of the tool.
-3. The user can later re-enable the appearance of the pop-up window by clicking *Display welcome view* in *Preferences* from :ref:`menu_bar-label`.
 
 Link with other views 
 ^^^^^^^^^^^^^^^^^^^^^
@@ -54,7 +53,7 @@ Link with other view-components
 
 
 :ref:`menu_bar-label`
-     User can re-enable appearance of the welcome view-component through options within the *Display* or *Preferences* menu.
+      The user can later re-enable the appearance of the  welcome view-component by clicking *Display welcome view* in *Preferences* from the menu.
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
