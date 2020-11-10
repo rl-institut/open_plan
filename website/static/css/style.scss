@@ -45,6 +45,7 @@ h2 {
 
 p {
 	font-size: $font-size-mobile-text;
+	line-height: 1.75rem;
 	@media screen and (min-width: 640px) {
 		font-size: $font-size-text;
 	}
@@ -138,6 +139,7 @@ body {
 
 html {
 	font-size: 16px;
+	scroll-behavior: smooth;
 }
 
 /* ----------------- HEADER SECTION ---------------- */
@@ -289,6 +291,75 @@ html {
 		@media screen and (min-width: 640px) {
 			width: 50%;
 			padding: 2rem 0 0 1rem;
+		}
+	}
+}
+
+/* ----------------- TOOL SECTION ---------------- */
+.tool {
+	width: 100%;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	@media screen and (min-width: 128px) {
+		padding-top: 8rem;
+	}
+	&__wrap {
+		@include section-wrap(1280px);
+		box-shadow: 0px 8px 32px 16px rgba(31, 86, 125, 0.08);
+		padding-top: 2.5rem;
+		padding-bottom: 2rem;
+		@media screen and (min-width: 640px) {
+			padding-bottom: 3rem;
+		}
+	}
+
+	&__logo {
+		text-align: center;
+		padding-bottom: 3.5rem;
+		img {
+			height: 6.875rem;
+		}
+	}
+
+	&__heading {
+		@media screen and (min-width: 640px) {
+			padding-bottom: 2rem;
+		}
+		h2 {
+			text-align: center;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+		@media screen and (min-width: 640px) {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__item {
+		@media screen and (min-width: 640px) {
+			width: 50%;
+		}
+		.icon {
+			text-align: center;
+			img {
+				height: 5.125rem;
+				margin: 1rem 0;
+				@media screen and (min-width: 1280px) {
+					height: 7.5rem;
+				}
+			}
+		}
+		p {
+			padding: 0 1rem 0 .5rem;
+			@media screen and (min-width: 1280px) {
+				padding: 0 4rem 0 2rem;
+			}
 		}
 	}
 }
