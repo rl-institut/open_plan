@@ -120,6 +120,7 @@ a.btn {
 	}
 
 	&--full {
+		border: 1px solid $primary-color;
 		background-color: $primary-color;
 		color: $white;
 	}
@@ -360,6 +361,53 @@ html {
 			@media screen and (min-width: 1280px) {
 				padding: 0 4rem 0 2rem;
 			}
+		}
+	}
+}
+
+/* ----------------- UNDER DEV SECTION ---------------- */
+.dev {
+	width: 100%;
+
+	&__wrap {
+		@include section-wrap(1280px);
+	}
+
+	&__heading {
+		@media screen and (min-width: 640px) {
+			padding-bottom: 2rem;
+		}
+		h2 {
+			text-align: center;
+		}
+	}
+
+	&__img {
+		text-align: center;
+		img {
+			width: 100%;
+			max-width: 32rem;
+		}
+	}
+
+	&__text p {
+		text-align: center;
+		line-height: 1.5rem;
+		padding: 2rem 0 1rem;
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		@media screen and (min-width: 640px) {
+			flex-direction: row;
+		}
+
+		a {
+			margin: .5rem;
 		}
 	}
 }
