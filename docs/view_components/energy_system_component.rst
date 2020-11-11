@@ -50,7 +50,6 @@ Requirements
 1. As long as the *energy system component* is not connected correctly to another *energy system component* the Icon-frame is displayed in another colour
 2. An *energy system component* which is not of *component type* Bus can not be connected to another *energy system component*, which is not of *component type* Bus
 3. An *energy system component* which is not of *component type* Bus, should have at least one connection to an *energy system component* of *component type* Bus
-4. An *energy system component* which is of *component type* Bus, should have at least one Source and one Sink *component type* connected to it .. I would delete this one, you can connect to buses with a Transformer, imagine you have an ac-electricity bus and an dc-electricity bus and you want to connect connect those two, you would e.g. connect via a Transfomer
 5. An *energy system component* of *component type* Sink has a connection to *Input energy flow*, but no connection to *Output energy flow*
 6. An *energy system component* of *component type* Source has a connection *Output Energy flow*, but no connection to *Input energy flow*
 7. ... .. to indicate that there are more requirements to be added, if more component types are introduced
