@@ -38,8 +38,7 @@ Example: [index] The user can click on button B to trigger action C
 
 requirement
 ------------
-.. TODO : rework this sentence
-    A requirement describes specific conditions of a :ref:`view-def`, a :ref:`view-component-def`, an :ref:`action-def` or an :ref:`attribute-def`. A requirement specifies necessary actions that need to be done by the user and explains what happens if the requirement is not met. Each requirement has an index which is used to link it to an :ref:`attribute-def`.
+A requirement describes specific conditions of a :ref:`view-def`, a :ref:`view-component-def`, an :ref:`action-def` or an :ref:`attribute-def` that should be met. Each requirement has an index which is used to link it to an :ref:`attribute-def`.
  Example: [index] The button B cannot be clicked unless text input C is not filled by user.
 
 .. _view-rendering-def:
