@@ -17,7 +17,7 @@ Attributes
 
 
 **Unique id**
-    A positive integer number to identify the component uniquely within the list of energy system components of the :ref:`es_network-label` .. why unique integer, rather than string label?
+    A positive integer number to identify the component uniquely within the list of energy system components of the :ref:`es_network-label` 
 
 
 **Icon**
@@ -52,7 +52,6 @@ Requirements
 3. An *energy system component* which is not of *component type* Bus, should have at least one connection to an *energy system component* of *component type* Bus
 5. An *energy system component* of *component type* Sink has a connection to *Input energy flow*, but no connection to *Output energy flow*
 6. An *energy system component* of *component type* Source has a connection *Output Energy flow*, but no connection to *Input energy flow*
-7. ... .. to indicate that there are more requirements to be added, if more component types are introduced
 
 
 Link with views
