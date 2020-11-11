@@ -38,6 +38,9 @@ def menu_bar(request: Request) -> Response:
 def menu_bar(request: Request) -> Response:
     return templates.TemplateResponse("welcome_pop_up.html", {"request": request})
 
+@app.get("/proj_params")
+def proj_params(request: Request) -> Response:
+    return templates.TemplateResponse("proj_params.html", {"request": request})
 
 @app.get("/step1")
 def step1(request: Request) -> Response:
