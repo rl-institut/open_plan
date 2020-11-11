@@ -13,7 +13,7 @@ Attributes
 
 
 **Component type**
-    Can be one of [Source, Sink, Transformer, Storage, Bus, ...] .. we propably not going to only use oemof.solph basic components in the tool, so list needs to be extended
+    Can be one of [Source, Sink, Transformer, Storage, Bus]
 
 
 **Unique id**
