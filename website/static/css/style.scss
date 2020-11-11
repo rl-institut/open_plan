@@ -31,6 +31,7 @@ $font-size-medium: 1.25rem;
 $font-size-text: 1rem;
 $font-size-mobile-xlarge: 1.7rem;
 $font-size-mobile-large: 1.3rem;
+$font-size-mobile-medium: 1.1rem;
 $font-size-mobile-text: .875rem;
 
 h2 {
@@ -40,6 +41,16 @@ h2 {
 	}
 	@media screen and (min-width: 1280px) {
 		font-size: $font-size-xlarge;
+	}
+}
+
+h3 {
+	font-size: $font-size-mobile-medium;
+	@media screen and (min-width: 640px) {
+		font-size: $font-size-medium;
+	}
+	@media screen and (min-width: 1280px) {
+		font-size: $font-size-large;
 	}
 }
 
@@ -359,7 +370,7 @@ html {
 		p {
 			padding: 0 1rem 0 .5rem;
 			@media screen and (min-width: 1280px) {
-				padding: 0 4rem 0 2rem;
+				padding: 0 4rem 0 4rem;
 			}
 		}
 	}
@@ -455,13 +466,16 @@ html {
 		@media screen and (min-width: 640px) {
 			width: 50%;
 		}
+		@media screen and (min-width: 1280px) {
+			width: 33.33%;
+		}
 		.icon {
 			text-align: center;
 			img {
-				height: 5.125rem;
+				height: 4rem;
 				margin: 1rem 0;
 				@media screen and (min-width: 1280px) {
-					height: 7.5rem;
+					height: 5rem;
 				}
 			}
 		}
@@ -472,7 +486,7 @@ html {
 			padding: 0 1rem 0 .5rem;
 			text-align: center;
 			@media screen and (min-width: 1280px) {
-				padding: 0 4rem 0 2rem;
+				padding: 0 4rem 0 4rem;
 			}
 		}
 	}
