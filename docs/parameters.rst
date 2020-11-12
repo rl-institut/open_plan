@@ -7,7 +7,10 @@ Parameters
 Inputs
 ======
 
-Inputs are necessary values for the optimization. All inputs have default values that can be replaced by the user if desired.
+* Inputs are necessary values for the optimization.
+* All inputs have default values that can be replaced by the user if desired.
+* It could also be a chance to specify for each input if it is a project input or a scenario input.
+* It could also be a chance to explain the default value for each input in a short line.
 
 
 .. This file is generated automatically when conf.py is executed
