@@ -4,6 +4,23 @@
 Tool interface description
 **************************
 
+The tool should enable its users to simulate a local energy system model with sector-coupling (like an industry park or a neighbourhood) and operate optimizations with constrains on it for planning purposes (not thought for operation).
+
+The optimization is taken care of in the backend with the `oemof <https://oemof.org/>`_ framework. The role of the interface is thus to gather the necessary input parameters and to provide a vizualization of the outputs.
+
+It is wished that this interface helps several actors with different perspectives and backgrounds to run scenarios or re-run scenarios changing only a few input parameters, compare their results with other scenarios and possibly engage in a dialogue.
+
+One way to fullfill this wish, is to design the tool's interface collaboratively: by inviting different actors in a dialogue about the interface's functionalities before implementing the interface itself.
+
+We start by defining a few :ref:`concepts<concepts-menu>` which come handy when describing the interface and what the users will be able to interact with and see.
+One of these concepts is the :ref:`view-component-def`, it is analoguous to a building block we can use to describe (and then implement) the user interface functionalities in a modular way.
+
+It is possible to deploy an interactive presentation of the :ref:`views<view-def>` made with the help of the :ref:`view-component-def` by following `these step <https://github.com/rl-institut/open_plan/blob/dev/website/README.md>`_
+
+We are welcoming feedbacks
+
+.. _concepts-menu:
+
 Concepts definition
 ===================
 
