@@ -122,6 +122,15 @@ a:focus {
 	letter-spacing: .02rem;
 }
 
+a {
+	transition: color .6s ease;
+	overflow: hidden;
+	&:focus,
+	&:hover {
+		color: darken($primary-color, 12%);
+	}
+}
+
 /* ----------------- Buttons ---------------- */
 a.btn {
 	display: block;
@@ -139,6 +148,12 @@ a.btn {
 		border: 1px solid $primary-color;
 		background-color: $primary-color;
 		color: $white;
+		transition: background-color .6s ease;
+		overflow: hidden;
+		&:focus,
+		&:hover {
+			background-color: darken($primary-color, 8%);
+		}
 	}
 
 	&--hollow {
@@ -252,7 +267,6 @@ html {
 			margin: 0 auto;
 			@media screen and (min-width: 640px) {
 				margin: 0;
-				font-size: $font-size-medium;
 			}
 		}
 	}
