@@ -181,7 +181,7 @@ html {
 	@media screen and (min-width: 1280px) {
 		background-position: center top;
 		max-height: 44rem;
-		padding: 6rem 0;
+		padding: 4rem 0;
 	}
 	
 	&__wrap {
@@ -196,6 +196,9 @@ html {
 		}
 		img {
 			width: 4.5rem;
+			@media screen and (min-width: 1280px) {
+				width: 6.875rem;
+			}
 		}
 	}
 
@@ -337,7 +340,10 @@ html {
 		text-align: center;
 		padding-bottom: 3.5rem;
 		img {
-			height: 6.875rem;
+			width: 4.5rem;
+			@media screen and (min-width: 1280px) {
+				width: 6.875rem;
+			}
 		}
 	}
 
@@ -698,8 +704,8 @@ html {
 		}
 		img {
 			height: 4.5rem;
-			@media screen and (min-width: 640px) {
-				height: 6.5rem;
+			@media screen and (min-width: 1280px) {
+				height: 6.875rem;
 			}
 		}
 	}
