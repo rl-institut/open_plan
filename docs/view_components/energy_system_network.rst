@@ -11,9 +11,9 @@ Attributes
     A list of energy busses
     
     Properties:
-        - id: `es_bus_list`
-        - each bus has a unique id
-        - each bus has an associated :ref:`energy-type-def`
+        * id: `es_bus_list`
+        * each bus has a unique id
+        * each bus has an associated :ref:`energy-type-def`
 
     Actions index: 1, 2, 4
 
@@ -24,7 +24,7 @@ Attributes
     Linked to the action of adding a bus to the `es_bus_list`
 
     Properties:
-        - id `add_es_bus`
+        * id `add_es_bus`
 
     Actions index: 1, 5, 6
 
@@ -45,14 +45,8 @@ Attributes
     A list of *energy system components*
     
     Properties:
-        - id: `es_component_list`
-        - each *energy system component* has a unique id
-        - each *energy system component* has a list of associated :ref:`energy-type-def`
-        - each *energy system component* can have in and/or out connection to one of the energy busses or one of the other energy system components
-        - each *energy system component* has a type (sink, source, transformer, storage)
-        .. these properties are all described in energy_system_component.rst already, isn't that redundant? Should we delete them here?
-
-
+        * id: `es_component_list`
+  
     Actions index: 1, 2, 4
 
 
