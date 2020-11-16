@@ -1,7 +1,7 @@
 Energy sector selector
 ----------------------
 
-The user can choose which :ref:`energy-type-def` they would like to use in their energy system. This choice will impact which components of the energy system are available for example.
+The user can choose which :ref:`energy-type-def` they would like to use in their energy system. This choice will impact which components of the energy system model are available.
 
 Attributes
 ^^^^^^^^^^
@@ -10,35 +10,36 @@ Attributes
     Contains the possible energy sectors a user can choose from
 
     Properties:
-        - id `es_sector_avail_list`
-        - each sector has an associated :ref:`energy-type-def`
-        - each sector has an associated icon
+        * id `es_sector_avail_list`
+        * each sector has an associated :ref:`energy-type-def`
+        * each sector has an associated icon
 
 **list of selected energy sectors**
     Contains the choices selected by the user from the `es_sector_avail_list`
+    
     Properties:
-        - id `es_sector_select_list`
-        - each sector has an associated :ref:`energy-type-def`
+        * id `es_sector_select_list`
+        * each sector has an associated :ref:`energy-type-def`
 
 **list of connection between selected energy sectors**
-
-    Indicates whether there is a coupling between two sector
+    Indicates whether there is a coupling between two sectors
 
     Properties:
-        - id `es_sector_coupling_list`
-        - each element is a list of two interconnected sectors
-        - an empty list means that all sectors are independent
+        * id `es_sector_coupling_list`
+        * each element is a list of two interconnected sectors
+        * an empty list means that all sectors are independent
 
 Actions
 ^^^^^^^
 
-1. The user can select the sector they want to include in their energy system from the `es_sector_avail_list` by clicking on the list item
-2. The user should be able to indicate if two sector are interconnected (could be clicking on greyed-out line connecting sectors visually
+1. The user can select the sector they want to include in their energy system model from the `es_sector_avail_list` by clicking on the list item
+2. The user should be able to indicate if two sectors are interconnected (could be clicking on greyed-out line connecting sectors visually)
 
 Requirement
 ^^^^^^^^^^^
 
-1. Any `es_sector_select_list` items has to provide from `es_sector_avail_list`.
+1. Any `es_sector_select_list` item has to be an item of `es_sector_avail_list`.
+
 
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
