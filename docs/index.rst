@@ -19,7 +19,8 @@ It uses the framework `oemof <https://oemof.org/>`_ to describe and solve the en
 .. toctree::
    :maxdepth: 2
 
-   project_description
+   .. project_description
+
    tool_interface
 
 
