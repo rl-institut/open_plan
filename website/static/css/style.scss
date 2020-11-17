@@ -277,7 +277,7 @@ html {
 	width: 100%;
 
 	&__wrap {
-		@include section-wrap(1024px);
+		@include section-wrap(1280px);
 		@media screen and (min-width: 640px) {
 			padding-top: 8rem;
 		}
@@ -286,6 +286,7 @@ html {
 	&__heading {
 		h2 {
 			text-align: center;
+			padding-bottom: 1rem;
 		}
 	}
 
@@ -296,48 +297,69 @@ html {
 		@media screen and (min-width: 640px) {
 			flex-direction: row;
 		}
+
+		@media screen and (max-width: 639px) {
+			.text--left {
+			 	order: 2;
+			}
+			.text--right {
+				order: 3;
+		   }
+		   .img {
+				order: 1;
+	   		}
+		}
+
+		.text__item p {
+			font-size: $font-size-mobile-medium;
+			line-height: 1.6rem;
+			color: $primary-color;
+		}
+
+		.img {
+			padding-bottom: 2rem;
+			text-align: center;
+
+			img {
+				max-width: 16rem;
+			}
+		}
 	}
 
-	&__img {
-		width: 100%;
+	&__hide {
 		text-align: center;
-		@media screen and (min-width: 640px) {
-			width: 50%;
-		}
-		.helper {
-			display: none;
-			@media screen and (min-width: 640px) {
-				height: 100%;
-				vertical-align: middle;
-			}
+		a,
+		a:hover,
+		a:focus,
+		a:active,
+		a:visited {
+			color: $anchor-color;
 		}
 		img {
-			width: 80%;
-			padding: 2rem 0;
-			@media screen and (min-width: 640px) {
-				padding-bottom: 0;
-				width: 18rem;
-				height: 100%;
-				vertical-align: middle;
-			}
+			height: 1rem;
+		}
+		.hidden { 
+			max-height: 0; 
+			overflow: hidden; 
+			transition: max-height 500ms;
+		}
+		.hidden.active {
+			max-height: 1000px;
 		}
 	}
-
-	&__text {
-		width: 100%;
-		@media screen and (min-width: 640px) {
-			width: 50%;
-			padding: 2rem 0 0 1rem;
+	#hideShowBtn {
+		&.hidden::before {
+			background-image: url(../assets/icons/i_arrow_down.svg);
+			background-size: 16px 16px;
+			display: inline-block;
+			height: 16px;
+			width: 16px;
+			transform: translateY(3px) translateX(-5px);
+			content: "";
 		}
-	}
-	
-	.hidden { 
-		max-height: 0; 
-		overflow: hidden; 
-		transition: max-height 500ms;
-	}
-	.hidden.active {
-		max-height: 1000px;
+		&.hidden.active::before {
+			background-image: url(../assets/icons/i_arrow_up.svg);
+		}
 	}
 }
 
