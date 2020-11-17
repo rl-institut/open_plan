@@ -48,6 +48,7 @@ Here is a template for new release sections
 - Unify description and cross-reference of view-components (#51)
 - Adjust ReadTheDocs' template to enable max-width when reading the documentation (#61)
 - Modify view-component welcome.rst for consistent formatting and correct wording (#69) 
+- Added a link to the RDT in README (#90)
 
 ### Removed
 - yet another thing
