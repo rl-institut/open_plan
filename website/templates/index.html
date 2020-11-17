@@ -17,6 +17,7 @@
     integrity="sha512-dMUQinc1gbNb95AFtKtP4q/g56T8r9oDxlWy0hrHyzfUbMq/vQztAqaR/FDY/bY0R1Ikc30aq94jyQH2Ix++ug=="
     crossorigin="anonymous" />
   <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+  <script src="static/js/project.js"></script>
 </head>
 <body>
 <main class="landing-page">
@@ -48,6 +49,15 @@
         </div>
         <div class="energy-cell__text">
           <p>The “Verband der Elektrotechnik, Elektronik und Informationstechnik” (VDE) proposes a new energy system model framework based on decentralized energy system. This framework named the cellular approach is the idea that the production and consumption of energy are balanced in a so-called energy cell. The basic concept of an energy cell incorporates the notion that there is no geographical delimitation to it and therefore multiple energy cells interacting with each other can be considered as one bigger cell (different zoom levels). An energy cell can contain many form of energy such as electricity, heat, gas and mobility thus embracing the concept of sector coupling.</p>
+        </div>
+      </div>
+      <div class="energy-cell__hide">
+        <a href="#" id="hideShowBtn" onclick="showHide('mapsec', this.id); return false;">show more</a>
+        <div id="mapsec" class="hidden">
+          <p>
+          The adoption of the German Renewable Energy Law „EEG 2021“ opens a unique opportunity to be leveraged by taking an energy cell perspective: The full transition to renewable energy sources and climate neutrality by 2050 requires a high level of citizens' acceptance, reachable by local participation opportunities such as framworks to enable tenants to benefit from roof-top PV installations and local authorities from wind power generation. These are just two examples how bottom-up approaches can contribute to a successful energy transition, ultimatively requiring a cellular approach:
+          "The cellular approach is a new organizational model for energy supply. In this interdisciplinary model, technical, economic, legal and political (and social) concerns are taken into account. The central component of this model is the energy cell.
+          </p>
         </div>
       </div>
     </div>

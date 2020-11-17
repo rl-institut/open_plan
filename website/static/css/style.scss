@@ -330,6 +330,15 @@ html {
 			padding: 2rem 0 0 1rem;
 		}
 	}
+	
+	.hidden { 
+		max-height: 0; 
+		overflow: hidden; 
+		transition: max-height 500ms;
+	}
+	.hidden.active {
+		max-height: 1000px;
+	}
 }
 
 /* ----------------- TOOL SECTION ---------------- */
