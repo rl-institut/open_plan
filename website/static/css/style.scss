@@ -392,6 +392,20 @@ html {
 			background-image: url(../assets/icons/i_arrow_up.svg);
 		}
 	}
+	#ECText {
+		p {
+			text-align: left;
+			&:first-of-type {
+				margin-top: 1rem;
+			}
+		}
+		@media screen and (min-width: 640px) {
+			max-width: 32rem;
+			margin: 0 auto;
+			padding-left: 1rem;
+			border-left: 1px solid $secondary-color;
+		}
+	}
 }
 
 /* ----------------- TOOL SECTION ---------------- */
@@ -400,7 +414,7 @@ html {
 	padding-top: 4rem;
 	padding-bottom: 4rem;
 	@media screen and (min-width: 640px) {
-		padding-top: 8rem;
+		padding-top: 6rem;
 	}
 	&__wrap {
 		@include section-wrap(1280px);
