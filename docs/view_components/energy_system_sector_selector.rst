@@ -20,6 +20,7 @@ Attributes
     Properties:
         * id `es_sector_select_list`
         * each sector has an associated :ref:`energy-type-def`
+        * each sector has an associated icon
 
 **list of connection between selected energy sectors**
     Indicates whether there is a coupling between two sectors
@@ -27,7 +28,7 @@ Attributes
     Properties:
         * id `es_sector_coupling_list`
         * each element is a list of two interconnected sectors
-        * an empty list means that all sectors are independent
+        * an empty list means that all sectors are independent from each other
 
 Actions
 ^^^^^^^
@@ -50,4 +51,4 @@ Link with other view-components
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Each sector in the list is represented by its icon. The energy sectors in the `es_sector_select_list` are rendered in color and the remaining energy sectors (in `es_sector_avail_list` but not in `es_sector_select_list`) are rendered in shades of grey.
-Each sector is visually connected to all the other sectors by a greyed-out line (no active sector coupling), If the line is display in bright color (e.g. after an activating click on it by the user) it means the two sectors are interconnected directly.
+Each sector is visually connected to all the other sectors by a greyed-out line (no active sector coupling). If the line is display in bright color (e.g. after an activating click on it by the user) it means the two sectors are interconnected directly.
