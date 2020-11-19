@@ -17,6 +17,7 @@
 $primary-color: #1F567D;
 $secondary-color: #495965;
 $color-1: #EEF3F6;
+$color-2: #A5A5A5;
 $white: #fff;
 $black: #000;
 
@@ -30,6 +31,7 @@ $font-size-xlarge: 1.95rem;
 $font-size-large: 1.55rem;
 $font-size-medium: 1.25rem;
 $font-size-text: 1rem;
+$font-size-small: .85rem;
 $font-size-mobile-xlarge: 1.7rem;
 $font-size-mobile-large: 1.3rem;
 $font-size-mobile-medium: 1.1rem;
@@ -128,6 +130,16 @@ a {
 	&:focus,
 	&:hover {
 		color: darken($primary-color, 12%);
+	}
+}
+
+.footnote {
+	font-size: $font-size-mobile-small;
+	line-height: 1.1rem;
+	color: $color-2;
+	@media screen and (min-width: 640px) {
+		font-size: $font-size-small;
+		line-height: 1.25rem;
 	}
 }
 
