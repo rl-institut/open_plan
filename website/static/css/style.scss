@@ -488,12 +488,15 @@ html {
 		.icon {
 			text-align: center;
 			img {
-				height: 5.125rem;
+				height: 6.125rem;
 				margin: 1rem 0;
 				@media screen and (min-width: 1280px) {
 					height: 7.5rem;
 				}
 			}
+		}
+		h3 {
+			text-align: center;
 		}
 		p {
 			padding: 0 1rem 0 .5rem;
