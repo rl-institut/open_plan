@@ -872,7 +872,8 @@ html {
 
 /* ----------------- IMPRINT PAGE ---------------- */
 
-.imprint {
+.imprint,
+.privacy {
 	width: 100%;
 	padding-bottom: 4rem;
 
@@ -900,6 +901,16 @@ html {
 		font-size: $font-size-mobile-large;
 		@media screen and (min-width: 640px) {
 			font-size: $font-size-xlarge;
+		}
+	}
+
+	&__content {
+		padding-bottom: 2rem;
+		h2 {
+			font-size: $font-size-mobile-medium;
+			@media screen and (min-width: 640px) {
+				font-size: $font-size-large;
+			}
 		}
 	}
 }
