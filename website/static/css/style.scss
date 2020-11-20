@@ -403,7 +403,7 @@ html {
 		.hidden { 
 			max-height: 0; 
 			overflow: hidden; 
-			transition: max-height 500ms;
+			transition: max-height 1000ms;
 		}
 		.hidden.active {
 			max-height: 1000px;
