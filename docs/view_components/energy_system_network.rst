@@ -102,15 +102,9 @@ Actions
 Requirements
 ^^^^^^^^^^^^
 
-1. each energy *Bus* needs to be connected to at least one energy system component of type source
-.. this requirment is not true, see the pull request #79
-
-2. if the user does not provide an energy system component of type sink for an energy bus, the latter is created automatically
-.. i guess this should be done to dump excess energy flows. The problem is that you can't generalize here. Also, you would probably need a source as slack, in case the sum of energy flows do not fulfill the demand. How about, we phrase it as such: 
-.. 2. If not defined by the user, an additional Sink component to dump excess energy flow is defined and connected automatically to one *Bus* in the *energy system network*
-
-3. If not defined by the user, an additional Source component to provide slack energy flow is defined and connected automatically to one *Bus* in the *energy system network* 
-4. notifications informing the user about potential problems with their energy system model should be displayed in the `error_log` text area. Problems could be such as a failure to meet any of the other requirements, an undefined property value of an *energy system component*, or a *Bus* without connection to another *energy system component*
+1. If not defined by the user, an additional Sink component to dump excess energy flow is defined and connected automatically to one *Bus* in the *energy system network*
+2. If not defined by the user, an additional Source component to provide slack energy flow is defined and connected automatically to one *Bus* in the *energy system network*
+3. notifications informing the user about potential problems with their energy system model should be displayed in the `error_log` text area. Problems could be such as a failure to meet any of the other requirements, an undefined property value of an *energy system component*, or a *Bus* without connection to another *energy system component*
 
 
 Link with other view-components
