@@ -186,6 +186,26 @@ html {
 	scroll-behavior: smooth;
 }
 
+/* ----------------- TOP NAVIGATION ---------------- */
+.nav {
+	&__wrap {
+		padding: .5rem 1rem 0;
+		@media screen and (min-width: 640px) {
+			padding: 1rem 2rem 0;
+		}
+		@media screen and (min-width: 1280px) {
+			max-width: 1280px;
+			margin: 0 auto;
+		}
+	}
+
+	&__logo {
+		img {
+			height: 3rem;
+		}
+	}
+}
+
 /* ----------------- HEADER SECTION ---------------- */
 .header {
 	width: 100%;
@@ -846,6 +866,40 @@ html {
 		p {
 			font-size: $font-size-mobile-small;
 			line-height: 1.15rem;
+		}
+	}
+}
+
+/* ----------------- IMPRINT PAGE ---------------- */
+
+.imprint {
+	width: 100%;
+	padding-bottom: 4rem;
+
+	&__wrap {
+		@include section-wrap(1280px);
+	}
+
+	.to-home-anchor {
+		padding-bottom: 2rem;
+		@media screen and (min-width: 640px) {
+			padding-bottom: 3rem;
+		}
+		&::before {
+			background-image: url(../assets/icons/i_arrow_left.svg);
+			background-size: 12px 12px;
+			display: inline-block;
+			height: 12px;
+			width: 12px;
+			transform: translateY(1px) translateX(-3px);
+			content: "";
+		}
+	}
+
+	&__heading h1 {
+		font-size: $font-size-mobile-large;
+		@media screen and (min-width: 640px) {
+			font-size: $font-size-xlarge;
 		}
 	}
 }
