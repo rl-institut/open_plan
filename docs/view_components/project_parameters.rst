@@ -1,3 +1,5 @@
+.. _project_parameters-label:
+
 Project parameters
 ------------------
 

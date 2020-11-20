@@ -1,3 +1,5 @@
+.. _load_scenario-label:
+
 Load Scenario
 -------------
 

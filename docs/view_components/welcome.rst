@@ -1,3 +1,5 @@
+.. _welcome-label:
+
 Welcome page
 ------------
 

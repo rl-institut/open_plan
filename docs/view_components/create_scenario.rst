@@ -1,3 +1,5 @@
+.. _create_scenario-label:
+
 Create Scenario
 ---------------
 

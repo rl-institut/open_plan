@@ -1,3 +1,5 @@
+.. _es_network-label:
+
 Energy System network
 ---------------------
 

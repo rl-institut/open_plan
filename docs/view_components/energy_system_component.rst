@@ -1,3 +1,5 @@
+.. _es_component-label:
+
 Energy system component
 -----------------------
 

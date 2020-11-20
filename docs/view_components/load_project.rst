@@ -1,3 +1,5 @@
+.. _load_project-label:
+
 Load project
 ------------
 

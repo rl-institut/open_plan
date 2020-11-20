@@ -1,3 +1,5 @@
+.. _scenario_parameters-label:
+
 Scenario parameters
 -------------------
 Inputs parameters to describe a :ref:`scenario-label`. The do not contain the information about the energy system, which is defined in the :ref:`es_network` view-component.
