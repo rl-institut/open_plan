@@ -42,6 +42,11 @@ def menu_bar(request: Request) -> Response:
 def proj_params(request: Request) -> Response:
     return templates.TemplateResponse("proj_params.html", {"request": request})
 
+
+@app.get("/proj_location")
+def proj_params(request: Request) -> Response:
+    return templates.TemplateResponse("proj_location.html", {"request": request})
+
 @app.get("/step1")
 def step1(request: Request) -> Response:
     return templates.TemplateResponse("step1.html", {"request": request})
