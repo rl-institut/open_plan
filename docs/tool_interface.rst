@@ -4,7 +4,7 @@
 Tool interface description
 **************************
 
-The tool should enable its users to simulate a local energy system model with sector-coupling (like an industry park or a neighbourhood) and operate optimizations with constrains on it for planning purposes (not thought for operation).
+The tool should enable its users to model a local energy system (like an industry park or a district) with the possibility to include sector-coupling. This web-based tool is thought for planning purposes and not operation. It should allow the user to optimize the energy system model subject to equality constraints.
 
 The optimization is taken care of in the backend with the `oemof <https://oemof.org/>`_ framework. The role of the interface is thus to gather the necessary input parameters and to provide a vizualization of the outputs.
 
@@ -17,7 +17,7 @@ One of these concepts is the :ref:`view-component-def`, it is analoguous to a bu
 
 It is possible to deploy an interactive presentation of the :ref:`views<view-def>` made with the help of the :ref:`view-component-def` by following `these step <https://github.com/rl-institut/open_plan/blob/dev/website/README.md>`_
 
-We are welcoming feedbacks
+We welcome feedback. 
 
 .. _concepts-menu:
 
