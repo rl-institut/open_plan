@@ -221,6 +221,13 @@ View-components definition
 
 .. include:: view_components/visualize_dataseries.rst
 
+----
+
+.. _project_location-label:
+
+.. include:: view_components/project_location.rst
+
+----
 
 Abstract-components Definition
 ==============================
