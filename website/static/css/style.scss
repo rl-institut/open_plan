@@ -210,6 +210,9 @@ html {
 		}
 		img {
 			height: 3rem;
+			@media screen and (min-width: 640px) {
+				height: 4rem;
+			}
 		}
 	}
 }
@@ -228,7 +231,7 @@ html {
 		background-repeat: no-repeat;
 		background-position: center center;
 		padding-bottom: 0;
-		padding-top: 0;
+		padding-top: 1rem;
 	}
 
 	@media screen and (min-width: 1024px) {
