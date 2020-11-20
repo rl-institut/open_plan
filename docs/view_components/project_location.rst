@@ -1,6 +1,8 @@
 .. one can then cross link to this view component by using
     :ref:`project_location-label`
 
+.. _project_location-label:
+
 Map with Project Location
 -------------------------
 
