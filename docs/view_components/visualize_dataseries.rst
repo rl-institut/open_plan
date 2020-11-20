@@ -1,3 +1,5 @@
+.. _visualize_dataseries-label:
+
 Visualize data-series
 ---------------------
 

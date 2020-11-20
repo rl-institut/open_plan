@@ -1,5 +1,9 @@
+.. _read_write_files-label:
+
 Read/Write Files
 ----------------
+
+File explorer to read and write files to the system storage.
 
 Attributes
 ^^^^^^^^^^

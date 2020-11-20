@@ -69,5 +69,5 @@ Link with other view-components
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 :guilabel:`&Browse` is on the right of the text input, the :guilabel:`&Load` is centered on the next line below

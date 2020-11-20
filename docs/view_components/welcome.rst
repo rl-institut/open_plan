@@ -25,6 +25,7 @@ Attributes
     Properties:
         * id `cb_welcome_show_again`
         * unticked by default
+
     Action index: 2
 
 Actions
