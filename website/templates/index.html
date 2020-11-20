@@ -1,32 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>open_plan</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
-  <link rel="manifest" href="../static/favicon/site.webmanifest">
-  <link rel="mask-icon" href="../static/favicon/safari-pinned-tab.svg" color="#1f567d">
-  <meta name="msapplication-TileColor" content="#1f567d">
-  <meta name="theme-color" content="#ffffff">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/css/foundation.min.css"
-    integrity="sha512-dMUQinc1gbNb95AFtKtP4q/g56T8r9oDxlWy0hrHyzfUbMq/vQztAqaR/FDY/bY0R1Ikc30aq94jyQH2Ix++ug=="
-    crossorigin="anonymous" />
-  <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
-  <script src="../static/js/project.js"></script>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
 <main class="landing-page">
 
   <section class="header">
     <div class="header__wrap">
-      <div class="header__logo">
-        <img src="../static/assets/logos/open_plan_logo.svg" alt="open_plan logo">
-      </div>
       <div class="header__heading">
         <h1>We plan energy systems from a cellular perspective</h1>
         <p>In close collaboration with practitioners and project developers we are developing an open-source planning tool</p>
@@ -269,27 +247,4 @@
     </div>
   </section>
 </main>
-
-<footer class="footer">
-  <div class="footer__wrap">
-    <div class="footer__logo">
-      <img src="../static/assets/logos/open_plan_logo.svg" alt="open_plan logo">
-    </div>
-    <div class="footer__content">
-      <div class="footer__links">
-        <a href="https://github.com/rl-institut/open_plan" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="imprint">Imprint</a>
-        <a href="privacy">Privacy</a>
-      </div>
-      <div class="footer__licence">
-        <p>Content of this webpage - except for the partner logos - is licensed under CC-BY-4.0 conditions</p>
-      </div>
-    </div>
-  </div>
-</footer>
-
-{% block content %}
 {% endblock content %}
-
-</body>
-</html>

@@ -188,6 +188,10 @@ html {
 
 /* ----------------- TOP NAVIGATION ---------------- */
 .nav {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
 	&__wrap {
 		padding: .5rem 1rem 0;
 		@media screen and (min-width: 640px) {
@@ -200,6 +204,10 @@ html {
 	}
 
 	&__logo {
+		text-align: center;
+		@media screen and (min-width: 640px) {
+			text-align: left;
+		}
 		img {
 			height: 3rem;
 		}
@@ -213,12 +221,14 @@ html {
 	background-size: contain;
 	height: auto;
 	padding-bottom: 3rem;
+	padding-top: 2rem;
 
 	@media screen and (min-width: 640px) {
 		background-image: url(../assets/open_plan_hero_hexagon.svg);
 		background-repeat: no-repeat;
 		background-position: center center;
 		padding-bottom: 0;
+		padding-top: 0;
 	}
 
 	@media screen and (min-width: 1024px) {
@@ -233,20 +243,6 @@ html {
 	
 	&__wrap {
 		@include section-wrap(1280px);
-	}
-
-	&__logo {
-		width: 100%;
-		text-align: center;
-		@media screen and (min-width: 640px) {
-			text-align: left;
-		}
-		img {
-			width: 4.5rem;
-			@media screen and (min-width: 1280px) {
-				width: 6.875rem;
-			}
-		}
 	}
 
 	&__heading {
