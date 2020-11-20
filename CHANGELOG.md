@@ -27,7 +27,7 @@ Here is a template for new release sections
 - Description of load_scenario view component (#29)
 - Template for views (#33)
 - Description of energy_system_sector_selector view component (#38)
-- Description of energy_system_network view-component (#11, #40)
+- Description of energy_system_network view-component (#11, #40, #81)
 - Description of energy_system_component view-component (#32) 
 - Template for view-component (#24)
 - Description of load_scenario view-component (#29)
