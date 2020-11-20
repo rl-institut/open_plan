@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block description %}<meta name="description" content="open_plan is developing an open-source planning tool for heat and electricity based on a cellular approach">{% endblock %}
+  <title>{% block title %}open_plan{% endblock %}</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../static/favicon/site.webmanifest">
+  <link rel="mask-icon" href="../static/favicon/safari-pinned-tab.svg" color="#1f567d">
+  <meta name="msapplication-TileColor" content="#1f567d">
+  <meta name="theme-color" content="#ffffff">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/css/foundation.min.css"
+    integrity="sha512-dMUQinc1gbNb95AFtKtP4q/g56T8r9oDxlWy0hrHyzfUbMq/vQztAqaR/FDY/bY0R1Ikc30aq94jyQH2Ix++ug=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+  <script src="../static/js/project.js"></script>
+</head>
+<body>
+
+<body>
+    {% include 'nav.html' %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% include 'footer.html' %}
+</body>
+
+</html>
