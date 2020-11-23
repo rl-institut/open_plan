@@ -65,6 +65,16 @@ def proj_params(request: Request) -> Response:
     return templates.TemplateResponse("proj_location.html", {"request": request})
 
 
+@app.get("/scenarios_page")
+def proj_params(request: Request) -> Response:
+    return templates.TemplateResponse("scenarios_page.html", {"request": request})
+
+
+@app.get("/landing_page")
+def menu_bar(request: Request) -> Response:
+    return templates.TemplateResponse("landing_page.html", {"request": request})
+
+
 @app.get("/step1")
 def step1(request: Request) -> Response:
     return templates.TemplateResponse("step1.html", {"request": request})
