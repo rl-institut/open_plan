@@ -8,6 +8,10 @@ div {
     justify-content: center;
 }
 
+p {
+    text-align: center;
+}
+
 .progression_bar a {
     margin-left: 0.3rem;
     margin-right: 0.3rem;
