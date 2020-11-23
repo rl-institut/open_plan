@@ -1,0 +1,31 @@
+,label,:Definition:,:Unit:,:Default:,:Category:,:Restrictions:,Source/related requirements,Ease of oemof implementation,ref,Rational
+0,Load profile,The energy demand,,,Energy,,,component/constraint exists,,
+1,Energy timeseries,"Timeseries of energy sources from a primary-secondary transformation (e.g. PV, Wind)",,,Energy,,OP_IN_07,component/constraint exists,,
+2,Source power mix,Percentage of each source of power (inclusive % from Grid),,,Energy,,OP_IN_05,component/constraint exists,,
+3, Lower bound renewable energy share,A lower bound on the share of renewable energies in the output energy mix,,,Energy,,,component/constraint exists,,
+4,CO2 upper limit,An upper bound on the CO2 emissions,,,Energy,,,component/constraint exists,,
+5,Energy source and storage units,Possibility to add energy sources and energy storage units with default generic values,,,Technical,,,?,,A user can select 
+6,Specific energy source and storage units,A list of energy sources and energy storage units with specific existing values (e.g. characteristics of specific commercial models),,,Technical,,,?,,If the user know already that they are going to use a commercial model
+7,GPS coordinates,"GPS coordinate of the location, to retrieve the weather conditions in case of missing timeseries. Could be a point, a set of points, or a polygon",,,GIS,,,function exists,,
+8,Existing energy infrastructure,"Existing energy infrastructure (e.g. heat and or electricity network, energy source/storage)",,,Technical,,,component/constraint exists,,
+9,Grid parameters (v2.0 of the tool),"Grid parameters such as:  power, voltage, frequence, line length, line impedance, transformers, topology",,,Technical,,,"I'm not sure about this. There are components which represent also the electrical characteristics of the grid (not only energy characteristics) and people are further developing it right now. Not sure, what is already there and what is missing, but I think it's not that difficult to implement more if something is missing, even though we have a lot of experience with grid tools like Dingo and so on...",,
+10,Degree of Autonomy (DA),"Degree of Autonomy or self sufficiency wished, typically a number between 0 and 1",,,KPI,,,component/constraint exists,,
+11,Temporal resolution of simulation,Time step of the simulation. The user should be aware that a higher resolution require more data and can lead to longer simulation times,,,Time,,"OP_IN_01, OP_IN_02",time steps are flexible; it's always a matter of data,,
+12,Optimization goal,"The quantities which govern the optimization (CO2, costs, renewable maximization in energy mix, degree of autonomy, multi-objectives)",,,Simulation,,"OP_IN_04, OP_IN_10","optimization goal can be costs or CO2 emissions; maximization in renewable energy or autonomy seems more to be a constraint; multi-objectives are not possible due to linear programming, but users could input weights",,
+13,Maximum investment budget,Upper bound on the investment budget,,,Costs,,OP_IN_07,component/constraint exists,,
+14,Current price of CO2 emission certificates,Current price of CO2 emission certificates,,,Costs,,"OP_IN_07, OP_IN_15",data issue?,,
+15,Future price estimates for CO2 emission certificates,Timeseries of future price  for CO2 emission certificates (values from the EU-ETS and DE-ETS),,,Costs,,OP_IN_07,data issue?,,The user can load its own timeseries to check their own prediction of CO2 prices
+16,Interest rate,A guess of what the  interest rate will be in during the project lifetime. Could be provided as constant or timeseries.,,,Costs,,,function exists,,Estimate the project costs
+17,Costs of replacement,Costs of replacement/improvement of the current system components/assets,PF,,Costs,,,"not sure, if this exists already, but I think if not it's easy to implement; the mobility team has this in their tools as far as I remember",,
+18,Grid stability fee,Fee/payment for contribution to grid stability,,,Costs,,,fix cost?,,
+19,Spatial resolution,Define the wished spatial resolution (it is wished that it can range from building up to districts),,,GIS,,,spatial resolution is flexible; it's always a matter of data ,,
+20,New power plant available space,Available space for new power plants (for PV installation for example),,,GIS,,,upper bounds exist,,"Space on the rooftop is only for solar, fields can be solar and wind, inside existing building diesel/gas/heat exchanger can be installed but no solar or wind"
+21,Consumer requirements,consumer requirements such as a specific localisation and wished minimal load profile (e.g. in an industry park),,,GIS/Technical,,OP_IN_27,?,,
+22,Existing grid structure,GPS coordinates of current grid structure (lines and hubs),,,GIS/Technical,,,"in the Ego-Tools I guess, but this is a topic I am not familiar with",,
+23,Future grid structure,GPS coordinates of future grid structure (lines and hubs),,,GIS/Technical,,,"in the Ego-Tools I guess, but this is a topic I am not familiar with",,
+24,Security of supply, e.g. existence of back-up system,,,Technical,,,there are many components and constraints for a flexible backup system,,
+25,Balancing ratio for anciliary services,Balancing ratio for ancilliary services (need a more precise definition as PF could not re-figure out what this means),,,Technical,,,?,,
+26,Number of future extra users,Number of future extra user in energy cell,,,Technical,,,?,,
+27,Load types,Designation of flexible and non-flexible loads in the load profile,,,Technical,,OP_IN_21,dsm functionalities exist,,
+28,Costs of asset use,The price of a liter of diesel or a kWh from the grid,,,Costs,,OP_IN_07,,,To be able to compute the cost associated with the use of an asset
+29,Project lifetime,The lifetime of the project (simulation time),,,Time,,,,,

@@ -21,6 +21,7 @@ It uses the `oemof <https://oemof.org/>`_ framework to describe and optimize the
 
    .. project_description
 
+   parameters
    tool_interface
 
 
