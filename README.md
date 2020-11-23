@@ -1,5 +1,7 @@
 # open_plan
 
+**You can access the documentation by clicking [here](https://open-plan.readthedocs.io/en/latest/?badge=latest)**
+
 [![Documentation Status](https://readthedocs.org/projects/open-plan/badge/?version=dev)](https://open-plan.readthedocs.io/en/latest/?badge=latest)
 
 [![Build Status](https://travis-ci.com/rl-institut/open_plan.svg?branch=dev)](https://travis-ci.com/rl-institut/open_plan)

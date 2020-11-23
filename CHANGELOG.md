@@ -27,7 +27,7 @@ Here is a template for new release sections
 - Description of load_scenario view component (#29)
 - Template for views (#33)
 - Description of energy_system_sector_selector view component (#38)
-- Description of energy_system_network view-component (#11, #40)
+- Description of energy_system_network view-component (#11, #40, #81)
 - Description of energy_system_component view-component (#32) 
 - Template for view-component (#24)
 - Description of load_scenario view-component (#29)
@@ -41,6 +41,7 @@ Here is a template for new release sections
 - Add description for the view-component to access specific sections of the docs (#63)
 - Add descriptions for the view-components to input a data-series and visualize it (#65)
 - Add scss compiler for the website (#68)
+- Website content (#83)
 
 
 ### Changed
@@ -48,6 +49,7 @@ Here is a template for new release sections
 - Unify description and cross-reference of view-components (#51)
 - Adjust ReadTheDocs' template to enable max-width when reading the documentation (#61)
 - Modify view-component welcome.rst for consistent formatting and correct wording (#69) 
+- Added a link to the RDT in README (#90)
 
 ### Removed
 - yet another thing
