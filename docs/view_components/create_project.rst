@@ -1,3 +1,5 @@
+.. _create_project-label:
+
 Create project
 --------------
 

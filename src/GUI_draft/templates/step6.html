@@ -1,18 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'progression.html' %}
 
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
-{% block content %}
-
-<div class="grid-x">
-    <div class="cell">
-        {% import "progression_bar.html" as progression_bar %}
-        {{ progression_bar.input(step_idx=6, step_map=step_map) }}
-    </div>
+{% block progression_content %}
     <h2 class="cell">Results</h2>
 
-    <p>Describe the view of the step 6 here</p>
+    <div title="Select Scenarios for comparison"><h4><a href="">Compare Scenarios VC</a></h4></div>
+    <div title="Click to Zoom in"><h4><a href="">Time Series plots VC</a></h4></div>
+    <div title="KPIs at a glance"><h4><a href="">KPIs Table VC</a></h4></div>
+    <div title="Choose a format to export results"><h4><a href="">Export Results VC</a></h4></div>
 
-    <a class="cell" href="/step5">Previous</a>
-</div>
-
-{% endblock content %}
+{% endblock progression_content %}

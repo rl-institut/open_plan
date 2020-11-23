@@ -1,4 +1,6 @@
 import os
+import uvicorn
+from starlette.responses import RedirectResponse
 from fastapi import FastAPI, Request, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -13,6 +15,7 @@ app.mount(
 
 templates = Jinja2Templates(directory=os.path.join(SERVER_ROOT, "templates"))
 
+
 # option for routing `@app.X` where `X` is one of
 # post: to create data.
 # get: to read data.
@@ -25,8 +28,16 @@ templates = Jinja2Templates(directory=os.path.join(SERVER_ROOT, "templates"))
 
 
 @app.get("/")
-def landing_page(request: Request) -> Response:
-    return templates.TemplateResponse("landing_page.html", {"request": request})
+def landing_page(request: Request, project: int = None) -> Response:
+    params = {"request": request}
+    if project is not None:
+        params["project"] = project
+    return templates.TemplateResponse("landing_page.html", params)
+
+
+@app.get("/project_created")
+def project_created(request: Request) -> Response:
+    return landing_page(request, project=1)
 
 
 @app.get("/menubar")
@@ -34,36 +45,55 @@ def menu_bar(request: Request) -> Response:
     return templates.TemplateResponse("menu_bar.html", {"request": request})
 
 
+@app.get("/create_project")
+def menu_bar(request: Request) -> Response:
+    return templates.TemplateResponse("create_project.html", {"request": request})
+
+
+@app.get("/proj_params")
+def proj_params(request: Request) -> Response:
+    return templates.TemplateResponse("proj_params.html", {"request": request})
+
+
+@app.get("/load_proj_params")
+def load_proj_params(request: Request) -> Response:
+    return templates.TemplateResponse(
+        "load_project_parameters.html", {"request": request}
+    )
+
+
+@app.get("/proj_location")
+def proj_location(request: Request) -> Response:
+    return templates.TemplateResponse("proj_location.html", {"request": request})
+
+
 @app.get("/welcomepage")
 def menu_bar(request: Request) -> Response:
     return templates.TemplateResponse("welcome_pop_up.html", {"request": request})
 
 
-@app.get("/step1")
-def step1(request: Request) -> Response:
-    return templates.TemplateResponse("step1.html", {"request": request})
+@app.get("/project_overview")
+def project_overview(request: Request) -> Response:
+    return templates.TemplateResponse("project_overview.html", {"request": request})
 
 
-@app.get("/step2")
-def step2(request: Request) -> Response:
-    return templates.TemplateResponse("step2.html", {"request": request})
+@app.get("/create_scenario")
+def create_scenario(request: Request) -> Response:
+    url = request.url_for("progression", step_id=1)
+    return RedirectResponse(url=url)
 
 
-@app.get("/step3")
-def step2(request: Request) -> Response:
-    return templates.TemplateResponse("step3.html", {"request": request})
+@app.get("/step/{step_id}")
+def progression(request: Request, step_id: int = 1) -> Response:
+    return templates.TemplateResponse(
+        f"step{step_id}.html", {"request": request, "step_id": step_id}
+    )
 
 
-@app.get("/step4")
-def step2(request: Request) -> Response:
-    return templates.TemplateResponse("step4.html", {"request": request})
+@app.get("/progression_bar")
+def progression_bar_vc(request: Request) -> Response:
+    return templates.TemplateResponse("progression_bar_vc.html", {"request": request})
 
 
-@app.get("/step5")
-def step2(request: Request) -> Response:
-    return templates.TemplateResponse("step5.html", {"request": request})
-
-
-@app.get("/step6")
-def step2(request: Request) -> Response:
-    return templates.TemplateResponse("step6.html", {"request": request})
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)

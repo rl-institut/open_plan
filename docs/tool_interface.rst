@@ -49,6 +49,7 @@ attribute
 action
 ------
     An action describes what the user can do in a certain :ref:`view-def` or :ref:`view-component-def`. Each action has an index which is used to link it to an :ref:`attribute-def`.
+
 Example: [index] The user can click on button B to trigger action C
 
 .. _requirement-def:
@@ -220,6 +221,18 @@ View-components definition
 .. _visualize_dataseries-label:
 
 .. include:: view_components/visualize_dataseries.rst
+
+----
+
+.. _project_location-label:
+
+.. include:: view_components/project_location.rst
+
+----
+
+.. _read_write_files-label:
+
+.. include:: view_components/read_write_files.rst
 
 
 Abstract-components Definition

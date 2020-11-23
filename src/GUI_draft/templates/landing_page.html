@@ -4,17 +4,49 @@
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
 {% block content %}
 
+<!--
 <div class="grid-x">
 <div class="cell">
     {% import "progression_bar.html" as progression_bar %}
-            <!-- this is just an example, you can complete the dict with all the steps -->
+            this is just an example, you can complete the dict with all the steps
     {{ progression_bar.input(step_idx=1, step_map=step_map) }}
 
 </div>
 </div>
+-->
 
-<div class="cell">
-<div title="Click here"><h4><a href="/welcomepage">Welcome Pop-up VC</a></h4></div>
+<div class="grid-x">
+    <h2>Landing Page</h2>
+
+    <div class="cell">
+        <div title="The welcome pop-up can be disabled by checking a box"><h4><a href="/welcomepage">Welcome Pop-up VC</a></h4></div>
+    </div>
+
+    <div class="cell">
+        <div title="Click here"><h4><a href="/create_project">Create Project...</a></h4></div>
+    </div>
+
+
+    <div class="cell">
+        <h4><a href="/project_list">Project List VC</a></h4>
+        <div>
+            {% if project %}
+
+            <p>Project 1</p>
+            <a href="{{ url_for('project_overview') }}">Select ...</a>
+            <a href="">Show ...</a>
+            <a href="">Edit ...</a>
+            <a href="">Delete ...</a>
+
+            {% else %}
+
+                You don't have any project yet, please create one by clicking on "Create Project" button
+
+            {% endif %}
+
+         </div>
+    </div>
+
 </div>
 
 {% endblock content %}

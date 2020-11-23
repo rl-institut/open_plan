@@ -1,3 +1,5 @@
+.. _input_parameter_field-label:
+
 Input Parameter Field
 ---------------------
 

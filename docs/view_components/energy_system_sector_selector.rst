@@ -1,3 +1,5 @@
+.. _es_sector_selector-label:
+
 Energy sector selector
 ----------------------
 

@@ -1,3 +1,5 @@
+.. _load_input_dataseries-label:
+
 Load input data-series
 ----------------------
 

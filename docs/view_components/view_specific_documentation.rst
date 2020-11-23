@@ -1,3 +1,5 @@
+.. _view_specific_documentation-label:
+
 View Specific Documentation
 ---------------------------
 

@@ -1,14 +1,12 @@
-.. _load_project-label:
+.. _read_write_files-label:
 
-Load project
-------------
+Read/Write Files
+----------------
 
-This is not described yet
+File explorer to read and write files to the system storage.
 
 Attributes
 ^^^^^^^^^^
-.. Please refer to the definition of what an attribute is in the tool_interface.rst file
-.. The properties should be filled in only if applicable.
 
 **Attribute A**
     Description
@@ -81,4 +79,5 @@ Link with other view-components
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. TBD
+
+Rendered as a pop-up

@@ -34,7 +34,7 @@ Here is a template for new release sections
 - Add a folder for abstract components and Scenario abstract component description (#27) 
 - Description of create scenario view-component (#31)
 - Description of energy_system_component view-component (#32)
-- GUI draft for interactive views (#45)
+- GUI draft for interactive views (#45, #82)
 - Add input parameter field view-component to docs (#49)
 - Create landing page for GUI draft (#47)
 - Create `Attribute` definition (#52)

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
+{% block content %}
+
+<div class="grid-x">
+
+    <h2>Project overview</h2>
+    <p class="cell"> On this page you can create new scenarios within you project, load scenario from file or select a scenario in the list</p>
+    <div class="cell">
+        <div title="Click here"><h4><a href="{{ url_for('create_scenario') }}">Create New Scenario...</a></h4></div>
+        <div title="Click here"><h4><a href="/load_scenario">Load Scenario from file...</a></h4></div>
+    </div>
+
+    <div class="cell">
+        <h4><a href="/scenario_list">Scenario List VC</a></h4>
+        <div>
+            {% if scenario %}
+
+                <p>Scenario 1</p>
+                <a href="\select_scenario">Select ...</a>
+                <a href="">Show ...</a>
+                <a href="">Edit ...</a>
+                <a href="">Delete ...</a>
+
+            {% else %}
+
+                You don't have any scenarios yet, please create one by clicking on "Create Scenario" button
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <a class="cell" href="/landing_page">Previous</a>
+    <a class="cell" href="/step1">Next</a>
+
+</div>
+
+
+{% endblock content %}
