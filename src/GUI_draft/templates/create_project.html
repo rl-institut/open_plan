@@ -10,10 +10,16 @@
   <li>It allows the user to create a new project and enter a name for the project</li>
 </ul>
 
+<div class="grid-x">
     <div class="cell">
-        <div title="Click here"><h4><a href="/proj_params">Project Parameters</a></h4></div>
-        <div title="Click here"><h4><a href="/load_proj_params">Load Project Parameters from file</a></h4></div>
-        <div title="Project Location"><h4><a href="/proj_location">Project Location Map</a></h4></div>
-
+        <div title="Click here"><h4><a href="/proj_params">Project Parameters VC</a></h4></div>
+        <div title="Click here"><h4><a href="/load_proj_params">Load Project Parameters from file VC</a></h4></div>
+        <div title="Project Location"><h4><a href="/proj_location">Project Location Map VC</a></h4></div>
     </div>
+
+
+    <div class="cell">
+        <div title="Click here will go to the next step"><h4><a href="{{ url_for('project_created') }}">Create Project...</a></h4></div>
+    </div>
+</div>
 {% endblock content %}
