@@ -36,12 +36,10 @@ def generate_parameter_description(input_csv_file, output_rst_file):
 
     parameter_properties = [
         ":Definition:",
-        ":Type:",
-        ":Category:",
         ":Unit:",
-        ":Example:",
-        ":Restrictions:",
         ":Default:",
+        ":Category:",
+        ":Restrictions:",
     ]
 
     lines = []
@@ -80,6 +78,8 @@ def generate_parameter_description(input_csv_file, output_rst_file):
             ]
         )
 
+    # Change name of the index column
+    df = df.rename(columns={"label": ":Name:"}).set_index(":Name:")
     df[parameter_properties].to_csv(input_csv_file + "_short.csv")
 
     with open(output_rst_file, "w") as ofs:
@@ -90,6 +90,10 @@ generate_parameter_description(
     "_files/input_parameters_list", "input_parameters_list.inc"
 )
 
+
+generate_parameter_description(
+    "_files/output_parameters_list", "output_parameters_list.inc"
+)
 
 # -- Project information -----------------------------------------------------
 
