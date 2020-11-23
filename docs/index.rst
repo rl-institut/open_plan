@@ -10,7 +10,8 @@ Welcome to open_plan's documentation!
 
 
 .. toctree::
-   project_description
+..   project_description
+
    parameters
    tool_interface
 
