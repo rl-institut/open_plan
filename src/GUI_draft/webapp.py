@@ -39,6 +39,7 @@ def landing_page(request: Request, project: int = None) -> Response:
 def project_created(request: Request) -> Response:
     return landing_page(request, project=1)
 
+
 @app.get("/menubar")
 def menu_bar(request: Request) -> Response:
     return templates.TemplateResponse("menu_bar.html", {"request": request})
@@ -78,41 +79,21 @@ def project_overview(request: Request) -> Response:
 
 @app.get("/create_scenario")
 def create_scenario(request: Request) -> Response:
-    return templates.TemplateResponse("create_scenario.html", {"request": request})
+    url = request.url_for("progression", step_id=1)
+    return RedirectResponse(url=url)
 
 
-@app.get("/select_scenario")
-def select_scenario(request: Request) -> Response:
-    return templates.TemplateResponse("select_scenario.html", {"request": request})
+@app.get("/step/{step_id}")
+def progression(request: Request, step_id: int = 1) -> Response:
+    return templates.TemplateResponse(
+        f"step{step_id}.html", {"request": request, "step_id": step_id}
+    )
 
 
-@app.get("/step1")
-def step1(request: Request) -> Response:
-    return templates.TemplateResponse("step1.html", {"request": request})
+@app.get("/progression_bar")
+def progression_bar_vc(request: Request) -> Response:
+    return templates.TemplateResponse("progression_bar_vc.html", {"request": request})
 
 
-@app.get("/step2")
-def step2(request: Request) -> Response:
-    return templates.TemplateResponse("step2.html", {"request": request})
-
-
-@app.get("/step3")
-def step3(request: Request) -> Response:
-    return templates.TemplateResponse("step3.html", {"request": request})
-
-
-@app.get("/step4")
-def step4(request: Request) -> Response:
-    return templates.TemplateResponse("step4.html", {"request": request})
-
-
-@app.get("/step5")
-def step5(request: Request) -> Response:
-    return templates.TemplateResponse("step5.html", {"request": request})
-
-
-@app.get("/step6")
-def step6(request: Request) -> Response:
-    return templates.TemplateResponse("step6.html", {"request": request})
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
+{% block content %}
+
+
+<div class="grid-x">
+    <div class="cell">
+        {% import "progression_bar.html" as progression_bar %}
+        <!-- this is just an example, you can complete the dict with all the steps -->
+        {{ progression_bar.input(step_idx=step_id, step_map=step_map) }}
+    </div>
+    {% block progression_content %}
+
+
+    {% endblock progression_content %}
+
+
+    {% if step_id > 1 %}
+        <a class="cell" href="{{ url_for('progression', step_id=step_id-1) }}">Previous</a>
+    {% endif %}
+
+     {% if step_id < step_map|length %}
+        <a class="cell" href="{{ url_for('progression', step_id=step_id+1) }}">Next</a>
+    {% endif %}
+</div>
+
+{% endblock content %}

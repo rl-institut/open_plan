@@ -1,24 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'progression.html' %}
 
-{% block content %}
-
-<div class="grid-x">
-    <div class="cell">
-        {% import "progression_bar.html" as progression_bar %}
-        {{ progression_bar.input(step_idx=3, step_map=step_map) }}
-    </div>
+<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
+{% block progression_content %}
     <h2 class="cell">System Setup</h2>
 
     <div title="Click here"><h4><a href="/es_sector">Energy System Sector selector VC</a></h4></div>
     <div title="Click here"><h4><a href="/es_sector">Add Energy System Component VC</a></h4></div>
     <div title="Click here"><h4><a href="/es_network">Energy System network VC</a></h4></div>
 
-
-    <a class="cell" href="/step2">Previous</a>
-
-    <a class="cell" href="/step4">Next</a>
-
-</div>
-
-
-{% endblock content %}
+{% endblock progression_content %}
