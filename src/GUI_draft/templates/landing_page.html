@@ -4,17 +4,40 @@
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
 {% block content %}
 
+<!--
 <div class="grid-x">
 <div class="cell">
     {% import "progression_bar.html" as progression_bar %}
-            <!-- this is just an example, you can complete the dict with all the steps -->
+            this is just an example, you can complete the dict with all the steps
     {{ progression_bar.input(step_idx=1, step_map=step_map) }}
 
 </div>
 </div>
+-->
 
-<div class="cell">
-<div title="Click here"><h4><a href="/welcomepage">Welcome Pop-up VC</a></h4></div>
+<div class="grid-x">
+    <div><H2>Landing Page</H2></div>
+
+    <div class="cell">
+        <div title="Click here"><h4><a href="/welcomepage">Welcome Pop-up VC</a></h4></div>
+    </div>
+
+    <div><p>The above welcome pop-up can be disabled by checking a box</p></div>
+
+    <div class="cell">
+        <div title="Click here"><h4><a href="/create_project">Create Project...</a></h4></div>
+        <div title="Click here"><h4><a href="/load_project">Load Project...</a></h4></div>
+    </div>
+
+    <div class="cell">
+        <div title="Click here"><h4><a href="/proj_params">Project Parameters</a></h4></div>
+        <div title="Click here"><h4><a href="/load_proj_params">Load Project Parameters from file</a></h4></div>
+        <div title="Project Location"><h4><a href="/proj_location">Project Location Map</a></h4></div>
+
+    </div>
+
+    <a class="cell" href="/scenarios_page">Next</a>
+
 </div>
 
 {% endblock content %}

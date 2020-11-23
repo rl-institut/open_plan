@@ -13,6 +13,7 @@ app.mount(
 
 templates = Jinja2Templates(directory=os.path.join(SERVER_ROOT, "templates"))
 
+
 # option for routing `@app.X` where `X` is one of
 # post: to create data.
 # get: to read data.
@@ -34,18 +35,35 @@ def menu_bar(request: Request) -> Response:
     return templates.TemplateResponse("menu_bar.html", {"request": request})
 
 
+@app.get("/create_project")
+def menu_bar(request: Request) -> Response:
+    return templates.TemplateResponse("create_project.html", {"request": request})
+
+
+@app.get("/load_project")
+def menu_bar(request: Request) -> Response:
+    return templates.TemplateResponse("load_project.html", {"request": request})
+
+
 @app.get("/welcomepage")
 def menu_bar(request: Request) -> Response:
     return templates.TemplateResponse("welcome_pop_up.html", {"request": request})
+
 
 @app.get("/proj_params")
 def proj_params(request: Request) -> Response:
     return templates.TemplateResponse("proj_params.html", {"request": request})
 
 
+@app.get("/load_proj_params")
+def proj_params(request: Request) -> Response:
+    return templates.TemplateResponse("load_project_parameters.html", {"request": request})
+
+
 @app.get("/proj_location")
 def proj_params(request: Request) -> Response:
     return templates.TemplateResponse("proj_location.html", {"request": request})
+
 
 @app.get("/step1")
 def step1(request: Request) -> Response:
