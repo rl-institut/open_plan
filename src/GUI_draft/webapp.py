@@ -70,6 +70,16 @@ def proj_params(request: Request) -> Response:
     return templates.TemplateResponse("scenarios_page.html", {"request": request})
 
 
+@app.get("/create_scenario")
+def proj_params(request: Request) -> Response:
+    return templates.TemplateResponse("create_scenario.html", {"request": request})
+
+
+@app.get("/select_scenario")
+def proj_params(request: Request) -> Response:
+    return templates.TemplateResponse("select_scenario.html", {"request": request})
+
+
 @app.get("/landing_page")
 def menu_bar(request: Request) -> Response:
     return templates.TemplateResponse("landing_page.html", {"request": request})
