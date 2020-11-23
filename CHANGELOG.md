@@ -42,6 +42,7 @@ Here is a template for new release sections
 - Add descriptions for the view-components to input a data-series and visualize it (#65)
 - Add scss compiler for the website (#68)
 - Website content (#83)
+- Add input and output tables in parameters category (#59)
 
 
 ### Changed
