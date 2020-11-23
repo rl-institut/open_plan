@@ -1,8 +1,19 @@
-<h4>Create Project View-Component</h4>
+
+{% extends 'base.html' %}
+
+
+<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
+{% block content %}
+<h4>Create Project View</h4>
 
  <ul>
-  <li>This view component is rendered as a button with the text 'Create New Project...'</li>
   <li>It allows the user to create a new project and enter a name for the project</li>
-  <li>The corresponding view-component is yet to be described in readthedocs</li>
-  <li>It is connected to the view-component to read_write_files (file explorer)</li>
 </ul>
+
+    <div class="cell">
+        <div title="Click here"><h4><a href="/proj_params">Project Parameters</a></h4></div>
+        <div title="Click here"><h4><a href="/load_proj_params">Load Project Parameters from file</a></h4></div>
+        <div title="Project Location"><h4><a href="/proj_location">Project Location Map</a></h4></div>
+
+    </div>
+{% endblock content %}

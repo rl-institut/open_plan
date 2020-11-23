@@ -39,10 +39,14 @@ def menu_bar(request: Request) -> Response:
 def menu_bar(request: Request) -> Response:
     return templates.TemplateResponse("create_project.html", {"request": request})
 
+@app.get("/proj_params")
+def proj_params(request: Request) -> Response:
+    return templates.TemplateResponse("proj_params.html", {"request": request})
 
-@app.get("/load_project")
-def menu_bar(request: Request) -> Response:
-    return templates.TemplateResponse("load_project.html", {"request": request})
+
+@app.get("/load_proj_params")
+def load_proj_params(request: Request) -> Response:
+    return templates.TemplateResponse("load_project_parameters.html", {"request": request})
 
 
 @app.get("/welcomepage")
@@ -50,39 +54,24 @@ def menu_bar(request: Request) -> Response:
     return templates.TemplateResponse("welcome_pop_up.html", {"request": request})
 
 
-@app.get("/proj_params")
-def proj_params(request: Request) -> Response:
-    return templates.TemplateResponse("proj_params.html", {"request": request})
-
-
-@app.get("/load_proj_params")
-def proj_params(request: Request) -> Response:
-    return templates.TemplateResponse("load_project_parameters.html", {"request": request})
-
-
 @app.get("/proj_location")
-def proj_params(request: Request) -> Response:
+def proj_location(request: Request) -> Response:
     return templates.TemplateResponse("proj_location.html", {"request": request})
 
 
 @app.get("/scenarios_page")
-def proj_params(request: Request) -> Response:
+def scenarios_page(request: Request) -> Response:
     return templates.TemplateResponse("scenarios_page.html", {"request": request})
 
 
 @app.get("/create_scenario")
-def proj_params(request: Request) -> Response:
+def create_scenario(request: Request) -> Response:
     return templates.TemplateResponse("create_scenario.html", {"request": request})
 
 
 @app.get("/select_scenario")
-def proj_params(request: Request) -> Response:
+def select_scenario(request: Request) -> Response:
     return templates.TemplateResponse("select_scenario.html", {"request": request})
-
-
-@app.get("/landing_page")
-def menu_bar(request: Request) -> Response:
-    return templates.TemplateResponse("landing_page.html", {"request": request})
 
 
 @app.get("/step1")
@@ -96,20 +85,20 @@ def step2(request: Request) -> Response:
 
 
 @app.get("/step3")
-def step2(request: Request) -> Response:
+def step3(request: Request) -> Response:
     return templates.TemplateResponse("step3.html", {"request": request})
 
 
 @app.get("/step4")
-def step2(request: Request) -> Response:
+def step4(request: Request) -> Response:
     return templates.TemplateResponse("step4.html", {"request": request})
 
 
 @app.get("/step5")
-def step2(request: Request) -> Response:
+def step5(request: Request) -> Response:
     return templates.TemplateResponse("step5.html", {"request": request})
 
 
 @app.get("/step6")
-def step2(request: Request) -> Response:
+def step6(request: Request) -> Response:
     return templates.TemplateResponse("step6.html", {"request": request})

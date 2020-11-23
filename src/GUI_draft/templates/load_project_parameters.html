@@ -1,9 +1,22 @@
+{% extends 'base_view_component.html' %}
+
+<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
+{% block content %}
+
 <h4>Load Project Parameters View-Component</h4>
 
  <ul>
   <li>This view component is rendered as a button with the text 'Load Parameters from file...'</li>
   <li>It allows the user to load an existing project file, pre-defined or already-saved from previous simulations</li>
   <li>Uploading the file lets the program automatically fill-in the required project parameters</li>
-  <li>The corresponding view-component is yet to be described in readthedocs</li>
-  <li>It is connected to the view-component to read_write_files (file explorer)</li>
 </ul>
+
+
+<p>Load Project Parameters is similar to what is described in Load Scenario<a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#load-scenario">here</a></p>
+
+<iframe src="https://open-plan.readthedocs.io/en/latest/tool_interface.html#load-scenario" width="1000" height="600"></iframe>
+
+{% endblock content %}
+
+
+
