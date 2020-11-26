@@ -49,6 +49,7 @@ def menu_bar(request: Request) -> Response:
 def create_project(request: Request) -> Response:
     return templates.TemplateResponse("create_project.html", {"request": request})
 
+
 @app.get("/project_list")
 def create_project(request: Request) -> Response:
     return templates.TemplateResponse("project_list.html", {"request": request})
@@ -85,6 +86,11 @@ def project_overview(request: Request) -> Response:
 def create_scenario(request: Request) -> Response:
     url = request.url_for("progression", step_id=1)
     return RedirectResponse(url=url)
+
+
+@app.get("/load_scenario")
+def load_scenario(request: Request) -> Response:
+    return templates.TemplateResponse("load_scenarío.html", {"request": request})
 
 
 @app.get("/step/{step_id}")
