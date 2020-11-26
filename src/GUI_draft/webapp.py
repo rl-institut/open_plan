@@ -123,6 +123,10 @@ def create_energysys_comp(request: Request) -> Response:
 def load_ts(request: Request) -> Response:
     return templates.TemplateResponse("load_timeseries.html", {"request": request})
 
+@app.get("/es_sector")
+def select_es_sector(request: Request) -> Response:
+    return templates.TemplateResponse("es_sector_selector.html", {"request": request})
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
