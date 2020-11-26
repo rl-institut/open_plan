@@ -82,6 +82,11 @@ def project_overview(request: Request) -> Response:
     return templates.TemplateResponse("project_overview.html", {"request": request})
 
 
+@app.get("/scenario_list")
+def scenario_list(request: Request) -> Response:
+    return templates.TemplateResponse("scenario_list.html", {"request": request})
+
+
 @app.get("/create_scenario")
 def create_scenario(request: Request) -> Response:
     url = request.url_for("progression", step_id=1)
