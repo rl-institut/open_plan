@@ -242,7 +242,7 @@ View-components definition
 
 ----
 
-.. _scenarios_list-label:
+.. _scenario_list-label:
 
 .. include:: view_components/scenario_list.rst
 
