@@ -61,7 +61,7 @@ Preferences
     II. Display
     III. Display welcome view: display :ref:`welcome-label`
 Help
-    I. Read documentation: redirect to `ReadTheDocs documentation <https://open-plan.readthedocs.io/en/latest/?badge=latest>`_
+    I. Read documentation: redirect to `ReadTheDocs documentation <https://open-plan.readthedocs.io/en/latest/>`_
     II. Examples and use cases: redirect to ReadTheDocs usecases TODO: add link
     III. Contact developers: redirect to `Github issues <https://github.com/rl-institut/open_plan/issues/new/choose>`_
     IV. Feedback redirect to `Github issues <https://github.com/rl-institut/open_plan/issues/new/choose>`_
