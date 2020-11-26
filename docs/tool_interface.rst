@@ -261,7 +261,7 @@ Abstract-components Definition
 
 .. _scenario-label:
 
-.. include:: abstract_components/scenario.rst
+.. include:: abstract_components/scenario_list.rst
 
 
 Inputs definition

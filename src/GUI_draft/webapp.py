@@ -98,6 +98,11 @@ def load_scenario(request: Request) -> Response:
     return templates.TemplateResponse("load_scenarío.html", {"request": request})
 
 
+@app.get("/scenario_parameters")
+def scenario_parameters(request: Request) -> Response:
+    return templates.TemplateResponse("scenario_parameters.html", {"request": request})
+
+
 @app.get("/step/{step_id}")
 def progression(request: Request, step_id: int = 1) -> Response:
     return templates.TemplateResponse(
