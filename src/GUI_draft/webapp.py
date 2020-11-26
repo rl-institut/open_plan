@@ -119,6 +119,10 @@ def progression_bar_vc(request: Request) -> Response:
 def create_energysys_comp(request: Request) -> Response:
     return templates.TemplateResponse("insert_es_comp.html", {"request": request})
 
+@app.get("/load_time_series")
+def load_ts(request: Request) -> Response:
+    return templates.TemplateResponse("load_timeseries.html", {"request": request})
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
