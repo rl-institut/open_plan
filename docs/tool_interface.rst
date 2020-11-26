@@ -252,6 +252,8 @@ View-components definition
 
 .. include:: view_components/create_energysys_components.rst
 
+----
+
 
 Abstract-components Definition
 ==============================
