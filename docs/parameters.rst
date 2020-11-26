@@ -1,4 +1,4 @@
-.. _tool_interface:
+.. _parameters:
 
 **********
 Parameters

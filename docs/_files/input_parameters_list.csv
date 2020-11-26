@@ -2,7 +2,7 @@
 0,Load profile,The energy demand,,,Energy,,,component/constraint exists,,
 1,Energy timeseries,"Timeseries of energy sources from a primary-secondary transformation (e.g. PV, Wind)",,,Energy,,OP_IN_07,component/constraint exists,,
 2,Source power mix,Percentage of each source of power (inclusive % from Grid),,,Energy,,OP_IN_05,component/constraint exists,,
-3, Lower bound renewable energy share,A lower bound on the share of renewable energies in the output energy mix,,,Energy,,,component/constraint exists,,
+3,Lower bound renewable energy share,A lower bound on the share of renewable energies in the output energy mix,,,Energy,,,component/constraint exists,,
 4,CO2 upper limit,An upper bound on the CO2 emissions,,,Energy,,,component/constraint exists,,
 5,Energy source and storage units,Possibility to add energy sources and energy storage units with default generic values,,,Technical,,,?,,A user can select 
 6,Specific energy source and storage units,A list of energy sources and energy storage units with specific existing values (e.g. characteristics of specific commercial models),,,Technical,,,?,,If the user know already that they are going to use a commercial model
