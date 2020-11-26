@@ -46,8 +46,12 @@ def menu_bar(request: Request) -> Response:
 
 
 @app.get("/create_project")
-def menu_bar(request: Request) -> Response:
+def create_project(request: Request) -> Response:
     return templates.TemplateResponse("create_project.html", {"request": request})
+
+@app.get("/project_list")
+def create_project(request: Request) -> Response:
+    return templates.TemplateResponse("project_list.html", {"request": request})
 
 
 @app.get("/proj_params")

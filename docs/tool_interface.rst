@@ -234,6 +234,14 @@ View-components definition
 
 .. include:: view_components/read_write_files.rst
 
+----
+
+.. _project_list-label:
+
+.. include:: view_components/project_list.rst
+
+----
+
 
 Abstract-components Definition
 ==============================
