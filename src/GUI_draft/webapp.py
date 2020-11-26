@@ -115,5 +115,10 @@ def progression_bar_vc(request: Request) -> Response:
     return templates.TemplateResponse("progression_bar_vc.html", {"request": request})
 
 
+@app.get("/create_es_comp")
+def create_energysys_comp(request: Request) -> Response:
+    return templates.TemplateResponse("insert_es_comp.html", {"request": request})
+
+
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
