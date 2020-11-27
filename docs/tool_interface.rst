@@ -274,6 +274,14 @@ Abstract-components Definition
 
 .. include:: abstract_components/scenario.rst
 
+----
+
+.. _project-label:
+
+.. include:: abstract_components/project.rst
+
+----
+
 
 Inputs definition
 =================
