@@ -248,12 +248,6 @@ View-components definition
 
 ----
 
-.. _create_es_comps-label:
-
-.. include:: view_components/create_energysys_components.rst
-
-----
-
 Abstract-components Definition
 ==============================
 
