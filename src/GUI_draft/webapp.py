@@ -46,8 +46,13 @@ def menu_bar(request: Request) -> Response:
 
 
 @app.get("/create_project")
-def menu_bar(request: Request) -> Response:
+def create_project(request: Request) -> Response:
     return templates.TemplateResponse("create_project.html", {"request": request})
+
+
+@app.get("/project_list")
+def create_project(request: Request) -> Response:
+    return templates.TemplateResponse("project_list.html", {"request": request})
 
 
 @app.get("/proj_params")
@@ -77,10 +82,25 @@ def project_overview(request: Request) -> Response:
     return templates.TemplateResponse("project_overview.html", {"request": request})
 
 
+@app.get("/scenario_list")
+def scenario_list(request: Request) -> Response:
+    return templates.TemplateResponse("scenario_list.html", {"request": request})
+
+
 @app.get("/create_scenario")
 def create_scenario(request: Request) -> Response:
     url = request.url_for("progression", step_id=1)
     return RedirectResponse(url=url)
+
+
+@app.get("/load_scenario")
+def load_scenario(request: Request) -> Response:
+    return templates.TemplateResponse("load_scenarío.html", {"request": request})
+
+
+@app.get("/scenario_parameters")
+def scenario_parameters(request: Request) -> Response:
+    return templates.TemplateResponse("scenario_parameters.html", {"request": request})
 
 
 @app.get("/step/{step_id}")
@@ -93,6 +113,19 @@ def progression(request: Request, step_id: int = 1) -> Response:
 @app.get("/progression_bar")
 def progression_bar_vc(request: Request) -> Response:
     return templates.TemplateResponse("progression_bar_vc.html", {"request": request})
+
+
+@app.get("/create_es_comp")
+def create_energysys_comp(request: Request) -> Response:
+    return templates.TemplateResponse("insert_es_comp.html", {"request": request})
+
+@app.get("/load_time_series")
+def load_ts(request: Request) -> Response:
+    return templates.TemplateResponse("load_timeseries.html", {"request": request})
+
+@app.get("/es_sector")
+def select_es_sector(request: Request) -> Response:
+    return templates.TemplateResponse("es_sector_selector.html", {"request": request})
 
 
 if __name__ == "__main__":

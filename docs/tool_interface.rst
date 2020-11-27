@@ -234,6 +234,19 @@ View-components definition
 
 .. include:: view_components/read_write_files.rst
 
+----
+
+.. _project_list-label:
+
+.. include:: view_components/project_list.rst
+
+----
+
+.. _scenario_list-label:
+
+.. include:: view_components/scenario_list.rst
+
+----
 
 Abstract-components Definition
 ==============================
@@ -248,6 +261,14 @@ Abstract-components Definition
 .. _scenario-label:
 
 .. include:: abstract_components/scenario.rst
+
+----
+
+.. _project-label:
+
+.. include:: abstract_components/project.rst
+
+----
 
 
 Inputs definition

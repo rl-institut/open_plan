@@ -59,24 +59,32 @@ def generate_parameter_description(input_csv_file, output_rst_file):
     #
     # ----
     #
-    for row in df.iterrows():
+    n_param = len(df.index)
+
+    for i, row in enumerate(df.iterrows()):
         props = row[1]
+        reference = str(props.ref)
+        if reference == "nan":
+            reference = str(props.label).lower().replace(" ", "_")
         lines = (
             lines
             + [
-                f".. _{props.ref}:",
+                f".. _{reference}:",
                 "",
                 props.label,
                 "^" * len(props.label),
                 "",
             ]
             + [f"{p} {props[p]}" for p in parameter_properties]
-            + [
+        )
+
+        # do not print this on the last iteration
+        if i + 1 < n_param:
+            lines = lines + [
                 "",
                 "----",
                 "",
             ]
-        )
 
     # Change name of the index column
     df = df.rename(columns={"label": ":Name:"}).set_index(":Name:")
@@ -138,7 +146,7 @@ import sphinx_rtd_theme
 
 html_theme = "sphinx_rtd_theme"
 
-html_favicon = 'logos/favicon.ico'
+html_favicon = "logos/favicon.ico"
 
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 

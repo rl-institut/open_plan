@@ -2,7 +2,7 @@
 
 Scenario parameters
 -------------------
-Inputs parameters to describe a :ref:`scenario-label`. The do not contain the information about the energy system, which is defined in the :ref:`es_network` view-component.
+Inputs parameters to describe a :ref:`scenario-label`. They do not contain the information about the energy system, which is defined in the :ref:`es_network` view-component.
 
 
 Attributes
@@ -20,8 +20,7 @@ Attributes
         - Link in documentation
 
 
-As the parameters in this list should also be accessible in a more general parameter documentation in ReadTheDocs, they will be automatically listed here from either a .yml or csv file.
-
+You can browse through the list of different :ref:`input parameters<parameters>`
 
 Actions
 ^^^^^^^

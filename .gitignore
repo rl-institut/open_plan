@@ -116,3 +116,4 @@ venv.bak/
 website/static/css/style.css
 docs/*.inc
 docs/_files/input_parameters_list_short.csv
+docs/_files/output_parameters_list_short.csv
