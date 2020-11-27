@@ -254,12 +254,6 @@ View-components definition
 
 ----
 
-.. _load_timeseries-label:
-
-.. include:: view_components/load_consumption_ts.rst
-
-----
-
 Abstract-components Definition
 ==============================
 
