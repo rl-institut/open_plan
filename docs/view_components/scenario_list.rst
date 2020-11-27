@@ -3,49 +3,30 @@
 List of Scenarios
 -----------------
 
-This view-component shows the list of scenarios, both created through the tool or loaded from file, available for further steps in the simulation.
+This view-component shows the list of scenario objects, both created through the tool within the current project or loaded from file, available for further steps in the simulation.
 
 Attributes
 ^^^^^^^^^^
-.. Please refer to the definition of what an attribute is in the tool_interface.rst file
-.. The properties should be filled in only if applicable.
 
-**Attribute A**
-    Description
+**Select**
+    Allows the user to select the scenario object to be loaded as the current project
 
-    Properties:
-        * Property 1
-        * ...
-        * Property n
+**Delete**
+    Allows the user to delete the saved scenario object from the disk
 
-    Actions index:
+**Show**
+    Allows the user to quickly preview the scenario object selected
 
-    Requirements index:
-
-.. [One liner] corresponding indexes from the Actions and Requirements paragraph below
-
-**Attribute B**
-    Description
-
-    Properties:
-        * Property 1
-        * ...
-        * Property n
-
-    Actions index:
-
-    Requirements index:
-
-.. [One liner] corresponding indexes from the Actions and Requirements paragraph below
+**Edit**
+    Allows the user to quickly edit the main scenario parameters
 
 Actions
 ^^^^^^^
-..
-    an action is something one can perform directly from the view-component
-    (i.e. "clicking on this attribute should update this other attribute")
 
-1. Action 1
-2. Action 2
+1. Select the current scenario object
+2. Show the main parameters of any scenario object that the user selects in the list of scenarios
+3. View the list of scenarios objects created in the present project or available on the disk
+4. Delete a scenario object, both saved and unsaved ones
 
 Requirements
 ^^^^^^^^^^^^
@@ -63,22 +44,18 @@ Link with views
 ^^^^^^^^^^^^^^^
 .. use :ref:`<view>-label` to cross link to the view's description directly
 
-:ref:`<view1>-label`
-    Description of the link
-
-:ref:`<view2>-label`
-    Description of the link
-
 Link with other view-components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. use :ref:`<view_component>-label` to cross link to the view-component's description directly
 
-:ref:`<view_component1>-label`
-    Description of the link
+:ref:`scenario-label`
+    The abstract component describing the scenario objects part of this view-component
 
-:ref:`<view_component2>-label`
-    Description of the link
+:ref:`read_write_files-label`
+    VIew-component through which the project objects could be loaded from the disk or written to the disk
 
 Rendering of the view-component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. TBD
+
+1. Rendered as a list which displays all the scenario objects loaded and/or created in the current project
+
+2. Currently selected scenario is highlighted separately
