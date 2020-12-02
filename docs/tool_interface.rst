@@ -4,11 +4,11 @@
 Tool interface description
 **************************
 
-The tool should enable its users to model a local energy system (like an industry park or a district) with the possibility to include sector-coupling. This web-based tool is thought for planning purposes and not operation. It should allow the user to optimize the energy system model subject to equality constraints.
+The tool should enable its users to model a local energy system (like an industry park, a district or a small village) with the possibility to include sector-coupling. This web-based tool is thought for planning purposes and not for operation. It should allow the user to optimize the energy system model subject to equality constraints.
 
 The optimization is taken care of in the backend with the `oemof <https://oemof.org/>`_ framework. The role of the interface is thus to gather the necessary input parameters and to provide a vizualization of the outputs.
 
-It is wished that this interface helps several actors with different perspectives and backgrounds to run scenarios or re-run scenarios changing only a few input parameters, compare their results with other scenarios and possibly engage in a dialogue.
+It is wished that this interface helps several actors with different perspectives and backgrounds to run scenarios or re-run scenarios changing only a few input parameters, compare their results with other scenarios and possibly engage in a dialogue based on the knowledge gained.
 
 One way to fullfill this wish, is to design the tool's interface collaboratively: by inviting different actors in a dialogue about the interface's functionalities before implementing the interface itself.
 
@@ -30,7 +30,7 @@ In order to describe the interface, a few definitions are required at first.
 
 view
 ----
-    Description of a given state of the user interface: what should the user be able to interact with in that *view*, which other *view* can the user visit from the current *view*. The collection of *views* form together the user interface. Note: the view does not describe how the interface looks like to the user, this is described in the *view-rendering*.
+    Description of a given state of the user interface: what should the user be able to interact with in that *view*, which other *view* can the user visit from the current *view*. The collection of *views* form together the user interface. Note: the view does not describe how the interface looks like to the user (e.g. color, position), this is described in the *view-rendering*.
 
 .. _view-component-def:
 
