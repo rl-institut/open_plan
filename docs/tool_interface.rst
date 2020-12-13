@@ -26,23 +26,6 @@ Concepts definition
 
 In order to describe the interface, a few definitions are required at first.
 
-.. _view-def:
-
-view
-----
-    Description of a given state of the user interface: what should the user be able to interact with in that *view*, which other *view* can the user visit from the current *view*. The collection of *views* form together the user interface. Note: the view does not describe how the interface looks like to the user, this is described in the *view-rendering*.
-
-.. _view-component-def:
-
-view-component
---------------
-    A *view-component* is a part of a *view* which can be described independently from the view and could be reused in different *views* (a menu bar for example). A *view-component* is described in terms of its attributes and its actions. For example a menu bar has a nested list of items (each item can itself be a list of item: submenus). Each item, if not itself a list, consists of a label (what the user will see) and an action (what will be done upon clicking/selecting the item).
-
-.. _attribute-def:
-
-attribute
----------
-    An attribute contains the essential information needed to characterize and render a :ref:`view-def` or a :ref:`view-component-def`. An attribute might be visible in the :ref:`view-def` or :ref:`view-component-def` but it can also just be information. An attribute can be linked to a certain number of :ref:`action-def` and to certain :ref:`requirement-def`.
 
 .. _action-def:
 
@@ -51,6 +34,28 @@ action
     An action describes what the user can do in a certain :ref:`view-def` or :ref:`view-component-def`. Each action has an index which is used to link it to an :ref:`attribute-def`.
 
 Example: [index] The user can click on button B to trigger action C
+
+
+.. _attribute-def:
+
+attribute
+---------
+    An attribute contains the essential information needed to characterize and render a :ref:`view-def` or a :ref:`view-component-def`. An attribute might be visible in the :ref:`view-def` or :ref:`view-component-def` but it can also just be information. An attribute can be linked to a certain number of :ref:`action-def` and to certain :ref:`requirement-def`.
+
+
+.. _energy-type-def:
+
+energy type
+-----------
+    An energy type is represented by a bus. It describes the energy carrier for an energy sector: heat, electricity, gas, biomass, H2O.
+
+
+.. _main-window-def:
+
+main window
+-----------
+    It is the window from which the user can interact with the open_plan tool on their computer.
+
 
 .. _requirement-def:
 
@@ -61,23 +66,26 @@ A requirement describes specific conditions of a :ref:`view-def`, a :ref:`view-c
     A requirement describes specific conditions of a :ref:`view-def`, a :ref:`view-component-def`, an :ref:`action-def` or an :ref:`attribute-def`. A requirement specifies necessary actions that need to be done by the user and explains what happens if the requirement is not met. Each requirement has an index which is used to link it to an :ref:`attribute-def`.
  Example: [index] The button B cannot be clicked unless text input C is not filled by user.
 
+
+.. _view-def:
+
+view
+----
+    Description of a given state of the user interface: what should the user be able to interact with in that *view*, which other *view* can the user visit from the current *view*. The collection of *views* form together the user interface. Note: the view does not describe how the interface looks like to the user, this is described in the *view-rendering*.
+
+
+.. _view-component-def:
+
+view-component
+--------------
+    A *view-component* is a part of a *view* which can be described independently from the view and could be reused in different *views* (a menu bar for example). A *view-component* is described in terms of its attributes and its actions. For example a menu bar has a nested list of items (each item can itself be a list of item: submenus). Each item, if not itself a list, consists of a label (what the user will see) and an action (what will be done upon clicking/selecting the item).
+
+
 .. _view-rendering-def:
 
 view-rendering
 --------------
     Description of how a *view* or *component-view* will be rendered on the screen. This belongs to frontend and is where the details about color, size, font, placement on screen matter. For example a menu bar which is a *view-component* can have many different *view-rendering* (horizontal with buttons, expandable vertically only on hover, etc.).
-
-.. _energy-type-def:
-
-energy type
------------
-    An energy type is represented by a bus. It describes the energy carrier for an energy sector: heat, electricity, gas, biomass, H2O.
-
-.. _main-window-def:
-
-main window
------------
-    It is the window from which the user can interact with the open_plan tool on their computer.
 
 
 .. _widget-def:
