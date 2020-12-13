@@ -57,11 +57,25 @@ main window
     It is the window from which the user can interact with the open_plan tool on their computer.
 
 
+.. _project-def:
+
+project
+-------
+    A project is a collection of one to n scenarios regrouping all the inputs and a local copy in a folder of all necessary files for the optimization. A project name and a project ID must be assigned when creating it. A project can also be used for a simple scenario comparison.
+
+
 .. _requirement-def:
 
 requirement
 ------------
     A requirement describes specific conditions that need to be met. Requirements can be used for a :ref:`view-def`, a :ref:`view-component-def`, an :ref:`action-def` or an :ref:`attribute-def`. Each requirement has an index to link with it's :ref:`attribute-def`.
+
+
+.. _scenario-de:
+
+scenario
+--------
+    A scenario holds all the input data for an energy system. Once the optimization is done, the ouput data will be available in the same scenario.
 
 
 .. _view-def:
