@@ -61,10 +61,7 @@ main window
 
 requirement
 ------------
-A requirement describes specific conditions of a :ref:`view-def`, a :ref:`view-component-def`, an :ref:`action-def` or an :ref:`attribute-def` that should be met. Each requirement has an index which is used to link it to an :ref:`attribute-def`.
-.. TODO : rework this sentence
-    A requirement describes specific conditions of a :ref:`view-def`, a :ref:`view-component-def`, an :ref:`action-def` or an :ref:`attribute-def`. A requirement specifies necessary actions that need to be done by the user and explains what happens if the requirement is not met. Each requirement has an index which is used to link it to an :ref:`attribute-def`.
- Example: [index] The button B cannot be clicked unless text input C is not filled by user.
+    A requirement describes specific conditions that need to be met. Requirements can be used for a :ref:`view-def`, a :ref:`view-component-def`, an :ref:`action-def` or an :ref:`attribute-def`. Each requirement has an index to link with it's :ref:`attribute-def`.
 
 
 .. _view-def:
