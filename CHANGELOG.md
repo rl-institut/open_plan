@@ -43,6 +43,7 @@ Here is a template for new release sections
 - Add scss compiler for the website (#68)
 - Website content (#83)
 - Add input and output tables in parameters category (#59)
+- Add definition of a project and a scenario (#102)
 
 
 ### Changed
@@ -52,6 +53,7 @@ Here is a template for new release sections
 - Modify view-component welcome.rst for consistent formatting and correct wording (#69) 
 - Added a link to the RDT in README (#90)
 - Modified the web app and fixed some broken links (#95)
+- Reorganize the concept definitions alphabetically (#102)
 
 ### Removed
 - yet another thing
