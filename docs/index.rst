@@ -11,7 +11,7 @@ open_plan Documentation
    :align: right
 
 
-open_plan is a Python-based, open-source energy-system modeling tool targeted at simulating energy cells e.g. energy systems for industry parks and districts, or mini-grids.
+open_plan is a Python-based, open-source energy system modeling tool targeted at simulating energy cells e.g. energy systems for industry parks and districts, or mini-grids.
 
 It uses the `oemof <https://oemof.org/>`_ framework to describe and optimize the energy system and will provide a user-friendly web-based interface to intereact with python. This will enable users **without python or programming knowledge** to use the tool and simulate energy systems.
 
