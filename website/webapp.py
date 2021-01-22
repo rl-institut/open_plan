@@ -55,12 +55,12 @@ def imprint(request: Request) -> Response:
 
 
 @app.get("/privacy")
-def imprint(request: Request) -> Response:
+def privacy(request: Request) -> Response:
     compile_scss_files()
     return templates.TemplateResponse("privacy.html", {"request": request})
 
 
 @app.get("/publications")
-def imprint(request: Request) -> Response:
+def publications(request: Request) -> Response:
     compile_scss_files()
     return templates.TemplateResponse("publications.html", {"request": request})

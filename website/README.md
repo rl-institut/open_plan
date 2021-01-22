@@ -24,3 +24,13 @@ Any `.scss` file in `/static/css` folder will be converted to a `.css` file auto
     <link rel="stylesheet" href="{{ url_for('static', path='/css/<name of your scss file>.css') }}">
     
 Note the file name is the same, only the extension changes from `.scss` to `.css`
+
+## Generate files for a static website
+
+Execute the script
+
+    python create_static_website.py
+
+from the repository's root, the file will be generated automatically in the repository's root.
+
+The index page is `index.html`

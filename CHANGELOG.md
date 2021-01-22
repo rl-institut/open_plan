@@ -44,7 +44,7 @@ Here is a template for new release sections
 - Website content (#83)
 - Add input and output tables in parameters category (#59)
 - Add definition of a project and a scenario (#102)
-
+- Module `create_static_website.py`, described in `website/README.md` (#109)
 
 ### Changed
 - Modified the view-components according to the changed template (#35)
