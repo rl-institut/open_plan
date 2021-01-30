@@ -42,7 +42,7 @@ def project_created(request: Request) -> Response:
 
 @app.get("/menubar")
 def menu_bar(request: Request) -> Response:
-    return templates.TemplateResponse("menu_bar.html", {"request": request})
+    return templates.TemplateResponse("menu_bar_vc.html", {"request": request})
 
 
 @app.get("/create_project")
@@ -118,6 +118,10 @@ def progression_bar_vc(request: Request) -> Response:
 @app.get("/create_es_comp")
 def create_energysys_comp(request: Request) -> Response:
     return templates.TemplateResponse("insert_es_comp.html", {"request": request})
+
+@app.get("/es_network")
+def create_energysys_comp(request: Request) -> Response:
+    return templates.TemplateResponse("energy_sys_network.html", {"request": request})
 
 @app.get("/load_time_series")
 def load_ts(request: Request) -> Response:
