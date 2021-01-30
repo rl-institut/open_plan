@@ -1,0 +1,22 @@
+{% macro menu(menus_dict) -%}
+
+<nav>
+    <div class="rows">
+        <div class="columns">
+            <ul class="dropdown menu" data-dropdown-menu>
+                {% for (menu_name, list_of_submenus) in menus_dict.items() %}
+                    <li>
+                        <a href="#">{{ menu_name }}</a>
+                        <ul class="menu">
+                            {% for submenu in list_of_submenus %}
+                                <li><a href="#">{{ submenu }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{%- endmacro %}
