@@ -8,8 +8,8 @@
     <h2>Project overview</h2>
     <p class="cell"> On this page you can create new scenarios within you project, load scenario from file or select a scenario in the list</p>
     <div class="cell">
-        <div title="Click here"><h4><a href="{{ url_for('create_scenario') }}">Create New Scenario...</a></h4></div>
-        <div title="Click here"><h4><a href="/load_scenario">Load Scenario from file...</a></h4></div>
+        <div title="Click here"><h4><a href="{{ url_for('create_scenario') }}" class="button">Create New Scenario...</a></h4></div>
+        <div title="Click here">
             <h4>
                 <label for="scenarioFileUpload" class="button alert">Load Scenario from file...</label>
                 <input type="file" id="scenarioFileUpload" class="show-for-sr">
@@ -26,7 +26,7 @@
                 <a href="\select_scenario">Select ...</a>
                 <a href="">Show ...</a>
                 <a href="">Edit ...</a>
-                <a href="">Delete ...</a>
+                <a href="" class="button alert">Delete ...</a>
 
             {% else %}
 

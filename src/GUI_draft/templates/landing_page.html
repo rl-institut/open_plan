@@ -12,9 +12,12 @@
     </div>
 
     <div class="cell">
-        <div title="Click here"><h4><a href="/create_project">Create Project...</a></h4></div>
+        <div title="Click here"><a href="/create_project" class="button success">Create New Project...</a></div>
+        <div title="Click here">
+            <label for="loadProjectFile" class="button">Load Project...</label>
+            <input type="file" id="loadProjectFile" class="show-for-sr">
+        </div>
     </div>
-
 
     <div class="cell">
         <h4><a href="/project_list">Project List VC</a></h4>
@@ -22,10 +25,10 @@
             {% if project %}
 
             <p>Project 1</p>
-            <a href="{{ url_for('project_overview') }}">Select ...</a>
-            <a href="">Show ...</a>
-            <a href="">Edit ...</a>
-            <a href="">Delete ...</a>
+            <a href="{{ url_for('project_overview') }}" class="button primary">Select ...</a>
+            <a href="" class="button success">Show ...</a>
+            <a href="" class="button warning">Edit ...</a>
+            <a href="" class="button alert">Delete ...</a>
 
             {% else %}
 
