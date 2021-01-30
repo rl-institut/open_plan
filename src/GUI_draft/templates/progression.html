@@ -7,7 +7,6 @@
 <div class="grid-x">
     <div class="cell">
         {% import "progression_bar.html" as progression_bar %}
-        <!-- this is just an example, you can complete the dict with all the steps -->
         {{ progression_bar.input(step_idx=step_id, step_map=step_map) }}
     </div>
     {% block progression_content %}
