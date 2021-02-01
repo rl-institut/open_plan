@@ -1,3 +1,16 @@
+.progression_bar_buttons {
+    background-color: #eb5e0b;
+    color: white;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+    padding: 12px 16px;
+}
+
+.progression_bar_buttons:hover {
+    background-color: #00303f;
+    color: white;
+}
 div {
     border-color: red;
     border-width: 2px;

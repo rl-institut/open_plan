@@ -1,14 +1,15 @@
 {% macro input(step_idx=1, step_map={"step1": "Scenario Setup"}) -%}
+
 <div class="grid-x progression_bar">
-    <h4 class="cell"><a href="/progression_bar">Progression Bar VC</a></h4>
     <div class="cell">
         {% for (url, step) in step_map.items() %}
             {% if loop.index <= step_idx + 1 %}
-                <a href="{{ url }}">{{ loop.index }}. {{ step }} </a>
+                <a href="{{ url }}" class="progression_bar_buttons">{{ loop.index }}. {{ step }} </a>
             {% else %}
-                <a>{{ loop.index }}. {{ step }}</a>
+                <a class="progression_bar_buttons">{{ loop.index }}. {{ step }}</a>
             {% endif %}
         {% endfor %}
     </div>
 </div>
+
 {%- endmacro %}
