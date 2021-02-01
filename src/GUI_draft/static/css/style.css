@@ -1,3 +1,22 @@
+.dropdownbuttonstyle {
+  display: none;
+  text-align: center;
+  position: absolute;
+  background-color: #0a043c;
+  color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+}
+
+li a:hover, .dropdownbuttonstyle:hover, ul:hover {
+  background-color: #48426d;
+  text-decoration: none;
+  color: white;
+  z-index: 1;
+  position: absolute;
+}
+
 .progression_bar_buttons {
     background-color: #eb5e0b;
     color: white;

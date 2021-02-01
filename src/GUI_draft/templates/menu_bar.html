@@ -6,8 +6,8 @@
             <ul class="dropdown menu" data-dropdown-menu>
                 {% for (menu_name, list_of_submenus) in menus_dict.items() %}
                     <li>
-                        <a href="#">{{ menu_name }}</a>
-                        <ul class="menu">
+                        <a href="#" class="dropdownbuttonstyle">{{ menu_name }}</a>
+                        <ul class="menu dropbuttons">
                             {% for submenu in list_of_submenus %}
                                 <li><a href="#">{{ submenu }}</a></li>
                             {% endfor %}
