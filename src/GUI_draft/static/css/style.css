@@ -11,6 +11,12 @@
     background-color: #00303f;
     color: white;
 }
+
+.success, .progress, .progress-meter, .progress_barmodal1, .progress-meter-text {
+    border: none;
+}
+
+
 div {
     border-color: red;
     border-width: 2px;
