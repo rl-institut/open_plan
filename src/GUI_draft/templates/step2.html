@@ -6,7 +6,10 @@
 
     <p class="cell">User could either provide timeseries for supply and demand or skip to next step to draw their energy system and provide timeseries there</p>
 
-    <div title="Click here"><h4><a href ="/load_time_series">Load Energy supply Timeseries ...</a></h4></div>
-    <div title="Click here"><h4><a href ="/load_time_series">Load Energy demands Timeseries ...</a></h4></div>
+    <div title="Click here"><h4><label for="supplyTimeseriesFile" class="button">Load Energy supply Timeseries...</label></h4></div>
+    <input type="file" id="supplyTimeseriesFile" class="show-for-sr">
+
+    <div title="Click here"><h4><label for="demandTimeseriesFile" class="button">Load Energy demands Timeseries...</label></h4></div>
+    <input type="file" id="demandTimeseriesFile" class="show-for-sr">
 
 {% endblock progression_content %}

@@ -5,10 +5,22 @@
     <h2 class="cell">Scenario Parameters</h2>
 
     <div title="Click here"><h4><a href="/scenario_parameters">Enter Scenario Parameters VC</a></h4></div>
-    <div title="Click here"><h4><a href="/load_proj_params">Load Scenario Parameters ... </a></h4></div>
-
+    <div title="Click here to load the file containing the scenario parameters">
+        <h4>
+            <label for="scenarioParamsFileUpload" class="button alert">Load Scenario Parameters ...</label>
+            <input type="file" id="scenarioParamsFileUpload" class="show-for-sr">
+        </h4>
+    </div>
 
     <p class="cell">Please choose which energy sector you would like to cover in your energy cell/energy system</p>
-    <div class="cell small-4" title="Click here"><h4><a href="/es_sector">Energy System Sector selector VC</a></h4></div>
 
+    <div  class="sysselecttext">
+        <fieldset class="fieldset">
+            <legend>Sectors in the Energy System</legend>
+                <input id="checkbox12" type="checkbox"><label for="checkbox12">Electricity</label>
+                <input id="checkbox22" type="checkbox"><label for="checkbox22">Heat</label>
+                <input id="checkbox32" type="checkbox"><label for="checkbox32">Hydrogen</label>
+                <input id="checkbox42" type="checkbox"><label for="checkbox42">Mobility</label>
+        </fieldset>
+    </div>
 {% endblock progression_content %}
