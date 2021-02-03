@@ -54,6 +54,7 @@ Here is a template for new release sections
 - Added a link to the RDT in README (#90)
 - Modified the web app and fixed some broken links (#95)
 - Reorganize the concept definitions alphabetically (#102)
+- Replaces the iframe elements showing the relevant docs pages with hyperlinks to readthedocs (#110)
 
 ### Removed
 - yet another thing
