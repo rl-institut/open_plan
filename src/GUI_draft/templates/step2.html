@@ -3,9 +3,12 @@
 {% block title %} Simulation Inputs {% endblock %}
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
 {% block progression_content %}
-    <h2 class="cell">Inputs</h2>
 
-    <p class="cell">User could either provide timeseries for supply and demand or skip to next step to draw their energy system and provide timeseries there</p>
+<div class="grid-x">
+
+    <h2>Inputs</h2>
+
+    <p class="cell">User could either provide timeseries for supply and demand or skip to next step to draw their energy system and provide timeseries there.</p>
     <p class="cell">The time-series files can be uploaded from the file-system of the computer using the view-component to load input data-series described in-detail here in the <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#load-input-data-series" target="_blank">docs</a>.</p>
 
     <div title="Click here"><h4><label for="supplyTimeseriesFile" class="button">Load Energy supply Timeseries...</label></h4></div>
@@ -13,5 +16,7 @@
 
     <div title="Click here"><h4><label for="demandTimeseriesFile" class="button">Load Energy demands Timeseries...</label></h4></div>
     <input type="file" id="demandTimeseriesFile" class="show-for-sr">
+
+</div>
 
 {% endblock progression_content %}
