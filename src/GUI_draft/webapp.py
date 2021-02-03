@@ -40,41 +40,9 @@ def project_created(request: Request) -> Response:
     return landing_page(request, project=1)
 
 
-@app.get("/menubar")
-def menu_bar(request: Request) -> Response:
-    return templates.TemplateResponse("menu_bar_vc.html", {"request": request})
-
-
 @app.get("/create_project")
 def create_project(request: Request) -> Response:
     return templates.TemplateResponse("create_project.html", {"request": request})
-
-
-@app.get("/project_list")
-def create_project(request: Request) -> Response:
-    return templates.TemplateResponse("project_list.html", {"request": request})
-
-
-@app.get("/proj_params")
-def proj_params(request: Request) -> Response:
-    return templates.TemplateResponse("proj_params.html", {"request": request})
-
-
-@app.get("/load_proj_params")
-def load_proj_params(request: Request) -> Response:
-    return templates.TemplateResponse(
-        "load_project_parameters.html", {"request": request}
-    )
-
-
-@app.get("/proj_location")
-def proj_location(request: Request) -> Response:
-    return templates.TemplateResponse("proj_location.html", {"request": request})
-
-
-@app.get("/welcomepage")
-def menu_bar(request: Request) -> Response:
-    return templates.TemplateResponse("welcome_pop_up.html", {"request": request})
 
 
 @app.get("/project_overview")
@@ -82,55 +50,16 @@ def project_overview(request: Request) -> Response:
     return templates.TemplateResponse("project_overview.html", {"request": request})
 
 
-@app.get("/scenario_list")
-def scenario_list(request: Request) -> Response:
-    return templates.TemplateResponse("scenario_list.html", {"request": request})
-
-
 @app.get("/create_scenario")
 def create_scenario(request: Request) -> Response:
     url = request.url_for("progression", step_id=1)
     return RedirectResponse(url=url)
-
-
-@app.get("/load_scenario")
-def load_scenario(request: Request) -> Response:
-    return templates.TemplateResponse("load_scenarío.html", {"request": request})
-
-
-@app.get("/scenario_parameters")
-def scenario_parameters(request: Request) -> Response:
-    return templates.TemplateResponse("scenario_parameters.html", {"request": request})
-
 
 @app.get("/step/{step_id}")
 def progression(request: Request, step_id: int = 1) -> Response:
     return templates.TemplateResponse(
         f"step{step_id}.html", {"request": request, "step_id": step_id}
     )
-
-
-@app.get("/progression_bar")
-def progression_bar_vc(request: Request) -> Response:
-    return templates.TemplateResponse("progression_bar_vc.html", {"request": request})
-
-
-@app.get("/create_es_comp")
-def create_energysys_comp(request: Request) -> Response:
-    return templates.TemplateResponse("insert_es_comp.html", {"request": request})
-
-@app.get("/es_network")
-def create_energysys_comp(request: Request) -> Response:
-    return templates.TemplateResponse("energy_sys_network.html", {"request": request})
-
-@app.get("/load_time_series")
-def load_ts(request: Request) -> Response:
-    return templates.TemplateResponse("load_timeseries.html", {"request": request})
-
-@app.get("/es_sector")
-def select_es_sector(request: Request) -> Response:
-    return templates.TemplateResponse("es_sector_selector.html", {"request": request})
-
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
