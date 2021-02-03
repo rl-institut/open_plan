@@ -7,7 +7,6 @@
 <div class="grid-x">
     <div class="cell">
         {% import "progression_bar.html" as progression_bar %}
-        <!-- this is just an example, you can complete the dict with all the steps -->
         {{ progression_bar.input(step_idx=step_id, step_map=step_map) }}
     </div>
     {% block progression_content %}
@@ -15,17 +14,18 @@
 
     {% endblock progression_content %}
 
-
+</div>
+<div class="grid-x">
     {% if step_id > 1 %}
-        <a class="cell" href="{{ url_for('progression', step_id=step_id-1) }}">Previous</a>
+        <a class="cell small-1 button warning nextprevbut" href="{{ url_for('progression', step_id=step_id-1) }}">Previous</a>
     {% endif %}
 
      {% if step_id < step_map|length %}
-        <a class="cell" href="{{ url_for('progression', step_id=step_id+1) }}">Next</a>
+        <a class="cell small-1 button success nextprevbut" href="{{ url_for('progression', step_id=step_id+1) }}">Next</a>
     {% endif %}
 </div>
 
-<a href="{{ url_for('project_overview') }}">Back to project overview</a>
+<a href="{{ url_for('project_overview') }}" class="button warning">Back to project overview</a>
 
 {% endblock content %}
 

@@ -1,10 +1,22 @@
-{% extends 'base_view_component.html' %}
+{% macro menu(menus_dict) -%}
 
-<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
-{% block content %}
+<nav>
+    <div class="rows">
+        <div class="columns">
+            <ul class="dropdown menu" data-dropdown-menu>
+                {% for (menu_name, list_of_submenus) in menus_dict.items() %}
+                    <li>
+                        <a href="#" class="dropdownbuttonstyle">{{ menu_name }}</a>
+                        <ul class="menu dropbuttons">
+                            {% for submenu in list_of_submenus %}
+                                <li><a href="#">{{ submenu }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>
 
-<p>The menu bar content is described <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#menu-bar">here</a></p>
-
-<iframe src="https://open-plan.readthedocs.io/en/latest/tool_interface.html#menu-bar" width="1000" height="600"></iframe>
-
-{% endblock content %}
+{%- endmacro %}

@@ -4,22 +4,27 @@
 
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
 {% block content %}
-<h4>Create Project View</h4>
-
- <ul>
-  <li>It allows the user to create a new project and enter a name for the project</li>
-</ul>
 
 <div class="grid-x">
+    <h2>Create Project View</h2>
+
+    <div class="cell">
+        <p>This view allows the user to create a new project and enter a name for the project</p>
+    </div>
+
     <div class="cell">
         <div title="Click here"><h4><a href="/proj_params">Project Parameters VC</a></h4></div>
-        <div title="Click here"><h4><a href="/load_proj_params">Load Project Parameters from file VC</a></h4></div>
+        <div title="Click here">
+            <h4>
+                <label for="projParamsFile" class="button">Load Project Parameters from file...</label>
+                <input type="file" id="projParamsFile" class="show-for-sr">
+            </h4>
+        </div>
         <div title="Project Location"><h4><a href="/proj_location">Project Location Map VC</a></h4></div>
     </div>
 
-
     <div class="cell">
-        <div title="Click here will go to the next step"><h4><a href="{{ url_for('project_created') }}">Create Project...</a></h4></div>
+        <div title="Click here will go to the next step"><h4><a href="{{ url_for('project_created') }}" class="success button">Create Project...</a></h4></div>
     </div>
 </div>
 {% endblock content %}
