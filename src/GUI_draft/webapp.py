@@ -55,11 +55,13 @@ def create_scenario(request: Request) -> Response:
     url = request.url_for("progression", step_id=1)
     return RedirectResponse(url=url)
 
+
 @app.get("/step/{step_id}")
 def progression(request: Request, step_id: int = 1) -> Response:
     return templates.TemplateResponse(
         f"step{step_id}.html", {"request": request, "step_id": step_id}
     )
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
