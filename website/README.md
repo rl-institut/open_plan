@@ -15,7 +15,7 @@
 1. Clone the repository locally
 2. [Setup](https://oemof.readthedocs.io/en/latest/installation_and_setup.html#using-virtualenv-community-driven) a virtual environment.
 3. Install the dependencies `pip install -r requirements.txt`
-4. run the app locally with `. website/run_app.sh`, or `uvicorn website.webapp:app --reload --port 5001` you can visualize it in your browser under  `http://127.0.0.1:5001`
+4. run the app locally with `. website/run_app.sh` (linux), or `uvicorn website.webapp:app --reload --port 5001` (windows or linux) you can visualize it in your browser under  `http://127.0.0.1:5001`
 
 ## Scss files
 
