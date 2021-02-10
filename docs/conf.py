@@ -68,13 +68,7 @@ def generate_parameter_description(input_csv_file, output_rst_file):
             reference = str(props.label).lower().replace(" ", "_")
         lines = (
             lines
-            + [
-                f".. _{reference}:",
-                "",
-                props.label,
-                "^" * len(props.label),
-                "",
-            ]
+            + [f".. _{reference}:", "", props.label, "^" * len(props.label), "",]
             + [f"{p} {props[p]}" for p in parameter_properties]
         )
 

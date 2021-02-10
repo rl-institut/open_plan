@@ -1,18 +1,26 @@
 {% extends 'progression.html' %}
 
+{% block title %} Scenario Setup {% endblock %}
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
 {% block progression_content %}
-    <h2 class="cell">Scenario Parameters</h2>
 
-    <div title="Click here"><h4><a href="/scenario_parameters">Enter Scenario Parameters VC</a></h4></div>
-    <div title="Click here to load the file containing the scenario parameters">
+<div class="grid-x">
+
+    <h2>Scenario Parameters</h2>
+
+    <div class="cell">
+
+        <div title="Click here"><h4><a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#scenario-parameters" target="_blank">Enter Scenario Parameters VC</a></h4></div>
+        <div title="Click here to load the file containing the scenario parameters">
         <h4>
             <label for="scenarioParamsFileUpload" class="button alert">Load Scenario Parameters ...</label>
             <input type="file" id="scenarioParamsFileUpload" class="show-for-sr">
         </h4>
     </div>
-
+    </div>
+    <h4><a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#energy-sector-selector" target="_blank">Energy Sector Selector VC</a></h4>
     <p class="cell">Please choose which energy sector you would like to cover in your energy cell/energy system</p>
+
 
     <div  class="sysselecttext">
         <fieldset class="fieldset">
@@ -23,4 +31,6 @@
                 <input id="checkbox42" type="checkbox"><label for="checkbox42">Mobility</label>
         </fieldset>
     </div>
+</div>
+
 {% endblock progression_content %}

@@ -27,7 +27,9 @@ def convert_webapp_to_html_files():
 
             # replace href to other endpoints with html files
             for href in url_list[1:]:
-                html_text = html_text.replace(f'href="{url_base}/{href}"', f'href="{href}.html"')
+                html_text = html_text.replace(
+                    f'href="{url_base}/{href}"', f'href="{href}.html"'
+                )
 
             # fix href to css, js, and images files in the static folder
             html_text = html_text.replace("../static", "website/static")

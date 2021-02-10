@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+
+    <title>{% block title %} Home {% endblock %}</title>
 
     <link
         rel="stylesheet"
@@ -16,6 +17,8 @@
 
 <body>
     {% set menu_map={"File": ['Load project', 'New project', 'Save project', 'Save project as', 'Export project', 'Exit open_plan'], "Scenarios":['New scenario', 'Load scenario', 'Compare scenarios', 'List of scenarios in the system'], "Preferences": ['Language', 'Display', 'Display welcome view'], "Help":['Read documentation', 'Examples and use cases', 'Contact developers', 'Feedback', 'License information', 'About open_plan…']} %}
+
+    <p class="cell">Menu bar view-component is described here in the <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#menu-bar" target="_blank">docs</a>.</p>
 
     <div class="cell">
                 {% import "menu_bar.html" as menu_bar %}

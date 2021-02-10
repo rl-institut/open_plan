@@ -1,16 +1,16 @@
 
 {% extends 'base.html' %}
 
-
+{% block title %} Create Project {% endblock %}
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
 {% block content %}
 
 <div class="grid-x">
     <h2>Create Project View</h2>
 
-    <div class="cell">
-        <p>This view allows the user to create a new project and enter a name for the project</p>
-    </div>
+    <p class="cell">This view allows the user to create a new project and enter a name for the project.</p>
+    <p class="cell">The view component to enter the various project parameters is described in-detail <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#project-parameters" target="_blank">here</a>.</p>
+    <p class="cell">Project parameters can also be directly entered through uploading a file, similar to what is described <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#load-scenario" target="_blank">here</a> for loading scenario files.</p>
 
     <div class="cell">
         <div title="Click here"><h4><a href="/proj_params">Project Parameters VC</a></h4></div>
@@ -20,7 +20,7 @@
                 <input type="file" id="projParamsFile" class="show-for-sr">
             </h4>
         </div>
-        <div title="Project Location"><h4><a href="/proj_location">Project Location Map VC</a></h4></div>
+        <div title="Project Location"><h4><a href="https://open-plan--82.org.readthedocs.build/en/82/tool_interface.html#map-with-project-location" target="_blank">Project Location Map VC</a></h4></div>
     </div>
 
     <div class="cell">

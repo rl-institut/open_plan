@@ -1,26 +1,31 @@
 {% extends 'progression.html' %}
 
+{% block title %} Constraints {% endblock %}
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
 {% block progression_content %}
-    <h2 class="cell">Constraints</h2>
-<div class="cell">
-    <div title="Click here"><h4><a href="">Simulation Constraints VC</a></h4></div>
-    <div title="Click here"><h4><a href="">Set Simulation Constraints VC</a></h4></div>
-</div>
 
-<p><a data-open="exampleModal1" class="progress_barmodal1 button">Run simulation</a></p>
+<div class="grid-x">
 
-<div class="progress_barmodal1 reveal" id="exampleModal1" data-reveal>
-
-    <div class="success progress" role="progressbar" tabindex="0" aria-valuenow="95" aria-valuemin="0" aria-valuetext="95 percent" aria-valuemax="100">
-        <div class="progress-meter" style="width: 95%">
-            <p class="progress-meter-text">95%</p>
-        </div>
+    <h2>Constraints</h2>
+    <div class="cell">
+        <div title="Click here"><h4><a href="">Simulation Constraints VC</a></h4></div>
+        <div title="Click here"><h4><a href="">Set Simulation Constraints VC</a></h4></div>
     </div>
 
-      <button class="close-button" data-close aria-label="Close reveal" type="button">
-          <span aria-hidden="true">&times;</span>
-      </button>
+    <p><a data-open="exampleModal1" class="progress_barmodal1 button">Run simulation</a></p>
+
+    <div class="progress_barmodal1 reveal" id="exampleModal1" data-reveal>
+
+        <div class="success progress" role="progressbar" tabindex="0" aria-valuenow="95" aria-valuemin="0" aria-valuetext="95 percent" aria-valuemax="100">
+            <div class="progress-meter" style="width: 95%">
+                <p class="progress-meter-text">95%</p>
+            </div>
+        </div>
+
+          <button class="close-button" data-close aria-label="Close reveal" type="button">
+              <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
 </div>
 
 {% endblock progression_content %}

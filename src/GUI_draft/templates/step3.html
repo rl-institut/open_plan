@@ -1,13 +1,19 @@
 {% extends 'progression.html' %}
 
+{% block title %} System Setup {% endblock %}
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
 {% block progression_content %}
-    <h2 class="cell">System Setup</h2>
+
+<div class="grid-x">
+
+    <h2>Energy System Setup</h2>
 
     <p class="cell">The user can draw their energy system model here and provide detailed parameters for each component (type of electricity, capacity of power source, cost of fuel etc...)</p>
 
 
-    <div title="Click here"><h4><a href="/create_es_comp">Add Energy System Component VC</a></h4></div>
-    <div title="Click here"><h4><a href="/es_network">Energy System network VC</a></h4></div>
+    <div title="Click here"><h4><a href="https://open-plan--95.org.readthedocs.build/en/95/tool_interface.html#energy-system-component" target="_blank">Add Energy System Component VC</a></h4></div>
+    <div title="Click here"><h4><a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#energy-system-network" target="_blank">Energy System network VC</a></h4></div>
+
+</div>
 
 {% endblock progression_content %}
