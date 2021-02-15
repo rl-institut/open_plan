@@ -5,11 +5,12 @@
 {% block content %}
 
 <div class="grid-x">
-    <h2 class="cell small-9">Landing Page</h2>
-    <p class="cell small-9">A new project can be created using the button "Create New Project..." below. More description of this view-component <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#create-project" target="_blank">here</a>.</p>
-    <p class="cell small-9">Existing project files can also be loaded from the computer's file-system. More details on this <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#load-project" target="_blank">here</a>. Basically, it allows the user to load an existing project file, pre-defined or already-saved from previous simulations</p>
-
-    <div class="cell small-6 view-component">
+    <div class="cell small-9 grid-x box comment">
+        <h2 class="cell">Landing Page</h2>
+        <p class="cell small-7">A new project can be created using the button "Create New Project..." below. More description of this view-component <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#create-project" target="_blank">here</a>.</p>
+        <p class="cell small-7">Existing project files can also be loaded from the computer's file-system. More details on this <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#load-project" target="_blank">here</a>. Basically, it allows the user to load an existing project file, pre-defined or already-saved from previous simulations</p>
+    </div>
+    <div class="cell small-9 view-component">
             <h4><a data-open="exampleModal1">Welcome Pop-up VC</a></h4>
 
             <div class="reveal" id="exampleModal1" data-reveal>
@@ -22,7 +23,7 @@
             </div>
     </div>
 
-    <div class="cell small-8 grid-x projects__menu box">
+    <div class="cell small-9 grid-x projects__menu box">
         <h3 class="cell" >Projects Menu</h3>
         <p class="cell"> From this menu the user should be able to interact with existing projects, please suggest actions that are missing, point out useless features</p>
         <div class="cell small-3"><a href="/create_project" class="button success">Create New Project...</a></div>

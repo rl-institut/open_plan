@@ -41,6 +41,13 @@ li a:hover, .dropdownbuttonstyle:hover, ul:hover {
 .box {
 
     background-color: #7e766a;
+    padding: 1rem;
+    border-radius: 15px;
+
+}
+
+.box.comment{
+ background-color: #62727b;
 
 }
 
@@ -56,6 +63,8 @@ li a:hover, .dropdownbuttonstyle:hover, ul:hover {
 .view-component {
 
  background-color: #968b74;
+ padding: 1rem;
+ border-radius: 15px;
 
 }
 
