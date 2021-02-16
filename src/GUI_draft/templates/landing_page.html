@@ -26,7 +26,7 @@
     <div class="cell small-9 grid-x projects__menu box">
         <h3 class="cell" >Projects Menu</h3>
         <p class="cell"> From this menu the user should be able to interact with existing projects, please suggest actions that are missing, point out useless features</p>
-        <div class="cell small-3"><a href="/create_project" class="button success">Create New Project</a></div>
+        <div class="cell small-3"><a href="{{ url_for('create_project') }}" class="button success">Create New Project</a></div>
         <div class="cell small-3">
             <label for="loadProjectFile" class="button">Load Project</label>
             <input type="file" id="loadProjectFile" class="show-for-sr">
