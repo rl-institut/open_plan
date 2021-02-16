@@ -1,3 +1,6 @@
+{% set step_map={"/step/1": "Scenario Setup", "/step/2": "Inputs", "/step/3": "System Setup", "/step/4": "Visualization", "/step/5": "Constraints", "/step/6": "Results"} %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +20,6 @@
 
 <body id="main">
     {% include "menu_bar.html" %}
-
-    {% set step_map={"/step/1": "Scenario Setup", "/step/2": "Inputs", "/step/3": "System Setup", "/step/4": "Visualization", "/step/5": "Constraints", "/step/6": "Results"} %}
 
     {% block content %}
     {% endblock content %}
