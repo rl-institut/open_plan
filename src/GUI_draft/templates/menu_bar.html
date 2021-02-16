@@ -1,22 +1,29 @@
-{% macro menu(menus_dict) -%}
 
-<nav>
-    <div class="rows">
-        <div class="columns">
+{% set menus_dict={"File": ['Load project', 'New project', 'Save project', 'Save project as', 'Export project', 'Exit open_plan'], "Scenarios":['New scenario', 'Load scenario', 'Compare scenarios', 'List of scenarios in the system'], "Preferences": ['Language', 'Display', 'Display welcome view'], "Help":['Read documentation', 'Examples and use cases', 'Contact developers', 'Feedback', 'License information', 'About open_plan…']} %}
+<div data-sticky-container>
+    <div class="grid-x nav" data-sticky data-options="marginTop:0;">
+
+        <div class="cell small-6 nav-menu">
+            <div class="nav-logo">
+                <a href="https://open-plan-tool.org" target="_blank">
+                  <img src="{{ url_for('static', path='assets/logos/open_plan_logo.svg') }}">
+                </a>
+            </div>
             <ul class="dropdown menu" data-dropdown-menu>
                 {% for (menu_name, list_of_submenus) in menus_dict.items() %}
-                    <li>
-                        <a href="#" class="dropdownbuttonstyle">{{ menu_name }}</a>
-                        <ul class="menu dropbuttons">
+                    <li class="nav-menu__header">
+                        <a class="nav_menu__opt" href="#">{{ menu_name }}</a>
+                        <ul class="vertical menu nested">
                             {% for submenu in list_of_submenus %}
-                                <li><a href="#">{{ submenu }}</a></li>
+                                <li><a class="nav_menu__opt" href="#">{{ submenu }}</a></li>
                             {% endfor %}
                         </ul>
                     </li>
                 {% endfor %}
             </ul>
         </div>
-    </div>
-</nav>
+        <div class="cell auto">
 
-{%- endmacro %}
+        </div>
+    </div>
+</div>
