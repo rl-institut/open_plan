@@ -1,3 +1,11 @@
+/*
+ #e6e6de  Light shades Use this color as the background for your dark-on-light designs, or the text color of an inverted design.
+ #968b74  Light accent: Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette.
+ #7e766a  Main brand color: This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.
+ #62727b  Dark accent: Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best.
+ #292e24  Dark shades: Use as the text color for dark-on-light designs, or as the background for inverted designs.
+ #
+*/
 
 .progression_bar_buttons {
     background-color: #eb5e0b;
@@ -49,7 +57,8 @@
     background-color: #7e766a;
     padding: 1rem;
     border-radius: 15px;
-
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .box.comment{
@@ -75,25 +84,13 @@
 }
 
 
-/*
- #e6e6de  Light shades Use this color as the background for your dark-on-light designs, or the text color of an inverted design.
- #968b74  Light accent: Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette.
- #7e766a  Main brand color: This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.
- #62727b  Dark accent: Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best.
- #292e24  Dark shades: Use as the text color for dark-on-light designs, or as the background for inverted designs.
- #
-*/
+
 #main{
 
  background-color: #e6e6de;
 }
 
 div {
-    /*border-color: red;
-    border-width: 2px;
-    border-style: solid;*/
-    padding: 2px;
-    margin-bottom: 0.5rem;
     display: flex;
     justify-content: center;
 }
