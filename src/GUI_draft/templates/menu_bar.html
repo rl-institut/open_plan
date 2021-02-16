@@ -18,7 +18,7 @@ set menus_dict={
 "Preferences": {
     'Language': "",
     'Display': "",
-    'Display welcome view': ""
+    'Display welcome popup': ""
 },
 "Help": {
     'Read documentation': "https://open-plan.readthedocs.io/en/latest/index.html",
@@ -46,7 +46,11 @@ set menus_dict={
                         <ul class="vertical menu nested dropdown nav_submenu" data-dropdown-menu>
                             {% for (submenu, menu_link) in list_of_submenus.items() %}
                                 <li>
-                                    <a class="nav_menu__opt nav_submenu_opt" href="{{ menu_link }}">{{ submenu }}</a>
+                                    {% if submenu == "Display welcome popup" %}
+                                        <a class="nav_menu__opt nav_submenu_opt" data-open="welcome-popup">{{ submenu }}</a>
+                                    {% else %}
+                                        <a class="nav_menu__opt nav_submenu_opt" href="{{ menu_link }}">{{ submenu }}</a>
+                                    {% endif %}
                                     <!-- to continue one more level
                                     <ul class="horizontal menu nested nav_submenu">
                                         <li>
