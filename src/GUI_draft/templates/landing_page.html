@@ -5,14 +5,15 @@
 {% block content %}
 
 <div class="grid-x">
-    <h2>Landing Page</h2>
-    <p class="cell">A new project can be created using the button "Create New Project..." below. More description of this view-component <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#create-project" target="_blank">here</a>.</p>
-    <p class="cell">Existing project files can also be loaded from the computer's file-system. More details on this <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#load-project" target="_blank">here</a>. Basically, it allows the user to load an existing project file, pre-defined or already-saved from previous simulations</p>
+    <div class="cell small-9 grid-x box comment">
+        <h2 class="cell">Landing Page</h2>
+        <p class="cell small-7">A new project can be created using the button "Create New Project..." below. More description of this view-component <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#create-project" target="_blank">here</a>.</p>
+        <p class="cell small-7">Existing project files can also be loaded from the computer's file-system. More details on this <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#load-project" target="_blank">here</a>. Basically, it allows the user to load an existing project file, pre-defined or already-saved from previous simulations</p>
+    </div>
+    <div class="cell small-9 view-component">
+            <h4><a data-open="welcome-popup">Welcome Pop-up VC</a></h4>
 
-    <div class="cell">
-            <h4><a data-open="exampleModal1">Welcome Pop-up</a></h4>
-
-            <div class="reveal" id="exampleModal1" data-reveal>
+            <div class="reveal" id="welcome-popup" data-reveal>
                 <p>Welcome to open_plan tool's early-stage UI!</p>
                 <p>More description of this component can be found <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#welcome-page" target="_blank">here</a></p>
 
@@ -22,32 +23,34 @@
             </div>
     </div>
 
-    <div class="cell">
-        <div title="Click here"><a href="/create_project" class="button success">Create New Project...</a></div>
-        <div title="Click here">
-            <label for="loadProjectFile" class="button">Load Project...</label>
+    <div class="cell small-9 grid-x projects__menu box">
+        <h3 class="cell" >Projects Menu</h3>
+        <p class="cell"> From this menu the user should be able to interact with existing projects, please suggest actions that are missing, point out useless features</p>
+        <div class="cell small-3"><a href="{{ url_for('create_project') }}" class="button success">Create New Project</a></div>
+        <div class="cell small-3">
+            <label for="loadProjectFile" class="button">Load Project</label>
             <input type="file" id="loadProjectFile" class="show-for-sr">
         </div>
-    </div>
 
-    <div class="cell">
-        <h4><a href="https://open-plan.readthedocs.io/en/latest//tool_interface.html#list-of-projects" target="_blank">Project List VC</a></h4>
-        <div>
-            {% if project %}
+        <div class="cell small-9 grid-x projects__list view-component">
+            <h4 class="cell"><a href="https://open-plan.readthedocs.io/en/latest//tool_interface.html#list-of-projects" target="_blank">Project List VC</a></h4>
+            <div class="cell small-8 grid-x grid-margin-x">
+                <!-- here the projects will be loaded from models DB, only dummy for the moment -->
+                {% if project %}
+                <p class="cell small-2 ">Project 1</p>
+                <a href="{{ url_for('project_overview') }}" class="cell auto button primary">Select</a>
+                <a href="" class="cell auto  button success">Show</a>
+                <a href="" class="cell auto button warning">Edit</a>
+                <a href="" class="cell auto button alert">Delete</a>
 
-            <p>Project 1</p>
-            <a href="{{ url_for('project_overview') }}" class="button primary">Select ...</a>
-            <a href="" class="button success">Show ...</a>
-            <a href="" class="button warning">Edit ...</a>
-            <a href="" class="button alert">Delete ...</a>
+                {% else %}
 
-            {% else %}
+                    You don't have any project yet, please create one by clicking on "Create New    Project" button
 
-                You don't have any project yet, please create one by clicking on "Create Project" button
+                {% endif %}
 
-            {% endif %}
-
-         </div>
+             </div>
+        </div>
     </div>
 
 </div>

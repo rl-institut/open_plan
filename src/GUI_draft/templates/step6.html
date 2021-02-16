@@ -1,49 +1,67 @@
 {% extends 'progression.html' %}
 
-{% block title %} Results {% endblock %}
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
 {% block progression_content %}
-    <h2 class="cell">Results</h2>
 
-    <div title="Select Scenarios for comparison"><h4><a href="">Compare Scenarios VC</a></h4></div>
-    <div title="Click to Zoom in"><h4><a href="">Time Series plots VC</a></h4></div>
-    <div title="KPIs at a glance"><h4><a href="">KPIs Table VC</a></h4></div>
+<div class="grid-x">
 
-    <div title="Click here to choose a format to export results">
-        <h4><a data-open="exampleModal1">Export Results VC</a></h4>
 
-        <div class="large reveal" id="exampleModal1" data-reveal>
+    <div class="cell small-9 grid-x grid-margin-x box">
+        <h2 class="cell">{{ step_map["/step/"+step_id|string] }}</h2>
 
-            <p>Please choose a format in which to export the results:</p>
-            <div class="row">
-              <div class="columns">
-                <ul class="dropdown menu" data-dropdown-menu>
-                  <li><button class="button">Select format...</button>
-                    <ul class="menu">
-                        <li><a href="#pdf_file">PDF</a></li>
-                        <li><a href="#html_file">HTML</a></li>
-                        <li><a href="#html_file">JSON</a></li>
-                        <li><a href="#html_file">XPS</a></li>
-                        <li><a href="#html_file">CSV</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-          <button class="close-button" data-close aria-label="Close reveal" type="button">
-              <span aria-hidden="true">&times;</span>
-          </button>
-
-            <div>
-                <a href="#" download="file">
-                    <button class="button success">Export file</button>
-                </a>
-            </div>
+        <div class="cell auto grid-x view-component" title="Select Scenarios for comparison">
+            <h4 class="cell"><a href="">Compare Scenarios VC</a></h4>
+            <p class="cell">Ability to select another scenario from this project's scenario list</p>
         </div>
+
+        <div class="cell auto grid-x view-component" title="Click to Zoom in">
+            <h4 class="cell"><a href="">Time Series plots VC</a></h4>
+            <p class="cell">Ability to select the parameters one wants to see plotted</p>
+        </div>
+
+        <div class="cell auto grid-x view-component" title="KPIs at a glance">
+            <h4 class="cell"><a href="">KPIs Table VC</a></h4>
+            <p class="cell">Ability to see the KPI in tables as summary</p>
+        </div>
+
+        <div class="cell auto grid-x view-component" title="Click here to choose a format to export results">
+            <h4 class="cell"><a data-open="export">Export Results VC</a></h4>
+            <p class="cell">Ability to export the results of the simulation in different formats</p>
+        </div>
+
     </div>
 
+</div>
 
+<div class="large reveal" id="export" data-reveal>
+
+    <p>Please choose a format in which to export the results:</p>
+    <div class="row">
+      <div class="columns">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li><button class="button">Select format...</button>
+            <ul class="menu">
+                <li><a href="#pdf_file">PDF</a></li>
+                <li><a href="#html_file">HTML</a></li>
+                <li><a href="#html_file">JSON</a></li>
+                <li><a href="#html_file">XPS</a></li>
+                <li><a href="#html_file">CSV</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  <button class="close-button" data-close aria-label="Close reveal" type="button">
+      <span aria-hidden="true">&times;</span>
+  </button>
+
+    <div>
+        <a href="#" download="file">
+            <button class="button success">Export file</button>
+        </a>
+    </div>
+</div>
 
 
 {% endblock progression_content %}

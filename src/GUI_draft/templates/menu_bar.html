@@ -1,15 +1,68 @@
-{% macro menu(menus_dict) -%}
 
-<nav>
-    <div class="rows">
-        <div class="columns">
-            <ul class="dropdown menu" data-dropdown-menu>
+{%
+set menus_dict={
+"File": {
+    'Load project': "",
+    'New project': url_for('create_project'),
+    'Save project': "",
+    'Save project as': "",
+    'Export project': "",
+    'Exit open_plan': ""
+},
+"Scenarios": {
+    'New scenario': url_for('create_scenario'),
+    'Load scenario': "",
+    'Compare scenarios': "",
+    'List of scenarios in the system': ""
+},
+"Preferences": {
+    'Language': "",
+    'Display': "",
+    'Display welcome popup': ""
+},
+"Help": {
+    'Read documentation': "https://open-plan.readthedocs.io/en/latest/index.html",
+    'Examples and use cases': "",
+    'Contact developers': "https://github.com/rl-institut/open_plan/discussions",
+    'Feedback': "https://github.com/rl-institut/open_plan/discussions",
+    'License information': url_for('licenses'),
+    'About open_plan…': "https://open-plan-tool.org/"
+}
+}
+%}
+<div data-sticky-container>
+    <div class="grid-x nav" data-sticky data-options="marginTop:0;">
+
+        <div class="cell nav-menu">
+            <div class="nav-logo">
+                <a href="https://open-plan-tool.org" target="_blank">
+                  <img src="{{ url_for('static', path='assets/logos/open_plan_logo.svg') }}">
+                </a>
+            </div>
+            <ul class="dropdown horizontal menu" data-dropdown-menu>
                 {% for (menu_name, list_of_submenus) in menus_dict.items() %}
-                    <li>
-                        <a href="#" class="dropdownbuttonstyle">{{ menu_name }}</a>
-                        <ul class="menu dropbuttons">
-                            {% for submenu in list_of_submenus %}
-                                <li><a href="#">{{ submenu }}</a></li>
+                    <li class="nav-menu__header">
+                        <a class="nav_menu__opt" href="#">{{ menu_name }}</a>
+                        <ul class="vertical menu nested dropdown nav_submenu" data-dropdown-menu>
+                            {% for (submenu, menu_link) in list_of_submenus.items() %}
+                                <li>
+                                    {% if submenu == "Display welcome popup" %}
+                                        <a class="nav_menu__opt nav_submenu_opt" data-open="welcome-popup">{{ submenu }}</a>
+                                    {% else %}
+                                        <a class="nav_menu__opt nav_submenu_opt" href="{{ menu_link }}">{{ submenu }}</a>
+                                    {% endif %}
+                                    <!-- to continue one more level
+                                    <ul class="horizontal menu nested nav_submenu">
+                                        <li>
+                                            <a class="nav_menu__opt" href="#">test1</a>
+                                        </li>
+                                        <li>
+                                            <a class="nav_menu__opt" href="#">test2</a>
+                                        </li>
+                                    </ul>
+                                    -->
+
+                                </li>
                             {% endfor %}
                         </ul>
                     </li>
@@ -17,6 +70,4 @@
             </ul>
         </div>
     </div>
-</nav>
-
-{%- endmacro %}
+</div>

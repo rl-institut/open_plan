@@ -1,21 +1,11 @@
-.dropdownbuttonstyle {
-  display: none;
-  text-align: center;
-  position: absolute;
-  background-color: #0a043c;
-  color: white;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-}
-
-li a:hover, .dropdownbuttonstyle:hover, ul:hover {
-  background-color: #48426d;
-  text-decoration: none;
-  color: white;
-  z-index: 1;
-  position: absolute;
-}
+/*
+ #e6e6de  Light shades Use this color as the background for your dark-on-light designs, or the text color of an inverted design.
+ #968b74  Light accent: Accent colors can be used to bring attention to design elements by contrasting with the rest of the palette.
+ #7e766a  Main brand color: This color should be eye-catching but not harsh. It can be liberally applied to your layout as its main identity.
+ #62727b  Dark accent: Another accent color to consider. Not all colors have to be used - sometimes a simple color scheme works best.
+ #292e24  Dark shades: Use as the text color for dark-on-light designs, or as the background for inverted designs.
+ #
+*/
 
 .progression_bar_buttons {
     background-color: #eb5e0b;
@@ -35,19 +25,125 @@ li a:hover, .dropdownbuttonstyle:hover, ul:hover {
     border: none;
 }
 
+.nav{
+    background-color:#7e766a;
+    width: 100%;
+}
+
+.nav-logo img{
+    height: 4rem;
+    padding: 0.25rem;
+    padding-right: 1rem;
+}
+
+.nav-menu{
+    justify-content: flex-start;
+    padding-left: 2.5rem;
+    align-items: center;
+}
+
+.nav_menu__opt{
+    color: #292e24;
+}
+
+.nav_menu__opt:hover{
+    color:  #e6e6de !important;
+}
+
+.nav_submenu{
+   background-color: #7e766a;
+   border-width: 0;
+   margin-top: 0.8rem;
+}
+
+.nav-menu__header{
+    padding-right: 4rem; /* adjust the space between menu items */
+}
+
+
+/*overwrite foundation dropdown sytling*/
+
+/* Menu options not hovered on*/
+.dropdown.menu > li> a{
+    color: #292e24;
+}
+/* Menu arrows not hovered on*/
+.dropdown.menu > li.nav-menu__header > a::after{
+	border-color:  #292e24 transparent transparent;
+}
+.vertical.menu.nested.nav_submenu > li > a::after{
+    border-color:  transparent transparent transparent #292e24;
+}
+.horizontal.menu.nested.nav_submenu > li > a::after{
+    border-color:  #292e24 transparent transparent;
+}
+
+/* Menu options hovered on*/
+.dropdown.menu > li.is-active > a{
+    color: #e6e6de;
+}
+/* Menu arrows hovered on*/
+.dropdown.menu > li.is-active > a::after{
+	border-color:  #e6e6de transparent transparent;
+}
+.vertical.menu.nested.nav_submenu > li.is-active > a::after{
+    border-color:  transparent transparent transparent #e6e6de;
+}
+.horizontal.menu.nested.nav_submenu > li.is-active > a::after{
+    border-color:  #e6e6de transparent transparent;
+}
+
+
+
+/* LANDING PAGE */
+
+.box {
+
+    background-color: #7e766a;
+    padding: 1rem;
+    border-radius: 15px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.box.comment{
+ background-color: #62727b;
+
+}
+
+.projects__menu{
+
+}
+
+.projects_list{
+
+
+}
+
+.view-component {
+
+ background-color: #968b74;
+ padding: 1rem;
+ border-radius: 15px;
+ margin-top: 1rem;
+ margin-bottom: 1rem;
+}
+
+
+
+#main{
+
+ background-color: #e6e6de;
+}
 
 div {
-    border-color: red;
-    border-width: 2px;
-    border-style: solid;
-    padding: 2px;
-    margin-bottom: 0.5rem;
     display: flex;
     justify-content: center;
 }
 
 p {
     text-align: center;
+    font-size: 20px;
 }
 
 .sysselecttext {
@@ -60,6 +156,11 @@ p {
     margin-right: 0.3rem;
 }
 
+.progression-buttons{
+    justify-content: flex-end;
+    margin-right: 12.5%;
+}
+
 a, .button {
   font-family: sans-serif;
   box-sizing: border-box;
@@ -67,13 +168,6 @@ a, .button {
   font-weight:600;
 }
 
-.dropdown, .menu {
-  box-sizing: border-box;
-  color: #ffffff;
-  padding: 16px;
-  font-size: 16px;
-  font-weight: 700;
-}
 
 .nextprevbut {
     justify-content: center;

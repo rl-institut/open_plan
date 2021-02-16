@@ -6,36 +6,41 @@
 
 <div class="grid-x">
 
-    <h2>Project overview</h2>
-    <p class="cell"> On this page you can create new scenarios within you project, load scenario from file or select a scenario in the list</p>
-    <div class="cell">
-        <div title="Click here"><h4><a href="{{ url_for('create_scenario') }}" class="button">Create New Scenario...</a></h4></div>
-        <div title="Click here">
-            <h4>
-                <label for="scenarioFileUpload" class="button alert">Load Scenario from file...</label>
-                <input type="file" id="scenarioFileUpload" class="show-for-sr">
-            </h4>
-        </div>
+
+
+    <div class="cell small-9 grid-x box comment">
+        <h2 class="cell">Project overview</h2>
+        <p class="cell"> On this page you can create new scenarios within you project, load scenario from file or select a scenario in the list</p>
     </div>
 
-    <div class="cell">
-        <h4><a href="https://open-plan.readthedocs.io/en/latest//tool_interface.html#list-of-scenarios" target="_blank">Scenario List VC</a></h4>
-        <div>
-            {% if scenario %}
+    <div class="cell small-9 grid-x box">
 
-                <p>Scenario 1</p>
-                <a href="\select_scenario">Select ...</a>
-                <a href="">Show ...</a>
-                <a href="">Edit ...</a>
-                <a href="" class="button alert">Delete ...</a>
 
-            {% else %}
-
-                You don't have any scenarios yet, please create one by clicking on "Create Scenario" button
-
-            {% endif %}
-
+        <div class="cell small-3"><a href="{{ url_for('create_scenario') }}" class="button">Create New Scenario</a></div>
+        <div class="cell small-3">
+            <label for="scenarioFileUpload" class="button alert">Load Scenario from file</label>
+            <input type="file" id="scenarioFileUpload" class="show-for-sr">
         </div>
+        <div class="cell grid-x view-component">
+            <h4 class="cell"><a href="https://open-plan.readthedocs.io/en/latest//tool_interface.html#list-of-scenarios" target="_blank">Scenario List VC</a></h4>
+            <div class="cell small-8 grid-x grid-margin-x">
+                {% if scenario %}
+
+                    <p class="cell small-2" >Scenario 1</p>
+                    <a class="cell auto" href="">Select</a>
+                    <a class="cell auto" href="">Show</a>
+                    <a class="cell auto" href="">Edit</a>
+                    <a class="cell auto" href="" class="button alert">Delete</a>
+
+                {% else %}
+
+                    <p class="cell">You don't have any scenarios yet, please create one by clicking on "Create New Scenario" button</p>
+
+                {% endif %}
+
+            </div>
+
+         </div>
 
     </div>
 

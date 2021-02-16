@@ -1,23 +1,28 @@
 {% extends 'base.html' %}
 
+{% block title %} {{ step_map["/step/"+step_id|string] }} {% endblock title%}
+
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
 {% block content %}
 
 
 <div class="grid-x">
 
-    <p class="cell">Progression Bar view-component, shown below, is described in-detail in the docs <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#progression-bar" target="_blank">here</a>.</p>
-    <div class="cell">
+    <div class="cell small-9 grid-x view-component">
+        <h4 class="cell"><a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#progression-bar" target="_blank">Progression bar VC</a></h4>
         {% import "progression_bar.html" as progression_bar %}
         {{ progression_bar.input(step_idx=step_id, step_map=step_map) }}
     </div>
+
+
+
     {% block progression_content %}
 
 
     {% endblock progression_content %}
 
 </div>
-<div class="grid-x">
+<div class="grid-x progression-buttons">
     {% if step_id > 1 %}
         <a class="cell small-1 button warning nextprevbut" href="{{ url_for('progression', step_id=step_id-1) }}">Previous</a>
     {% endif %}

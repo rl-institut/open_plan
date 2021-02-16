@@ -55,6 +55,7 @@ Here is a template for new release sections
 - Modified the web app and fixed some broken links (#95)
 - Reorganize the concept definitions alphabetically (#102)
 - Replaces the iframe elements showing the relevant docs pages with hyperlinks to readthedocs (#110)
+- Make the webapp more visually friendly (#116)
 
 ### Removed
 - yet another thing

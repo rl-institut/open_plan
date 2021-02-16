@@ -63,5 +63,10 @@ def progression(request: Request, step_id: int = 1) -> Response:
     )
 
 
+@app.get("/licenses")
+def licenses(request: Request) -> Response:
+    return templates.TemplateResponse("licenses.html", {"request": request})
+
+
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
