@@ -125,7 +125,8 @@
  background-color: #968b74;
  padding: 1rem;
  border-radius: 15px;
-
+ margin-top: 1rem;
+ margin-bottom: 1rem;
 }
 
 
@@ -142,6 +143,7 @@ div {
 
 p {
     text-align: center;
+    font-size: 20px;
 }
 
 .sysselecttext {
