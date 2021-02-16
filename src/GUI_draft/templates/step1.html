@@ -6,31 +6,36 @@
 
 <div class="grid-x">
 
-    <h2>Scenario Parameters</h2>
+    <div class="cell small-9 grid-x grid-margin-x box">
+        <h2 class="cell">{{ step_map["/step/"+step_id|string] }}</h2>
 
-    <div class="cell">
+        <div class="cell auto grid-x view-component">
+            <h4 class="cell"><a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#energy-sector-selector" target="_blank">Energy Sector Selector VC</a></h4>
+            <div class="cell grid-x">
+                <p class="cell">Please choose which energy sector you would like to cover in your energy cell/energy system</p>
 
-        <div title="Click here"><h4><a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#scenario-parameters" target="_blank">Enter Scenario Parameters VC</a></h4></div>
-        <div title="Click here to load the file containing the scenario parameters">
-        <h4>
-            <label for="scenarioParamsFileUpload" class="button alert">Load Scenario Parameters ...</label>
-            <input type="file" id="scenarioParamsFileUpload" class="show-for-sr">
-        </h4>
+                <div class="cell sysselecttext">
+                    <fieldset class="fieldset">
+                        <legend>Sectors in the Energy System</legend>
+                            <input id="checkbox12" type="checkbox"><label for="checkbox12">Electricity</label>
+                            <input id="checkbox22" type="checkbox"><label for="checkbox22">Heat</label>
+                            <input id="checkbox32" type="checkbox"><label for="checkbox32">Hydrogen</label>
+                            <input id="checkbox42" type="checkbox"><label for="checkbox42">Mobility</label>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+        <div class="cell auto grid-x view-component">
+            <h4 class="cell"><a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#scenario-parameters" target="_blank">Enter Scenario Parameters VC</a></h4>
+            <p class="cell" title="Click here to load the file containing the scenario parameters">
+                <label for="scenarioParamsFileUpload" class="button alert">Load Scenario Parameters</label>
+                <input type="file" id="scenarioParamsFileUpload" class="show-for-sr">
+            </p>
+        </div>
+
     </div>
-    </div>
-    <h4><a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#energy-sector-selector" target="_blank">Energy Sector Selector VC</a></h4>
-    <p class="cell">Please choose which energy sector you would like to cover in your energy cell/energy system</p>
 
-
-    <div  class="sysselecttext">
-        <fieldset class="fieldset">
-            <legend>Sectors in the Energy System</legend>
-                <input id="checkbox12" type="checkbox"><label for="checkbox12">Electricity</label>
-                <input id="checkbox22" type="checkbox"><label for="checkbox22">Heat</label>
-                <input id="checkbox32" type="checkbox"><label for="checkbox32">Hydrogen</label>
-                <input id="checkbox42" type="checkbox"><label for="checkbox42">Mobility</label>
-        </fieldset>
-    </div>
 </div>
 
 {% endblock progression_content %}

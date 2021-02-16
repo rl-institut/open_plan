@@ -156,6 +156,11 @@ p {
     margin-right: 0.3rem;
 }
 
+.progression-buttons{
+    justify-content: flex-end;
+    margin-right: 12.5%;
+}
+
 a, .button {
   font-family: sans-serif;
   box-sizing: border-box;

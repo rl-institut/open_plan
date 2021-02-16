@@ -5,16 +5,27 @@
 
 <div class="grid-x">
 
-    <h2>Inputs</h2>
 
-    <p class="cell">User could either provide timeseries for supply and demand or skip to next step to draw their energy system and provide timeseries there.</p>
-    <p class="cell">The time-series files can be uploaded from the file-system of the computer using the view-component to load input data-series described in-detail here in the <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#load-input-data-series" target="_blank">docs</a>.</p>
 
-    <div title="Click here"><h4><label for="supplyTimeseriesFile" class="button">Load Energy supply Timeseries...</label></h4></div>
-    <input type="file" id="supplyTimeseriesFile" class="show-for-sr">
+    <div class="cell small-9 grid-x grid-margin-x box">
+        <h2 class="cell">{{ step_map["/step/"+step_id|string] }}</h2>
 
-    <div title="Click here"><h4><label for="demandTimeseriesFile" class="button">Load Energy demands Timeseries...</label></h4></div>
-    <input type="file" id="demandTimeseriesFile" class="show-for-sr">
+        <p class="cell">User could either provide timeseries for supply and demand or skip to next step to draw their energy system and provide timeseries there.</p>
+        <p class="cell">The time-series files can be uploaded from the file-system of the computer using the view-component to load input data-series described in-detail here in the <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#load-input-data-series" target="_blank">docs</a>.</p>
+
+
+        <div class="cell auto">
+            <label for="supplyTimeseriesFile" class="button">Load Energy supply Timeseries</label>
+            <input type="file" id="supplyTimeseriesFile" class="show-for-sr">
+        </div>
+
+        <div class="cell auto">
+            <label for="demandTimeseriesFile" class="button">Load Energy demands Timeseries</label>
+            <input type="file" id="demandTimeseriesFile" class="show-for-sr">
+        </div>
+
+    </div>
+
 
 </div>
 

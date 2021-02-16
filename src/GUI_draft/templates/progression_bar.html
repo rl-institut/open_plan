@@ -1,6 +1,6 @@
 {% macro input(step_idx=1, step_map={"step1": "Scenario Setup"}) -%}
 
-<div class="grid-x progression_bar">
+<div class="cell grid-x progression_bar">
     <div class="cell">
         {% for (url, step) in step_map.items() %}
             {% if loop.index <= step_idx + 1 %}
