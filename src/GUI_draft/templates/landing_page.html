@@ -34,18 +34,18 @@
 
         <div class="cell small-9 grid-x projects__list view-component">
             <h4 class="cell"><a href="https://open-plan.readthedocs.io/en/latest//tool_interface.html#list-of-projects" target="_blank">Project List VC</a></h4>
-            <div class="cell small-8">
+            <div class="cell small-8 grid-x grid-margin-x">
                 <!-- here the projects will be loaded from models DB, only dummy for the moment -->
                 {% if project %}
-                <p>Project 1</p>
-                <a href="{{ url_for('project_overview') }}" class="button primary">Select ...</a>
-                <a href="" class="button success">Show ...</a>
-                <a href="" class="button warning">Edit ...</a>
-                <a href="" class="button alert">Delete ...</a>
+                <p class="cell small-2 ">Project 1</p>
+                <a href="{{ url_for('project_overview') }}" class="cell auto button primary">Select</a>
+                <a href="" class="cell auto  button success">Show</a>
+                <a href="" class="cell auto button warning">Edit</a>
+                <a href="" class="cell auto button alert">Delete</a>
 
                 {% else %}
 
-                    You don't have any project yet, please create one by clicking on "Create Project" button
+                    You don't have any project yet, please create one by clicking on "Create New    Project" button
 
                 {% endif %}
 
