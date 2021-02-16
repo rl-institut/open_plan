@@ -1,5 +1,35 @@
 
-{% set menus_dict={"File": ['Load project', 'New project', 'Save project', 'Save project as', 'Export project', 'Exit open_plan'], "Scenarios":['New scenario', 'Load scenario', 'Compare scenarios', 'List of scenarios in the system'], "Preferences": ['Language', 'Display', 'Display welcome view'], "Help":['Read documentation', 'Examples and use cases', 'Contact developers', 'Feedback', 'License information', 'About open_plan…']} %}
+{%
+set menus_dict={
+"File": {
+    'Load project': "",
+    'New project': url_for('create_project'),
+    'Save project': "",
+    'Save project as': "",
+    'Export project': "",
+    'Exit open_plan': ""
+},
+"Scenarios": {
+    'New scenario': url_for('create_scenario'),
+    'Load scenario': "",
+    'Compare scenarios': "",
+    'List of scenarios in the system': ""
+},
+"Preferences": {
+    'Language': "",
+    'Display': "",
+    'Display welcome view': ""
+},
+"Help": {
+    'Read documentation': "https://open-plan.readthedocs.io/en/latest/index.html",
+    'Examples and use cases': "",
+    'Contact developers': "https://github.com/rl-institut/open_plan/discussions",
+    'Feedback': "https://github.com/rl-institut/open_plan/discussions",
+    'License information': url_for('licenses'),
+    'About open_plan…': "https://open-plan-tool.org/"
+}
+}
+%}
 <div data-sticky-container>
     <div class="grid-x nav" data-sticky data-options="marginTop:0;">
 
@@ -9,13 +39,26 @@
                   <img src="{{ url_for('static', path='assets/logos/open_plan_logo.svg') }}">
                 </a>
             </div>
-            <ul class="dropdown menu" data-dropdown-menu>
+            <ul class="dropdown horizontal menu" data-dropdown-menu>
                 {% for (menu_name, list_of_submenus) in menus_dict.items() %}
                     <li class="nav-menu__header">
                         <a class="nav_menu__opt" href="#">{{ menu_name }}</a>
-                        <ul class="vertical menu nested nav_submenu">
-                            {% for submenu in list_of_submenus %}
-                                <li><a class="nav_menu__opt nav_submenu_opt" href="#">{{ submenu }}</a></li>
+                        <ul class="vertical menu nested dropdown nav_submenu" data-dropdown-menu>
+                            {% for (submenu, menu_link) in list_of_submenus.items() %}
+                                <li>
+                                    <a class="nav_menu__opt nav_submenu_opt" href="{{ menu_link }}">{{ submenu }}</a>
+                                    <!-- to continue one more level
+                                    <ul class="horizontal menu nested nav_submenu">
+                                        <li>
+                                            <a class="nav_menu__opt" href="#">test1</a>
+                                        </li>
+                                        <li>
+                                            <a class="nav_menu__opt" href="#">test2</a>
+                                        </li>
+                                    </ul>
+                                    -->
+
+                                </li>
                             {% endfor %}
                         </ul>
                     </li>
