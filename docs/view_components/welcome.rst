@@ -10,7 +10,7 @@ Attributes
 ^^^^^^^^^^
 
 **Welcome message**
-    * A text
+    * dlkasjdas adkjadkasjd aslkdjsdoiasdas 
 
 **Video intro message**
     * A short, 3 minute video clip that provides the important information such as tool features, capabilities, where to find help, etc., very briefly.
