@@ -5,6 +5,13 @@
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
 {% block content %}
 
+{% set project_parameters={
+    'Project Name': {'value': '', 'default_value': 'Berlin Energy Cell', 'type': str, 'description': 'Name of the project, defined by user', 'unit': None, 'restrictions': None }, 
+    'Project Id': {'value': '', 'default_value': 'proj_3_2', 'type': str, 'description': 'ID for project, assigned by user', 'unit': None, 'restrictions': None }, 
+    'Country': {'value': '', 'default_value': 'Germany', 'type': str, 'description': 'Country where the project is located', 'unit': None, 'restrictions': None }, 
+    'Project Duration': {'value': '', 'default_value': '1', 'type': float, 'description': 'Number of years for which the energy system is simulated', 'unit': 'Years', 'restrictions': 'A whole or decimal point number' }, 
+} %}
+
 <div class="grid-x">
 
     <div class="cell small-9 grid-x box comment">
