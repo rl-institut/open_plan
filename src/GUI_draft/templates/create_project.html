@@ -32,6 +32,29 @@
                 <input type="file" id="projParamsFile" class="show-for-sr">
             </div>
             <p class="cell">A list of inputs relevant for the project should be listed here</p>
+            <form class="cell small-9 grid-x">
+                {% for (param, param_details) in project_parameters.items() %}
+                    <div class="cell grid-x">
+                        <label class="cell small-6 input_field_labels">{{ param }}</label>
+                        {% for (param_info, value) in param_details.items() %}
+                            {% if param_info == 'docs_link' %}
+                            <a class="cell auto" href="{{ value }}" target="_blank"><i class="fa fa-question-circle"></i></a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="cell grid-x">
+                        {% for (param_info, value) in param_details.items() %}
+                            {% if param_info == 'type' and value == 'str' %}
+                                {% set param_type = "text" %}
+                            {% elif param_info == 'type' and value == 'float' %}
+                                {% set param_type = "number" %}
+                            {% endif %}
+                        {% endfor %}
+                            <input class="cell auto" type="{{ param_type }}" placeholder="{{ project_parameters[param.default_value] }}">
+                            <p class="cell auto">{{ project_parameters[param]['unit'] }}</p>
+                    </div>
+                {% endfor %}
+            </form>
         </div>
 
         <div class="cell auto view-component" title="Project Location">
