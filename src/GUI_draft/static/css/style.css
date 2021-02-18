@@ -7,6 +7,10 @@
  #
 */
 
+.input_field_labels {
+    font-size: 18px;
+}
+
 .progression_bar_buttons {
     background-color: #eb5e0b;
     color: white;
