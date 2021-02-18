@@ -6,11 +6,13 @@
 {% block content %}
 
 {% set project_parameters={
-    'Project Name': {'value': '', 'default_value': 'Berlin Energy Cell', 'type': str, 'description': 'Name of the project, defined by user', 'unit': None, 'restrictions': None }, 
-    'Project Id': {'value': '', 'default_value': 'proj_3_2', 'type': str, 'description': 'ID for project, assigned by user', 'unit': None, 'restrictions': None }, 
-    'Country': {'value': '', 'default_value': 'Germany', 'type': str, 'description': 'Country where the project is located', 'unit': None, 'restrictions': None }, 
-    'Project Duration': {'value': '', 'default_value': '1', 'type': float, 'description': 'Number of years for which the energy system is simulated', 'unit': 'Years', 'restrictions': 'A whole or decimal point number' }, 
+    'Project Name': {'value': '', 'default_value': 'Berlin Energy Cell', 'type': 'str', 'description': 'Name of the project, defined by user', 'unit': None, 'restrictions': None, 'docs_link': '#' }, 
+    'Project Id': {'value': '', 'default_value': 'proj_3_2', 'type': 'str', 'description': 'ID for project, assigned by user', 'unit': None, 'restrictions': None, 'docs_link': '#' }, 
+    'Country': {'value': '', 'default_value': 'Germany', 'type': 'str', 'description': 'Country where the project is located', 'unit': None, 'restrictions': None, 'docs_link': '#'  }, 
+    'Project Duration': {'value': '', 'default_value': '1', 'type': 'float', 'description': 'Number of years for which the energy system is simulated', 'unit': 'Years', 'restrictions': 'A whole or decimal point number', 'docs_link': '#'  }, 
 } %}
+
+{% set by_default = 0 %}
 
 <div class="grid-x">
 
