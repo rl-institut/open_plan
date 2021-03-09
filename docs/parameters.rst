@@ -18,14 +18,14 @@ It could be nice to add the name of the view-component they are part of.
 .. This file is generated automatically when conf.py is executed
 
 .. csv-table:: Table Title
-   :file: _files/input_parameters_list_short.csv
+   :file: _files/input_parameters_list_short.inc
    :header-rows: 1
 
 Another way to display the Inputs
 
 .. This file is generated automatically when conf.py is executed
 
-.. include:: input_parameters_list.inc
+.. include:: _files/input_parameters_list.inc
 
 
 Outputs
@@ -42,11 +42,11 @@ It could be nice to add the name of the view-component they are part of.
 .. This file is generated automatically when conf.py is executed
 
 .. csv-table:: Table Title
-   :file: _files/output_parameters_list_short.csv
+   :file: _files/output_parameters_list_short.inc
    :header-rows: 1
 
 Another way to display the Inputs
 
 .. This file is generated automatically when conf.py is executed
 
-.. include:: output_parameters_list.inc
+.. include:: _files/output_parameters_list.inc

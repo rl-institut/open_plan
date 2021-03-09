@@ -82,19 +82,19 @@ def generate_parameter_description(input_csv_file, output_rst_file):
 
     # Change name of the index column
     df = df.rename(columns={"label": ":Name:"}).set_index(":Name:")
-    df[parameter_properties].to_csv(output_rst_file + "_short.csv")
+    df[parameter_properties].to_csv(output_rst_file + "_short.inc")
 
     with open(output_rst_file + ".inc", "w") as ofs:
         ofs.write("\n".join(lines))
 
 
 generate_parameter_description(
-    "_files/input_parameters_list", "input_parameters_list"
+    "_files/input_parameters_list", "_files/input_parameters_list"
 )
 
 
 generate_parameter_description(
-    "_files/output_parameters_list", "output_parameters_list"
+    "_files/output_parameters_list", "_files/output_parameters_list"
 )
 
 # -- Project information -----------------------------------------------------
