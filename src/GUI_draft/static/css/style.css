@@ -7,6 +7,14 @@
  #
 */
 
+.footer_content {
+    background-color: #342426;
+    color: white;
+    margin: 10px;
+    padding: 2px;
+    font-size: 24px;
+}
+
 .progression_bar_buttons {
     background-color: #eb5e0b;
     color: white;
