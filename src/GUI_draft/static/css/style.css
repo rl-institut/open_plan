@@ -7,6 +7,54 @@
  #
 */
 
+
+.input-form{
+
+}
+
+.input-label {
+    justify-content: left;
+    font-size: 18px;
+}
+
+.input-label span {
+    padding-left: 0.1rem;
+}
+
+.input-unit {
+
+}
+
+.input-browse {
+    padding-right: 0.2rem;
+}
+
+.timeseries-trace {
+    height: 40px;
+    display: flex;
+    justify-content: start;
+}
+
+
+.input-label p {
+    text-align: left;
+    padding-right: 0.25rem;
+    margin-bottom: 0;
+}
+
+.input-help-icon{
+    justify-content: right;
+}
+
+.input-help-icon a {
+    display:flex;
+}
+
+.input-value {
+    margin-top: 0.1rem;
+}
+
+
 .progression_bar_buttons {
     background-color: #eb5e0b;
     color: white;

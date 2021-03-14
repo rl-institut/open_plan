@@ -1,0 +1,47 @@
+{% macro input(label="", input_type="int", input_unit="", placeholder_text="", required=True, id="") -%}
+        <div class="cell grid-x input-form align-left">
+          <div class="cell small-11 input-label">
+              <p>
+                  {{ label }}
+                  <span class="input-unit">[{{ input_unit }}]</span>
+                  {% if required == True %}
+                    <span>*</span>
+                  {% endif %}
+              </p>
+          </div>
+          <div class="cell small-1 input-help-icon">
+            <a href="https://open-plan.readthedocs.io/en/latest/parameters.html#" target="_blank" rel="noreferrer">
+              <img src="../static/img/icons/i_info.svg">
+            </a>
+          </div>
+          {% if input_type == "int" or input_type == "str" or input_type == "float" %}
+          <div class="cell input-value">
+              <input type="text" placeholder="{{ placeholder_text }}">
+          </div>
+          {% elif input_type == "array" %}
+          <div class="cell grid-x">
+              <div class="cell auto input-value">
+                  <input type="text" placeholder="Absolute path to file or [val1, val2, ...]">
+              </div>
+
+              <div class="cell shrink input-browse">
+                  <button class="button success">Browse file... </button>
+              </div>
+          </div>
+          {% else %}
+          <div class="cell grid-x">
+              {# TODO, style the plotly area so that it does not take up more than the height/width of the input field placement is to see where it is nicest#}
+              <div class="cell shrink input-browse">
+                <label for="loadfile_{{ id }}" class="button">Load {{ label }} from file</label>
+                <input type="file" id="loadfile_{{ id }}" onchange="test_load_file_to_see(obj=this.files, plot_id='{{ id }}_trace_plot')" class="show-for-sr">
+              </div>
+              <div class="cell auto timeseries-trace" id="{{ id }}_trace_plot"></div>
+
+
+
+          </div>
+          {% endif %}
+
+        </div>
+
+{%- endmacro %}
