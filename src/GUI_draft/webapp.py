@@ -34,17 +34,17 @@ templates = Jinja2Templates(directory=os.path.join(SERVER_ROOT, "templates"))
 # Test Driven Development --> https://fastapi.tiangolo.com/tutorial/testing/
 
 
-
 @flask_app.route("/")
 def flask_main():
     name = request.args.get("name", "World")
     return f"Hello, {escape(name)} from Flask!"
 
 
-
 app.mount("/dash", WSGIMiddleware(flask_app))
 # register dashapp
-dash_app = dashboard.register_dashapp(flask_app, "dashboard", "Data Dashboard", dashboard.dashboard_layout)
+dash_app = dashboard.register_dashapp(
+    flask_app, "dashboard", "Data Dashboard", dashboard.dashboard_layout
+)
 
 
 @app.get("/")
@@ -62,7 +62,9 @@ def project_created(request: Request) -> Response:
 
 @app.get("/create_project")
 def create_project(request: Request) -> Response:
-    return templates.TemplateResponse("create_project.html", {"request": request, "input_params": project_params})
+    return templates.TemplateResponse(
+        "create_project.html", {"request": request, "input_params": project_params}
+    )
 
 
 @app.get("/project_overview")
@@ -85,9 +87,7 @@ def progression(request: Request, step_id: int = 1) -> Response:
     elif step_id == 2:
         content["input_params"] = input_data_params
 
-    return templates.TemplateResponse(
-        f"step{step_id}.html", content
-    )
+    return templates.TemplateResponse(f"step{step_id}.html", content)
 
 
 @app.get("/licenses")
