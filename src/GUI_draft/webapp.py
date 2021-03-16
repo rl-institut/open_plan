@@ -12,6 +12,7 @@ from model_parameters import (
     scenario_params,
     input_data_params,
     constraints_params,
+    output_params,
     scenario_model,
 )
 
@@ -131,6 +132,7 @@ def visualize_results(request: Request, scenario_id: int = 1) -> Response:
             "request": request,
             "scenarios_list": scenario_fake_db,
             "scenario_id": scenario_id,
+            "output_params": output_params
         },
     )
 

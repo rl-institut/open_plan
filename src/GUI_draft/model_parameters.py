@@ -46,7 +46,6 @@ input_parameters = input_parameters.rename(
         ":label_DE:": "label",
     }
 )
-print(input_parameters.columns)
 
 
 input_parameters.loc[input_parameters.unit.isna(), ["unit"]] = ""
@@ -135,6 +134,60 @@ constraints_params = input_parameters.loc[
     input_parameters.internal_categorization == "constraint", input_param_props
 ]
 constraints_params = constraints_params.to_dict("records")
+
+
+
+
+
+
+path_csv = path.join(PACKAGE_DATA_PATH, "output_parameters_list.csv")
+
+output_parameters = pd.read_csv(path_csv)
+
+
+rtd_base_url = "https://open-plan.readthedocs.io/en/latest/parameters.html#"
+
+prefix = "out_"
+
+# Prepare what will be the parameter ID variable
+output_parameters["ref"] = output_parameters.label.apply(
+    lambda x: prefix + x.lower().replace(" ", "_")
+)
+
+# Prepare link to RTD
+output_parameters["rtd"] = rtd_base_url + output_parameters.ref.apply(
+    lambda x: x.lower().replace("_", "-")
+)
+
+# Fill the parameter definition where the tooltip is not defined
+output_parameters.loc[output_parameters.tooltip.isna(), "tooltip"] = output_parameters.loc[
+    output_parameters.tooltip.isna(), ":Definition:"
+]
+
+# Rename columns names
+output_parameters = output_parameters.rename(
+    columns={
+        ":Unit:": "unit",
+        ":Type:": "type",
+        ":Default:": "default_value",
+        ":Definition_DE:": "definition",
+        "ref": "id",
+        "label": "label_EN",
+    }
+)
+
+output_parameters = output_parameters.rename(
+    columns={
+        ":label_DE:": "label",
+    }
+)
+
+
+output_parameters.loc[output_parameters.unit.isna(), ["unit"]] = ""
+
+output_param_props = ["label", "id", "unit", "type", "default_value", "tooltip", "rtd"]
+
+output_params = output_parameters.loc[output_parameters.internal_categorization != "hidden", output_param_props].to_dict("records")
 
 
 def scenario_model(id, name, params):

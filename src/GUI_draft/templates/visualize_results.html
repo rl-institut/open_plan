@@ -20,18 +20,30 @@
             {% endfor %}
 
             <div class="cell shrink">
-                <a class="button" href="{{ url_for('compare_scenarios') }}">Compare</a>
+                <a class="button" href="{{ url_for('compare_scenarios') }}" style="height:40px">Compare</a>
             </div>
         </div>
 
-        <div class="cell auto grid-x view-component" title="Click to Zoom in">
+        <div class="cell auto grid-x view-component">
             <h4 class="cell"><a href="">Time Series plots VC</a></h4>
             <p class="cell">Ability to select the parameters one wants to see plotted</p>
+
         </div>
 
         <div class="cell auto grid-x view-component" title="KPIs at a glance">
             <h4 class="cell"><a href="">KPIs Table VC</a></h4>
-            <p class="cell">Ability to see the KPI in tables as summary</p>
+            <p class="cell">Ability to which KPI to see in a table as summary</p>
+
+            <div class="grid-x">
+                <select data-placeholder="Begin typing a name to filter..." multiple style="height:450px">
+                <option value=""></option>
+
+                {% for row in output_params %}
+                     <option value="{{ row['id'] }}">{{ row["label"] }}</option>
+                    {# input(label=row["label"], placeholder_text=row["default_value"], input_unit=row["unit"], input_type=row["type"], id=row["id"], tooltip=row["tooltip"]) #}
+                {% endfor %}
+                      </select>
+            </div>
         </div>
 
         <div class="cell auto grid-x view-component" title="Click here to choose a format to export results">
