@@ -45,3 +45,14 @@
         </div>
 
 {%- endmacro %}
+
+
+{% macro input_list(param_list, css_class="") -%}
+    <div class="{{ css_class }} grid-x">
+        {% for row in param_list %}
+            {{ input(label=row["label"], placeholder_text=row["default_value"], input_unit=row["unit"], input_type=row["type"], id=row["id"]) }}
+        {% endfor %}
+    </div>
+{%- endmacro %}
+
+

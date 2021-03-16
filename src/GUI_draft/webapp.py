@@ -7,6 +7,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.middleware.wsgi import WSGIMiddleware
 from flask import Flask, escape, request
 import dashboard
+from model_parameters import project_params, scenario_params, input_data_params
 
 
 app = FastAPI()
@@ -61,7 +62,7 @@ def project_created(request: Request) -> Response:
 
 @app.get("/create_project")
 def create_project(request: Request) -> Response:
-    return templates.TemplateResponse("create_project.html", {"request": request})
+    return templates.TemplateResponse("create_project.html", {"request": request, "input_params": project_params})
 
 
 @app.get("/project_overview")
@@ -77,8 +78,15 @@ def create_scenario(request: Request) -> Response:
 
 @app.get("/step/{step_id}")
 def progression(request: Request, step_id: int = 1) -> Response:
+    content = {"request": request, "step_id": step_id}
+
+    if step_id == 1:
+        content["input_params"] = scenario_params
+    elif step_id == 2:
+        content["input_params"] = input_data_params
+
     return templates.TemplateResponse(
-        f"step{step_id}.html", {"request": request, "step_id": step_id}
+        f"step{step_id}.html", content
     )
 
 
