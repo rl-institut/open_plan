@@ -3,7 +3,9 @@
           <div class="cell small-11 input-label">
               <p>
                   {{ label }}
+                  {% if input_unit != "" %}
                   <span class="input-unit">[{{ input_unit }}]</span>
+                  {% endif %}
                   {% if required == True %}
                     <span>*</span>
                   {% endif %}
