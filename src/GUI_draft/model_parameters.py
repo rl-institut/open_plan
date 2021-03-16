@@ -35,10 +35,19 @@ input_parameters = input_parameters.rename(
         ":Unit:": "unit",
         ":Type:": "type",
         ":Default:": "default_value",
-        ":Definition:": "definition",
+        ":Definition_DE:": "definition",
         "ref": "id",
+        "label": "label_EN",
     }
 )
+
+input_parameters = input_parameters.rename(
+    columns={
+        ":label_DE:": "label",
+    }
+)
+print(input_parameters.columns)
+
 
 input_parameters.loc[input_parameters.unit.isna(), ["unit"]] = ""
 
