@@ -20,6 +20,12 @@
           <div class="cell input-value">
               <input type="text" placeholder="{{ placeholder_text }}">
           </div>
+          {% elif input_type == "text" %}
+          <div class="cell input-value">
+              <textarea type="text" placeholder="{{ placeholder_text }}" rows="4">
+              </textarea>
+          </div>
+
           {% elif input_type == "array" %}
           <div class="cell grid-x">
               <div class="cell auto input-value">
