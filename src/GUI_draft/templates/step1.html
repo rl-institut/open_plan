@@ -32,6 +32,8 @@
                 <label for="scenarioParamsFileUpload" class="button alert">Load Scenario Parameters</label>
                 <input type="file" id="scenarioParamsFileUpload" class="show-for-sr">
             </p>
+            {% import "input_form.html" as input_form %}
+            {{ input_form.input_list(input_params, css_class="cell") }}
         </div>
 
     </div>

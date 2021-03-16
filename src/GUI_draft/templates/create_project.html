@@ -23,6 +23,8 @@
                 <input type="file" id="projParamsFile" class="show-for-sr">
             </div>
             <p class="cell">A list of inputs relevant for the project should be listed here</p>
+            {% import "input_form.html" as input_form %}
+            {{ input_form.input_list(input_params, css_class="cell") }}
         </div>
 
         <div class="cell auto view-component" title="Project Location">

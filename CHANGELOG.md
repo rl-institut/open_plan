@@ -46,6 +46,9 @@ Here is a template for new release sections
 - Add definition of a project and a scenario (#102)
 - Module `create_static_website.py`, described in `website/README.md` (#109)
 - Add official open_plan website link to README (#113)
+- Add customizable input fields which adapt based each parameter options in the `input_parameters_list.csv` in the docs (#126)
+- Add dummy trace plot for vizualizing timeseries (#126)
+- Add plotly dash endpoint (#126)
 
 ### Changed
 - Modified the view-components according to the changed template (#35)
