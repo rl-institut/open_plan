@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+
+<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
+{% block content %}
+<div class="grid-x">
+    <div class="cell small-9 grid-x box comment">
+        <h2 class="cell">Compare "Scenario1", "Scenario 2", ..., "Scenario n" </h2>
+        <p class="cell small-7">Note: these scenarios names and number are only for example purpose, the data is also fake for demonstration purpose so its values and unit is irrelevant here</p>
+        <div class="cell grid-x grid-margin-x">
+            <a class="cell shrink button" title="Add a new radar plot in the box below to compare different parameters from different scenarios">Add new Radar plot</a>
+            <a class="cell shrink button" title="Timeseries">Add new timeseries plot</a>
+        </div>
+    </div>
+    <div class="cell small-9 grid-x projects__menu box">
+        <h3 class="cell" >Comparison plots examples</h3>
+        <h4 class="cell" >Radar plot for KPI comparison</h4>
+        <p class="cell small-7">Ability to multi-select KPI to compare on them on a radar plot. Right now there are only 5 output scalars ('Eigenversorgung','NPV','DA', 'CO2', 'Gesamtkosten', 'Eigenversorgung') but this selection should be up to the user</p>
+        <div class="cell" id="example-radar-plot" style="justify-content: flex-start;"></div>
+
+
+        <h4 class="cell" >Timeseries plot comparison</h4>
+        <p class="cell small-7">Ability to multi-select scenarios output timeseries to compare on the same plot</p>
+        <div class="cell" id="example-timeseries-plot" style="justify-content: flex-start;"></div>
+
+
+        <div class="cell" style="justify-content: flex-start;">
+            <img src="">
+        </div>
+        <div class="cell" style="justify-content: flex-start;">
+            <img src="">
+        </div>
+    </div>
+
+</div>
+<script>
+var config = {showLink: false, responsive: true};
+
+// potential problem : range cannot be different for different axes
+
+
+var categories = ['Eigenversorgung','NPV','DA', 'CO2', 'Gesamtkosten', 'Eigenversorgung'];
+
+var data = [
+  {
+  type: 'scatterpolar',
+  r: [39, 28, 8, 7, 28, 39],
+  theta: categories,
+  fill: 'toself',
+  name: 'Scenario 1'
+  },
+  {
+  type: 'scatterpolar',
+  r: [1.5, 10, 39, 31, 15, 1.5],
+  theta: categories,
+  fill: 'toself',
+  name: 'Scenario 2'
+  },
+  {
+  type: 'scatterpolar',
+  r: [10, 16, 25, 36, 2, 18],
+  theta: categories,
+  fill: 'toself',
+  name: 'Scenario n'
+  }
+]
+
+layout = {
+
+  polar: {
+    radialaxis: {
+      visible: true,
+      range: [0, 50]
+    }
+  },
+  showlegend: true
+}
+
+
+Plotly.newPlot("example-radar-plot", data, layout, config);
+
+
+
+Plotly.d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv", function(err, rows){
+
+  function unpack(rows, key) {
+  return rows.map(function(row) { return row[key]; });
+}
+
+
+var trace1 = {
+  type: "scatter",
+  mode: "lines",
+  name: 'Scenario 1',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, 'AAPL.High'),
+  line: {color: '#17BECF'}
+}
+
+var trace2 = {
+  type: "scatter",
+  mode: "lines",
+  name: 'Scenario 2',
+  x: unpack(rows, 'Date'),
+  y: unpack(rows, 'AAPL.Low'),
+  line: {color: '#7F7F7F'}
+}
+
+var y3 = unpack(rows, 'AAPL.Low');
+for(var i=0;i<y3.length; ++i){
+    y3[i] = y3[i]*(1 + 0.1* Math.random());
+};
+
+var trace3 = {
+  type: "scatter",
+  mode: "lines",
+  name: 'Scenario n',
+  x: unpack(rows, 'Date'),
+  y: y3,
+  line: {color: 'red'}
+}
+
+var data = [trace1,trace2, trace3];
+
+var layout = {
+  title: 'Some timeseries',
+  xaxis: {
+    autorange: true,
+    range: ['2015-02-17', '2017-02-16'],
+    rangeselector: {buttons: [
+        {
+          count: 1,
+          label: '1m',
+          step: 'month',
+          stepmode: 'backward'
+        },
+        {
+          count: 6,
+          label: '6m',
+          step: 'month',
+          stepmode: 'backward'
+        },
+        {step: 'all'}
+      ]},
+    rangeslider: {range: ['2015-02-17', '2017-02-16']},
+    type: 'date'
+  },
+  yaxis: {
+    autorange: true,
+    range: [86.8700008333, 138.870004167],
+    type: 'linear'
+  }
+};
+
+Plotly.newPlot('example-timeseries-plot', data, layout);
+})
+
+
+
+</script>
+
+{% endblock content %}

@@ -12,8 +12,8 @@ set menus_dict={
 "Scenarios": {
     'New scenario': url_for('create_scenario'),
     'Load scenario': "",
-    'Compare scenarios': "",
-    'List of scenarios in the system': ""
+    'Compare scenarios': url_for('project_overview'),
+    'List of scenarios in the system': url_for('project_overview')
 },
 "Preferences": {
     'Language': "",
@@ -35,7 +35,7 @@ set menus_dict={
 
         <div class="cell nav-menu">
             <div class="nav-logo">
-                <a href="https://open-plan-tool.org" target="_blank">
+                <a href="{{ url_for('landing_page') }}" target="_blank">
                   <img src="{{ url_for('static', path='assets/logos/open_plan_logo.svg') }}">
                 </a>
             </div>

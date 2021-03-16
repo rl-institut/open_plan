@@ -19,19 +19,19 @@
 
     </div>
 
-    <div class="progress_barmodal1 reveal" id="sim-progress-bar" data-reveal>
+    <div class="progress_barmodal1 reveal grid-x" id="sim-progress-bar" data-reveal>
 
-        <div class="success progress" role="progressbar" tabindex="0" aria-valuenow="95" aria-valuemin="0" aria-valuetext="95 percent" aria-valuemax="100">
-            <div class="progress-meter" style="width: 95%">
+        <div class="success progress cell" role="progressbar" tabindex="0" aria-valuenow="95" aria-valuemin="0" aria-valuetext="95 percent" aria-valuemax="100">
+            <div class="progress-meter " style="width: 95%">
                 <p class="progress-meter-text">95%</p>
             </div>
-            <div>
-            <a class="close-button" data-close aria-label="Close reveal" type="button" href="{{ url_for('project_overview') }}">
-              Close
+
+        </div>
+        <div class="cell">
+            <a data-close aria-label="Close reveal"  href="{{ url_for('fake_new_scenario') }}">
+              Close and vizualize results
             </a>
         </div>
-        </div>
-
 
     </div>
 </div>

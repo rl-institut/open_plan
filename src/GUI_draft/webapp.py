@@ -7,7 +7,13 @@ from fastapi.templating import Jinja2Templates
 from fastapi.middleware.wsgi import WSGIMiddleware
 from flask import Flask, escape, request
 import dashboard
-from model_parameters import project_params, scenario_params, input_data_params
+from model_parameters import (
+    project_params,
+    scenario_params,
+    input_data_params,
+    constraints_params,
+    scenario_model,
+)
 
 
 app = FastAPI()
@@ -67,9 +73,25 @@ def create_project(request: Request) -> Response:
     )
 
 
+@app.get("/fake_new_scenario")
+def fake_new_scenario(request: Request) -> Response:
+
+    # url = request.url_for("project_overview", new_scenario=True)
+    return project_overview(request, new_scenario=True)
+
+
 @app.get("/project_overview")
-def project_overview(request: Request) -> Response:
-    return templates.TemplateResponse("project_overview.html", {"request": request})
+def project_overview(request: Request, new_scenario: bool = False) -> Response:
+
+    scenario_fake_db = [scenario_model(1, "Example scenario 1", params={})]
+
+    if new_scenario is True:
+        scenario_fake_db.append(scenario_model(2, "Example scenario 2", params={}))
+
+    return templates.TemplateResponse(
+        "project_overview.html",
+        {"request": request, "scenarios_list": scenario_fake_db},
+    )
 
 
 @app.get("/create_scenario")
@@ -86,8 +108,36 @@ def progression(request: Request, step_id: int = 1) -> Response:
         content["input_params"] = scenario_params
     elif step_id == 2:
         content["input_params"] = input_data_params
+    elif step_id == 4:
+        content["input_params"] = constraints_params
 
     return templates.TemplateResponse(f"step{step_id}.html", content)
+
+
+@app.get("/visualize-results/{scenario_id}")
+def visualize_results(request: Request, scenario_id: int = 1) -> Response:
+
+    if scenario_id == 1:
+        sce_compare = 2
+    else:
+        sce_compare = 1
+    scenario_fake_db = [
+        scenario_model(sce_compare, f"Example scenario {sce_compare}", params={})
+    ]
+
+    return templates.TemplateResponse(
+        "visualize_results.html",
+        {
+            "request": request,
+            "scenarios_list": scenario_fake_db,
+            "scenario_id": scenario_id,
+        },
+    )
+
+
+@app.get("/compare-scenarios")
+def compare_scenarios(request: Request) -> Response:
+    return templates.TemplateResponse("compare_scenarios.html", {"request": request})
 
 
 @app.get("/licenses")

@@ -9,7 +9,7 @@
 
 
     <div class="cell small-9 grid-x box comment">
-        <h2 class="cell">Project overview</h2>
+        <h2 class="cell">"Project 1" overview</h2>
         <p class="cell"> On this page you can create new scenarios within you project, load scenario from file or select a scenario in the list</p>
     </div>
 
@@ -23,22 +23,39 @@
         </div>
         <div class="cell grid-x view-component">
             <h4 class="cell"><a href="https://open-plan.readthedocs.io/en/latest//tool_interface.html#list-of-scenarios" target="_blank">Scenario List VC</a></h4>
-            <div class="cell small-8 grid-x grid-margin-x">
-                {% if scenario %}
+            <div class="cell small-10 grid-x grid-margin-x">
+                {% if scenarios_list %}
 
-                    <p class="cell small-2" >Scenario 1</p>
-                    <a class="cell auto" href="">Select</a>
-                    <a class="cell auto" href="">Show</a>
-                    <a class="cell auto" href="">Edit</a>
-                    <a class="cell auto" href="" class="button alert">Delete</a>
+                    <p class="cell">Example of how a scenario list item could look like:</p>
+                    {% for scenario in scenarios_list %}
+                    <div class="cell grid-x grid-margin-x">
+                        <input class="cell shrink"  id="{{ scenario['name'] }}_select" type="checkbox">
+                        <p class="cell auto" style="text-align: left" >{{ scenario["name"] }}</p>
+                        <a class="cell shrink  button" href="">Duplicate</a>
+                        <a class="cell shrink  button success" href="{{ url_for('visualize_results', scenario_id=scenario['id']) }}">Vizualize results</a>
+                        <a class="cell shrink button warning" href="{{ url_for('create_scenario') }}" title="Allows the user to go back to the scenario parameters and allow editing">Edit</a>
+                        <a class="cell shrink button alert" href="" title="Remove the scenario for the project and erase its results">Delete</a>
+                    </div>
+                    {% endfor %}
 
+                    {% if scenarios_list|length > 1 %}
+                    <div class="cell shrink">
+                        <a class="button" href="{{ url_for('compare_scenarios') }}">Compare selected scenarios' results</a>
+                    </div>
+                    {% endif %}
+
+                    <div class="cell shrink">
+                        <a class="button" href="{{ url_for('compare_scenarios') }}">Export selected scenarios</a>
+                    </div>
                 {% else %}
 
                     <p class="cell">You don't have any scenarios yet, please create one by clicking on "Create New Scenario" button</p>
 
+
                 {% endif %}
 
             </div>
+
 
          </div>
 

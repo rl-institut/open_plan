@@ -40,19 +40,74 @@ input_parameters = input_parameters.rename(
     }
 )
 
+input_parameters.loc[input_parameters.unit.isna(), ["unit"]] = ""
+
 input_param_props = ["label", "id", "unit", "type", "default_value", "tooltip", "rtd"]
 project_params = input_parameters.loc[
     input_parameters.internal_categorization == "project", input_param_props
 ]
 project_params = project_params.to_dict("records")
 
+project_params = [
+    {
+        "label": "Project name",
+        "id": "in_project_name",
+        "unit": "",
+        "type": "str",
+        "default_value": "Enter a name",
+        "tooltip": "A name to identify your scenario",
+        "rtd": "",
+    },
+    {
+        "label": "Project description",
+        "id": "in_project_description",
+        "unit": "",
+        "type": "text",
+        "default_value": "Enter a description",
+        "tooltip": "A small text to describe your scenario",
+        "rtd": "",
+    },
+] + project_params
+
+
 scenario_params = input_parameters.loc[
     input_parameters.internal_categorization == "scenario", input_param_props
 ]
 scenario_params = scenario_params.to_dict("records")
+
+scenario_params = [
+    {
+        "label": "Scenario name",
+        "id": "in_scenario_name",
+        "unit": "",
+        "type": "str",
+        "default_value": "Enter a name",
+        "tooltip": "A name to identify your scenario",
+        "rtd": "",
+    },
+    {
+        "label": "Scenario description",
+        "id": "in_scenario_description",
+        "unit": "",
+        "type": "text",
+        "default_value": "Enter a description",
+        "tooltip": "A small text to describe your scenario",
+        "rtd": "",
+    },
+] + scenario_params
 
 
 input_data_params = input_parameters.loc[
     input_parameters.internal_categorization == "scenario", input_param_props
 ]
 input_data_params = input_data_params.to_dict("records")
+
+
+constraints_params = input_parameters.loc[
+    input_parameters.internal_categorization == "constraint", input_param_props
+]
+constraints_params = constraints_params.to_dict("records")
+
+
+def scenario_model(id, name, params):
+    return dict(id=id, name=name, params=params)

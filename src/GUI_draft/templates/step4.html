@@ -9,8 +9,14 @@
     <div class="cell small-9 grid-x grid-margin-x box">
         <h2 class="cell">{{ step_map["/step/"+step_id|string] }}</h2>
 
-        <div class="cell auto view-component"><h4><a href="">Simulation Constraints VC</a></h4></div>
-        <div class="cell auto view-component"><h4><a href="">Set Simulation Constraints VC</a></h4></div>
+        <div class="cell auto view-component grid-x">
+            <h4 class="cell"><a href="">Simulation Constraints VC</a></h4>
+
+            <p class="cell">Example of constraints:</p>
+            {% import "input_form.html" as input_form %}
+            {{ input_form.input_list(input_params, css_class="cell small-4") }}
+
+        </div>
 
     </div>
 

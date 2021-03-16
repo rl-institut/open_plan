@@ -1,0 +1,8 @@
+fastapi
+aiofiles
+jinja2
+uvicorn[standard]
+requests
+flask
+dash
+pandas

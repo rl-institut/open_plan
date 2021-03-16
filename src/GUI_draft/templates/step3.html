@@ -10,12 +10,38 @@
 
         <p class="cell">The user can draw their energy system model here and provide detailed parameters for each component (type of electricity, capacity of power source, cost of fuel etc...)</p>
 
+        <div class="cell auto grid-x">
+            <div class="cell view-component grid-x">
+                <h4 class="cell"><a href="https://open-plan--95.org.readthedocs.build/en/95/tool_interface.html#energy-system-component" target="_blank">Add Energy System Component VC</a></h4>
+                <p class="cell">Here the user will be promped with the parameter inputs relative to the new component</p>
+            </div>
+            <div class="cell view-component grid-x">
+                <h4 class="cell"><a href="" target="_blank">Energy System Component List VC</a></h4>
+                <p class="cell">Photovoltaic</p>
+                <p class="cell">Gas</p>
+                <p class="cell">Heat Pump</p>
+                <p class="cell">Grid Operator</p>
+                <p class="cell">Electrical Battery</p>
+                <p class="cell">Thermal load</p>
+                <p class="cell">Electrical Demand</p>
+                <p class="cell">Heat bus</p>
+                <p class="cell">Electricity bus</p>
 
-        <div class="cell auto view-component">
-            <h4><a href="https://open-plan--95.org.readthedocs.build/en/95/tool_interface.html#energy-system-component" target="_blank">Add Energy System Component VC</a></h4>
+            </div>
+
+            <div class="cell view-component grid-x">
+                <h4 class="cell"><a href="" target="_blank">Energy System Busses List VC</a></h4>
+                <p class="cell">Heat bus</p>
+                <p class="cell">Electricity bus</p>
+
+            </div>
         </div>
-        <div class="cell auto view-component">
-            <h4><a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#energy-system-network" target="_blank">Energy System network VC</a></h4>
+        <div class="cell auto view-component grid-x">
+            <h4 class="cell"><a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#energy-system-network" target="_blank">Energy System network VC</a></h4>
+            <p class="cell">Here the user could potentially build the energy system via drag and drop, or simply vizualize the system build via the "Add new components VC of the left"</p>
+            <div class="cell">
+                <img src="{{ url_for('static', path='img/example_energy_system.jpg')}}" style="height:400px">
+            </div>
         </div>
 
 

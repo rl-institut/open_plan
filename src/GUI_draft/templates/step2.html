@@ -13,16 +13,25 @@
         <p class="cell">User could either provide timeseries for supply and demand or skip to next step to draw their energy system and provide timeseries there.</p>
         <p class="cell">The time-series files can be uploaded from the file-system of the computer using the view-component to load input data-series described in-detail here in the <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#load-input-data-series" target="_blank">docs</a>.</p>
 
+        {% import "input_form.html" as input_form %}
 
-        <div class="cell auto">
-            <label for="supplyTimeseriesFile" class="button">Load Energy supply Timeseries</label>
-            <input type="file" id="supplyTimeseriesFile" class="show-for-sr">
+        <div class="cell small-6">
+            {{ input_form.input(label="Electricity supply Timeseries", input_unit="kW/kwh", input_type="matrix", id="supplyTimeseriesEFile", tooltip="", required=False) }}
         </div>
 
-        <div class="cell auto">
-            <label for="demandTimeseriesFile" class="button">Load Energy demands Timeseries</label>
-            <input type="file" id="demandTimeseriesFile" class="show-for-sr">
+        <div class="cell small-6">
+            {{ input_form.input(label="Electricity demand Timeseries", input_unit="kW/kWh", input_type="matrix", id="demandTimeseriesEFile", tooltip="", required=False) }}
         </div>
+
+        <div class="cell small-6">
+            {{ input_form.input(label="Heat supply Timeseries", input_unit="kW/kwh", input_type="matrix", id="supplyTimeseriesHFile", tooltip="", required=False) }}
+        </div>
+
+        <div class="cell small-6">
+            {{ input_form.input(label="Heat demand Timeseries", input_unit="kW/kWh", input_type="matrix", id="demandTimeseriesHFile", tooltip="", required=False) }}
+        </div>
+
+
 
     </div>
 

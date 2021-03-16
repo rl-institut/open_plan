@@ -43,7 +43,7 @@
 }
 
 .input-help-icon{
-    justify-content: right;
+    justify-content: flex-end;
 }
 
 .input-help-icon a {
@@ -220,4 +220,9 @@ a, .button {
 .nextprevbut {
     justify-content: center;
     font-size: 12px;
+}
+
+
+#map_select {
+    height:500px;
 }

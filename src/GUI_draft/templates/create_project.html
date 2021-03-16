@@ -22,15 +22,16 @@
                 <label for="projParamsFile" class="button">Load Project Parameters from file</label>
                 <input type="file" id="projParamsFile" class="show-for-sr">
             </div>
-            <p class="cell">A list of inputs relevant for the project should be listed here</p>
+            <p class="cell">Example of typical project parameters</p>
             {% import "input_form.html" as input_form %}
             {{ input_form.input_list(input_params, css_class="cell") }}
         </div>
 
-        <div class="cell auto view-component" title="Project Location">
-            <h4 class="row"><a href="https://open-plan--82.org.readthedocs.build/en/82/tool_interface.html#map-with-project-location" target="_blank">Project Location Map VC</a></h4class>
+        <div class="cell auto view-component grid-x" title="Project Location">
+            <h4 class="cell"><a href="https://open-plan--82.org.readthedocs.build/en/82/tool_interface.html#map-with-project-location" target="_blank">Project Location Map VC</a></h4>
 
-            <p class="row">User could pick/see their location on/from a map here</p>
+            <p class="cell">User could pick/see their location on/from a map here</p>
+            <div class="cell" id="map_select"></div>
         </div>
 
      <div class="cell" title="Click here will go to the next step">
@@ -40,6 +41,25 @@
     </div>
 </div>
 
+<script>
+
+var options = {
+  center: [52, 10],
+  zoomSnap: 0.5,
+  zoom: 2,
+  maxZoom: 19,
+  zoomControl: true,
+};
+var map = L.map("map_select", options);
+
+var osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
+
+osm.addTo(map);
+
+</script>
 
 
 
