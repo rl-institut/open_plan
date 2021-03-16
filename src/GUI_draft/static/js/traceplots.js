@@ -1,4 +1,4 @@
-var config = {showLink: false, responsive: true};
+var config = {showLink: false, responsive: true, displayModeBar: false};
 var layout = {
     margin:{
         b:0,
