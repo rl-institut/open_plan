@@ -4,18 +4,20 @@
 {% block progression_content %}
 
 <div class="grid-x">
-
-
     <div class="cell small-9 grid-x grid-margin-x box">
         <h2 class="cell">{{ step_map["/step/"+step_id|string] }}</h2>
-
-        <div class="cell auto view-component"><h4><a href="">Simulation Constraints VC</a></h4></div>
-        <div class="cell auto view-component"><h4><a href="">Set Simulation Constraints VC</a></h4></div>
+        <div class="cell auto view-component"><h4><a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#visualize-data-series" target="_blank">View Time Series plots VC</a></h4></div>
+        <div class="cell auto view-component"><h4><a href="">Tables of data VC</a></h4></div>
+        <div class="cell auto view-component grid-x">
+            <h4><a href="">Display Important Inputs VC</a></h4>
+            <p class="cell">Bim</p>
+            <p class="cell">Bam</p>
+            <p class="cell">Boum</p>
+        </div>
 
         <p class="cell"><a data-open="sim-progress-bar" class="progress_barmodal1 button">Run simulation</a></p>
 
     </div>
-
 
     <div class="progress_barmodal1 reveal" id="sim-progress-bar" data-reveal>
 
@@ -23,13 +25,17 @@
             <div class="progress-meter" style="width: 95%">
                 <p class="progress-meter-text">95%</p>
             </div>
+            <div>
+            <a class="close-button" data-close aria-label="Close reveal" type="button" href="{{ url_for('project_overview') }}">
+              Close
+            </a>
+        </div>
         </div>
 
-          <button class="close-button" data-close aria-label="Close reveal" type="button">
-              <span aria-hidden="true">&times;</span>
-          </button>
-    </div>
 
+    </div>
 </div>
+
+
 
 {% endblock progression_content %}
