@@ -2,7 +2,7 @@ from os import path
 import pandas as pd
 
 PACKAGE_DATA_PATH = path.join(
-    path.dirname(path.dirname(path.abspath(path.curdir))), "docs", "_files"
+    path.dirname(path.dirname(path.dirname(path.abspath(__file__)))), "docs", "_files"
 )
 
 path_csv = path.join(PACKAGE_DATA_PATH, "input_parameters_list.csv")
@@ -94,7 +94,26 @@ scenario_params = [
         "tooltip": "A small text to describe your scenario",
         "rtd": "",
     },
-] + scenario_params
+] + scenario_params + [
+    {
+        "label": "Start date",
+        "id": "in_start_date",
+        "unit": "",
+        "type": "str",
+        "default_value": "Enter a date in YYYY-MM_DD",
+        "tooltip": "The starting date of your simulation",
+        "rtd": "",
+    },
+    {
+        "label": "Evaluated period",
+        "id": "in_evaluated_period",
+        "unit": "day",
+        "type": "str",
+        "default_value": "Enter a number of days",
+        "tooltip": "The total length of the simulation",
+        "rtd": "",
+    },
+]
 
 
 input_data_params = input_parameters.loc[
