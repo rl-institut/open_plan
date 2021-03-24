@@ -141,6 +141,15 @@
     border-color:  #e6e6de transparent transparent;
 }
 
+.feedback-button {
+    justify-content: center;
+    padding-left: 2.5rem;
+    align-items: center;
+}
+
+.feedback-button a{
+    margin: 0;
+}
 
 
 /* LANDING PAGE */

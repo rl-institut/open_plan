@@ -33,7 +33,7 @@ set menus_dict={
 <div data-sticky-container>
     <div class="grid-x nav" data-sticky data-options="marginTop:0;">
 
-        <div class="cell nav-menu">
+        <div class="cell small-10 nav-menu">
             <div class="nav-logo">
                 <a href="{{ url_for('landing_page') }}" target="_blank">
                   <img src="{{ url_for('static', path='assets/logos/open_plan_logo.svg') }}">
@@ -68,6 +68,9 @@ set menus_dict={
                     </li>
                 {% endfor %}
             </ul>
+        </div>
+        <div class="cell small-2 grid-x feedback-button">
+            <a class="cell shrink button alert" href="https://miro.com/app/board/o9J_lPfZpOc=/" target="_blank">Feedback</a>
         </div>
     </div>
 </div>
