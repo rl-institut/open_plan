@@ -4,8 +4,15 @@ from starlette.responses import RedirectResponse
 from fastapi import FastAPI, Request, Response
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from fastapi.middleware.wsgi import WSGIMiddleware
+from flask import Flask, escape, request
+import dashboard
+from model_parameters import project_params, scenario_params, input_data_params
+
 
 app = FastAPI()
+
+flask_app = Flask(__name__)
 
 SERVER_ROOT = os.path.dirname(__file__)
 
@@ -27,6 +34,19 @@ templates = Jinja2Templates(directory=os.path.join(SERVER_ROOT, "templates"))
 # Test Driven Development --> https://fastapi.tiangolo.com/tutorial/testing/
 
 
+@flask_app.route("/")
+def flask_main():
+    name = request.args.get("name", "World")
+    return f"Hello, {escape(name)} from Flask!"
+
+
+app.mount("/dash", WSGIMiddleware(flask_app))
+# register dashapp
+dash_app = dashboard.register_dashapp(
+    flask_app, "dashboard", "Data Dashboard", dashboard.dashboard_layout
+)
+
+
 @app.get("/")
 def landing_page(request: Request, project: int = None) -> Response:
     params = {"request": request}
@@ -40,51 +60,16 @@ def project_created(request: Request) -> Response:
     return landing_page(request, project=1)
 
 
-@app.get("/menubar")
-def menu_bar(request: Request) -> Response:
-    return templates.TemplateResponse("menu_bar_vc.html", {"request": request})
-
-
 @app.get("/create_project")
 def create_project(request: Request) -> Response:
-    return templates.TemplateResponse("create_project.html", {"request": request})
-
-
-@app.get("/project_list")
-def create_project(request: Request) -> Response:
-    return templates.TemplateResponse("project_list.html", {"request": request})
-
-
-@app.get("/proj_params")
-def proj_params(request: Request) -> Response:
-    return templates.TemplateResponse("proj_params.html", {"request": request})
-
-
-@app.get("/load_proj_params")
-def load_proj_params(request: Request) -> Response:
     return templates.TemplateResponse(
-        "load_project_parameters.html", {"request": request}
+        "create_project.html", {"request": request, "input_params": project_params}
     )
-
-
-@app.get("/proj_location")
-def proj_location(request: Request) -> Response:
-    return templates.TemplateResponse("proj_location.html", {"request": request})
-
-
-@app.get("/welcomepage")
-def menu_bar(request: Request) -> Response:
-    return templates.TemplateResponse("welcome_pop_up.html", {"request": request})
 
 
 @app.get("/project_overview")
 def project_overview(request: Request) -> Response:
     return templates.TemplateResponse("project_overview.html", {"request": request})
-
-
-@app.get("/scenario_list")
-def scenario_list(request: Request) -> Response:
-    return templates.TemplateResponse("scenario_list.html", {"request": request})
 
 
 @app.get("/create_scenario")
@@ -93,43 +78,21 @@ def create_scenario(request: Request) -> Response:
     return RedirectResponse(url=url)
 
 
-@app.get("/load_scenario")
-def load_scenario(request: Request) -> Response:
-    return templates.TemplateResponse("load_scenarío.html", {"request": request})
-
-
-@app.get("/scenario_parameters")
-def scenario_parameters(request: Request) -> Response:
-    return templates.TemplateResponse("scenario_parameters.html", {"request": request})
-
-
 @app.get("/step/{step_id}")
 def progression(request: Request, step_id: int = 1) -> Response:
-    return templates.TemplateResponse(
-        f"step{step_id}.html", {"request": request, "step_id": step_id}
-    )
+    content = {"request": request, "step_id": step_id}
+
+    if step_id == 1:
+        content["input_params"] = scenario_params
+    elif step_id == 2:
+        content["input_params"] = input_data_params
+
+    return templates.TemplateResponse(f"step{step_id}.html", content)
 
 
-@app.get("/progression_bar")
-def progression_bar_vc(request: Request) -> Response:
-    return templates.TemplateResponse("progression_bar_vc.html", {"request": request})
-
-
-@app.get("/create_es_comp")
-def create_energysys_comp(request: Request) -> Response:
-    return templates.TemplateResponse("insert_es_comp.html", {"request": request})
-
-@app.get("/es_network")
-def create_energysys_comp(request: Request) -> Response:
-    return templates.TemplateResponse("energy_sys_network.html", {"request": request})
-
-@app.get("/load_time_series")
-def load_ts(request: Request) -> Response:
-    return templates.TemplateResponse("load_timeseries.html", {"request": request})
-
-@app.get("/es_sector")
-def select_es_sector(request: Request) -> Response:
-    return templates.TemplateResponse("es_sector_selector.html", {"request": request})
+@app.get("/licenses")
+def licenses(request: Request) -> Response:
+    return templates.TemplateResponse("licenses.html", {"request": request})
 
 
 if __name__ == "__main__":

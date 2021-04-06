@@ -45,6 +45,10 @@ Here is a template for new release sections
 - Add input and output tables in parameters category (#59)
 - Add definition of a project and a scenario (#102)
 - Module `create_static_website.py`, described in `website/README.md` (#109)
+- Add official open_plan website link to README (#113)
+- Add customizable input fields which adapt based each parameter options in the `input_parameters_list.csv` in the docs (#126)
+- Add dummy trace plot for vizualizing timeseries (#126)
+- Add plotly dash endpoint (#126)
 
 ### Changed
 - Modified the view-components according to the changed template (#35)
@@ -54,6 +58,9 @@ Here is a template for new release sections
 - Added a link to the RDT in README (#90)
 - Modified the web app and fixed some broken links (#95)
 - Reorganize the concept definitions alphabetically (#102)
+- Replaces the iframe elements showing the relevant docs pages with hyperlinks to readthedocs (#110)
+- Make the webapp more visually friendly (#116)
+- Host stakeholder workshop reports on the open_plan website (#128)
 
 ### Removed
 - yet another thing

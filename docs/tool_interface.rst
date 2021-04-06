@@ -288,17 +288,3 @@ Abstract-components Definition
 .. include:: abstract_components/project.rst
 
 ----
-
-
-Inputs definition
-=================
-
-.. contents::
-   :local:
-   :depth: 1
-
-----
-
-.. _inputs-label:
-
-.. include:: input_output/inputs.rst

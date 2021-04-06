@@ -1,48 +1,48 @@
+{% set step_map={"/step/1": "Scenario Setup", "/step/2": "Inputs", "/step/3": "System Setup", "/step/4": "Visualization", "/step/5": "Constraints", "/step/6": "Results"} %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+
+    <title>{% block title %} Home {% endblock %}</title>
 
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
         crossorigin="anonymous" />
-
+    <link rel="shortcut icon" href="{{ url_for('static', path='favicon/favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 </head>
 
-<body>
-    {% set menu_map={"File": ['Load project', 'New project', 'Save project', 'Save project as', 'Export project', 'Exit open_plan'], "Scenarios":['New scenario', 'Load scenario', 'Compare scenarios', 'List of scenarios in the system'], "Preferences": ['Language', 'Display', 'Display welcome view'], "Help":['Read documentation', 'Examples and use cases', 'Contact developers', 'Feedback', 'License information', 'About open_plan…']} %}
-
-    <div class="cell">
-                {% import "menu_bar.html" as menu_bar %}
-                {{ menu_bar.menu(menus_dict=menu_map)}}
-    </div>
-
-    {% set step_map={"/step/1": "Scenario Setup", "/step/2": "Inputs", "/step/3": "System Setup", "/step/4": "Visualization", "/step/5": "Constraints", "/step/6": "Results"} %}
+<body id="main">
+    {% include "menu_bar.html" %}
 
     {% block content %}
     {% endblock content %}
 
     <a href="/" class="button secondary">Back to landing page</a>
 
-
     <p class="callout primary">Note: The idea of this intermediate-interface is to enable someone to navigate through the various views of the interface and provide feedbacks on existing component or non-existing components which would be wished. Keep in mind that it is not how the interface is going to look, we are only focusing on the user interaction now. We'll make it look nice once we agree on the structure</p>
 
-
     <p class="callout primary">Hint1: if you see VC next to a title it means View-Component, i.e. normally you would see what is inside a view-component directly in this page either in a sub window, a popup window or integrated as a component of the current view, you can click on it to have more information about the view component</p>
-    <p class="callout primary">Hint2: if you see ... next to a title it means it is a link/button to another view (or page of the interface if you wish)</p>
-    <p class="callout primary">Hint3: we defined <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#concepts-definition">a few concepts</a> which we use when talking about the interface (to provide feedback for example) so that we are all on the same page</p>
+    <p class="callout primary">Hint2: we defined <a href="https://open-plan.readthedocs.io/en/latest/tool_interface.html#concepts-definition">a few concepts</a> which we use when talking about the interface (to provide feedback for example) so that we are all on the same page</p>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+
     <script>
        $(document).foundation();
        $('#exampleModal1').foundation('reveal', 'open');
     </script>
+    <script src="{{ url_for('static', path='js/traceplots.js') }}"></script>
+
+
 </body>
 
 </html>

@@ -3,3 +3,4 @@ aiofiles
 jinja2
 uvicorn==0.9.1 #https://github.com/encode/starlette/issues/538#issuecomment-548795041
 pyScss
+requests
