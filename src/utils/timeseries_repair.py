@@ -339,3 +339,119 @@ def resample_feedin(
         )
 
     return answer
+
+
+def fill_timeseries_gaps(
+    timeseries_with_gaps, timestep=np.timedelta64(900, "s"), simulated_timeseries=None
+):
+    """
+
+    Parameters
+    ----------
+    timeseries: pandas.DataFrame
+        timeseries with timestamps as index, one column labeled VALUE_COL_NAME with values and the
+        other one labeled STATUS_COL_NAME indicating whether the value is good or not
+    timestep: numpy.timedelta64
+        expected interval in s between two timestamps in the timeseries
+        default: 15min, expressed in s
+    simulated_timeseries: pandas.DataFrame
+        timeseries with timestamps as index (from a simulated feedin for example)
+    Returns
+    -------
+    copy of the timeseries with gaps in data filled
+
+    Notes
+    -----
+
+    There are different strategies depending on the gaps length
+
+    """
+
+    missing_values = timeseries_with_gaps.loc[
+        timeseries_with_gaps[STATUS_COL_NAME].str.contains(STATUS_BAD)
+    ].copy()
+
+    dt = missing_values.index.to_numpy()
+    # take the interval between each value of the array, if array has length N, there is N-1 intervals
+    dt_diff = np.diff(dt)
+    # find the indexes where the interval is not equal to exactly one timestep
+    idx = np.where(dt_diff != timestep)[0]
+
+    # The very first element of dt_diff is a start of troubled interval, so we append it
+    idx = np.append([-1], idx)
+    # The very last element of dt_diff is an end of troubled interval, so we append it
+    idx = np.append(idx, [len(dt_diff)])
+
+    error_interval = []
+
+    for i in range(0, len(idx) - 1, 1):
+
+        # build an interval with timestamps at beginning and end of a troubled interval
+        tstart = dt[idx[i] + 1]
+        tstop = timestep + dt[idx[i + 1]]
+        interv = pd.Interval(pd.Timestamp(tstart), pd.Timestamp(tstop), closed="both")
+
+        # for interval less than 5 hours
+        if interv.length < np.timedelta64(5, "h"):
+            # Compute mean value based on value before and after the interval
+            val_before = timeseries_with_gaps.loc[
+                pd.Timestamp(tstart - timestep), VALUE_COL_NAME
+            ]
+            val_after = timeseries_with_gaps.loc[
+                pd.Timestamp(tstop + timestep), VALUE_COL_NAME
+            ]
+            mean_val = (val_before + val_after) / 2
+            # Assign the mean value to all point of the interval and set the status to "Gut/interpolated"
+            missing_values.loc[interv.left : interv.right, VALUE_COL_NAME] = mean_val
+            missing_values.loc[interv.left : interv.right, STATUS_COL_NAME] = (
+                STATUS_OK + ":interpolated"
+            )
+
+        else:
+            if simulated_timeseries is not None:
+                missing_values.loc[interv.left : interv.right, VALUE_COL_NAME] = (
+                    simulated_timeseries.loc[
+                        interv.left : interv.right, simulated_timeseries.columns[0]
+                    ]
+                    / 1000
+                )
+                missing_values.loc[interv.left : interv.right, STATUS_COL_NAME] = (
+                    STATUS_OK + ":simulated"
+                )
+            else:
+                # find a patch in the previous days to replace the troubled values
+                no_fit_interval = True
+                n = 0
+                while no_fit_interval is True:
+                    # TODO find out the upper integer numbers of day which upperbounds the time interval and shift the interval by an integer number of days
+                    # otherwise the times might not match the ones of the initial interval (if the interval length is not an integer number of days which is very likely)
+                    val_before = timeseries_with_gaps.loc[
+                        pd.Timestamp(tstart - (n + 1) * interv.length) : pd.Timestamp(
+                            tstart - n * interv.length - timestep
+                        )
+                    ]
+
+                    no_fit_interval = not (
+                        len(val_before[STATUS_COL_NAME].unique()) == 1
+                        and STATUS_OK in val_before[STATUS_COL_NAME].unique()
+                    )
+                    n = n + 1
+
+                assert (
+                    len(val_before[STATUS_COL_NAME].unique()) == 1
+                    and STATUS_OK in val_before[STATUS_COL_NAME].unique()
+                )
+                missing_values.loc[
+                    interv.left : interv.right, VALUE_COL_NAME
+                ] = val_before[VALUE_COL_NAME].values
+                missing_values.loc[interv.left : interv.right, STATUS_COL_NAME] = (
+                    STATUS_OK + ":pasted"
+                )
+
+            error_interval.append(interv)
+
+    timeseries_with_gaps.loc[
+        timeseries_with_gaps[STATUS_COL_NAME].str.contains(STATUS_BAD)
+    ] = missing_values
+
+    return timeseries_with_gaps
