@@ -279,3 +279,63 @@ def prepare_wind_data(
     # resampled_timeseries.Wert.resample("H").mean().to_csv(output_fname, index=False)
     timeseries.to_csv(output_fname)
     return timeseries
+
+
+def resample_feedin(
+    simulated_timeseries, start_timestamp, timestep=np.timedelta64(900, "s"), duration=1
+):
+    """Resample a feedin timeseries to a given period
+
+    Parameters
+    ----------
+    simulated_timeseries: pandas.DataFrame
+        timeseries of simulated feedin profile (i.e. for wind or PV production)
+    start_timestamp: timestamp or str
+        the starting time of the timeseries in ISO format YYYY-MM-DDTHH:MM:SS
+    timestep: numpy.timedelta64
+        the timestep between two values of the timeseries
+    duration: float
+        duration of the timeseries in unit of years
+    Returns
+    -------
+    up or down sampled timeseries
+    """
+
+    # Determines the frequency of the timeseries based on the number of occurences
+    freq = (60 * 8760 * duration) / len(simulated_timeseries)
+
+    # Assign a datetime index to the timeseries
+    datetime_index = pd.date_range(
+        start=start_timestamp, freq=f"{freq}min", periods=len(simulated_timeseries)
+    )
+    sim_df = simulated_timeseries.set_index(datetime_index)
+
+    # Determines how many timesteps fit in one hour and resample the timeseries
+    n_timestep = int(np.timedelta64(1, "h") / timestep.astype("timedelta64[60s]"))
+
+    if 60 / n_timestep < freq:
+        # Upsamples the timeseries and assign new timestamps with value of the earlier timestamp or the lower temporal resolution
+        sim_df_resampled = pd.DataFrame(
+            sim_df[VALUE_COL_NAME].resample(f"{60/n_timestep}T").pad()
+        )
+        new_dtidx = pd.date_range(
+            start=sim_df_resampled.index[-1] + timestep,
+            periods=n_timestep - 1,
+            freq=f"{60/n_timestep}T",
+        )
+        new_timestamps = pd.DataFrame(
+            [[sim_df_resampled[VALUE_COL_NAME][-1]] for i in range(n_timestep - 1)],
+            columns=sim_df_resampled.columns,
+        ).set_index(new_dtidx)
+        answer = sim_df_resampled.append(
+            new_timestamps, ignore_index=False, verify_integrity=False
+        )
+    elif 60 / n_timestep == freq:
+        answer = sim_df
+    else:
+        # Downsample the time and replace the value by the mean of the values at higher temporal resolution
+        answer = pd.DataFrame(
+            sim_df[VALUE_COL_NAME].resample(f"{60/n_timestep}T").mean()
+        )
+
+    return answer
