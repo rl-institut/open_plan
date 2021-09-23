@@ -98,8 +98,9 @@ Getting Started
    :maxdepth: 1
    :caption: Getting Started
 
-   Installation
    simulating_with_the_mvs
+   mathematics_simply_explained
+   Installation
 
 .. toctree::
    :hidden:
