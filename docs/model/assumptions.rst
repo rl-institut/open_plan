@@ -2,7 +2,7 @@
 Assumptions
 ===========
 
-The MVS uses the programming framework :code:`oemof-solph` at its core and builds an energy system model based upon its nomenclature.
+The open_plan tool uses the programming framework :code:`oemof-solph` at its core and builds an energy system model based upon its nomenclature.
 As such, the energy system model can be described with a linear equation system.
 The most important aspects of a linear equation system are described below in a generalized way, and additionally explained through the use of an example.
 This will enable the clear comparision to other energy system models.
@@ -14,8 +14,8 @@ Economic Dispatch
 
 Linear programming is a mathematical modelling and optimization technique for a system of a linear objective function subject to linear constraints.
 The goal of a linear programming problem is to find the optimal value for the objective function, be it a maximum or a minimum.
-The MVS is based on :code:`oemof-solph`, which in turn uses :code:`Pyomo` to create a linear problem.
-The economic dispatch problem in the MVS has the objective of minimizing the production cost by allocating the total demand among the generating units at each time step.
+open_plan is based on :code:`oemof-solph`, which in turn uses :code:`Pyomo` to create a linear problem.
+The economic dispatch problem in the open_plan tool has the objective of minimizing the production cost by allocating the total demand among the generating units at each time step.
 The equation is the following:
 
 .. math::
@@ -71,7 +71,7 @@ as a result, the number of replacements :math:`n` is estimated using the equatio
         n = round \left( \frac{T}{t_a} + 0.5 \right) - 1
 
 The residual value is also known as the salvage value and it represents an estimate of the monetary value of an asset at the end of the project lifetime :math:`T`.
-The MVS considers a linear depreciation over :math:`T` and accounts for the time value of money through the use of the following equation:
+open_plan considers a linear depreciation over :math:`T` and accounts for the time value of money through the use of the following equation:
 
 .. math::
         c_{res,i} = \frac{capex_i}{(1+d)^{n \cdot t_a}} \cdot \frac{1}{T} \cdot \frac{(n+1) \cdot t_a - T}{(1+d)^T}
@@ -158,7 +158,7 @@ For the sake of simplicity, the following table gives an example for each asset 
      - kWth
 
 All grid and dispatchable source asset types are assumed to be available 100% of the time with no consumption limits.
-For each bus in the system, the MVS automatically includes a sink component for excess energy related to the bus, which is denoted :math:`E_{ex}` in the equations.
+For each bus in the system, the open_plan tool automatically includes a sink component for excess energy related to the bus, which is denoted :math:`E_{ex}` in the equations.
 This excess sink accounts for the extra energy in the system that has to be dumped.
 
 Electricity Grid Equation
@@ -332,12 +332,12 @@ The DS Bus shows an example of a fuel source providing an energy carrier (biogas
 Cost calculations
 -----------------
 
-The optimization of the MVS is mainly based on costs.
+The optimization of the open_plan tool is mainly based on costs.
 There is, however, the possibility of introducing additional constraints which will impact the optimization results e.g. implementing a maximum installable capacity limit (comp. :ref:`maxcap-label`) or adding constraints for certain key performance indicators (see :ref:`constraints-label`).
 In order to optimize the energy systems properly, the economic data provided with the input data has to be pre-processed (also see :ref:`economic_precalculation-label`) and then also post-processed when evaluating the results. The following assumptions are therefore important:
 
 * :ref:`Project lifetime <projectduration-label>`: The simulation has a defined project lifetime, for which continuous operation is assumed - which means that the first year of operation is considered to be the same as the last year of operation. Existing and optimized assets have to be replaced (if their lifetime preceeds the system lifetime) to make this possible.
-* :ref:`Simulation duration <evaluatedperiod-label>`: It is advisable to simulate the whole year to find the most suitable combination of energy assets for your system. Sometimes however you might want to look at specific seasons to see their effect - this is possible in the MVS by choosing a specific start date and simulation duration.
+* :ref:`Simulation duration <evaluatedperiod-label>`: It is advisable to simulate the whole year to find the most suitable combination of energy assets for your system. Sometimes however you might want to look at specific seasons to see their effect - this is possible by choosing a specific start date and simulation duration.
 * :ref:`Asset costs <economic_precalculation-label>`: Each asset can have development costs, specific investment costs, specific operation and management costs as well as dispatch costs.
     * *Replacement costs* are calculated based on the lifetime of the assets, and residual values are paid at the end of the project.
     * *Development costs* are costs that will occurr regardless of the installed capacity of an asset - even if it is not installed at all. It stands for system planning and licensing costs. If you have optimized your energy system and see that an asset might not be favourable (zero optimized capacities), you might want to run the simulation again and remove the asset, or remove the development costs of the asset.
@@ -505,7 +505,7 @@ For example, the `degree of sector coupling` will reach its maximum, when the sy
 
 :Comment:
 
-In the MVS, there is no distinction between energy carriers and energy vector. For `Electricity` of the `Electricity` vector this may be self-explanatory. However, the energy carriers of the `Heat` vector can have different technical characteristics: A fluid on different temperature levels. As the MVS measures the energy content of a flow in kWh(thermal) however, this distinction is only relevant for the end user to be aware of, as two assets that have different energy carriers as an output should not be connected to one and the same bus if a detailed analysis is expected. An example of this would be, that a system where the output of the diesel boiler as well as the output of a solar thermal panel are connected to the same bus, eventhough they can not both supply the same kind of heat demands (radiator vs. floor heating).  This, however, is something that the end-user has to be aware of themselves, eg. by defining self-explanatory labels.
+In the open_plan tool, there is no distinction between energy carriers and energy vector. For `Electricity` of the `Electricity` vector this may be self-explanatory. However, the energy carriers of the `Heat` vector can have different technical characteristics: A fluid on different temperature levels. As the open_plan tool measures the energy content of a flow in kWh(thermal) however, this distinction is only relevant for the end user to be aware of, as two assets that have different energy carriers as an output should not be connected to one and the same bus if a detailed analysis is expected. An example of this would be, that a system where the output of the diesel boiler as well as the output of a solar thermal panel are connected to the same bus, eventhough they can not both supply the same kind of heat demands (radiator vs. floor heating).  This, however, is something that the end-user has to be aware of themselves, eg. by defining self-explanatory labels.
 
 Emission factors
 ----------------
@@ -598,7 +598,7 @@ The values mentioned in the table above account for emissions during the complet
 Input verification
 ------------------
 
-The inputs for a simulation with the MVS are subjected to a couple of verification tests to make sure that the inputs result in valid oemof simulations. This should ensure:
+The inputs for a simulation with the open_plan tool are subjected to a couple of verification tests to make sure that the inputs result in valid oemof simulations. This should ensure:
 
 - Uniqueness of labels (:code:`C1.check_for_label_duplicates`): This function checks if any LABEL provided for the energy system model in dict_values is a duplicate. This is not allowed, as oemof can not build a model with identical labels.
 
