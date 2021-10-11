@@ -225,11 +225,11 @@ def generate_parameter_table(input_csv_file, output_csv_file):
     )
 
 
-def copy_readme():
-    with open("../README.rst", "r", encoding="utf8") as fp:
-        data = fp.readlines()
-    with open("readme.inc", "w") as fp:
-        fp.writelines(data[data.index("Setup\n") :])
+# def copy_readme():
+    # with open("../README.rst", "r", encoding="utf8") as fp:
+        # data = fp.readlines()
+    # with open("readme.inc", "w") as fp:
+        # fp.writelines(data[data.index("Setup\n") :])
 
 
 def generate_kpi_description(input_csv_file, output_path):
@@ -321,7 +321,7 @@ generate_kpi_categories(
     "MVS_kpi_categories.csv",
     "model/outputs/MVS_kpi_categories.inc",
 )
-copy_readme()
+# copy_readme()
 
 # -- Project information -----------------------------------------------------
 
@@ -329,9 +329,9 @@ project = "Multi-Vector Simulator (MVS)"
 copyright = "2019, Reiner Lemoine Institut and Martha M. Hoffmann"
 author = "Reiner Lemoine Institut and Martha M. Hoffmann"
 
-from multi_vector_simulator.version import version_num
+# from multi_vector_simulator.version import version_num
 
-release = version_num
+# release = version_num
 
 # -- General configuration ---------------------------------------------------
 
@@ -346,7 +346,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.imgmath",
     "sphinx.ext.autosummary",
-    "sphinxcontrib.rsvgconverter",
+    # "sphinxcontrib.rsvgconverter",
     "numpydoc",
 ]
 
