@@ -5,7 +5,7 @@
 
 .. _Flowchart:
 
-Multi-vector simulator
+open_plan
 ======================
 .. only:: html
 
@@ -38,7 +38,7 @@ Multi-vector simulator
 
 The open_plan tool is an `oemof <https:/github.com/oemof>`__ -based Python package which aims at facilitating the modelling of multi-energy carriers energy systems in island or grid connected mode.
 
-The main goals of the MVS are
+The main goals of the open_plan tool are
 
 #. to minimize the production costs by determining the generating units' optimal output, which meets the total demand
 
@@ -46,7 +46,7 @@ The main goals of the MVS are
 
 
 
-The MVS graphical model is divided into three connected blocks that trace the logic sequence: inputs, system model, and outputs. This is a typical representation of a simulation model:
+The open_plan graphical model is divided into three connected blocks that trace the logic sequence: inputs, system model, and outputs. This is a typical representation of a simulation model:
 
 .. image:: images/MVS_flowchart.png
  :width: 600
@@ -75,98 +75,7 @@ Additionally, different vizualizations of the results can be provided, eg. as pi
 Maintainers
 ===========
 
-The multi-vector simulator is currently maintained by staff from `Reiner Lemoine Institute <https://reiner-lemoine-institut.de/>`__.
-
-The MVS is developed as a work package in the European Union’s Horizon 2020 Research `E-LAND project <https://elandh2020.eu/>`__
-
-:Acknowledgement: This project has received funding from the European Union’s Horizon 2020 Research and Innovation programme under Grant Agreement No 824388. 
-
-:Disclaimer: The information and views set out in this document are those of the author(s) and do not necessarily reflect the official opinion of the European Union. Neither the European Union institutions and bodies nor any person acting on their behalf may be held responsible for the use which may be made of the information contained herein
-
-Getting Started
-===============
-
-.. only:: html
-
-    Follow the  :doc:`Quick start guide <Installation>`
-
-.. Documentation
-.. =============
-
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-   :caption: Getting Started
-
-   simulating_with_the_mvs
-   mathematics_simply_explained
-   Installation
-
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-   :caption: Examples
-
-   examples/simple_les
-   examples/time_series_params
-   examples/multiple_busses
-   examples/tips_and_tricks
-
-Model Reference
-===============
-
-* **How the energy system is modelled**: :doc:`Assumption behind the model <model/assumptions>` | :doc:`Available components for modelling <model/components>` | :doc:`Setting constraints on model or components <model/constraints>` | :doc:`Scope and limitation of the model <model/limitations>`
-* **Description of parameters**: :doc:`Input parameters <model/input_parameters>` | :doc:`Output variables and KPIs <model/simulation_outputs>`
-* **Validation of the model**: :doc:`Validation methodology <model/validation>`
-
-    .. maybe add Pilot projects here as well?
-
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-   :caption: Model Reference
-
-   model/assumptions
-   model/components
-   model/constraints
-   model/limitations
-   model/input_parameters
-   model/simulation_outputs
-   model/validation
-   model/eland_requirements
-
-..
-    release_notes (for website, remove for report, not implemented yet, nice to have)
-    contributing (here paste content of contributing.md --> convert to RST and include it as we did for readme, the mention to contributing in getting started will link to this chapter)
+The open_plan tool is currently maintained by staff from the `Reiner Lemoine Institute <https://reiner-lemoine-institut.de/>`__the `Potsdam Institute for Climate Impact Research <https://www.pik-potsdam.de/>`__ and the `German Solar Energy Society <https://www.dgs-berlin.de/>`__.
 
 
-API Reference
-=============
 
-* **Documentation**: :doc:`Modules and functions <references/code>`
-* **Getting involved**: :doc:`Contributing guidelines and protocols <references/contributing>`
-* **Academic references**: :doc:`Publications and Bibliography <references/publications>`
-* **Using or modifying MVS**: :doc:`License <references/license>` | :doc:`How to cite MVS <references/citations>`
-* **Getting help**: :doc:`Know issues and workaround <references/troubleshooting>` | :doc:`Report a bug or issue <references/bug_report>`
-
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-   :caption: References
-
-   references/code
-   references/release_notes
-   references/license
-   references/contributing
-   references/publications
-   references/citations
-   references/troubleshooting
-   references/bug_report
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
