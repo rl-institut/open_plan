@@ -4,21 +4,6 @@
 Input parameters
 ================
 
-.. _input_csv_categories:
-
-************************************
-Parameters in each category/CSV file
-************************************
-
-Important note: Each asset and bus needs to have an unique label.
-In the :code:`csv` input files, these are defined by the column headers.
-The input parameters are gathered under the following categories. These categories reflect the structure of the :code:`csv` input files or the firsts keys of the :code:`json` input file.
-
-.. This file is generated automatically when conf.py is executed (function generate_parameter_categories)
-
-.. include:: parameters/MVS_parameters_categories.inc
-
-
 *******************
 Table of parameters
 *******************
@@ -37,7 +22,7 @@ The input parameters are gathered in the table below. Each parameter is provided
 List of parameters
 ******************
 
-Below is the list of all the parameters of MVS, sorted in alphabetical order.
+Below is the list of all the parameters of the open_plan tool, sorted in alphabetical order.
 Each of the parameters has the following properties
 
 :Definition: parameter's definition, could also contain potential use cases of the parameter
