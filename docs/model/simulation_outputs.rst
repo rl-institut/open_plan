@@ -4,7 +4,7 @@
 Outputs of a simulation
 =======================
 
-After optimization of an energy system, the MVS evaluates the simulation output. It evaluates the flows, costs and performance of the system. As a result, it calculates a number of :ref:`key performance indicators (KPI) <key_performance_indicators_overview>`, namely :ref:`economic <kpi_economic>`, :ref:`technical <kpi_technical>` and :ref:`environmental <kpi_environmental>` KPI. Depending on the simulation settings, it can also generate different :ref:`output files and figures <output_files>` of the results, including an :ref:`automatic report <automatic_report>` in :code:`pdf` or :code:`html` format.
+After optimization of an energy system, the open_plan tool evaluates the simulation output. It evaluates the flows, costs and performance of the system. As a result, it calculates a number of :ref:`key performance indicators (KPI) <key_performance_indicators_overview>`, namely :ref:`economic <kpi_economic>`, :ref:`technical <kpi_technical>` and :ref:`environmental <kpi_environmental>` KPI. Depending on the simulation settings, it can also generate different :ref:`output files and figures <output_files>` of the results, including an :ref:`automatic report <automatic_report>` in :code:`pdf` or :code:`html` format.
 
 .. _key_performance_indicators_overview:
 
@@ -36,7 +36,7 @@ Besides these parameters attributes, the underlying equation of a specific KPI m
 Suffixes of KPI
 ###############
 
-The KPI of the MVS can be calculated per asset, for each sector or for the overall system.
+The KPI of the open_plan tool can be calculated per asset, for each sector or for the overall system.
 
 KPI calculated per asset are not included in the scalar results of the automatic report or in the stored Excel file, but are displayed separately. They do not need suffixes, as they are always displayed in tables next to the respective asset.
 
@@ -82,7 +82,7 @@ Therefore, we define the :ref:`attributed costs of each energy vector <attribute
 
 .. include:: outputs/levelized_costs_of_electricity_equivalent.inc
 
-Specific electricity supply costs, eg. levelized costs of electricity are commonly used to compare the supply costs of different investment decisions or also energy provider prices to local generation costs. However, the a multi-vector energy system connects energy vectors into a joined energy system and the optimization objective of the MVS then is to minimize the overall energy costs, without distinguising between the different sectors. This sector-coupled energy system is then designed to have an optimial, joined operation. With other systems, the costs associated to each individual energy vector would be used to calculate the levelized costs of energy (LCOEnergy). With the multi-vector system, this could lead to distorted costs - for example if there is a lot of PV (electricity sector), which in the end is only supplying an electrolyzer (H2 sector). The LCOE of electricity would thus turn out to be very high, which could be considered unfair as the electricity from PV is solely used to provide the H2 demand.
+Specific electricity supply costs, eg. levelized costs of electricity are commonly used to compare the supply costs of different investment decisions or also energy provider prices to local generation costs. However, a multi-vector energy system connects energy vectors into a joined energy system and the optimization objective of the open_plan tool then is to minimize the overall energy costs, without distinguising between the different sectors. This sector-coupled energy system is then designed to have an optimal, joined operation. With other systems, the costs associated to each individual energy vector would be used to calculate the levelized costs of energy (LCOEnergy). With the multi-vector system, this could lead to distorted costs - for example if there is a lot of PV (electricity sector), which in the end is only supplying an electrolyzer (H2 sector). The LCOE of electricity would thus turn out to be very high, which could be considered unfair as the electricity from PV is solely used to provide the H2 demand.
 Therefore, we define the :ref:`attributed costs of each energy vector <attributed_costs>`, to determine how much of the overall system costs should be attributed to one sector, depending on the energy demand it has compared to the other sectors. To be able to compare the demands of different energy carriers, :ref:`energy carrier weighting <energy_carrier_weighting>` is applied.
 
 Therefore the levelized costs of energy (LCOEnergy) for energy carrier :math:`i` are defined based on the annuity of the attributed costs, the CRF and the demand of one energy sector :math:`E_{dem,i}`:
@@ -99,14 +99,14 @@ It can be used to assess and compare the available alternative methods of energy
 The levelized cost of energy of an asset (:math:`LCOE~ASSET_i`) is usually obtained
 by looking at the lifetime costs of building and operating the asset per unit of total energy throughput of an asset over the assumed lifetime [currency/kWh].
 
-Since not all assets are production assets, the MVS distinguishes between the type of assets.
-For assets in energyConversion and energyProduction the MVS calculates the :math:`LCOE~ASSET_i`
+Since not all assets are production assets, the open_plan tool distinguishes between the type of assets.
+For assets to convert or produce energy the open_plan tool calculates the :math:`LCOE~ASSET_i`
 by dividing the total annuity :math:`a_i` of the asset :math:`i` by the total flow :math:`\sum_{t} E_i(t)`.
 
 .. math::
         LCOE~ASSET_i = \frac{a_i}{\sum_{t} E_i(t)}
   
-For assets in :code:`energyStorage`, the MVS sums the annuity for :code:`storage capacity` :math:`a_{i,sc}`, :code:`input power` :math:`a_{i,ip}` and :code:`output power` :math:`a_{i,op}` and divides it by the :code:`output power` total flow :math:`\sum{t} E_{i,op}(t)`.
+For assets that store energy, the open_plan tool sums the annuity for :code:`storage capacity` :math:`a_{i,sc}`, :code:`input power` :math:`a_{i,ip}` and :code:`output power` :math:`a_{i,op}` and divides it by the :code:`output power` total flow :math:`\sum{t} E_{i,op}(t)`.
 
 .. math::
         LCOE~ASSET_i = \frac{a_{i,sc} + a_{i,ip} + a_{i,op}}{\sum_{t}{E_{i,op}(t)}}
@@ -116,7 +116,7 @@ If the total flow is 0 in any of the previous cases, then the :math:`LCOE~ASSET`
 .. math::
         LCOE~ASSET_i = None
   
-For assets in :ref:`energyConsumption <consumption>`, the MVS outputs 0 for the :math:`LCOE~ASSET_i`.
+For assets that consume energy, the open_plan tool outputs 0 for the :math:`LCOE~ASSET_i`.
 
 .. math::
         LCOE~ASSET_i = 0
@@ -304,7 +304,7 @@ The degree of net zero energy describes the ability of an energy system to provi
 In a net zero energy system, demand can be supplied by energy import, but then local energy generation must provide an equally high energy export of energy in the course of the year. In a plus energy system, the export exceeds the import, while local generation can supply all demand (from an aggregated perspective).
 To calculate the degree of NZE, the margin between grid feed-in and grid consumption is compared to the overall demand.
 
-Some definitions of NZE systems require that the local demand is solely covered by locally generated renewable energy. In MVS this is not the case - all locally generated energy is taken into consideration. For information about the share of renewables in the local energy system checkout :ref:`renewable_share_of_local_generation`.
+Some definitions of NZE systems require that the local demand is solely covered by locally generated renewable energy. In the open_plan tool this is not the case - all locally generated energy is taken into consideration. For information about the share of renewables in the local energy system checkout :ref:`renewable_share_of_local_generation`.
 
 A degree of NZE lower than 1 shows that the energy system can not reach a net zero balance, and indicates by how much it fails to do so,
 while a degree of NZE of 1 represents a net zero energy system
@@ -331,7 +331,7 @@ The total emissions of the MES in question are calculated with all aggregated en
 
         \text{with~} &i \text{: generation assets 1,2,…}
 
-The emissions of each generation asset and provider are also calculated and displayed separately in the outputs of MVS.
+The emissions of each generation asset and provider are also calculated and displayed separately in the outputs of the open_plan tool.
 
 .. include:: outputs/specific_emissions_per_electricity_equivalent.inc
 
@@ -347,92 +347,3 @@ Currently the emissions do not include life cycle emissions of energy conversion
 
 .. _output_files:
 
-Files
-#####
-
-.. include:: outputs/bar_chart_optimizedAddCap.inc
-
-An example of a bar chart of recommended additional asset capacities is shown below. Note that currently kWp are displayed on the same scale as kW (or kWh or gkH2), which is not ideal.
-
-.. image:: images/example_optimal_additional_capacities.png
- :width: 600
-
-.. include:: outputs/pie_chart_costs.inc
-
-An examplary pie chart is displayed below, in this case for the operation and management costs of an energy system.
-
-.. image:: images/example_om_pie_chart.png
- :width: 600
-
-.. include:: outputs/plot_input_timeseries.inc
-
-An example of the graph created from the timeseries, eg. specific generation timeseries, provided by the input files is shown below.
-
-.. image:: images/example_input_timeseries.png
- :width: 600
-
-.. include:: outputs/plot_dispatch.inc
-
-An example of the graph displaying the asset dispatch on a specific bus is shown below.
-
-.. image:: images/example_dispatch_assets.png
- :width: 600
-
-.. include:: outputs/network_graph.inc
-
-An example of the created energy system model graphs is shown below.
-
-.. image:: images/network_graph.png
- :width: 600
-
-
-.. include:: outputs/excel_scalar_kpi.inc
-
-The file is named :code:`scalars.xlsx`. An example is shown below.
-
-.. image:: images/example_excel_scalar.png
- :width: 600
-
-.. include:: outputs/excel_timeseries.inc
-
-The file is named :code:`timeseries_all_busses.xlsx`. An example is shown below.
-
-.. image:: images/example_excel_timeseries.png
- :width: 600
-
-.. include:: outputs/logfile.inc
-
-The file is named :code:`mvs_logfile.log`. An example is shown below.
-
-.. image:: images/example_logfile.png
- :width: 600
-
-.. include:: outputs/automatic_report.inc
-
-MVS has a feature to automatically :ref:`generate a PDF report <pdf-report-commands>` that contains the main elements from the input data as well as the simulation results' data.
-The report can also be viewed as a web app on the browser, which provides some interactivity.
-
-MVS version number, the branch ID and the simulation date are provided as well in the report, under the MVS logo.
-A commit hash number is provided at the end of the report in order to prevent the erroneous comparing results from simulations using different versions.
-
-It includes several tables with project data, simulation settings, the various demands supplied by the user, the various components of the system and the optimization results such as the energy flows and the costs.
-The report also provides several plots which help to visualize the flows and costs.
-
-Please, refer to the :ref:`report section <pdf-report-commands>` for more information on how to setup and use this feature, or type
-
-::
-
-    mvs_report -h
-
-in your terminal or command line.
-
-A screenshot of the example report header is displayed below. The full examplary report can be accessed on github in :code:`docs/model/images/example_simulation_report.pdf`.
-
-.. todo: Add permalink when example report on dev?
-
-.. image:: images/example_report_header.png
- :width: 600
-
-.. include:: outputs/json_input_processed.inc
-
-.. include:: outputs/json_with_results.inc
