@@ -34,7 +34,7 @@ We also have a battery, and we have the end user, who consumes energy.
 ..
     We also try to find out, if installing a battery would be an option to
     further reduce costs. Further our energy system contains the electricity consumption.
-
+..
 [Picture Energysystem]
 
 Using this data, we can now think about our optimal solution. In this case our
@@ -47,8 +47,8 @@ On the x-axis we have the fossil fuel generator capacity, and on the y-axis we h
 PV cells generation capacity. Any point within the solution space is a possible
 solution, and using linear optimization, we will find the optimum.
 
-.. image:: images/slide_1.pdf
- :width: 200
+.. image:: ../images/slide_1.png
+ :width: 1000
 
 If we just want to minimize the costs, we would have to say that the optimum is
 (0,0), as this costs us the least. Therefore, we need to add more information,
@@ -61,24 +61,19 @@ In our example, we assume that a small fossil fuel generator has already been
 installed, and consequently, the solution space is reduced, as shown in the
 graphic.
 
-.. image:: images/slide_2.pdf
- :width: 200
+.. image:: ../images/slide_2.png
+ :width: 1000
 
 Another secondary condition is that the amount of solar capacity that we can
 build is restricted by the area that we can actually build solar cells on,
 which is represented by the purple line.
 
-(Slide 3)
-.. image:: images/slide_2.pdf
- :width: 200
+.. image:: ../images/slide_3.png
+ :width: 1000
 
 We also know that we do not want to install more capacity than necessary,
 meaning that the generation capacity of the fossil fuel generator should not
 exceed the peak demand, which is shown by the black straight line. 
-
-Slide 4
-.. image:: images/slide_2.pdf
- :width: 200
 
 We also have to be able to meet the peak demand. We need to make sure that we
 have enough capacity installed to meet this demand, which is depicted by the
@@ -86,25 +81,22 @@ diagonal line, which shows us all the combinations of solar and fossil fuel
 capacity that let us meet peak demand. However, all the solutions above the
 diagonal line are also theoretically possible.
 
-Slide 4
-.. image:: images/slide_2.pdf
- :width: 200
+.. image:: ../images/slide_4.png
+ :width: 1000
 
 We also have some PV cells installed, and consequently, our solution space is
 reduced again. 
 
-Slide 5
-.. image:: images/slide_2.pdf
- :width: 200
+.. image:: ../images/slide_5.png
+ :width: 1000
 
 Finally, we also want to make sure that our energy system is sustainable, and
 therefore, we define a maximum amount of CO2 that we want to emit, which is
 represented by the green line. After having reduced the solution space again,
 we now turn to solving the optimization problem
 
-Slide 6
-.. image:: images/slide_2.pdf
- :width: 200
+.. image:: ../images/slide_6.png
+ :width: 1000
 
 After we have defined our solution space, the next step is to find the optimum.
 Several ways of solving these problems have been developed, one of which is the
@@ -124,9 +116,8 @@ In our simple example, this means that the solution has to lie somewhere on
 the edge of our solutions space. In this case the solution is the yellow
 point.
 
-Slide 7
-.. image:: images/slide_2.pdf
- :width: 200
+.. image:: ../images/slide_7.png
+ :width: 1000
 
 It is also possible that several solutions exist. Graphically, this would mean
 that an entire edge of the constraint to the solution space would be an
@@ -142,31 +133,36 @@ same in a two dimensional problem or a 50 Dimensional problem, it just takes
 longer for the solver to do its work.
 
 
+..
 - Presentation of the benefits of individual technologies
 
+..
 Solving energy management problems with the help of linear optimization
 
+..
 General information on modeling
 
+..
 Reduction of the considered system to subcomponents with a certain level of detail
 
-real system
-Simplifications are necessary
-Results can be complex
+..
+  real system
+  Simplifications are necessary
+  Results can be complex
 
-Energy systems based on renewable energies can become very complex.
+  Energy systems based on renewable energies can become very complex.
 
-The components with which an energy supply system can be modeled in open_plan are classified as follows:
+  The components with which an energy supply system can be modeled in open_plan are classified as follows:
 
-- Sources
-- Sinks
-- Transformer
-- Storage
+  - Sources
+  - Sinks
+  - Transformer
+  - Storage
 
 .. TODO: link to oemof-solph
 
-.. image:: images/energy_system_model.png
- :width: 200
+  .. image:: images/energy_system_model.png
+  :width: 200
 
 Sub header 1
 ############
