@@ -325,7 +325,7 @@ generate_kpi_categories(
 
 # -- Project information -----------------------------------------------------
 
-project = "Multi-Vector Simulator (MVS)"
+project = "open_plan"
 copyright = "2019, Reiner Lemoine Institut and Martha M. Hoffmann"
 author = "Reiner Lemoine Institut and Martha M. Hoffmann"
 
