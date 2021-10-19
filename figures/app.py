@@ -19,7 +19,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 
-path_to_ts_scenario1 = "max_boegl/Szenario_1/timeseries_all_busses.xls"
+path_to_ts_scenario1 = "max_boegl/Szenario_1/timeseries_all_busses.xlsx"
 path_to_json_scenario1 = 'max_boegl/Szenario_1/json_with_results.json'
 path_to_ts_scenario2 = "max_boegl/Szenario_2/timeseries_all_busses.xlsx"
 path_to_json_scenario2 = 'max_boegl/Szenario_2/json_with_results.json'
