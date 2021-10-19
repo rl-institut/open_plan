@@ -49,6 +49,8 @@ Here is a template for new release sections
 - Add customizable input fields which adapt based each parameter options in the `input_parameters_list.csv` in the docs (#126)
 - Add dummy trace plot for vizualizing timeseries (#126)
 - Add plotly dash endpoint (#126)
+- Add a link to the open_plan youtube page (#140)
+- Add the finished Master thesis to the publication page (#140)
 
 ### Changed
 - Modified the view-components according to the changed template (#35)
