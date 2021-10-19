@@ -11,7 +11,7 @@ energy technologies and optimize them cost-efficiently.
 The easy to use graphical user interface and also the in-depth insight into the 
 optimization program and its visible open source code encourages end-users and also 
 researchers to use it. 
-[Write some more about the aim of open_plan.....]
+.. [Write some more about the aim of open_plan.....]
 
 One important aspect of future scenarios is the determination of optimal dimensioning
 and combinations of various technologies. To compute an optimal individual energy system
