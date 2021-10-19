@@ -47,7 +47,7 @@ On the x-axis we have the fossil fuel generator capacity, and on the y-axis we h
 PV cells generation capacity. Any point within the solution space is a possible
 solution, and using linear optimization, we will find the optimum.
 
-.. image:: images/slide_1.png
+.. image:: images/slide_1.pdf
  :width: 200
 
 If we just want to minimize the costs, we would have to say that the optimum is
@@ -61,8 +61,86 @@ In our example, we assume that a small fossil fuel generator has already been
 installed, and consequently, the solution space is reduced, as shown in the
 graphic.
 
-.. image:: images/slide_2.png
+.. image:: images/slide_2.pdf
  :width: 200
+
+Another secondary condition is that the amount of solar capacity that we can
+build is restricted by the area that we can actually build solar cells on,
+which is represented by the purple line.
+
+(Slide 3)
+.. image:: images/slide_2.pdf
+ :width: 200
+
+We also know that we do not want to install more capacity than necessary,
+meaning that the generation capacity of the fossil fuel generator should not
+exceed the peak demand, which is shown by the black straight line. 
+
+Slide 4
+.. image:: images/slide_2.pdf
+ :width: 200
+
+We also have to be able to meet the peak demand. We need to make sure that we
+have enough capacity installed to meet this demand, which is depicted by the
+diagonal line, which shows us all the combinations of solar and fossil fuel
+capacity that let us meet peak demand. However, all the solutions above the
+diagonal line are also theoretically possible.
+
+Slide 4
+.. image:: images/slide_2.pdf
+ :width: 200
+
+We also have some PV cells installed, and consequently, our solution space is
+reduced again. 
+
+Slide 5
+.. image:: images/slide_2.pdf
+ :width: 200
+
+Finally, we also want to make sure that our energy system is sustainable, and
+therefore, we define a maximum amount of CO2 that we want to emit, which is
+represented by the green line. After having reduced the solution space again,
+we now turn to solving the optimization problem
+
+Slide 6
+.. image:: images/slide_2.pdf
+ :width: 200
+
+After we have defined our solution space, the next step is to find the optimum.
+Several ways of solving these problems have been developed, one of which is the
+simplex method. This can be done on paper, but as the number of equations
+rises, this becomes more and more difficult.
+
+In open_plan this is done by a solver, which can solve the optimization, given
+that the equations are in a certain form. The solver then proceeds in two
+steps. In the first step, it checks if there is a solution to the problem, and
+as soon as a solution is found, the solver proceeds to the second step. In the
+second step, the solver then tries to find a better solution, and continues
+this process iteratively, until it has found the best solution. To do this,
+the solver moves along the edges of the solutions space, as the optimum will
+always lie on the edge of the solution space in a linear optimization model,
+as long as there is an optimum.
+In our simple example, this means that the solution has to lie somewhere on
+the edge of our solutions space. In this case the solution is the yellow
+point.
+
+Slide 7
+.. image:: images/slide_2.pdf
+ :width: 200
+
+It is also possible that several solutions exist. Graphically, this would mean
+that an entire edge of the constraint to the solution space would be an
+optimum, meaning that we have several solutions that give us the same, optimal
+result. In this case we can pick any point of the input combinations that lead
+us to the optimal solution.
+If we increase the complexity, by either adding more secondary conditions, or
+by expanding the main condition, the solution space becomes more complex, and
+can go from 3 Dimensional to 50 Dimensional or even more. When the solution
+space becomes more complex, it becomes basically impossible to graphically
+demonstrate how the solution space is solved, but the principle is exactly the
+same in a two dimensional problem or a 50 Dimensional problem, it just takes
+longer for the solver to do its work.
+
 
 - Presentation of the benefits of individual technologies
 
