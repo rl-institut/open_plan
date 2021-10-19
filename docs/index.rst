@@ -85,14 +85,17 @@ Getting Started
    :maxdepth: 1
    :caption: Getting Started
 
-   Quick start guide
-   Mathematics_simply_explained
+   getting_started/quick_start_guide.rst
+   getting_started/mathematics_simply_explained
    
    
 .. toctree::
    :hidden:
    :maxdepth: 1
    :caption: Examples
+
+   examples/simple_energy_system.rst
+   examples/simple_energy_system_2.rst
    
 Model Reference
 ===============
