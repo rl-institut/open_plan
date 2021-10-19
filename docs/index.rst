@@ -71,6 +71,74 @@ The simulation outputs are also separated into categories:
 
 Additionally, different vizualizations of the results can be provided, eg. as pie charts, plots of asset dispatch and an automatic summary report.
 
+Getting Started
+===============
+
+.. only:: html
+
+    Follow the Quick start guide [Link ergänzen]
+
+.. Documentation
+.. =============
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :caption: Getting Started
+
+   Quick start guide
+   Mathematics_simply_explained
+   
+   
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :caption: Examples
+   
+Model Reference
+===============
+
+* **How the energy system is modelled**: :doc:`Assumption behind the model <model/assumptions>` | :doc:`Available components for modelling <model/components>` | :doc:`Setting constraints on model or components <model/constraints>` | :doc:`Scope and limitation of the model <model/limitations>`
+* **Description of parameters**: :doc:`Input parameters <model/input_parameters>` | :doc:`Output variables and KPIs <model/simulation_outputs>`
+* **Validation of the model**: :doc:`Validation methodology <model/validation>`
+
+    .. maybe add Pilot projects here as well?
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :caption: Model Reference
+
+   model/assumptions
+   model/components
+   model/constraints
+   model/limitations
+   model/input_parameters
+   model/simulation_outputs
+
+..
+    release_notes (for website, remove for report, not implemented yet, nice to have)
+    contributing (here paste content of contributing.md --> convert to RST and include it as we did for readme, the mention to contributing in getting started will link to this chapter)
+API Reference
+=============
+
+* **Documentation**: :doc:`Modules and functions <references/code>`
+* **Getting involved**: :doc:`Contributing guidelines and protocols <references/contributing>`
+* **Academic references**: :doc:`Publications and Bibliography <references/publications>`
+* **Using or modifying MVS**: :doc:`License <references/license>` | :doc:`How to cite MVS <references/citations>`
+* **Getting help**: :doc:`Know issues and workaround <references/troubleshooting>` | :doc:`Report a bug or issue <references/bug_report>`
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :caption: References
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
 
 Maintainers
 ===========
