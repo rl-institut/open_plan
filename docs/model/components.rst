@@ -3,10 +3,10 @@
 Component models
 ----------------
 
-The component models of the MVS result from the used python-library :code:`oemof-solph` for energy modeling.
+The component models of the open_plan tool result from the used python-library :code:`oemof-solph` for energy modeling.
 
 It requires component models to be simplified and linearized.
-This is the reason why the MVS can provide a pre-feasibility study of a specific system setup,
+This is the reason why the open_plan tool can provide a pre-feasibility study of a specific system setup,
 but not the final sizing and system design.
 The types of assets are presented below.
 
@@ -15,8 +15,8 @@ The types of assets are presented below.
 Energy consumption
 ##################
 
-Demands within the MVS are added as energy consumption assets in :ref:`energyConsumption.csv <consumption>`. Most importantly, they are defined by a timeseries, representing the demand profile, and their energy vector. A number of demand profiles can be defined for one energy system, both of the same and different energy vectors.
-The main optimization goal for the MVS is to supply the defined demand withouth fail for all of the timesteps in the simulation with the least cost of supply (comp. :ref:`economic_precalculation-label`).
+Demands within the open_plan tool are added as energy consumption assets. Most importantly, they are defined by a timeseries, representing the demand profile, and their energy vector. A number of demand profiles can be defined for one energy system, both of the same and different energy vectors.
+The main optimization goal for the open_plan tool is to supply the defined demand without fail for all of the timesteps in the simulation with the least cost of supply (comp. :ref:`economic_precalculation-label`).
 
 
 .. _energy_production:
@@ -34,10 +34,9 @@ Non-dispatchable sources of generation
     - Run-of-the-river hydro power plants
     - Solar thermal collectors
 
-Variable renewable energy (VRE) sources, like wind and PV, are non-dispatchable due to their fluctuations in supply. They are added as sources in :ref:`energyProduction.csv <production>`.
+Variable renewable energy (VRE) sources, like wind and PV, are non-dispatchable due to their fluctuations in supply. 
 
 The fluctuating nature of non-dispatchable sources is represented by generation time series that show the respective production for each time step of the simulated period. In energy system modelling it is common to use hourly time series.
-The name of the file containing the time series is added to :ref:`energyProduction.csv <production>` with the parameter :ref:`filename-label`. For further requirements concerning the time series see section :ref:`time_series_folder`.
 
 If you cannot provide time series for your VRE assets you can consider to calculate them by using models for generating feed-in time series from weather data. The following is a list of examples, which is not exhaustive:
 
@@ -58,14 +57,8 @@ Dispatchable sources of generation
     - Deep-ground geothermal plant (ground assumed to allow unlimited extraction of heat, not depending on season)
 
 Fuel sources are added as dispatchable sources, which can have development, investment, operational and dispatch costs.
-They are added to :ref:`energyProduction.csv <production>`, while setting :ref:`filename-label` to :code:`None`.
 
 Fuel sources are for example needed as source for a diesel generator (diesel), biogas plant (gas) or a condensing power plant (gas, coal, ...), see :ref:`energy_conversion`.
-
-Energy providers, even though also dispatchable sources of generation, should be added via :ref:`energyProviders.csv <providers>`,
-as there are some additional features available then, see :ref:`energy_providers`.
-
-Both energy providers and the additional fuel sources are limited to the options of energy carriers provided in the table of :ref:`table_default_energy_carrier_weights_label`, as the default weighting factors to translate the energy carrier into electricity equivalent need to be defined.
 
 
 .. _energy_conversion:
@@ -82,7 +75,7 @@ Energy conversion
     - Electrolyzers
     - Biogas power plants
 
-Conversion assets are added as transformers and are defined in :ref:`energyConversion.csv <conversion>`.
+Conversion assets are added as transformers.
 
 The parameters :ref:`dispatch_price <dispatchprice-label>`, :ref:`efficiency <efficiency-label>` and :ref:`installedCap <installedcap-label>` of transformers are assigned to their output flows.
 This means that these parameters need to be provided for the output of the asset and that the costs of the input, (e.g. cost of fuel) are not included in its :ref:`dispatch_price <dispatchprice-label>` but in the :ref:`dispatch_price <dispatchprice-label>` of the fuel source, see :ref:`dispatchable_sources`.
@@ -151,7 +144,7 @@ As described above, the costs for diesel and gas need to be included in the :ref
 Energy providers
 ################
 
-The energy providers are the most complex assets in the MVS model. They are composed of a number of sub-assets
+The energy providers are the most complex assets in the open_plan model. They are composed of a number of sub-assets
 
     - Energy consumption source, providing the energy required from the system with a certain price
     - Energy peak demand pricing "transformers", which represent the costs induced due to peak demand
@@ -178,13 +171,13 @@ A peak demand pricing scheme is based on an electricity tariff,
 that requires the consumer not only to pay for the aggregated energy consumption in a time period (eg. kWh electricity),
 but also for the maximum peak demand (load, eg. kW power) towards the grid of the energy provider within a specific pricing period.
 
-In the MVS, this information is gathered in :code:`energyProviders` assets with:
+In the open_plan tool, this information is gathered in the provider assets with:
 
     - :const:`multi_vector_simulator.utils.constants_json_strings.PEAK_DEMAND_PRICING_PERIOD` as the period used in peak demand pricing. Possible values are 1 (yearly), 2 (half-yearly), 3 (each trimester), 4 (quaterly), 6 (every 2 months) and 12 (each month). If you have a `simulation_duration` < 365 days, the periods will still be set up assuming a year! This means, that if you are simulating 14 days, you will never be able to have more than one peak demand pricing period in place.
 
     - :const:`multi_vector_simulator.utils.constants_json_strings.PEAK_DEMAND_PRICING` as the costs per peak load unit, eg. kW
 
-To represent the peak demand pricing, the MVS adds a "transformer" that is optimized with specific operation and maintenance costs per year equal to the PEAK_DEMAND_PRICING for each of the pricing periods.
+To represent the peak demand pricing, the open_plan tool adds a "transformer" that is optimized with specific operation and maintenance costs per year equal to the PEAK_DEMAND_PRICING for each of the pricing periods.
 For two peak demand pricing periods, the resulting dispatch could look as following:
 
 .. image:: ../images/Model_Assumptions_Peak_Demand_Pricing_Dispatch_Graph.png
@@ -195,7 +188,7 @@ For two peak demand pricing periods, the resulting dispatch could look as follow
 Energy storage
 ##############
 
-Energy storages such as battery storages, thermal storages or H2 storages are modelled with the :code:`GenericStorage` component of :code:`oemof.solph`. They are designed for one input and one output and are defined within the files :ref:`energyStorage.csv <storage>` and :ref:`storage_*.csv <storage_csv>`.
+Energy storages such as battery storages, thermal storages or H2 storages are modelled with the :code:`GenericStorage` component of :code:`oemof.solph`. They are designed for one input and one output.
 
 The state of charge of a storage at the first and last time step of an optimization are equal.
 Charge and discharge of the whole capacity of the energy storage are possible within one time step in case the capacity of the storage is not optimized. In case of
@@ -211,13 +204,13 @@ When choosing the second option, the capacity of the charge controller can be op
 If you do not want to optimize the charge controller's capacity you can take its costs and efficiency into account when defining the storage's input and output power, see :ref:`storage_csv`.
 A charge controller is defined by two transformers, see section :ref:`energy_conversion` above.
 
-Note that capacity reduction over the lifetime of a BESS that may occur due to different effects during aging cannot be taken into consideration in MVS. A possible workaround for this could be to manipulate the lifetime.
+Note that capacity reduction over the lifetime of a BESS that may occur due to different effects during aging cannot be taken into consideration in the open_plan tool. A possible workaround for this could be to manipulate the lifetime.
 
 
 Hydrogen storage (H2)
 =====================
 
-Hydrogen storages are modelled as all storage types in MVS with as :code:`GenericStorage` like described above.
+Hydrogen storages are modelled as all storage types in the open_plan tool as :code:`GenericStorage` like described above.
 
 The most common hydrogen storages store H2 as liquid under temperatures lower than -253 °C or under high pressures.
 The energy needed to provide these requirements cannot be modelled via the storage component as another energy sector such as cooling or electricity is needed. It could therefore, be modelled as an additional demand of the energy system, see `issue #811 <https://github.com/rl-institut/multi-vector-simulator/issues/811>`_
@@ -228,14 +221,14 @@ Thermal energy storage
 ======================
 
 Thermal energy storages of the type sensible heat storage (SHS) are modelled as :code:`GenericStorage` like described above. The implementation of a specific type of SHS, the stratified thermal energy storage, is described in section :ref:`stratified_tes`.
-The modelling of latent-heat (or Phase-change) and chemical storages have not been tested with MVS, but might be achieved by precalculations.
+The modelling of latent-heat (or Phase-change) and chemical storages have not been tested with the open_plan tool, but might be achieved by precalculations.
 
 .. _stratified_tes:
 
 Stratified thermal energy storage
 =================================
 
-Stratified thermal energy storage is defined by the two optional parameters :ref:`fixed_thermal_losses_relative-label` and :ref:`fixed_thermal_losses_absolute-label`. If they are not included in :ref:`storage_*.csv <storage_csv>` or are equal to zero, then a normal generic storage is simulated instead.
+Stratified thermal energy storage is defined by the two optional parameters :ref:`fixed_thermal_losses_relative-label` and :ref:`fixed_thermal_losses_absolute-label`. 
 These two parameters are used to take into account temperature dependent losses of a thermal storage. To model a thermal energy storage without stratification, the two parameters are not set. The default values of :ref:`fixed_thermal_losses_relative-label` and :ref:`fixed_thermal_losses_absolute-label` are zero.
 Except for these two additional parameters the stratified thermal storage is implemented in the same way as other storage components.
 
@@ -294,7 +287,7 @@ Energy excess
 #############
 
 .. note::
-   Energy excess components are implemented **automatically** by MVS! You do not need to define them yourself.
+   Energy excess components are implemented **automatically** by the open_plan tool! You do not need to define them yourself.
 
 An energy excess sink is placed on each of the LES energy busses, and therefore energy excess is allowed to take place on each bus of the LES.
 This means that there are assumed to be sufficient vents (heat) or resistors (electricity) to dump excess (waste) generation.
