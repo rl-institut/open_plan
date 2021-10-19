@@ -61,6 +61,7 @@ Here is a template for new release sections
 - Replaces the iframe elements showing the relevant docs pages with hyperlinks to readthedocs (#110)
 - Make the webapp more visually friendly (#116)
 - Host stakeholder workshop reports on the open_plan website (#128)
+- Add a link to the online version of the tool on the website (#140)
 
 ### Removed
 - yet another thing
