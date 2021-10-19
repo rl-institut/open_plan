@@ -78,8 +78,9 @@ df = df_ts[df_ts.columns[1:7]]
 df_total= df.sum(axis=1)/1e3                   # for feedin
 df_ts[df_ts.columns[1:]] = df_ts[df_ts.columns[1:]]/1e3
 
-
-fig = px.line(df_ts[:200], x=df_ts.columns[0], y= df_ts.columns[1:], title='Lastprofil',line_shape='hv',
+n = 24*21
+m = 24*0
+fig = px.line(df_ts[m:m+n], x=df_ts.columns[0], y= df_ts.columns[1:], title='Lastprofil',line_shape='hv',
               labels={
                   "value": "Leistung in MW",
                   "Unnamed: 0": "Zeit",
@@ -106,8 +107,6 @@ fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
 #########################
 
 fig1 = go.Figure()
-n=24*21
-m=24*0
 x = df_ts[df_ts.columns[0]][m:m+n]
 #df_total= df.sum(axis=1)/1e3                   # for feedin
 #df_ts[df_ts.columns[1:]] = df_ts[df_ts.columns[1:]]/1e3
