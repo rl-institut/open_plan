@@ -346,15 +346,15 @@ app.layout = html.Div(
     children=[
         dcc.Graph(
             className='cell medium-6',
+            figure=fig,
+        ),
+        dcc.Graph(
+            className='cell medium-6',
             figure=fig1,
         ),
         dcc.Graph(
             className='cell medium-6',
             figure=fig2,
-        ),
-        dcc.Graph(
-            className='cell medium-6',
-            figure=fig3,
         ),
         dcc.Graph(
             className='cell medium-6',
