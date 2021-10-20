@@ -59,7 +59,7 @@ The user is asked to provide the required data via a collection of csv files or 
 
 *	**System configuration**, in which the user specifies the technical and financial data of each asset
 
-*	**Meteorological data**, which is related to the components that generate electricity by harnessing an existing source of energy that is weather- and time-dependent (e.g., solar and wind power)
+*	**Meteorological data**, which is related to the components that generate electricity by harnessing an existing source of energy that is weather- and time-dependent (e.g. solar and wind power)
 
 This set of input data is then translated to a linear programming problem, also known as a constrained optimization problem. The MVS is based on the `oemof-solph <https://github.com/oemof/oemof-solph>`__ python library that describes the problem by specifying an objective function to minimize the annual energy supply costs, the decision variables and the bounds and constraints.
 
@@ -146,7 +146,7 @@ Indices and tables
 Maintainers
 ===========
 
-The open_plan tool is currently maintained by staff from the `Reiner Lemoine Institute <https://reiner-lemoine-institut.de/>`__the `Potsdam Institute for Climate Impact Research <https://www.pik-potsdam.de/>`__ and the `German Solar Energy Society <https://www.dgs-berlin.de/>`__.
+The open_plan tool is currently maintained by staff from the `Reiner Lemoine Institute <https://reiner-lemoine-institut.de/>`__ the `Potsdam Institute for Climate Impact Research <https://www.pik-potsdam.de/>`__ and the `German Solar Energy Society <https://www.dgs-berlin.de/>`__.
 
 
 
