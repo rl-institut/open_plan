@@ -94,7 +94,7 @@ newnames = {'DSO_consumption':'Netznutzung',
             'wind_winnberg04' : 'Wind - Winnberg04',
             'DSO_feedin': 'Netzeinspeisung',
             'AC bus_excess_sink':'Überschuss',
-            'Industriepark':'Industriepark'}
+            'Industriepark':'Strombedarf'}
 fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
                                       legendgroup = newnames[t.name],
                                       hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])
@@ -123,7 +123,7 @@ fig1.add_trace(go.Scatter(
 fig1.add_trace(go.Scatter(
     x=x,
     y=-df_ts_scope[df_ts_scope.columns[8]],
-    name='Industriepark',
+    name='Strombedarf',
     line=go.scatter.Line(shape='hv', color= 'red')))
 
 
