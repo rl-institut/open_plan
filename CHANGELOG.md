@@ -51,6 +51,7 @@ Here is a template for new release sections
 - Add plotly dash endpoint (#126)
 - Add a link to the open_plan youtube page (#140)
 - Add the finished Master thesis to the publication page (#140)
+- Add the 2021-10-20 workshop summary to the publication page (#144)
 
 ### Changed
 - Modified the view-components according to the changed template (#35)
@@ -65,6 +66,7 @@ Here is a template for new release sections
 - Host stakeholder workshop reports on the open_plan website (#128)
 - Add a link to the online version of the tool on the website (#140)
 
+
 ### Removed
-- yet another thing
+- Stakeholder workshop registration's link (#144)
 
