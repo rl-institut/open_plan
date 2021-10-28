@@ -1,0 +1,16 @@
+.icon {
+  &--small {
+    font-size: .6rem;
+  }
+}
+
+.icon[data-bs-toggle="tooltip"] {
+  cursor: pointer;
+  padding-left: 0.35rem;
+  vertical-align: middle;
+  color: $primary-color-1;
+}
+
+.tooltip-inner {
+  max-width: 350px!important;
+}

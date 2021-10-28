@@ -1,0 +1,179 @@
+msgid "Die Anzahl der Jahre, die die Anlage bereits in Betrieb ist."
+msgstr ""
+
+msgid "Jahr"
+msgstr ""
+
+msgid "Faktor"
+msgstr ""
+
+msgid "€/kWh"
+msgstr ""
+
+msgid "Verhältnis von Energieausbeute/Energieeintrag. Der Batteriewirkungsgrad ist das Verhältnis zwischen der aus der Batterie entnommenen Energie und der in die Batterie eingebrachten Energie. Das bedeutet, dass aufgrund der Entladeverluste nicht so viel Energie entnommen werden kann, wie der Batterie zugeführt wird. Der Wirkungsgrad der Spalten 'Eingangsleistung' und 'Ausgangsleistung' sollte gleich dem Lade- bzw. Entladewirkungsgrad gesetzt werden, während der Wirkungsgrad der 'Speicherkapazität' gleich dem Wirkungsgrad des Speichers/der Fähigkeit, die Ladung über die Zeit zu halten (`= 1 - Selbstentladung/Zerfall`), sein sollte, was bei elektrischen Speichern normalerweise im Bereich von 0,95 bis 1 liegt."
+msgstr ""
+
+msgid "Emissionen pro Versandeinheit einer Anlage."
+msgstr ""
+
+msgid "kgCO2eq/Anlageneinheit"
+msgstr ""
+
+msgid "Preis des aus dem Versorgungsnetz bezogenen Energieträgers."
+msgstr ""
+
+msgid "€/Energieträgereinheit"
+msgstr ""
+
+msgid "Energievektor/Rohstoff. Konvention: Für eine Energieumwandlungsanlage definieren Sie energyVector des Ausgangs. Für eine Senke definieren Sie auf Basis des Zuflusses. Für eine Quelle definieren Sie auf der Basis des Ausgangsflusses. Für einen Speicher definieren Sie basierend auf dem gespeicherten Energieträger."
+msgstr ""
+
+msgid "Die Anzahl der Tage, die mit dem Energiesystemmodell simuliert wurden."
+msgstr ""
+
+msgid "Tag"
+msgstr ""
+
+msgid "Name einer csv-Datei, die die Zeitreihe für die Erzeugung oder den Bedarf enthält."
+msgstr ""
+
+msgid "Thermische Verluste des Speichers unabhängig vom Ladezustand und unabhängig von der nominalen Speicherkapazität zwischen zwei aufeinanderfolgenden Zeitschritten."
+msgstr ""
+
+msgid "Faktor"
+msgstr ""
+
+msgid "Thermische Verluste des Speichers unabhängig vom Ladezustand zwischen zwei aufeinanderfolgenden Zeitschritten relativ zur nominalen Speicherkapazität."
+msgstr ""
+
+msgid "Die Bezeichnung des Busses/der Komponente, von dem/der der Energievektor in die Anlage eintrifft."
+msgstr ""
+
+msgid "Die bereits vorhandene installierte Kapazität an Ort und Stelle. Wenn das Projekt länger als die verbleibende Lebensdauer dauert, werden die Ersatzkosten berücksichtigt."
+msgstr ""
+
+msgid "kWp"
+msgstr ""
+
+msgid "Name der Anlage für Anzeigezwecke"
+msgstr ""
+
+msgid "Die maximale Menge an Gesamtemissionen in der optimierten Energieanlage."
+msgstr ""
+
+msgid "kgCO2eq/a"
+msgstr ""
+
+msgid "Die maximale Gesamtkapazität einer Anlage, die am Projektstandort installiert werden kann. Dies beinhaltet sowohl die installierte als auch die maximal mögliche zusätzliche Kapazität. Ein Beispiel wäre, dass ein Dach nur 50 kWp PV tragen kann (maximumCap), während die installierte Leistung bereits 10 kWp beträgt. Die Optimierung würde dann nur maximal 40 kWp PV zulassen."
+msgstr ""
+
+msgid "Der minimale Grad der Autonomie, der von der Optimierung erfüllt werden muss."
+msgstr ""
+
+msgid "Der minimale Anteil an Energie, der durch erneuerbare Erzeugung im optimierten Energiesystem geliefert wird. Geben Sie den Wert 0 ein, um diese Einschränkung zu deaktivieren."
+msgstr ""
+
+msgid "Gibt an, ob die Optimierung zu einem Netto-Null-Energiesystem führen muss (True) oder nicht (False)."
+msgstr ""
+
+msgid "Erlaubt dem Benutzer, eine Kapazitätsoptimierung für eine Anlage durchzuführen."
+msgstr ""
+
+msgid "Die Bezeichnung des Busses/der Komponente, zu dem/der der Energievektor von der Anlage abgeht."
+msgstr ""
+
+msgid "Aktivieren Sie die Erzeugung einer Datei mit dem linearen Gleichungssystem, das die Simulation beschreibt, d. h. mit der Zielfunktion und allen Nebenbedingungen. Diese lp-Datei ermöglicht es dem Benutzer, die zugrundeliegenden Gleichungen der Optimierung zu betrachten."
+msgstr ""
+
+msgid "Preis, der zusätzlich für den Energieverbrauch zu zahlen ist, basierend auf dem Spitzenbedarf einer bestimmten Periode."
+msgstr ""
+
+msgid "€/kW"
+msgstr ""
+
+msgid "Anzahl der Bezugszeiträume in einem Jahr für den Spitzenbedarfspreis."
+msgstr ""
+
+msgid "mal pro Jahr (1,2,3,4,6,12)"
+msgstr ""
+
+msgid "Jahre"
+msgstr ""
+
+msgid "Benutzer können eine Projekt-ID nach ihren Wünschen zuweisen."
+msgstr ""
+
+msgid "Benutzer können einen Projektnamen nach ihren Wünschen vergeben."
+msgstr ""
+
+msgid "Erlaube dem Benutzer, ein Asset als erneuerbar zu kennzeichnen."
+msgstr ""
+
+msgid "Kurze Beschreibung des zu simulierenden Szenarios."
+msgstr ""
+
+msgid "Benutzer können eine Szenario-ID nach ihren Wünschen zuweisen."
+msgstr ""
+
+msgid "Benutzer können einen Szenariennamen nach ihren Wünschen vergeben."
+msgstr ""
+
+msgid "Der Ladezustand (als Faktor der tatsächlichen Kapazität) des Speichers im nullten Zeitschritt."
+msgstr ""
+
+msgid "Keine oder Faktor"
+msgstr ""
+
+msgid "Tatsächliche CAPEX einer Anlage, d.h. spezifische Investitionskosten"
+msgstr ""
+
+msgid "€/Einheit"
+msgstr ""
+
+msgid "Tatsächliche OPEX einer Anlage, d.h. spezifische Betriebs- und Wartungskosten."
+msgstr ""
+
+msgid "€/Einheit/Jahr"
+msgstr ""
+
+msgid "Die Daten und der Zeitpunkt, an dem die Simulation im ersten Schritt beginnt."
+msgstr ""
+
+msgid "Name einer csv-Datei, die die Eigenschaften einer Speicherkomponente enthält"
+msgstr ""
+
+msgid "Minuten"
+msgstr ""
+
+msgid "Geben Sie den Typ der OEMOF-Komponente ein. Zum Beispiel wäre eine PV-Anlage eine Quelle, ein Solarwechselrichter ein Transformator, usw.  Der `Typ_oemof` wird später durch die EPA bestimmt."
+msgstr ""
+
+msgid "Einheit, die mit der Kapazität der Komponente verbunden ist."
+msgstr ""
+
+msgid "Szenario-Einstellung"
+msgstr ""
+
+msgid "Auslegung des Energiesystems"
+msgstr ""
+
+msgid "Randbedingungen"
+msgstr ""
+
+msgid "Simulation"
+msgstr ""
+
+msgid "Anbieter"
+msgstr ""
+
+msgid "Produktion"
+msgstr ""
+
+msgid "Umwandlung"
+msgstr ""
+
+msgid "Lagerung"
+msgstr ""
+
+msgid "Bedarf"
+msgstr ""

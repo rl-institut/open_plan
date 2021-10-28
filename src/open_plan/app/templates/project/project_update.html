@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+{% block head_block %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossorigin=""
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" />
+<link rel="stylesheet" href="{% static 'css/map.css' %}" type="text/css">
+{% endblock head_block %}
+
+{% block start_body_scripts %}
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" crossorigin=""
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==">
+    </script>
+{% endblock %}
+
+{% block content %}
+    <style>
+        @media screen and (max-width: 800px) {
+            .panel-default {
+                background: transparent;
+                box-shadow: none;
+            }
+
+            .btn btn-success, .submit-btn btn btn-primary { {
+                font-size: 80%;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .requiredField {
+                width: 50%;
+                margin-left: 5rem;
+            }
+
+            .numberinput {
+                width: 80%;
+                margin-left: 5rem;
+            }
+
+            .select {
+                width: 80%;
+                margin-left: 5rem;
+            }
+
+
+            #mapid {
+    height: 300px!important;
+  }
+
+  .btn.btn-primary.btn-lg{
+      margin-left:40% ;
+  }
+
+        #listtitle2 {
+            font-size: 60%;
+            width: 100%;
+            margin-left: 1rem;
+            text-align: center !important;
+
+        }
+    
+        }
+
+        @media screen and (max-width: 767px) {
+            .btn btn-success, .submit-btn btn btn-primary { {
+                width: 30%;
+                margin-left: 12rem;
+                font-size: 80%;
+            }
+        }
+         @media screen and (max-width: 991px) {
+             #mapid{
+                 height:2300px;
+             }
+         }
+    </style>
+    <br>
+    <button onclick="window.open(`{% url 'project_search' %}`, `_self`)" id="backbutton"><span class="glyphicon glyphicon-chevron-left"></span> Back</button>
+
+    <br>
+    <br>
+    <div class="row">
+
+        <div class="col-sm-12">
+
+
+            <div class="panel panel-default ">
+
+                <div class="container6">
+
+                    <div class="row">
+                        <!--   <div class="col-sm-7"> -->
+
+                        <!-- <div id="project_map"> -->
+                        <div class="col-sm-5">
+                            <div id="mapid" style="filter:sepia(10%); height:900px;">
+
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <br>
+                            <br>
+
+                            <div class="panel-heading"><h3 class="panel-title" id="titleproj" style="color: #1b1e21;">
+                                <strong>Edit
+                                    Project </strong></h3></div>
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-1"></div>
+                                <div class="col-sm-10">
+
+                                    <div class="panel-body">
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                {{ project_form.name| as_crispy_field }}
+                                                {{ project_form.description| as_crispy_field }}
+                                                {{ project_form.country| as_crispy_field }}
+                                                <!-- <div style="height:350px" id="mapid"></div> -->
+                                                <br/>
+                                                <div class="row">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-4 mb-0">
+                                                            {{ project_form.latitude|as_crispy_field }}
+                                                        </div>
+                                                        <div class="form-group col-md-4 mb-0">
+                                                            {{ project_form.longitude|as_crispy_field }}
+                                                        </div>
+                                                        <div class="form-group col-md-4 mb-0">
+                                                            {{ economic_data_form.duration|as_crispy_field }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-4 mb-0">
+                                                            {{ economic_data_form.currency|as_crispy_field }}
+                                                        </div>
+                                                        <div class="form-group col-md-4 mb-0">
+                                                            {{ economic_data_form.discount|as_crispy_field }}
+                                                        </div>
+                                                        <div class="form-group col-md-4 mb-0">
+                                                            {{ economic_data_form.tax|as_crispy_field }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-sm-4"></div>
+                                                <div class="col-sm-5">
+                                                    <button class="btn btn-primary btn-lg"type="submit"  type="submit">Submit
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-2"></div>
+                <script>
+                    /* Map Show and Latitude-Longitude data autofill */
+                    var lat = document.getElementById("id_latitude").value;
+                    var lon = document.getElementById("id_longitude").value;
+                    var mymap = L.map('mapid').setView([lat, lon], 4);
+
+                    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                        maxZoom: 18,
+                        id: 'mapbox/streets-v11',
+                        tileSize: 512,
+                        zoomOffset: -1,
+                        accessToken: 'pk.eyJ1IjoidmFsa2FsYWlzIiwiYSI6ImNrZGhpZ29peTFnMjIycG5ybWR3aG4yeHIifQ.L4y4PQjkIdO1c7pvzOr2kw'
+                    }).addTo(mymap);
+
+                    var popup = L.popup();
+
+                    function onMapClick(e) {
+                        popup.setLatLng(e.latlng)
+                            .setContent(`Location Coordinates: <br> (${e.latlng.lat.toFixed(4)}. ${e.latlng.lng.toFixed(4)})`)
+                            .openOn(mymap);
+                        $('#id_latitude').val(e.latlng.lat.toFixed(4));
+                        $('#id_longitude').val(e.latlng.lng.toFixed(4));
+                    }
+
+                    mymap.on('click', onMapClick);
+                </script>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+{% endblock content %}

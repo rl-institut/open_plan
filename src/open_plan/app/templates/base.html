@@ -1,0 +1,58 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Energy Planning Application</title>
+    <link rel="shortcut icon" href="{% static 'images/eland.png' %}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    {% block head_block %}
+    {% endblock head_block %}
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/jquery.bootstrap.modal.forms.min.js' %}"></script>
+    {% block start_body_scripts %}{% endblock %}
+
+    {% include "navbar.html" with user=user %}
+
+    {% block topology %}{% endblock %}
+
+    <div class="container">
+        {% include 'messages.html' %}
+        {% block content %}{% endblock %}
+    </div>
+
+
+    {% block end_body_scripts %}{% endblock %}
+    <br><br>
+
+      <footer>
+        <br>
+        <div class="footer-copyright"><br>
+            <div class="footerr">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+            © 2021 Copyright: Intracom Telecom
+            </div>
+            <div class="col-md-3">
+                <a class="terms">Terms and Conditions</a>
+        </div>
+        </div>
+    </div>
+            <br>
+        </div>
+    </footer>
+
+</body>
+
+</html>

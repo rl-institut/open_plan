@@ -1,0 +1,29 @@
+@each $anchor-state in $anchors-states-list {
+  a#{$anchor-state} {
+    font-weight: 700;
+    color: $primary-color-1 !important;
+    text-decoration: none !important;
+    cursor: pointer;
+  }
+}
+
+@each $anchors-item in $anchors-items-dark {
+  #{$anchors-item} {
+    font-size: $font-size-normal;
+    font-weight: 400 !important;
+  }
+
+  #{$anchors-item}:hover {
+    color: $text-color-a-sec-hover !important;
+    transition: $anchor-hover-transition;
+  }
+}
+
+@each $anchor-state in $anchors-states-list {
+  @each $anchors-item in $anchors-items-dark {
+    #{$anchors-item}#{$anchor-state} {
+      color: $text-color-a-sec !important;
+    }
+  }
+}
+

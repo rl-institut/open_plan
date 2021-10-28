@@ -1,0 +1,70 @@
+{% extends 'scenario/scenario_progression.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
+{% block progression_content %}
+<main>
+    <section class="scenario-create">
+
+        <form id="CreateScenarioForm" method="POST" action="{% url 'scenario_create_parameters' proj_id scen_id %}">
+            {% csrf_token %}
+            <div id="FormGroup" class="form-group">
+
+
+                {% for field in form.visible_fields %}
+
+                    <div class="input-item">
+                        <div class="scenario-create__form">
+                            <div>
+                                <label for="id_{{ field.name }}" class="form-label">{% translate field.label %}</label>
+                                <!-- TODO: add class form-control and aria-describedby with constraint_id + "Help" -->
+                                {{ field }}
+                            </div>
+                        </div>
+                        <div class="scenario-create__description">
+                            <div>
+                                <div id="{{ field.name }}Help" class="form-text"> {% translate field.help_text %}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        <button style=display:none;" type="submit" id="sumbit_scenario_btn">Send form</button>
+
+
+
+        </form>
+
+
+    </section>
+</main>
+
+{% endblock progression_content %}
+
+{% block end_body_scripts %}
+<script>
+
+    var form_id = $("#sumbit_scenario_btn");
+
+    function next_btn_clicked(){
+        console.log("clicked");
+        form_id.click();
+    };
+
+</script>
+<script src="{% static 'js/form_utils.js' %}"></script>
+{% endblock end_body_scripts %}
+
+
+{% block footer %}
+
+<div class="step-footer">
+    <a onclick="javascript:next_btn_clicked()" class="btn btn--medium" >{% translate "Next" %} </a>
+</div>
+{% endblock footer %}
+
+

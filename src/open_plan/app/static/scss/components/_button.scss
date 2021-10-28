@@ -1,0 +1,132 @@
+a.btn,
+button.btn {
+  display: inline-block;
+  background-color: $primary-color-1;
+  color: $white;
+  border-radius: $button-border-radius;
+  letter-spacing: $letter-spacing-normal;
+  font-weight: 400;
+
+  #{$anchor-pseudo-classes} {
+    color: $white !important;
+  }
+
+  #{$anchor-pseudo-classes-active-state} {
+    background-color: $primary-color-1-dark !important;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &--large {
+    padding: 0.925rem;
+    width: 100%;
+    max-width: 30rem;
+    font-size: $font-size-medium;
+    text-transform: uppercase;
+  }
+
+  &--medium {
+    padding: 0.55rem 0.75rem;
+    font-size: $font-size-normal;
+    min-width: 11rem;
+  }
+
+  &--small {
+    padding: 0.4rem 0.75rem;
+    font-size: $font-size-small;
+  }
+
+  &--hollow,
+  &--transparent,
+  &--action {
+    background-color: transparent;
+    color: $primary-color-1;
+
+    #{$anchor-pseudo-classes} {
+      color: $primary-color-1 !important;
+    }
+
+    #{$anchor-pseudo-classes-active-state} {
+      background-color: $white !important;
+    }
+  }
+
+  &--hollow {
+    border: 1px solid $primary-color-1;
+  }
+
+  &--transparent {
+    font-weight: 700;
+  }
+
+  &--action {
+    background-color: transparent;
+    color: $primary-color-2;
+    width: auto;
+    padding: 0;
+
+    #{$anchor-pseudo-classes-inactive-state} {
+      color: $primary-color-2 !important;
+    }
+
+    #{$anchor-pseudo-classes-active-state} {
+      color: $primary-color-2-light !important;
+    }
+  }
+
+  &--hollow.btn--action {
+    border-color: $primary-color-1;
+    color: $primary-color-1 !important;
+    font-weight: 700 !important;
+  }
+
+  &--load {
+    font-weight: 700;
+    background-color: transparent;
+    color: $primary-color-1;
+    width: auto;
+    padding: 0;
+
+    #{$anchor-pseudo-classes-inactive-state} {
+      color: $primary-color-1 !important;
+      background-color: transparent !important;
+    }
+
+    #{$anchor-pseudo-classes-active-state} {
+      color: $primary-color-1-dark !important;
+      background-color: transparent !important;
+    }
+  }
+
+  .icon {
+    padding-right: .25rem;
+  }
+
+  &--icon::before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: .15rem;
+    left: -.5rem;
+  }
+
+  &.hidden {
+    visibility: hidden;
+  }
+}
+
+// Dropdown
+ul.dropdown-menu {
+  box-shadow: $box-shadow-frame;
+  border: 1px solid $primary-gray-color-2;
+}
+ 
+a.dropdown-item:active {
+  background-color: $primary-gray-color-2;
+}

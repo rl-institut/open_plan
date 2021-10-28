@@ -1,0 +1,40 @@
+.main {
+  &--padding-top {
+    padding-top: $main-padding-top;
+
+    .header .header__title {
+      padding-top: 0;
+    }
+  }
+}
+
+.standard-layout {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  @include flex-row-justify-center;
+
+  &> div {
+    @include section-width;
+  }
+
+  h2 {
+    font-size: $font-size-medium-2;
+  }
+
+  h3 {
+    font-size: $font-size-medium;
+  }
+
+  .account {
+    @include flex-row-justify-center;
+
+    &> div {
+      max-width: 28rem;
+      width: 100%;
+    }
+
+    &__save {
+      @include flex-row-justify-center;
+    }
+  }
+}

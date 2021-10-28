@@ -1,0 +1,78 @@
+.simulation-error {
+  @include flex-column-align-justify-center;
+  background-color: $primary-gray-color-1;
+
+  .simulation-error__frame {
+    width: 100%;
+    max-width: 45rem;
+    padding: $padding-frames;
+    background-color: $white;
+    box-shadow: $box-shadow-frame;
+  }
+
+  .heading {
+    font-size: $font-size-medium-2;
+    color: $error-color;
+    text-align: center;
+    padding-bottom: $simulation-error-padding;
+  }
+
+  .img {
+    text-align: center;
+    padding-bottom: $simulation-error-padding;
+
+    img {
+      height: 6.125rem;
+    }
+  }
+
+  .feedback {
+    color: $primary-color-2;
+    padding-bottom: $simulation-error-padding;
+
+    p {
+      font-size: $font-size-medium;
+      text-align: center;
+
+      &.red {
+        color: $error-color;
+      }
+
+      span {
+        font-weight: 700;
+      }
+    }
+
+    ul {
+      li {
+        list-style: none;
+        text-align: left;
+        font-size: $font-size-normal;
+        font-weight: 300;
+        padding-bottom: .25rem;
+      }
+
+      li::before {
+        content: "\2022";
+        color: $secondary-gray-color-2;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+    }
+  }
+
+  .actions {
+    @include flex-column-align-justify-center;
+
+    &> div {
+      @include flex-row-justify-center;
+      padding-bottom: 1rem;
+
+      .btn {
+        margin: 0 .5rem;
+      }
+    }
+  }
+}

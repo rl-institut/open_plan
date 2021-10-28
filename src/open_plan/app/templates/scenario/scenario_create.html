@@ -1,0 +1,117 @@
+{% load crispy_forms_tags %}
+
+<div id="CreateScenarioModal" class="modal fade">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <br>
+            <div class="modal-header">
+                <h1 class="modal-title">Create New Scenario</h1>
+                 <br>
+            </div>
+
+            <div class="modal-body">
+                <form id="CreateScenarioForm" method="POST">
+                    {% csrf_token %}
+                    <div id="FormGroup" class="form-group">
+
+                       {{ form.name|as_crispy_field }}
+
+                        {{ form.start_date|as_crispy_field }}
+                        {{ form.time_step|as_crispy_field }}
+                        {{ form.evaluated_period|as_crispy_field }}
+                        {{ form.capex_fix|as_crispy_field }}
+                        {{ form.capex_var|as_crispy_field }}
+                        {{ form.opex_fix|as_crispy_field }}
+                        {{ form.opex_var|as_crispy_field }}
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-4">
+                            <button class="btn btn-primary btn-lg" type="submit" id=" " style=" margin-left:30px;">Create</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <!-- Here we create this empty div for alert messages -->
+                <div style="float: left; margin: 5px;" id="message-div"></div>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script>
+    $("#id_start_date").datepicker({
+        format: 'mm/dd/yyyy',
+    });
+</script>
+
+<script>
+    var form_id = $("#CreateScenarioForm");
+
+    form_id.on('submit', function (event) {
+        event.preventDefault();
+        //console.log(getFormData(form_id));
+        //console.log("form submitted!")  // sanity check
+
+        create_scenario();
+    });
+
+
+    function create_scenario() {
+        $.ajax({
+            url: "{% url 'scenario_create_post' proj_id %}",
+            type: "POST",
+            data: form_id.serialize(),
+            success: function (data) {
+                if (!(data['success'])) {
+                    console.log("form errors!")
+                    // Here we replace the form, for the errors to show
+                    form_id.find($("#FormGroup")).replaceWith($(data['form_html']));
+
+                } else {
+                    console.log("success!")
+                    //Remove fields to prevent accidental resubmission
+                    {% for field in form %}
+                        $('#' + '{{ field.auto_id}}').val(''); // remove the values from the inputs
+                    {% endfor %}
+                    //Show the success message
+                    $('#message-div').html("<div class='alert-success'>" +
+                        "<strong>Success: </strong>New scenario was created </div>");
+                    //location.reload();
+                }
+            },
+            error: function (xhr, errmsg) {
+                console.log("backend_error!")
+                //Show the error message
+                $('#message-div').html("<div class='alert-error'>" +
+                    "<strong>Success: </strong> We have encountered an error: " + errmsg + "</div>");
+            }
+        });
+
+
+    };
+
+    //Reload page when modal closes
+    $('#CreateScenarioModal').on('hide.bs.modal', function () {
+        console.log("reload!")  // sanity check
+        location.reload();
+
+    });
+
+    function getFormData($form) {
+        var unindexed_array = $form.serializeArray();
+        var indexed_array = {};
+
+        $.map(unindexed_array, function (n, i) {
+            indexed_array[n['name']] = n['value'];
+        });
+
+        return indexed_array;
+    }
+
+</script>

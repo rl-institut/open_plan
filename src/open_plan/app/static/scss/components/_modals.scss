@@ -1,0 +1,51 @@
+.modal {
+  .modal-header {
+    background-color: $primary-gray-color-1;
+    border-bottom: none;
+    padding: 1rem 3rem 1rem;
+  }
+
+  .modal-body {
+    padding: 3rem;
+  }
+}
+
+.system-design-error {
+  .modal-body {
+    @include flex-column-align-justify-center;
+  }
+
+  .system-design-error {
+    &__img {
+      width: 5rem;
+    }
+
+    &__message {
+      padding-top: 2rem;
+    }
+
+    &__log {
+      list-style: none;
+      padding-left: 1.5rem;
+      padding-top: 1rem;
+    }
+
+    &__log li {
+      position: relative;
+      color: $error-color;
+      padding-bottom: .5rem;
+    }
+
+    &__log li span {
+      font-weight: 700;
+    }
+
+    &__log li::before {
+      font-family: 'icomoon';
+      content: "\e906";
+      position: absolute;
+      display: inline-block;
+      left: -1.5rem;
+    }
+  }
+}

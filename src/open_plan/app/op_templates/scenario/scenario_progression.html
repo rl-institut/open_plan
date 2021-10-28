@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block navbar %}
+    {% include "navbar.html" with user=user scenario_create=True documentation_url=documentation_url%}
+{% endblock navbar %}
+
+{% block title %} {% translate "Scenario step" %} {{ step_id }} {% endblock title%}
+
+<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
+{% block content %}
+
+    <section class="wizard">
+        <div class="wizard__name">
+            <span class="project">{{ proj_name }}</span>
+            <span class="scenario">Scenario {{ scen_id }}</span>
+        </div>
+        <div class="wizard__steps">
+            <ul>
+                {% for step in step_list %}
+
+                <li {% if step_id == forloop.counter %} class="active" {% endif %}>
+                    {% if scen_id %}
+                        {% if forloop.counter < max_step %}
+                            <a href="{% url 'scenario_steps_edit' proj_id scen_id forloop.counter %}" >{% translate step %}</a>
+                        {% else %}
+                            {% translate step %}
+                        {% endif %}
+                    {% else %}
+                        {% translate step %}
+                    {% endif %}
+                </li>
+
+                {% endfor %}
+            </ul>
+        </div>
+        <div></div>
+    </section>
+
+    {% block progression_content %}
+
+    {% endblock progression_content %}
+
+{% endblock content %}
+
+{% block footer %}
+<div class="step-footer">
+    <div>
+        {% if step_id > 1 %}
+            <a class="btn btn--medium btn--hollow btn--previous" href="{% url 'scenario_steps' proj_id step_id|add:'-1' %}" aria-disabled="true">{% translate "Previous" %}</a>
+        {% endif %}
+        {% if step_id < step_list|length %}
+            <a class="btn btn--medium" href="{% url 'scenario_steps' proj_id step_id|add:1 %}">{% translate "Next" %}</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock footer %}

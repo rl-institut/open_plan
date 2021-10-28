@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block head_block %}
+{% endblock head_block %}
+
+{% block start_body_scripts %}
+{% endblock start_body_scripts %}
+
+{% block title %}{% translate "Results" %}{% endblock title %}
+
+{% block content %}
+<main>
+    <section class="header">
+        <div>
+            <div class="header__left"></div>
+            <h1 class="header__title">{% translate "Simulation results" %}</h1>
+            <div class="header__back">
+                <a href="{% url 'project_search' %}">{% translate "My projects" %}</a>
+            </div>
+        </div>
+    </section>
+    <section class="header-results">
+        <div>
+            <div class="header-results__scenario">
+                <div class="project-title">
+                    {% translate "Project" %}
+                </div>
+                <div class="project-name">
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="1" selected>PV Potsdam 2025</option>
+                        <option value="2">Scenario 2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="header-results__export">
+                <button class="btn btn--small" type="submit">
+                    <span class="icon icon-export"></span>
+                    {% translate "Export results" %}
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="dashboard">
+        <div>
+            <div class="row">
+                <div class="dashboard__scenarios">
+                    <h2>My scenarios</h2>
+                    <div class="scenario-select">
+                        <div class="scenario-select__item">
+                            PV Potsdam Scenario 1
+                        </div>
+                        <div class="scenario-select__item selected">
+                            PV Potsdam Scenario 2
+                        </div>
+                        <div class="scenario-select__item">
+                            PV Potsdam Scenario 3
+                        </div>
+                        <div class="scenario-select__item selected">
+                            PV Potsdam Scenario 4
+                        </div>
+                        <div class="scenario-select__item selected">
+                            PV Potsdam Scenario 5
+                        </div>
+                        <div class="scenario-select__item">
+                            PV Potsdam Scenario 6
+                        </div>
+                        <div class="scenario-select__item">
+                            PV Potsdam Scenario 7
+                        </div>
+                        <div class="scenario-select__item">
+                            PV Potsdam Scenario 8
+                        </div>
+                        <div class="scenario-select__item selected">
+                            PV Potsdam Scenario 9
+                        </div>
+                        <div class="scenario-select__item selected">
+                            PV Potsdam Scenario 10
+                        </div>
+                        <div class="scenario-select__item">
+                            PV Potsdam Scenario 11
+                        </div>
+                        <div class="scenario-select__item">
+                            PV Potsdam Scenario 12
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-8">
+                    <div class="chart">
+                        <div class="chart__header">
+                            <div>
+                                <span class="title">KPI Comparison</span>
+                                <span class="view" data-bs-toggle="modal" data-bs-target="#KPIModal">
+                      <span class="icon icon-i_arrow_right"></span>
+                      View KPIs
+                    </span>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle btn--transparent" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="icon icon-more"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="{% url 'not_implemented' %}?url={{ request.get_full_path }}">Export as .xls</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'not_implemented' %}?url={{ request.get_full_path }}">Export as PDF</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chart__plot">
+                            <div id="tester"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-4">
+                    <div class="chart chart--small">
+                        <div class="chart__header">
+                            <div>
+                                <span class="title">Emission Costs</span>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle btn--transparent" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="icon icon-more"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="{% url 'not_implemented' %}?url={{ request.get_full_path }}">Export as .xls</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'not_implemented' %}?url={{ request.get_full_path }}">Export as PDF</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chart__content">
+                            <div class="item item--best">
+                                <div class="item__name">
+                                    Scenario name 5
+                                </div>
+                                <div class="item__value">
+                                    500.000 EUR
+                                </div>
+                            </div>
+                            <div class="item item--worst">
+                                <div class="item__name">
+                                    Scenario name 10
+                                </div>
+                                <div class="item__value">
+                                    1.000.000 EUR
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart chart--small">
+                        <div class="chart__header">
+                            <div>
+                                <span class="title">Investment Costs</span>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle btn--transparent" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="icon icon-more"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li><a class="dropdown-item" href="{% url 'not_implemented' %}?url={{ request.get_full_path }}">Export as .xls</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'not_implemented' %}?url={{ request.get_full_path }}">Export as PDF</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chart__content">
+                            <div class="item item--best">
+                                <div class="item__name">
+                                    Scenario name 5
+                                </div>
+                                <div class="item__value">
+                                    500.000 EUR
+                                </div>
+                            </div>
+                            <div class="item item--worst">
+                                <div class="item__name">
+                                    Scenario name 10
+                                </div>
+                                <div class="item__value">
+                                    1.000.000 EUR
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart chart--small">
+                        <div class="chart__header">
+                            <div>
+                                <span class="title">Emission Costs</span>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle btn--transparent" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="icon icon-more"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                    <li><a class="dropdown-item" href="{% url 'not_implemented' %}?url={{ request.get_full_path }}">Export as .xls</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'not_implemented' %}?url={{ request.get_full_path }}">Export as PDF</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chart__content">
+                            <div class="item item--best">
+                                <div class="item__name">
+                                    Scenario name 5
+                                </div>
+                                <div class="item__value">
+                                    500.000 EUR
+                                </div>
+                            </div>
+                            <div class="item item--worst">
+                                <div class="item__name">
+                                    Scenario name 10
+                                </div>
+                                <div class="item__value">
+                                    1.000.000 EUR
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="chart">
+                        <div class="chart__header">
+                            <div>
+                                <span class="title">Time series</span>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle btn--transparent" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="icon icon-more"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="{% url 'not_implemented' %}?url={{ request.get_full_path }}">Export as .xls</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'not_implemented' %}?url={{ request.get_full_path }}">Export as PDF</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chart__plot">
+                            <div id="tester2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}
+
+
+{% block end_body_scripts %}
+{% endblock end_body_scripts %}

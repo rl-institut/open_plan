@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 3.8564653 3.839818"
+   height="3.839818mm"
+   width="3.8564653mm">
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(130.28523,-65.943555)"
+     id="layer1">
+    <circle
+       r="0.46353385"
+       cy="66.657089"
+       cx="-129.5717"
+       id="path815"
+       style="opacity:1;fill:#a8b5c0;fill-opacity:1;stroke:none;stroke-width:0.00415991;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+    <circle
+       style="opacity:1;fill:#a8b5c0;fill-opacity:1;stroke:none;stroke-width:0.00415991;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="circle817"
+       cx="-127.1423"
+       cy="66.657089"
+       r="0.46353385" />
+    <circle
+       transform="rotate(90)"
+       r="0.46353385"
+       cy="127.16846"
+       cx="69.069839"
+       id="circle821"
+       style="opacity:1;fill:#a8b5c0;fill-opacity:1;stroke:none;stroke-width:0.00415991;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+    <circle
+       style="opacity:1;fill:#a8b5c0;fill-opacity:1;stroke:none;stroke-width:0.00415991;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="circle823"
+       cx="-129.5717"
+       cy="69.069839"
+       r="0.46353385" />
+  </g>
+</svg>

@@ -1,0 +1,56 @@
+.project-setup.two-columns {
+  @include flex-row-justify-center;
+  padding-bottom: 6rem;
+
+  .left,
+  .right {
+    @include flex-row;
+    padding-top: $padding-sides-large;
+
+    @media only screen and (min-width: $large-screen) {
+      flex: 1 1 0;
+    }
+
+    &> div {
+      width: 100%;
+
+      @media only screen and (min-width: $large-screen) {
+        max-width: calc(#{$section-max-width} / 2);
+      }
+    }
+  }
+
+  .left {
+    justify-content: flex-end;
+
+    &> div {
+      padding-left: 1rem;
+      padding-right: $space-between-project-elements;
+    }
+
+    .text {
+      @include flex-row-space-between;
+      font-weight: 300;
+      padding-bottom: 1rem;
+
+      .icon-question {
+        @include info-icon;
+      }
+    }
+  }
+
+  .right {
+    justify-content: flex-start;
+
+    &> div {
+      padding-right: 1rem;
+    }
+
+    .map {
+      margin-left: 1.5rem;
+      width: calc(100% - 1.5rem);
+      height: 100%;
+      background-color: $primary-gray-color-2;
+    }
+  }
+}

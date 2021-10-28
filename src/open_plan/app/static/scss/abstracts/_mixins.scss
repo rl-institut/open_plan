@@ -1,0 +1,162 @@
+// Section-width
+@mixin section-width {
+  width: calc(100% - (#{$top-nav-padding-xsmall} * 2));
+  padding-left: $top-nav-padding-xsmall;
+  padding-right: $top-nav-padding-xsmall;
+  margin: 0 auto;
+
+  @media screen and (min-width:$small-screen) {
+    width: calc(100% - (#{$top-nav-padding-small} * 2));
+    padding-left: $top-nav-padding-small;
+    padding-right: $top-nav-padding-small;
+  }
+
+  @media screen and (min-width:$medium-screen) {
+    width: calc(100% - (#{$top-nav-padding-large} * 2));
+    padding-left: $top-nav-padding-large;
+    padding-right: $top-nav-padding-large;
+    max-width: $section-max-width;
+  }
+}
+
+// Layout
+@mixin section-width {
+  width: 100%;
+  max-width: $section-max-width;
+  padding-left: $padding-sides-normal;
+  padding-right: $padding-sides-normal;
+}
+
+// Flex
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row-justify-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@mixin flex-column-align-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-column-justify-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin flex-column-align-justify-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-row-space-between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@mixin flex-row-flex-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+// Translate
+@mixin translateY($translateY-value) {
+  transform: translateY($translateY-value);
+  -webkit-transform: translateY($translateY-value);
+  -moz-transform: translateY($translateY-value);
+  -ms-transform: translateY($translateY-value);
+  -o-transform: translateY($translateY-value);
+}
+
+@mixin translateX($translateX-value) {
+  transform: translateX($translateX-value);
+  -webkit-transform: translateX($translateX-value);
+  -moz-transform: translateX($translateX-value);
+  -ms-transform: translateX($translateX-value);
+  -o-transform: translateX($translateX-value);
+}
+
+// User select
+@mixin user-select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+// UL
+@mixin ul-horizontal {
+  list-style: none;
+	margin-bottom: 0;
+  padding-left: 0;
+}
+
+// Project details and actions
+@mixin project-details {
+  color: $text-color-secondary;
+
+  &:not(:last-of-type) {
+    padding-right: $space-between-project-elements;
+  }
+
+  &__property {
+    font-weight: 300;
+    padding-right: .75rem;
+  }
+}
+
+@mixin project-actions {
+  font-weight: 700;
+  padding-left: $space-between-project-elements;
+}
+
+@mixin project-btn {
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  color: $primary-color-2;
+  background-color: $primary-gray-color-1;
+  border: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $primary-color-2-light !important;
+    background-color: $white;
+  }
+}
+
+// GUI
+@mixin gui-component-image($img-path) {
+  content: '';
+  position: absolute;
+  top: 2.2rem;
+  right: calc((#{$gui-component-bg-size} - #{$gui-component-img-size}) / 2);
+  transform: translateY(-50%);
+  background-image: $img-path;
+  background-size: contain;
+  height: $gui-component-img-size;
+  width: $gui-component-img-size;
+}
+
+// Info icon
+@mixin info-icon {
+  padding-left: 0.35rem;
+  cursor: pointer;
+  vertical-align: middle;
+}

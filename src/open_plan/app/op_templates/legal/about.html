@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+
+{% block title %} {% translate "Privacy - open_plan" %} {% endblock title%}
+
+<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
+{% block content %}
+<main>
+    <section class="header">
+        <div>
+            <div class="header__left"></div>
+            <h1 class="header__title">About</h1>
+            <div class="header__back"></div>
+        </div>
+    </section>
+    <section class="standard-layout">
+        <div>
+            <div class="row">
+                <div class="col">
+                    <h2>open_plan project consortium</h2>
+                    <p>The open_plan project consortium is composed of the Reiner Lemoine Institut (RLI), Deutsche Gesellschaft für Sonnenenergie (DGS) and the Potsdam Institut für Klimafolgenforschung (PIK). It is funded within the framework of the "Technology-oriented systems analysis" funding area of the BMWi's 7th Energy Research Programme "Innovation for the energy transition".</p>
+                    <h3>This webapp design</h3>
+                    <p>Bryan Lancien from Reiner Lemoine Institut</p>
+
+                </div>
+                <div class="col">
+                    <h2>open_plan project website</h2>
+                    <p> You can visit the open_plan <a href="https://open-plan-tool.org/" target="_blank" rel="noreferrer">website</a> to know more about the cellular approach and the open_plan project </p>
+                    <h2>Feedback or question?</h2>
+                    <p> You can always <a href="{% url 'user_feedback' %}">leave us a comment or feedback</a> on things you would improve</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}
+

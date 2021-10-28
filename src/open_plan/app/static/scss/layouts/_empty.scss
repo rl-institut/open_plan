@@ -1,0 +1,58 @@
+.projects-empty,
+.scenario-empty {
+
+  @include flex-row-justify-center;
+
+	&> div {
+		@include section-width;
+	}
+
+  &__img {
+		text-align: center;
+
+		img {
+			width: 9rem;
+		}
+	}
+
+	&__text {
+		text-align: center;
+		font-size: $font-size-medium;
+		font-weight: 300;
+		color: $text-color-secondary;
+		padding-top: 2rem;
+	}
+
+	&__btn {
+		padding-top: 2rem;
+		text-align: center;
+
+		button::before {
+			background-image: url(../../assets/icons/i_add.svg);
+		}
+
+		button::after {
+			display: none;
+		}
+	}
+
+  &__separator {
+    @include flex-row-justify-center;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+
+    .separator {
+      height: 1px;
+      width: 100%;
+      background-color: $primary-gray-color-1;
+    }
+
+    .text {
+      @include translateY(-0.75rem);
+      padding: 0 1rem;
+      font-size: $font-size-normal;
+		  font-weight: 300;
+		  color: $text-color-secondary;
+    }
+  }
+}

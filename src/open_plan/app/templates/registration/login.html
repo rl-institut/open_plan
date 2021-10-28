@@ -1,0 +1,465 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Log In{% endblock title %}
+
+{% block content %}
+    <style>
+        
+        .container {
+            width: 100%;
+            min-height: 75vh;
+        }
+
+        .panel-default {
+            width: 80%;
+            margin: 5% auto;
+        }
+
+        @media screen and (max-width: 767px) {
+            .panel-title {
+                margin-left: 130px !important;
+                font-size: 20px;
+            }
+
+            .loginlogo {
+                width: 20%;
+                margin-left: 42%;
+            }
+
+            .Elandlogin {
+                font-size: 95%;
+                margin-left: 42%;
+            }
+
+            .panel-title {
+                margin-left: 40% !important;
+            }
+
+            .container {
+                width: 100% !important;
+            }
+        }
+
+        @media screen and (max-width: 1230px) and (min-width: 768px) {
+            .form-control {
+                width: 120%;
+            }
+
+            .panel-body {
+                width: 120%;
+
+            }
+
+            .loginlogo {
+                width: 60%;
+            }
+
+            .Elandlogin {
+                font-size: 40px;
+            }
+        }
+    </style>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" style="width: 100%;">
+            <div class="container" style="width: 80%;">
+                <div class="panel panel-default">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row">
+
+                                <div class="col-sm-12">
+                                    <img src="{% static 'images/eland.png' %}" class="loginlogo"/>
+
+                                    <p class="Elandlogin">E-land</p>
+                                </div>
+                            </div>
+                            <!--  <img src="/static/images/pic2.png" style="width: 90%; height: 90%; opacity: 0.6"  /> -->
+                        </div>
+
+                        <br>
+                        <br>
+                        <div class="col-sm-6">
+                            <br>
+                            <div class="panel-heading"><h3 class="panel-title" style="text-align:left;">LogIn</h3></div>
+                            <div class="panel-body">
+                                <br>
+
+                                <row>
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-7">
+                                        <form method="post" class="from-group">
+                                            {% csrf_token %}
+                                            {{ form|crispy }}
+
+                                            <button type="submit" class="btn btn-success" id="loginbutton">Login
+                                            </button>
+                                            <br>
+                                            <br>
+                                            <p class="questionn">Don't have an account? Create one <a
+                                                    href="{% url 'signup' %}">here</a></p>
+                                        </form>
+                                    </div>
+                                    <div class="col-sm-3"></div>
+                                </row>
+                            </div>
+                            <br>
+                            <br>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <span></span>
+        </div>
+
+
+    </div>
+    <div class="moving-mouse-holder">
+        <div class="mouse">
+            <div class="mouse-button">&nbsp;</div>
+        </div>
+        <div class="text">SCROLL DOWN <br> TO LEARN MORE</div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <section class="wrapper wrapper-hero"><!--data-type="background" data-speed="2"-->
+        <div class="container1" id="lo">
+
+
+            <div class="centralise" style="margin-top: 120.188px;">
+                <div class="row">
+
+                    <h4 class="lexio-title">
+						                            <span class="number" style="color:#1c1c1c; opacity: 0.7;"><b>
+                                The E-LAND project                           </b> </span>
+
+
+                        <!--<h1><b>What is maiCS.com?</b></h1>-->
+
+                        <br><br><br>
+                        <h2><b>What is it all about?</b></h2>
+                        <br>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4" id="greek">
+
+                            <br></br>
+                            <p> With increasing penetration of renewable energy resources and high expectations from
+                                end-users for energy reliability, we need to re-think how we connect and exploit our
+                                available energy resources, to fully take advantage of the synergies between them.
+
+
+                            </p>
+                        </div>
+
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4">
+
+                            <br></br>
+                            <p> New investments in electric infrastructure will be costly, urging for alternative
+                                solutions such as augmenting existing infrastructure in conjunction with new inexpensive
+                                technologies.
+
+                            </p>
+                        </div>
+                    </h4>
+                    <div class="col-sm-1"></div>
+                </div>
+
+
+            </div><!-- end centralise -->
+        </div><!-- end container -->
+
+        <br></br>
+        <br></br>
+
+        <br></br>
+
+
+    </section>
+
+    <section class="wrapper wrapper-hero8" style="width: 100%;"><!--data-type="background" data-speed="2"-->
+        <div class="container1">
+            <div class="centralise" style="margin-top: 120.188px;">
+                <div class="row">
+                    <div class=col-md-6>
+                        <img src="{% static 'images/ELA2.jpg' %}" class="myimg1"
+                             style="width:90%; height:auto; box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+                    </div>
+                    <br></br>
+                    <br></br>
+                    <div class=col-md-6>
+                        <img src="{% static 'images/ELA7.jpg' %}" class="myimg10"
+                             style="width:90%; height:auto;box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+                    </div>
+                </div>
+                <br></br>
+                <br></br>
+                <div class="row">
+                    <div class=col-md-2></div>
+                    <div class=col-md-6>
+                        <img src="{% static 'images/ELA8.jpg' %}" class="myimg15"
+                             style="width:90%; height:auto; box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                    </div>
+                    <div class=col-md-4></div>
+                </div>
+            </div><!-- end centralise -->
+        </div><!-- end container -->
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </section>
+    <!-- <div class="lala">
+         <br>
+
+         <div class="wraptextt">
+             <div class="row">
+                 <div class="col-sm-2"></div>
+                 <div class="col-sm-8">
+
+
+                     <br>
+                     <p class="wraptextt1">The E-LAND project
+                     <p>
+                         <br>
+                     <p class="wraptextt2"> What is it all about?
+                     </p>
+                     <br>
+                     <div class="row">
+                         <div class="col-sm-8">
+                             <p> With increasing penetration of renewable energy resources and high expectations from
+                                 end-users
+                                 for
+                                 energy reliability, we need to re-think how we connect and exploit our available energy
+                                 resources,
+                                 to fully take advantage of the synergies between them.</p>
+                         </div>
+                          <div class="col-sm-4">
+                             <img src="/static/images/ELA10.jpg" style="width: 100%; height:auto;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/>
+
+
+                         </div>
+                     </div>
+
+
+                     <br>
+                     <div class="row">
+                         <div class="col-sm-4">
+                             <img src="/static/images/ELA7.jpg" style="width: 100%; height:auto;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/>
+
+
+                         </div>
+                         <div class="col-sm-8">
+                             <p> New investments in electric infrastructure will be costly, urging for alternative
+                                 solutions
+                                 such
+                                 as
+                                 augmenting existing infrastructure in conjunction with new inexpensive technologies.</p>
+                         </div>
+                     </div>
+                     <br>
+                     <div class="row">
+
+                         <div class="col-sm-8">
+                             <p>Innovative and economically viable solutions for extending the lifetime of current energy
+                                 infrastructure will be in high demand. Incorporating more distributed renewable energy
+                                 resources
+                                 (RES) and storage assets at the edges of the electricity grid, and optimally balancing
+                                 these
+                                 assets
+                                 with other energy-vectors, while extending the lifetime of current infrastructures, will
+                                 not
+                                 only be
+                                 economically viable but at the same time decrease the level of carbonisation in local
+                                 energy
+                                 systems.</p>
+                         </div>
+                         <div class="col-sm-4">
+                             <img src="/static/images/ELA5.jpg" style="width: 100%; height:auto;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/>
+
+
+                         </div>
+                     </div>
+                     <br>
+                     <div class="row">
+                         <div class="col-sm-4">
+                             <img src="/static/images/ELA6.jpg" style="width: 100%; height:auto;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/>
+
+
+                         </div>
+                         <div class="col-sm-8">
+                             <p>With challenges come new opportunities. The transition to a low-carbon, energy-efficient
+                                 and
+                                 climate-resilient economy will require a more decentralised, open system to be
+                                 developed. It
+                                 is
+                                 also
+                                 clear that the role of the consumer as a much more active player needs to be understood.
+                                 E-LAND
+                                 takes a bottom-up approach by first analysing the dynamics of the communities, where the
+                                 actions
+                                 are
+                                 to take place. From there, can we address the needs of communites, instead of focusing
+                                 only
+                                 on
+                                 the
+                                 needs of the system operators. In addition, end-users will be involved as active members
+                                 of
+                                 the
+                                 project to participate in the development of the different tools.</p>
+
+                         </div>
+
+                         <br>
+
+
+                     </div>
+                     <div class="col-sm-2"></div>
+                 </div>
+             </div>
+         </div>
+     </div> -->
+
+
+
+    <div class="row">
+        <div class=" parag01" style="width: 100%;">
+            <div class="wrapper-hero3">
+
+                <br><br>
+                <br><br>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+
+                        <div class="row">
+
+
+                            <div class="col-sm-10">
+                                <p style="color:#ffffff;">Innovative and economically viable solutions for extending
+                                    the
+                                    lifetime of current
+                                    energy
+                                    infrastructure will be in high demand. Incorporating more distributed renewable
+                                    energy
+                                    resources
+                                    (RES) and storage assets at the edges of the electricity grid, and optimally
+                                    balancing
+                                    these
+                                    assets
+                                    with other energy-vectors, while extending the lifetime of current
+                                    infrastructures,
+                                    will
+                                    not
+                                    only be
+                                    economically viable but at the same time decrease the level of carbonisation in
+                                    local
+                                    energy
+                                    systems.</p>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                            <div class="col-sm-4">
+
+                            </div>
+                        </div>
+                        <br>
+
+
+                        <br>
+
+
+                        <br>
+
+                        <div class="col-sm-2"></div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class=" parag02">
+            <div class="wrapper-hero4">
+
+                <br>
+                <br><br>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <!--  <img src="/static/images/ELA11.jpg"
+                                       style="width: 100%; height:auto; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"/>
+  -->
+
+                            </div>
+                            <div class="col-sm-10">
+                                <p style="color:#ffffff;">With challenges come new opportunities. The transition to
+                                    a
+                                    low-carbon,
+                                    energy-efficient
+                                    and
+                                    climate-resilient economy will require a more decentralised, open system to be
+                                    developed. It
+                                    is
+                                    also
+                                    clear that the role of the consumer as a much more active player needs to be
+                                    understood.
+                                    E-LAND
+                                    takes a bottom-up approach by first analysing the dynamics of the communities,
+                                    where
+                                    the
+                                    actions
+                                    are
+                                    to take place. From there, can we address the needs of communites, instead of
+                                    focusing
+                                    only
+                                    on
+                                    the
+                                    needs of the system operators. In addition, end-users will be involved as active
+                                    members
+                                    of
+                                    the
+                                    project to participate in the development of the different tools.</p><br><br><br>
+
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-sm-2"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+{% endblock content %}

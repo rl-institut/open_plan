@@ -1,0 +1,49 @@
+.signup {
+  @include flex-column-align-justify-center;
+  background-color: $primary-gray-color-1;
+
+  .signup-frame {
+    width: 100%;
+    max-width: 36rem;
+    padding: $padding-frames;
+    background-color: $white;
+    box-shadow: $box-shadow-frame;
+
+    &__img {
+      text-align: center;
+
+      img {
+        height: 6.125rem;
+      }
+    }
+
+    &__heading {
+      font-size: $font-size-large;
+      text-align: center;
+      padding-top: 1rem;
+    }
+
+    &__subheading {
+      font-size: $font-size-small;
+      color: $text-color-secondary;
+      font-weight: 300;
+      text-align: center;
+      padding-top: 1rem;
+    }
+
+    &__form {
+      padding-top: 2rem;
+    }
+
+    .form-check {
+      font-size: $font-size-small;
+      color: $text-color-secondary;
+      font-weight: 300;
+      padding-top: 1rem;
+    }
+
+    button {
+      margin-top: 1.5rem;
+    }
+  }
+}

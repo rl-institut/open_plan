@@ -1,0 +1,143 @@
+// Colors
+$primary-color-1: #1F567D;
+$primary-color-1-dark: #17405C;
+$primary-color-2: #343434;
+$primary-color-2-light: #8c8c8c;
+
+$primary-gray-color-1: #F4F7F9;
+$primary-gray-color-2: #E3EAEE;
+$primary-gray-color-3: #A8B5C0;
+$primary-gray-color-4: #495965;
+
+$white: #fff;
+$secondary-gray-color-1: #E4E4E4;
+$secondary-gray-color-2: #D6D6D6;
+
+$error-color: #FD3434;
+
+$dashboard-profitable-value: #20A10B;
+$dashboard-inadequate-value: #A10B0B;
+
+// Text
+$text-color-main: $primary-color-2;
+$text-color-secondary: $primary-gray-color-4;
+// Anchor/action text
+$text-color-a-main: $primary-color-1;
+$text-color-a-main-hover: $primary-color-1-dark;
+$text-color-a-sec: $primary-color-2;
+$text-color-a-sec-hover: $primary-color-2-light;
+$text-color-invert: $white;
+
+$box-shadow-frame: 0px 0px 16px rgba(31, 86, 125, 0.08);
+$box-shadow-form: 0 0 0 0.25rem rgb(31 86 125 / 10%);
+
+// Media-breaks
+$small-screen: 640px;
+$medium-screen: 992px;
+$large-screen: 1250px;
+$xlarge-screen: 1500px;
+
+// Typography {
+$main-font-family: lato, Arial, Helvetica, sans-serif;
+$font-size-large: 1.953rem; // 31.25px
+$font-size-medium-2: 1.563rem; // 25px
+$font-size-medium: 1.25rem; // 20px
+$font-size-normal: 1rem; // 16px
+$font-size-small: 0.875rem; 
+
+$line-height-normal: 1.75rem;
+$letter-spacing-small: 0.01rem;
+$letter-spacing-normal: 0.03rem;
+
+// Nav
+$top-nav-padding-xsmall: 1rem;
+$top-nav-padding-small: 2rem;
+$top-nav-padding-large: 2rem;
+$top-nav-height: 4.5rem;
+$top-nav-button-height: calc(#{$top-nav-height} - (2 * 1rem));
+$wizard-height: 5.5rem;
+$header-scenario-height: 3rem;
+
+// Footer
+$footer-scenario-height: 4rem;
+$footer-height: $top-nav-height;
+
+// Logo
+$logo-height: 2rem;
+
+// Buttons
+$button-border-radius: 8px;
+
+// Borders
+$gray-border: 2px solid $primary-gray-color-1;
+
+// Anchors
+$anchor-hover-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out; // from Bootstrap
+$anchor-pseudo-classes: "&:link, &:hover, &:focus, &:visited, &:active";
+$anchor-pseudo-classes-active-state: "&:hover, &:focus, &:active";
+$anchor-pseudo-classes-inactive-state: "&:link, &:visited";
+$anchors-states-list: '', ':link', ':hover', ':active', ':visited';
+$anchors-items-dark: '.project a', '.dropdown-item', 'footer a', '.nav-link';
+
+// Layout
+$section-max-width: 82rem;
+$padding-sides-normal: 1rem;
+$padding-sides-large: 2rem;
+$padding-frames: 4rem;
+
+// Header
+$main-padding-top: 7rem;
+$header-title-top-position: 7rem;
+$header-dashboard-height: 4rem;
+$header-dashboard-margin-bottom: 1rem;
+
+// Projects
+$space-between-project-elements: 1.5rem;
+
+// GUI
+$gui-component-radius: 8px;
+$component-border-color--providers: #A4ADFB;
+$component-border-color--production: #FFEF9F;
+$component-border-color--conversion: #7BF1A8;
+$component-border-color--storage: #90F1EF;
+$component-border-color--demand: #FFD6E0;
+$component-border-color--bus: #F4CC9E;
+$component-categories: (
+  'providers': $component-border-color--providers, 
+  'production': $component-border-color--production, 
+  'conversion': $component-border-color--conversion, 
+  'storage': $component-border-color--storage, 
+  'demand': $component-border-color--demand, 
+  'bus': $component-border-color--bus
+);
+$component-images: (
+  'dso': 'electric_grid',
+  'pv': 'pv_plant',
+  'wind_turbine': 'wind_turbine',
+  'transformer_in': 'transformer_in',
+  'transformer_out': 'transformer_out',
+  'storage_in': 'storage_in',
+  'storage_out': 'storage_out',
+  'solar_inverter': 'solar_inverter',
+  'storage': 'battery',
+  'demand': 'demand',
+  'bus': 'power_antenna'
+);
+$gui-component-bg-size: 4.5rem;
+$gui-component-img-size: 3rem;
+$gui-component-node-size: 0.75rem;
+$gui-component-position-btm: 2rem;
+$gui-component-position-side: 0.9rem;
+
+// Dashboard
+$dashboard-chart-height: 32rem;
+$dashboard-space-between-charts: 1.5rem;
+
+// Simulation error
+$simulation-error-padding: 4rem;
+
+// Forms
+$form-control-placeholders: '', '::-webkit-input-placeholder', '::-moz-placeholder', ':-ms-input-placeholder', ':-moz-placeholder';
+
+// Z-index
+$z-index-nav: 9;

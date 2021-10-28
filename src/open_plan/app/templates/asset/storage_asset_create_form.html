@@ -1,0 +1,61 @@
+{% load crispy_forms_tags %}
+
+<form method="post" action="">
+  {% csrf_token %}
+  
+  <div class="form-group{% if field.errors %} invalid{% endif %}">
+    {{ form.name|as_crispy_field }}
+    {% for error in form.name.errors %}
+    <p class="help-block">{{ error }}</p>
+    {% endfor %}
+  </div>
+
+  <div>
+    <a data-toggle="collapse" href="#charging_power">Charging Power</a>
+  </div>
+  <div id="charging_power" class="collapse">
+    {% for field in form %}
+      {% if field.name|slice:":3" == "chp" %}
+      <div class="form-group{% if field.errors %} invalid{% endif %}">
+        {{ field|as_crispy_field }}
+        {% for error in field.errors %}
+        <p class="help-block">{{ error }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div>
+    <a data-toggle="collapse" href="#discharging_power">Discharging Power</a>
+  </div>
+  <div id="discharging_power" class="collapse">
+    {% for field in form %}
+      {% if field.name|slice:":4" == "dchp" %}
+      <div class="form-group{% if field.errors %} invalid{% endif %}">
+        {{ field|as_crispy_field }}
+        {% for error in field.errors %}
+        <p class="help-block">{{ error }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div>
+    <a data-toggle="collapse" href="#capacity">Capacity</a>
+  </div>
+  <div id="capacity" class="collapse">
+    {% for field in form %}
+      {% if field.name|slice:":2" == "cp" %}
+      <div class="form-group{% if field.errors %} invalid{% endif %}">
+        {{ field|as_crispy_field }}
+        {% for error in field.errors %}
+        <p class="help-block">{{ error }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+</form>

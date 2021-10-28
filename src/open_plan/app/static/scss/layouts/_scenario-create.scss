@@ -1,0 +1,84 @@
+.scenario-create {
+  @include flex-row-justify-center;
+  border-top: $gray-border;
+
+  form {
+    width: 100%;
+  }
+
+  .input-item,
+  .text-item {
+    width: 100%;
+    padding-bottom: 0;
+
+    @media only screen and (min-width: $medium-screen) {
+      @include flex-row;
+    }
+  }
+
+  .input-item:last-of-type {
+    .scenario-create__description {
+      padding-bottom: 8rem;
+    }
+  }
+
+  &__form,
+  &__description {
+    padding-top: 1.5rem;
+    @include flex-row;
+    
+    @media only screen and (min-width: $medium-screen) {
+      flex: 1 1 0;
+    }
+
+    &> div {
+      width: 100%;
+      max-width: calc(#{$section-max-width} / 2);
+    }
+  }
+
+  &__form {
+    justify-content: flex-end;
+
+    &> div {
+      padding-left: 1rem;
+      padding-right: $space-between-project-elements;
+    }
+
+    .text {
+      font-weight: 300;
+      padding-top: $space-between-project-elements;
+      @include flex-row-space-between;
+
+      .heading {
+        font-size: $font-size-medium;
+        display: inline-block;
+      }
+
+      .btn {
+        margin-top: 0;
+      }
+
+      &--border-top {
+        padding-top: 2.5rem;
+        margin-top: 1rem;
+        border-top: $gray-border;
+      }
+    }
+  }
+
+  &__description {
+    justify-content: flex-start;
+    background-color: $primary-gray-color-1;
+
+    &> div {
+      padding-right: 1rem;
+      padding-left: $space-between-project-elements;
+    }
+
+    .form-text {
+      margin-top: 1.75rem;
+      font-size: $font-size-normal;
+    }
+  }
+}

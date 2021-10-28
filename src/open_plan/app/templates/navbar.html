@@ -1,0 +1,101 @@
+{% load static %}
+<style>
+    @media screen and (max-width: 767px) {
+
+        .nav > li > a, .dropdown-menu {
+            font-size: 13px !important;
+        }
+
+        .navbar-nav {
+            text-align: center;
+        }
+
+        .navbar-header {
+            border-bottom: 1px solid #EFB03D;
+            width: 95%;
+        }
+
+        .navbar-nav {
+            width: 95%;
+        }
+    }
+
+</style>
+
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <img src="{% static 'images/eland.png' %}" class="logoo"/>
+            <a class="navbar-brand" href="https://elandh2020.eu/" target="_blank">E-LAND</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="{% url 'home' %}" >EPA</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="https://github.com/rl-institut/multi-vector-simulator" target="_blank" id="MVS">
+                    <i class="fab fa-github fa-lg"></i> MVS
+                </a>
+            </li>
+        </ul>
+
+        {% if user.is_authenticated %}
+           
+        <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'logout' %}">Logout <span class="glyphicon glyphicon-log-out" style="font-size:13px;"></span></a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="line-height:0.99;">
+                <li class="dropdown" >
+                    <a data-toggle="dropdown" href="#" id="userr">
+                        <span class="glyphicon glyphicon-user dropdown-toggle" style="font-size:13px;"></span>
+                        {{ user.username }}
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'user_info' %}">User Info</a></li>
+                        <li><a href="{% url 'change_password' %}">Change Password</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'project_search' %}">Project List</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'user_feedback' %}">Feedback</a>
+                </li>
+            </ul> 
+        {% else %}
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in" style="font-size:13px;"></span> Login</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'signup' %}"> Sign up</a>
+                </li>
+            </ul>
+
+        {% endif %}
+
+
+    </div>
+</nav>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        const url = window.location;
+        $('ul.nav a[href="' + url + '"]').parent().addClass('active');
+        $('ul.nav a').filter(function () {
+            return this.href == url;
+        }).parent().addClass('active');
+    });
+</script>

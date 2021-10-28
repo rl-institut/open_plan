@@ -1,0 +1,457 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_filters %}
+{% load crispy_forms_tags %}
+
+{% block head_block %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css"
+integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous" />
+<link rel="stylesheet" href="{% static 'css/user-ranking-stars.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{% static 'css/scenariolist.css' %}" type="text/css"/>
+{% endblock head_block %}
+
+{% block start_body_scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"
+        integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+<style>
+     .btn{
+            background-color: rgb(255, 255, 255);
+            color:#414141;
+            font-size: 10px;
+        }
+      .btn:hover{
+        box-shadow:3px 3px 5px #1c1c1c2d
+      }
+</style>
+<br>
+<button onclick="window.open(`{% url 'project_search' %}`, `_self`)" id="backbutton">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    Back
+</button>
+
+<br>
+<br>
+    <h1 style="text-align: center" class="panel-heading">Project Overview</h1>
+    <h3 style="text-align: center" class="panel-default">{{ project.name }}</h3>
+<!-- region Project Scenarios List -->
+<a class="open-modal" data-modal="CreateScenarioModal" style="visibility: hidden">Add Scenario</a>
+<br>
+<br>
+<div class="container5">
+    <div class="tab">
+        <button class="tablinks" onclick="tabSelect(event, 'Project Scenarios')" id="defaultOpen">Project Scenarios
+        </button>
+        <button class="tablinks" onclick="tabSelect(event, 'Project Comments')" id="commentsTabBtn">Project Comments</button>
+
+    </div>
+
+    <div id="Project Scenarios" class="tabcontent">
+
+        <div class="panel panel-default " id="scen">
+            <br>
+            <div class="panel-heading"><h2 class="panel-title" style="text-align: center" id="titleproj"><strong>Project
+                Scenarios </strong></h2></div>
+            <br>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                        <tr style="text-transform: uppercase;">
+                            <th>&emsp;&emsp;</th>
+                            <th>Name</th>
+                            <th>Start Date</th>
+                            <th>State</th>
+                            <th>User Ranking</th>
+                            <th>Progress</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for scenario in scenarios_list %}
+                        <tr class="table-row">
+                            <td>
+                                <!-- Create the configuration glyphicon and the dropdown menu choices. -->
+                                <div class="dropdown" style="float: left; width:50px; margin: 13px 0px;">
+                                    <a href="#" data-toggle="dropdown" class="btn btn-secondary dropdown-toggle">
+                                             <!--  <span class="glyphicon glyphicon-cog"
+                                                      style="font-size: 120%;  color:#E3AC37; text-shadow: 1px 1px 1px #222;"></span>-->
+                                                      <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
+                                        <li role="presentation"
+                                            style="opacity: 0.8;  font-family: Century Gothic; font-size: 18px;">
+                                            <a role="menuitem" tabindex="1" class="glyphicon glyphicon-search"
+                                               href="{% url 'scenario_view' scenario.pk %}" name="View">
+                                                <span class="labeel">Info</span></a>
+                                        </li>
+                                        <li role="presentation"
+                                            style="opacity: 0.8; font-family: Century Gothic; font-size: 18px;">
+                                            <a role="menuitem" tabindex="1" class="glyphicon glyphicon-eye-open"
+                                               style="display: {% if scenario.simulation.status == 'DONE' %}block{% else %}none{% endif %}" name="visualizeResults"
+                                               href="{% url 'scenario_visualize_results' scenario.pk %}" name="visualizeResults">
+                                               <span class="labeel">Visualize-Results</span></a>
+                                        </li>
+                                        <li role="presentation"
+                                            style="opacity: 0.8;  font-family: Century Gothic; font-size: 18px;">
+                                            <a role="menuitem" class="glyphicon glyphicon-picture"
+                                               href="{% url 'new_assets_topology' scenario.pk %}"
+                                               name="GridView">
+                                               <span class="labeel">Grid-Model</span></a>
+                                        </li>
+                                        {% if scenario.project.user == request.user %}
+                                        <li role="presentation"
+                                            style=" opacity: 0.8;  font-family: Century Gothic; font-size: 18px;">
+                                            <a role="menuitem" class="glyphicon glyphicon-random"
+                                               name="Simulation"
+                                               onclick="request_mvs_simulation(this, `{% url 'request_mvs_simulation' scenario.pk %}`, {{scenario.pk}})">
+                                               <span class="labeel">Simulate</span></a>
+                                        </li>
+                                        <li role="presentation" class="divider"></li>
+                                        <li role="presentation"
+                                            style="opacity: 0.8;  font-family: Century Gothic; font-size: 18px;">
+                                            <a role="menuitem" tabindex="1"
+                                               class="glyphicon glyphicon-duplicate"
+                                               href="{% url 'scenario_duplicate' scenario.pk %}"
+                                               name="Duplicate">
+                                               <span class="labeel">Create-a-Copy</span></a>
+                                        </li>
+                                        <li role="presentation"
+                                            style="opacity: 0.8;  font-family: Century Gothic; font-size: 18px;">
+                                            <a role="menuitem" tabindex="-1" href="#" id="remoove">
+                                                <form style="float: left;" class="form"
+                                                      action="{% url 'scenario_delete' scenario.pk %}"
+                                                      method="POST">
+                                                    {% csrf_token %}
+                                                    <label style="float: left;  margin: 5px;">&nbsp;&nbsp;
+                                                        <span class="glyphicon glyphicon-trash">
+                                                             <span class="labeel">&nbsp;Remove</span></span>
+                                                        <input style="display: none"
+                                                               class="btn btn-sm btn-danger"
+                                                               type="submit" value="Delete"
+                                                               onclick="return confirm('Are you sure you want to delete?')"/>
+                                                    </label>
+                                                </form>
+                                            </a>
+                                        </li>
+                                        {% endif %}
+
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="text"><span><b><a href="{% url 'scenario_view' scenario.pk %}">{{ scenario.name }}</a></b></span></td>
+                            <td class="text"><span>{{ scenario.start_date|date:'d F Y' }}</span></td>
+                            <td class="text">
+                                <span class="State" data-toggle="tooltip" title="{% if scenario.simulation.status == 'ERROR' %}An error occurred during the simulation. Make sure you have defined all the required assets.{% endif %}">
+                                    {% if scenario.simulation.status %} {{ scenario.simulation.status }} {% else %} Not Started {% endif %}
+                                </span>
+                            </td>
+                            <td class="text">
+                                <div id="userRating{{ scenario.pk }}" class="rate" style="display: {% if scenario.simulation.status == 'DONE' %}block{% else %}none{% endif %};" onchange="updateSimulationRating(event, this, {{ scenario.pk }})">
+                                    <input type="radio" id="star5{{ scenario.pk }}" name="rate{{ scenario.pk }}" value="5" {% if scenario.simulation.user_rating == 5 %}checked{% endif %}/>
+                                    <label for="star5{{ scenario.pk }}" title="5stars">5 stars</label>
+                                    <input type="radio" id="star4{{ scenario.pk }}" name="rate{{ scenario.pk }}" value="4" {% if scenario.simulation.user_rating == 4 %}checked{% endif %}/>
+                                    <label for="star4{{ scenario.pk }}" title="4stars">4 stars</label>
+                                    <input type="radio" id="star3{{ scenario.pk }}" name="rate{{ scenario.pk }}" value="3" {% if scenario.simulation.user_rating == 3 %}checked{% endif %}/>
+                                    <label for="star3{{ scenario.pk }}" title="3stars">3 stars</label>
+                                    <input type="radio" id="star2{{ scenario.pk }}" name="rate{{ scenario.pk }}" value="2"{% if scenario.simulation.user_rating == 2 %}checked{% endif %}/>
+                                    <label for="star2{{ scenario.pk }}" title="2stars">2 stars</label>
+                                    <input type="radio" id="star1{{ scenario.pk }}" name="rate{{ scenario.pk }}" value="1"{% if scenario.simulation.user_rating == 1 %}checked{% endif %}/>
+                                    <label for="star1{{ scenario.pk }}" title="1star">1 star</label>
+                                </div>
+                            </td>
+                            <td class="text"><span class="Progress">{% if scenario.simulation.elapsed_seconds %} {{ scenario.simulation.elapsed_seconds | beautiful_seconds }} {% else %} Not Started {% endif %}</span></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        {% if project.user == request.user %}
+                        <a class="glyphicon glyphicon-plus open-comments-modal" style="color: transparent;"
+                           data-modal="CreateScenarioModal" data-url="{% url 'scenario_create' project.id %}">
+                           <span id="createnewscen">Create New Scenario</span>
+                        </a>
+                        {% endif %}
+                    </div>
+
+                    {% comment %}<div class="col-sm-2"></div>
+                     <div class="col-sm-4">
+                        <a class="glyphicon glyphicon-upload" style="color: transparent;" id="upload-scenario">
+                            <span id="uploadscen">Upload Scenario From File</span>
+                        </a>
+                    </div> {% endcomment %}
+                    <div class="col-sm-4"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- endregion -->
+
+    <!-- region Project Comments List -->
+    <div id="Project Comments" class="tabcontent">
+        <div class="panel panel-default " id="comms">
+            <br>
+            <div class="panel-heading"><h2 class="panel-title" style="text-align: center" id="titlecoms"><strong>Project
+                Comments </strong>
+            </h2></div>
+            <br>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                        <tr style="text-transform: uppercase;">
+                            <th>&emsp;&emsp;</th>
+                            <th>Title</th>
+                            <th>Comment</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for comment in comment_list %}
+                        <tr>
+                            <td>
+                                <!-- leave empty -->
+                            </td>
+                            <td><b>{{ comment.name }}</b></td>
+                            <td class="text"><span>{{ comment.body }}</span></td>
+                            <td>
+                                <input style="float: left; margin: 5px;"
+                                       class="btn btn-sm btn-default open-comments-modal"
+                                       type="submit"
+                                       value="Edit" data-modal="UpdateCommentForm"
+                                       data-url="{% url 'comment_update' comment.pk %}"/>
+                                <form style="float: left;" class="form"
+                                      action="{% url 'comment_delete' comment.pk %}"
+                                      method="POST">
+                                    {% csrf_token %}
+                                    <input style="float: left;  margin: 5px;" class="btn btn-sm btn-danger"
+                                           type="submit" value="Delete"
+                                           onclick="return confirm('Are you sure you want to delete?')"/>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <a class="glyphicon glyphicon-plus open-comments-modal"
+                           style="color: transparent; text-shadow: 1px 1px 1px #222;"
+                           data-modal="CreateCommentForm" data-url="{% url 'comment_create' project.id %}"
+                               id="addcom"><span id="lo">Add Comment</span></a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- endregion -->
+
+<div class=" modal fade" tabindex="-1" role="dialog" id="modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"></div>
+    </div>
+</div>
+
+<!-- Create empty div for the modal -->
+<div id="modal-div"></div>
+{% endblock %}
+
+{% block end_body_scripts %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        // Load Scenario from file bootstrap modal form.
+        // $("#upload-scenario").modalForm({
+        // {% comment %}    formURL: "{% url 'scenario_upload' proj_id %}" {% endcomment %}
+        // }); 
+        
+        // Change active tab to comments based on flag
+        {% if show_comments == 1 %}
+            document.getElementById('commentsTabBtn').click();
+        {% endif %}
+
+        {% for scenario in scenarios_list %}
+            {% if scenario.simulation.errors %}
+                console.log(`MVS Token: {{scenario.simulation.mvs_token}} \nError message: {{ scenario.simulation.errors|escapejs }}\n`);
+            {% endif %}
+        {% endfor %}
+    });
+</script>
+
+<script>
+    function tabSelect(evt, tabName) {
+
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+
+<script>
+    //modalData holds id of html form
+    var modalDiv = $("#modal-div");
+    var modalName = $(".open-modal").data("modal")
+
+    $(".open-modal").on("click", function () {
+        $.ajax({
+            url: "{% url 'scenario_create' project.id %}",
+            success: function (data) {
+                modalDiv.html(data);
+                console.log(modalDiv);
+                $('#' + modalName).modal();
+            }
+        });
+    });
+</script>
+
+<script>
+    //modalData holds id of html form
+    var modalDiv = $("#modal-div");
+
+    $(".open-comments-modal").on("click", function () {
+        var modalUrl = $(this).data("url")
+        var modalName = $(this).data("modal")
+        $.ajax({
+            url: modalUrl,
+            success: function (data) {
+                modalDiv.html(data);
+                $(".modal-form").attr("action", modalUrl)
+                $('#' + modalName).modal();
+            }
+        });
+    });
+
+</script>
+
+<script>
+    (function () {
+        var dropdownMenu;
+        // show it and move it to the body
+        $(window).on('show.bs.dropdown', function (e) {
+            // grab the menu
+            dropdownMenu = $(e.target).find('.dropdown-menu');
+            // detach it and append it to the body
+            $('body').append(dropdownMenu.detach());
+            // grab the new offset position
+            var eOffset = $(e.target).offset();
+            // make sure to place it where it would normally go (this could be improved)
+            dropdownMenu.css({
+                'display': 'block',
+                'top': eOffset.top + $(e.target).outerHeight(),
+                'left': eOffset.left
+            });
+        });
+
+        // and when you hide it, reattach the drop down, and hide it normally
+        $(window).on('hide.bs.dropdown', function (e) {
+            $(e.target).append(dropdownMenu.detach());
+            dropdownMenu.hide();
+        });
+    })();
+    document.getElementById("defaultOpen").click();
+</script>
+
+
+<script>
+    async function updateSimulationRating(e, elem, scen_id) {
+        const selectedRating = elem.querySelector(`input[name="rate${scen_id}"]:checked`).value;
+        $.ajax({
+            headers: {'X-CSRFToken': '{{ csrf_token }}'},
+            url: "{% url 'update_simulation_rating' %}",
+            type: "POST",
+            data: {"scen_id": scen_id, "user_rating": selectedRating},
+            success: (data) => {},
+            error: (errors) => console.log(errors),
+        });
+    }
+</script>
+
+<script>
+    const timeoutThreshold = 30000; // 30sec
+
+    function request_mvs_simulation(elem, requestUrl, scen_id) {
+        $.ajax({
+            url: requestUrl,
+            success: function (data) {
+                // log EPA to MVS JSON data
+                console.log(data);
+                Swal.fire('Success', 'Simulation Started Successfully.', 'success');
+                // .then(()=>location.reload());
+                // ------------------------
+                const itemState = elem.closest('tr').querySelector('.State');
+                const itemProgress = elem.closest('tr').querySelector('.Progress');
+                const itemRate = elem.closest('tr').querySelector('.rate');
+                if (data['status'] && data['status'] === "DONE"){
+                    const visualizeResultsElem = elem.closest('ul').querySelector('a[name="visualizeResults"]');
+                    visualizeResultsElem.style["display"] = "block";
+                    itemRate.style["display"] = "block";
+                }
+                const floor = (divisor, mod) => Math.floor(data['secondsElapsed'] / divisor % mod);
+                itemProgress.textContent = `${floor(86400, 1)}d ${floor(3600, 24)}h ${floor(60, 60)}m ${floor(1,60)}s`;
+                itemState.textContent = data['status'];
+                if (data['status'] === "PENDING") {
+                    setTimeout(checkSimulationStatus, timeoutThreshold, `{% url 'check_simulation_status' %}${scen_id}`, `{{ csrf_token }}`);
+                }
+            },
+            error: (errors) => {
+                console.log(errors);
+                Swal.fire('Error', 'An error occurred while trying to start the simulation.', 'error');
+            },
+        });
+
+    }
+</script>
+
+<script>
+  async function checkSimulationStatus(checkUrl, csrfToken) {
+  fetch(checkUrl, {
+    method: "POST",
+    headers: {
+      "X-CSRFToken": csrfToken,
+    },
+  })
+    .then((response) => response.text())
+    .then((result) => JSON.parse(result))
+    .then((result) => {
+      console.log(result.status);
+      if (result.status === "PENDING")
+        setTimeout(checkSimulationStatus, timeoutThreshold, checkUrl, csrfToken);
+      else if (result.status === "DONE")
+        Swal.fire("Success", "Simulation Completed Successfully.", "success")
+          .then(() => location.reload());
+      else if (result.status === "ERROR")
+        Swal.fire("Failed", "Simulation Failed.", "error")
+          .then(() => location.reload());
+    })
+    .catch((error) => console.log("error", error));
+};
+
+</script>
+{% endblock end_body_scripts %}

@@ -1,0 +1,86 @@
+.header {
+  background-color: $white;
+  @include flex-row-justify-center;
+  padding-bottom: 2rem;
+
+  &> div {
+    padding-top: 7rem;
+    @include section-width;
+    @include flex-row-space-between;
+    position: relative;
+  }
+
+  &__left,
+  &__back {
+    width: 10rem;
+  }
+
+  &__title {
+    font-size: $font-size-medium-2;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+  }
+
+  &__back {
+    text-align: right;
+
+    a {
+      position: relative;
+      font-size: $font-size-small;
+      vertical-align: middle;
+    }
+
+    a::before {
+      content: "";
+      position: absolute;
+      display: block;
+      background-image: url(../../assets/icons/i_arrow_left.svg);
+      width: 0.75rem;
+      height: 0.75rem;
+      background-repeat: no-repeat;
+      background-size: cover;
+      top: 0.15rem;
+      left: -1.25rem;
+    }
+  }
+}
+
+// Specific to results page
+.header-results {
+  @include flex-row-justify-center;
+  height: $header-dashboard-height;
+  margin-bottom: $header-dashboard-margin-bottom;
+
+  &> div {
+    width: 100%;
+    @include flex-row-space-between;
+    @include section-width;
+    align-items: flex-end;
+  }
+
+  .header__title {
+    flex: 1;
+  }
+
+  .header__scenario {
+    select {
+      min-width: 20rem;
+    }
+  }
+
+  .header__export {
+    @include flex-column;
+    justify-content: flex-end;
+
+    .btn .icon {
+      font-size: 1.5rem;
+      vertical-align: middle;
+    }
+  }
+
+  .project-title {
+    font-weight: 300;
+    color: $primary-color-2;
+  }
+}

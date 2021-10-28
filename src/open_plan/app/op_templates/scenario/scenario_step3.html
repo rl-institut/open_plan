@@ -1,0 +1,79 @@
+{% extends 'scenario/scenario_progression.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load custom_filters %}
+{% load i18n %}
+
+
+<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
+{% block progression_content %}
+
+
+
+<main>
+
+    <section class="scenario-create">
+        <form method="POST" action="{% url 'scenario_create_constraints' proj_id scen_id %}">
+            {% csrf_token %}
+            <div id="FormGroup" class="form-group">
+                {% for constraint_id, form in forms.items %}
+
+                    <div class="input-item">
+                        <div class="scenario-create__form">
+                            <div>
+                                <label class="form-label">{{ forms_labels|get_item:constraint_id }}</label>
+                                {% for field in form.visible_fields %}
+                                    <!-- TODO: add class form-control and aria-describedby with constraint_id + "Help" -->
+                                    {{ field|as_crispy_field }}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="scenario-create__description">
+                            <div>
+                                <div id="{{ constraint_id }}Help" class="form-text">{% translate field.help_text %}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+            <button style="display:none" type="submit" id="submit_constraints_btn">submit</button>
+        </form>
+
+    </section>
+
+
+</main>
+
+
+
+{% endblock progression_content %}
+
+
+{% block end_body_scripts %}
+<script>
+    var form_id = $("#submit_constraints_btn");
+
+    function next_btn_clicked(){
+        console.log("clicked");
+        form_id.click();
+    };
+
+
+
+
+</script>
+<script src="{% static 'js/form_utils.js' %}"></script>
+{% endblock end_body_scripts %}
+
+{% block footer %}
+<div class="step-footer">
+
+    <div>
+        <a class="btn btn--medium btn--hollow btn--previous" href="{% url 'scenario_steps_edit' proj_id scen_id step_id|add:'-1' %}" aria-disabled="true">{% translate "Previous" %}</a>
+        <a onclick="next_btn_clicked()" id=next_btn" class="btn btn--medium" >{% translate "Next" %} </a>
+
+
+    </div>
+</div>
+{% endblock footer %}

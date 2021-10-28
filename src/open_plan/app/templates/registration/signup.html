@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Sign Up{% endblock title %}
+
+{% block content %}
+    <style>
+        @media screen and (max-width: 767px) {
+            .panel-title {
+                margin-left: 130px !important;
+                font-size: 20px;
+            }
+            #signupimg{
+                height: 200px!important;
+                width: 100% !important;
+                object-fit: none!important;
+            }
+
+            .container {
+                width: 100% !important;
+
+            }
+            .form-group{
+                font-size: 12px !important;
+            }
+        }
+
+        @media screen and (max-width: 990px) and (min-width: 768px) {
+            .form-control {
+                width: 90%;
+            }
+
+            .panel-body {
+                width: 120%;
+
+            }
+        }
+        label[for="id_username"], label[for="id_password1"],label[for="id_password2"] {
+            color: #555555;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-family: "Century Gothic";
+            opacity: 0.8;
+            font-size:16px!important;
+        }
+        .form-check-label {
+            color: #555555;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-family: "Century Gothic";
+            opacity: 0.8;
+            font-size:11px!important;
+        }
+        .form-check-label a{
+            color:#555555;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        input[type="checkbox"]{
+            width:15px;
+            height:15px;
+        }
+
+       
+    </style>
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" style="width: 100%;">
+            <div class="container" style="width: 80%;">
+
+                <div class="panel panel-default">
+
+
+                    <div class="row">
+
+                        <div class="col-sm-4">
+
+                            <!--<br> <br>
+                            <br> <br>
+                            <br> <br>
+                            <br> <br>
+                            <br> <br>-->
+                            <img src="{% static 'images/ELA3.jpg' %}"
+                                 style="width: auto; height: 760px; opacity: 0.5; object-fit: cover; " id="signupimg"/>
+
+                            <div class="centered"> Welcome to <br> E-LAND <br> <br>Create your Account <br> Here</div>
+
+                            <div class="row">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-9">
+                                    <!-- <img src="/static/images/account.png" style="width: 100%; height: 100%; opacity: 0.8; "  /> !-->
+
+                                </div>
+                            </div>
+
+
+                            <!--  <br>
+                              <br>
+                  -->
+                        </div>
+                        <div class="col-sm-8">
+                            <br>
+                            <br>
+                            <br>
+                            <!--    <div class="panel-heading"><h3 class="panel-title" style="text-align: left; font-size:30px; color: #363636; "><strong>Sign Up </strong></h3></div> !-->
+                            <div class="panel-body" style="line-height: 1.1;">
+
+
+                                <row>
+
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-10">
+
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            {{ form|crispy }}
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                <label class="form-check-label" for="exampleCheck1">I accept the <b><a>Terms and Conditions</a></b></label>
+                                            </div>
+                                            <div class="row"></div><br>
+                                            <div class="col-sm-2"></div>
+                                            <button class="btn btn-success" type="submit" id="submitbutton" style="width: 55%;">
+                                                Sign Up
+                                            </button>
+                                        </form>
+                                        <br>
+                                        <br>
+                                        </form>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    </div>
+    </div>
+    <br>
+    <br>
+{% endblock content %}

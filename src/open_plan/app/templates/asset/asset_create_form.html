@@ -1,0 +1,25 @@
+{% load crispy_forms_tags %}
+
+<form method="post" action="">
+  {% csrf_token %}
+
+  <div class="modal-body">
+    {% for field in form %}
+    <div class="form-group{% if field.errors %} invalid{% endif %}">
+      {{ field|as_crispy_field }} 
+      {% for error in field.errors %}
+      <p class="help-block">{{ error }}</p>
+      {% endfor %}
+      {% if field.name == "input_timeseries" and input_timeseries_data %}
+      <div>
+        <a data-toggle="collapse" href="#input_timeseries_data">uploaded data</a>
+      </div>
+      <div id="input_timeseries_data" class="collapse">
+        <textarea>{{input_timeseries_data}}</textarea>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+</form>

@@ -1,0 +1,23 @@
+{% load crispy_forms_tags %}
+
+<div id="UpdateCommentForm" class="modal fade">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Update Comment</h1>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form| crispy }}
+                    </div>
+                    <button class="btn btn-primary btn-lg" type="submit" type="submit">Update</button>
+                    <br>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,0 +1,528 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block head_block %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossorigin=""
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="/>
+    <link rel="stylesheet" href="{% static 'css/map.css' %}" type="text/css">
+{% endblock head_block %}
+
+{% block start_body_scripts %}
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" crossorigin=""
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==">
+    </script>
+{% endblock %}
+
+{% block title %}Projects{% endblock title %}
+
+{% block content %}
+    <!-- <div class="container5"> -->
+    <style>
+        .container {
+            max-width: 73% !important;
+        }
+        .container5{
+            border-radius: 0%;
+            width: 95%;
+            margin:5% auto;
+        }
+
+
+        td#colname {
+            max-width: 100px;
+        }
+
+        @media screen and (max-width: 1900px) {
+            .btn-success {
+                margin-top: 4rem;
+                margin-left: -35rem;
+
+            }
+
+            .btn-danger {
+                margin-top: 4rem;
+                margin-left: -25rem;
+            }
+
+            .btn-info {
+                margin-top: 4rem;
+                margin-left: -15rem;
+
+            }
+
+            .btn-default {
+                margin-top: 4rem;
+                margin-left: -5rem;
+
+            }
+
+            .btn-warning {
+                margin-top: 4rem;
+                margin-left: 3rem;
+
+            }
+
+            #listtitle {
+                margin: 5% auto;
+            }
+
+        }
+
+        /* @media screen and (max-width: 991px) {
+               td#colname, td#colname2, td#colname3 {
+                   max-width: 130px !important;
+                   overflow: hidden;
+                   white-space: nowrap;
+                   text-overflow: ellipsis;
+                   font-size: 90%;
+               }
+           }*/
+
+        @media screen and (max-width: 1199px) and (min-width: 768px) {
+            #list6 {
+                font-size: 10px;
+            }
+
+            #list5 {
+                left: -5%;
+            }
+
+            #box2, #box1 {
+                min-width: 95% !important;
+                right: -4%;
+            }
+        }
+
+        @media screen and (max-width: 904px) {
+            #box2 {
+                min-width: 100% !important;
+            }
+
+            #listtitle {
+                font-size: 85% !important;
+            }
+
+            .mapp {
+                height: 300px !important;
+                border-right: none;
+                border-bottom: 6px solid #967b65;;
+            }
+
+            td#colname, td#colname2, td#colname3{
+                font-size: 80%;
+                max-width: 130px !important;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            td#colname4{
+                font-size: 80%;
+                max-width: 380px !important;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+
+      
+        div.dropdown-menu{
+            overflow: visible;
+          
+            z-index: 999!important;
+           min-width: 100px;
+           
+        }
+
+        .dropdown-menu a{
+            color: black;
+            padding: 6px 8px;
+            text-decoration: none;
+             display: block;
+             font-size:12px;
+             text-transform:none!important;
+        }
+
+        .table-responsive{
+            overflow: visible !important;
+            border: none;
+        }
+
+        .container5{
+            overflow: auto;
+        }
+
+        @media screen and (min-width:886px){
+            .container5{
+            overflow: hidden;
+            }
+        }
+        #buttonn input{
+            padding:8px 16px;
+            background-color: #1c1c1c;
+            color:#f4d9a4;
+            border:none;
+            border-radius: 2px;
+            font-weight: 600;
+            box-shadow: 1px 1px 5px #1c1c1c57;
+        }
+
+        .btn{
+            background-color: rgb(255, 255, 255);
+            color:#414141;
+            font-size: 10px;
+        }
+      .btn:hover{
+        box-shadow:3px 3px 5px #1c1c1c2d
+      }
+      a.dropdown-item:hover,  input:hover{
+         /* background-color: rgba(139, 138, 139, 0.164);*/
+         cursor:pointer;
+         color:rgba(139, 138, 139, 0.699);
+      }
+
+      .btn-group.open .dropdown-toggle{
+          box-shadow: none;
+      }
+      #buttonn input:hover{
+          box-shadow: 3px 3px 5px #1c1c1c94;
+      }
+
+      input{
+          padding:6px 8px;
+      }
+
+    </style>
+    <div class="backg">
+        <div id="project_map" class="mapback"></div>
+        <br>
+        <div class="row">
+            <div class="col-sm-10" id="createproj">
+                <div class="input-panel">
+                    <a href="{% url 'project_create' %}" class="btn btn-primary btn-lg" id="button55"
+                       role="button"><span class="glyphicon glyphicon-plus-sign"></span> Create New
+                        Project</a>
+                </div>
+            </div>
+
+            <div class="col-sm-1"></div>
+        </div>
+        <br><br> <br><br><br><br><br><br>
+        <div class="container5">
+
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10" id="box1">
+                    <div class="panel panel-default" id="box2">
+                        <br>
+                        <div class="panel-heading"><h3 class="panel-title" id="listtitle"><strong>Project List </strong>
+                        </h3></div>
+                        <div class="panel-body" id="list5">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead class="thead-dark">
+                                    <tr>
+                                        <th>#ID</th>
+                                        <th>Project Name</th>
+                                        <th>Date Created</th>
+                                        <th>Members</th>
+                                        <th>Country</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    {% for project in project_list %}
+                                        <tr id="list6">
+                                            <th scope="row">{{ forloop.counter }}</th>
+                                            <td id="colname"><a href="{% url 'project_detail' project.pk %}">{{ project.name }}</a></td>
+                                            <td id="colname2">{{ project.date_created }}</td>
+                                            <td id="colname3">{% if project.viewers.count == 0 %}
+                                                Only You
+                                                {% else %}
+                                                <a {% if project.user == request.user %} 
+                                                    onclick="showMembers(event, `{% url 'project_members_list' project.pk %}`, `{% url 'project_revoke_access' project.pk %}`)" 
+                                                    {% endif %}>
+                                                    {{ project.viewers.count }} and You</a>
+                                                    {% endif %}
+                                            </td>
+                                         
+                                            <td id="colname4">{{ project.country }}
+                                                </td>
+                                                <td>
+
+                                                
+                                                    <form style="float: left;" class="form" id="buttonn"
+                                                          action="{% url 'scenario_search' project.pk %}"
+                                                          method="GET">
+                                                        <input class="" type="submit"
+                                                               value="Open"/>&emsp;
+                                                    </form>
+                                                   </td>
+
+                                            <td>
+                                                <div class="dropdown">
+                                            <div class="btn-group" dropdown>
+                                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <!--<span class="glyphicon glyphicon-cog"></span>&nbsp;--><!--<span class="caret" style=" transform: rotate(-90deg);"></span>-->
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+
+                                                </button>
+                                                
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="{% url 'project_detail' project.pk %}">&nbsp;&nbsp;Show</a>
+                                                    {% if project.user == request.user %}
+                                                    <a class="dropdown-item" href="{% url 'project_update' project.pk %}">&nbsp;&nbsp;Edit</a>
+                                                    
+                                                    <a class="dropdown-item">
+                                                        <form style="float: left;" 
+                                                        action="{% url 'project_delete' project.pk %}"
+                                                        method="POST">
+                                                      {% csrf_token %}
+                                                      <input type="submit" style="background: transparent; border:none;"
+                                                             value="Delete"
+                                                             onclick="return confirm('Are you sure you want to delete?' + '\n' +'This will also delete all related project data.')"/>
+                                                             &emsp; </form></a>
+
+                                                    <a class="dropdown-item" onSubmit="shareProject(event, `{% url 'project_share' project.pk %}`)">
+                                                        <form style="float: left;" class="" style="background:transparent;"
+                                                        onSubmit="shareProject(event, `{% url 'project_share' project.pk %}`)">
+                                                      <input type="submit" style="background: transparent; border:none;" value="Share"/>&emsp;</form></a>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                            </td>
+                                          <!-- <td>
+
+                                                <div class="buttons">
+                                                    <form style="float: left;" class="form"
+                                                          action="{% url 'scenario_search' project.pk %}"
+                                                          method="GET">
+                                                        <input class="btn btn-sm btn-success" type="submit"
+                                                               value="Open"/>&emsp;
+                                                    </form>
+                                                    <form style="float: left;" class="form"
+                                                          action="{% url 'project_detail' project.pk %}"
+                                                          method="GET">
+                                                        <input class="btn btn-sm btn-info" type="submit" value="Show"/>&emsp;
+                                                    </form>
+                                                    {% if project.user == request.user %}
+                                                    <form style="float: left;" class="form"
+                                                          action="{% url 'project_update' project.pk %}"
+                                                          method="GET">
+                                                        <input class="btn btn-sm btn-default" type="submit"
+                                                               value="Edit"/>&emsp;
+                                                    </form>
+                                                    <form style="float: left;" class="form"
+                                                          action="{% url 'project_delete' project.pk %}"
+                                                          method="POST">
+                                                        {% csrf_token %}
+                                                        <input class="btn btn-sm btn-danger" type="submit"
+                                                               value="Delete"
+                                                               onclick="return confirm('Are you sure you want to delete?' + '\n' +
+                             'This will also delete all related project data.')"/>
+                                                    </form>
+                                                    <form style="float: left;" class="form"
+                                                          onSubmit="shareProject(event, `{% url 'project_share' project.pk %}`)">
+                                                        <input class="btn btn-sm btn-warning" id="shaare" type="submit"
+                                                               value="Share"/>&emsp;
+                                                    </form>
+                                                    {% endif %}
+                                                </div>
+                                            </td>-->
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-2">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+
+{% endblock content %}
+
+
+{% block end_body_scripts %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script>
+
+    const satellite = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: '<a href="http://www.intracom-telecom.com/">Intracom Telecom S.A.</a>',
+        maxZoom: 8,
+        minZoom: 2,
+        id: 'mapbox/satellite-streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoidmFsa2FsYWlzIiwiYSI6ImNrZGhpZ29peTFnMjIycG5ybWR3aG4yeHIifQ.L4y4PQjkIdO1c7pvzOr2kw',
+    });
+
+    const streets = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: '<a href="http://www.intracom-telecom.com/">Intracom Telecom S.A.</a>',
+        maxZoom: 12,
+        minZoom: 2,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoidmFsa2FsYWlzIiwiYSI6ImNrZGhpZ29peTFnMjIycG5ybWR3aG4yeHIifQ.L4y4PQjkIdO1c7pvzOr2kw',
+    });
+
+    const baseMaps = {
+        "<span style='font-family:Century Gothic; font-size:12px;'>Sattelite View</span>": satellite,
+        "<span style='font-family:Century Gothic; font-size:12px;'>Street View</span>": streets
+    };
+
+    gridMap = L.map('project_map', {layers: [streets, satellite], scrollWheelZoom: false}).setView([38, 23.5], 5);
+    L.control.layers(baseMaps).addTo(gridMap);
+    markerGroup = new L.featureGroup().addTo(gridMap);
+
+    var markerList = [];
+    {% for project in project_list %}
+        var marker = L.marker([{{project.latitude}}, {{project.longitude}}]).addTo(gridMap);
+        marker.bindPopup("<b>Name: {{project.name}}</b><br>Country: {{project.country}}<br>Latitude: {{project.latitude}}<br>Longitude: {{project.longitude}}").openPopup();
+        markerList.push(marker);
+    {% endfor %}
+
+    var group = new L.featureGroup(markerList);
+    gridMap.panInsideBounds(group.getBounds().pad(0.5));
+
+    gridMap.on('click', function () {
+        if (gridMap.scrollWheelZoom.enabled()) {
+            gridMap.scrollWheelZoom.disable();
+        } else {
+            gridMap.scrollWheelZoom.enable();
+        }
+    });
+</script>
+
+<script>
+    function shareProject (e, projectShareUrl) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Share the Project',
+            html: "<h5>Provide the email of the user you would like to share your project.</h5>",
+            input: 'email',
+            showLoaderOnConfirm: true,
+            showCancelButton: true,
+            confirmButtonText: 'Share',
+            cancelButtonText: 'Cancel',
+            allowOutsideClick: () => !Swal.isLoading(),
+            preConfirm: (userEmail) => 
+                fetch(projectShareUrl, 
+                {
+                    method: "POST",
+                    headers: {"X-CSRFToken": `{{ csrf_token }}`},
+                    body: JSON.stringify({ userEmail: userEmail })
+                })
+                .then(response => {
+                    if (!response.ok)
+                        throw new Error(response.statusText)
+                    return response.json()
+                })
+                .catch(error => Swal.showValidationMessage(`Request failed: ${error}`)),
+        })
+        .then(result => result.value &&
+            Swal.fire({
+                icon: 'success',
+                html: 'If there is a user with this email, they will be able to see the project.'
+            })
+            .then(result=>result.value && location.reload())
+        )
+        .catch(error =>
+            Swal.fire({
+                icon: 'error',
+                html: 'Could not share project: ' + error
+            })
+        );
+    }
+</script>
+
+<script>
+    function showMembers(e, getProjectMembersUrl, revokeAccessUrl) {
+        fetch(getProjectMembersUrl)
+        .then(response => {
+            if (!response.ok)
+                throw new Error(response.statusText)
+            return response.json()
+        })
+        .then(async (json)=> {
+            Swal.fire({
+                title: 'Project Members',
+                html: 
+                    '<ul class="list-group">'+
+                        json.viewers.map(viewer=>
+                            `<li class="list-group-item" email="${viewer}">
+                                <text>${viewer}</text>
+                                <button onclick="removeMember(event,'${revokeAccessUrl}')" type="button" class="close" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </li>`
+                        )+
+                    '</ul>'
+            })
+            .then(result=>result.value && location.reload());
+        })
+        .catch(error => Swal.showValidationMessage(`Request failed: ${error}`))
+    }
+
+
+    function removeMember(ev, revokeAccessUrl) {
+        const listItem = ev.target.closest('li');
+        const userEmail = listItem.querySelector('text').innerText;
+        fetch(revokeAccessUrl, {
+            method: "POST",
+            headers: {"X-CSRFToken": `{{ csrf_token }}`},
+            body: JSON.stringify({ userEmail: userEmail })
+        })
+        .then(response => {
+            if (!response.ok)
+                throw new Error(response.statusText)
+            return response.status
+        })
+        .then(status=>{
+            const ulItem = ev.target.closest('ul');
+            ulItem.removeChild(listItem);
+        })
+        .catch(error => Swal.showValidationMessage(`Request failed: ${error}`));
+    }
+
+</script>
+
+<script>
+    (function () {
+        var dropdownMenu;
+        // show it and move it to the body
+        $(window).on('show.bs.dropdown', function (e) {
+            // grab the menu
+            dropdownMenu = $(e.target).find('.dropdown-menu');
+            // detach it and append it to the body
+            $('body').append(dropdownMenu.detach());
+            // grab the new offset position
+            var eOffset = $(e.target).offset();
+            // make sure to place it where it would normally go (this could be improved)
+            dropdownMenu.css({
+                'display': 'block',
+                'top': eOffset.top + $(e.target).outerHeight(),
+                'left': eOffset.left
+            });
+        });
+
+        // and when you hide it, reattach the drop down, and hide it normally
+        $(window).on('hide.bs.dropdown', function (e) {
+            $(e.target).append(dropdownMenu.detach());
+            dropdownMenu.hide();
+        });
+    })();
+</script>
+{% endblock end_body_scripts %}

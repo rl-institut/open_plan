@@ -1,0 +1,182 @@
+.project {
+  @include flex-row-justify-center;
+  padding-right: .5rem;
+  padding-left: 1rem;
+
+  &> div {
+    @include section-width;
+    position: relative;
+    padding-bottom: 4rem;
+    border-bottom: 2px solid $primary-gray-color-1;
+    margin-bottom: 4rem;
+  }
+
+  &__top {
+    @include flex-row-flex-start;
+    align-items: baseline;
+
+    .name,
+    .location {
+      display: inline-block;
+      margin: 0;
+    }
+
+    .name {
+      margin-right: $space-between-project-elements;
+      padding-left: $space-between-project-elements;
+    }
+
+    .name::before {
+      content: "";
+      position: absolute;
+      display: block;
+      background-image: url(../../assets/icons/i_cell.svg);
+      width: 1.5rem;
+      height: 1.5rem;
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 0.5rem;
+      left: 0;
+    }
+  }
+
+  &__details {
+    padding-top: $space-between-project-elements;
+    padding-left: $space-between-project-elements;
+
+    @media only screen and (min-width: $medium-screen) {
+      @include flex-row-space-between;
+    }
+
+    .details {
+      @include flex-row;
+      justify-content: flex-start;
+    }
+
+    .detail {
+      @include project-details;
+    }
+
+    .actions {
+      @include flex-row;
+
+      @media only screen and (min-width: $medium-screen) {
+        justify-content: flex-end;
+      }
+
+      .btn--hollow {
+        font-weight: 700;
+        padding: 0.25rem 0.5rem;
+        color: $primary-color-1;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $primary-color-1-dark !important;
+        }
+      }
+
+      a.btn--action {
+        padding-top: 0.25rem;
+        font-weight: 700 !important;
+      }
+    }
+
+    .action {
+      @include project-actions;
+    }
+  }
+
+  &__scenarios {
+    padding-top: $space-between-project-elements;
+    padding-left: $space-between-project-elements;
+
+    .toggle {
+      padding-bottom: .75rem;
+
+      button.btn {
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+    }
+
+    .card-body {
+      padding: 0;
+      border: none;
+      box-shadow: $box-shadow-frame;
+    }
+
+    .list-group-item {
+      @include flex-row-space-between;
+      @include user-select-none;
+      padding: $space-between-project-elements;
+      border-color: $primary-gray-color-1;
+    }
+
+    .details {
+      @include flex-row;
+      align-items: center;
+
+      input {
+        margin-top: 0;
+      }
+
+      label {
+        font-weight: 700;
+        padding-left: .5rem;
+        padding-right: 2rem;
+      }
+
+      .detail {
+        @include project-details;
+      }
+    }
+
+    .actions {
+
+      .btn--action {
+        margin-top: 0;
+      }
+      
+      .btn--action.results {
+        @include project-btn;
+        margin-top: 0;
+      }
+
+      .action {
+        @include project-actions;
+      }
+    }
+
+    button.export {
+      margin-top: .5rem;
+      margin-left: $space-between-project-elements;
+    }
+
+    .add-scenario {
+      @include flex-row;
+      justify-content: flex-end;
+      
+      .dropdown {
+        transform: translateY(-1rem);
+      }
+
+      .btn::after {
+        content: none;
+      }
+    }
+  }
+}
+
+.projects-new {
+  padding-bottom: 4rem;
+  text-align: center;
+
+  button::before {
+    background-image: url(../../assets/icons/i_add.svg);
+  }
+
+  button::after {
+    display: none;
+  }
+}

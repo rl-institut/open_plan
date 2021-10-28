@@ -1,0 +1,401 @@
+{% comment %}
+<a href="{% url 'scenario_steps' proj_id forloop.counter %}" class="progression_bar_buttons">{{ forloop.counter }}. {{ step }} </a>
+{% endcomment %}
+
+
+https://wam.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+handle_errors {
+@502 {
+expression {http.error.status_code} == '502'
+}
+rewrite @502 /root/wam_homepage/pages/502.html
+file_server
+}
+log {
+output file /var/log/caddy_wam_production.log
+}
+encode gzip
+route {
+root * /root/wam_homepage/
+file_server
+}
+route /stemp* {
+reverse_proxy wam_production:5000
+}
+route /stemp_abw* {
+reverse_proxy wam_production:5000
+}
+route /WAM_APP_FRED* {
+reverse_proxy wam_production:5000
+}
+route /static/* {
+reverse_proxy wam_production:5000
+}
+}
+
+https://djagora.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_djagora.log
+}
+encode gzip
+route /static/mvts/* {
+root * /root/djagora/
+file_server
+}
+route {
+reverse_proxy djagora_django_1:5000
+}
+}
+
+https://djagora-dev.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_djagora_dev.log
+}
+encode gzip
+#    route /static/mvts/* {
+#        root * /root/djagora_dev/
+#        file_server
+#    }
+route {
+reverse_proxy djagora-dev_django_1:5000
+}
+handle_errors {
+@404 {
+expression int({http.error.status_code}) == 404
+}
+rewrite @404 /root/djagora_dev/404.html
+}
+}
+
+https://djagora-pv.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_djagora_pv.log
+}
+encode gzip
+#    route /static/mvts/* {
+#        root * /root/djagora_pv/
+#        file_server
+#    }
+route {
+reverse_proxy djagora-pv_django_1:5000
+}
+handle_errors {
+@404 {
+expression int({http.error.status_code}) == 404
+}
+rewrite @404 /root/djagora_pv/404.html
+}
+}
+
+https://egon.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_egon_wam.log
+}
+encode gzip
+route /static/mvts/* {
+root * /root/egon/
+file_server
+}
+route {
+reverse_proxy egon_wam_django_1:5000
+}
+}
+
+https://enershelf.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_enershelf.log
+}
+encode gzip
+route /static/mvts/* {
+root * /root/enershelf/
+file_server
+}
+route {
+reverse_proxy enershelf_django_1:5000
+}
+}
+
+http://demonstrator.rl-institut.de {
+handle_errors {
+@502 {
+expression {http.error.status_code} == '502'
+}
+rewrite @502 /root/custom_error_pages/502.html
+file_server
+}
+log {
+output file /var/log/caddy_demonstrator.log
+}
+encode gzip
+reverse_proxy demonstrator:80
+}
+
+
+http://hypark.rl-institut.de {
+handle_errors {
+@502 {
+expression {http.error.status_code} == '502'
+}
+rewrite @502 /root/custom_error_pages/502.html
+file_server
+}
+log {
+output file /var/log/caddy_hypark.log
+}
+encode gzip
+reverse_proxy http://hypark:80 {
+header_up Host {host}
+header_up X-Real-IP {remote}
+header_up X-Forwarded-For {remote}
+header_up X-Forwarded-Port {server_port}
+}
+}
+
+https://wam.rl-institut.de:85 {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+handle_errors {
+@502 {
+expression {http.error.status_code} == '502'
+}
+rewrite @502 /root/wam_homepage/pages/502.html
+file_server
+}
+log {
+output file /var/log/caddy_wam_dev.log
+}
+#    ipfilter / {
+#        rule allow
+#        ip 213.61.198.10 213.61.198.11  # Institut
+#    }
+encode gzip
+route {
+root * /root/wam_homepage/
+file_server
+}
+route /stemp* {
+reverse_proxy wam:5000
+}
+route /stemp_abw* {
+reverse_proxy wam:5000
+}
+route /WAM_APP_FRED* {
+reverse_proxy wam:5000
+}
+route /static/* {
+reverse_proxy wam:5000
+}
+}
+
+https://tile.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_tile.log
+}
+encode gzip
+header / {
+Access-Control-Allow-Origin *
+-Server
+}
+reverse_proxy tileserver-gl:80
+}
+
+
+https://tile-internal.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_tile_internal.log
+}
+encode gzip
+header / {
+Access-Control-Allow-Origin *
+-Server
+}
+reverse_proxy tileserver-gl-2:80
+}
+
+https://nesp2.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_nesp2.log
+}
+encode gzip
+reverse_proxy nesp2_website:5000
+}
+
+https://mvs-eland.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_mvs_eland.log
+}
+encode gzip
+reverse_proxy mvs_eland_api_web_1:5001
+}
+
+https://modex.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_modex.log
+}
+encode gzip
+reverse_proxy oedatamodel_api:5001
+}
+
+https://modex-results.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_modex_results.log
+}
+encode gzip
+reverse_proxy modex_visualization:80
+}
+
+https://epa-eland.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_epa_eland.log
+}
+encode gzip
+route /static/* {
+root * /root/epa-eland/
+file_server
+}
+reverse_proxy django-gunicorn:8000
+}
+
+https://open-plan.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_open_plan.log
+}
+encode gzip
+route /static/* {
+root * /root/open_plan/
+file_server
+}
+reverse_proxy django-open_plan:8000
+}
+
+
+https://e-metrobus.berlin {
+log {
+output file /var/log/caddy_e_metrobus.log
+}
+encode gzip
+reverse_proxy e_metrobus_django_1:5000
+}
+
+https://ph.e-metrobus.berlin {
+log {
+output file /var/log/caddy_posthog.log
+}
+reverse_proxy posthog_web:8000
+}
+
+https://ego-n.org {
+root * /root/egon/production/
+file_server
+}
+
+https://staging.ego-n.org {
+basicauth {
+ego JDJhJDE0JFhPdUZHb0hyUVVLbS9iTWRJdUc0Sy5JMklzMVVXbnUuQlZRVHZkbEZqMzI4YXlyaVR0WTku
+}
+root * /root/egon/staging/
+file_server
+}
+
+https://open-plan-tool.org {
+root * /root/open_plan_website/
+file_server
+}
+
+https://legacy-wam.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+#    handle_errors {
+#        @502 {
+#             expression {http.error.status_code} == '502'
+#        }
+#        rewrite @502 /root/wam_homepage/pages/502.html
+#        file_server
+#    }
+log {
+output file /var/log/caddy_wam_legacy.log
+}
+encode gzip
+reverse_proxy wam_production:5000
+}
+
+http://wam.rl-institut.de {
+redir https://wam.rl-institut.de
+}
+
+https://abw.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+redir https://wam.rl-institut.de/stemp_abw/
+}
+
+http://abw.rl-institut.de {
+redir https://wam.rl-institut.de/stemp_abw/
+}
+
+http://e-metrobus.berlin {
+redir https://e-metrobus.berlin
+}
+
+http://ego-n.org {
+redir https://ego-n.org
+}
+
+http://mvs-eland.rl-institut.de {
+redir https://mvs-eland.rl-institut.de
+}
+
+http://modex.rl-institut.de {
+redir https://modex.rl-institut.de
+}
+
+http://modex-results.rl-institut.de {
+redir https://modex-results.rl-institut.de
+}
+
+http://epa-eland.rl-institut.de {
+redir https://epa-eland.rl-institut.de
+}
+
+
+- /services/epa_eland_api/src/cdn_static_root:/root/epa-eland/static
+
+
+- /services/open_plan_api/src/cdn_static_root:/root/open_plan/static
+
+https://epa-eland.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_epa_eland.log
+}
+encode gzip
+route /static/* {
+root * /root/epa-eland/
+file_server
+}
+reverse_proxy django-gunicorn:8000
+}
+
+https://open-plan.rl-institut.de {
+tls /etc/ssl/certs/wildcard2021.crt /etc/ssl/private/wildcard2021.key
+log {
+output file /var/log/caddy_open_plan.log
+}
+encode gzip
+route /static/* {
+root * /root/open_plan/
+file_server
+}
+reverse_proxy django-open_plan:8000
+}

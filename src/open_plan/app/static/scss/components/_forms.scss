@@ -1,0 +1,57 @@
+form {
+  .form-control:focus {
+    border-color: $primary-color-1;
+    box-shadow: $box-shadow-form;
+  }
+
+  .form-check-input:focus {
+    box-shadow: $box-shadow-form;
+  }
+
+  .form-check-input:checked {
+    background-color: $primary-color-1;
+  }
+
+  @each $placeholder in $form-control-placeholders {
+    .form-control#{$placeholder} {
+      color: $secondary-gray-color-2;
+      font-size: $font-size-normal;
+    }
+  }
+
+  .input-item,
+  .text-item {
+    position: relative;
+    padding-bottom: 1rem;
+
+    &.optional label.form-label::after {
+      content: '- optional';
+      font-weight: 300;
+      font-style: italic;
+      padding-left: .5rem;
+    }
+
+    .icon-question {
+      @include info-icon;
+    }
+
+    .form-text.to-right {
+      position: absolute;
+      right: 0;
+    }
+
+    textarea {
+      max-height: 10rem;
+    }
+
+    .input-group-text {
+      background-color: $primary-gray-color-2;
+      color: $primary-color-2;
+      @include user-select-none;
+    }
+  }
+
+  .btn {
+    margin-top: 1rem;
+  }
+}

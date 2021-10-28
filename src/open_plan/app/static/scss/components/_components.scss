@@ -1,0 +1,30 @@
+.components {
+  h1 {
+    text-align: center;
+  }
+
+  h2 {
+    padding-top: 3rem;
+    padding-left: 1rem;
+  }
+
+  &__description {
+    max-width: 60rem;
+
+    li {
+      padding-left: 1rem;
+    }
+  }
+
+  .component {
+    padding-bottom: 2rem;
+
+    &__title {
+      padding: 1rem;
+    }
+  }
+
+  nav.navbar {
+    position: relative;
+  }
+}

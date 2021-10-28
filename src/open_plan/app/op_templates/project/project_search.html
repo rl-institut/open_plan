@@ -1,0 +1,411 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% load static %}
+{% load i18n %}
+
+{% block head_block %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossorigin=""
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="/>
+    <link rel="stylesheet" href="{% static 'css/map.css' %}" type="text/css">
+{% endblock head_block %}
+
+{% block start_body_scripts %}
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" crossorigin=""
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==">
+    </script>
+{% endblock %}
+
+{% block title %}{% translate "Projects" %}{% endblock title %}
+
+{% block content %}
+    <main>
+        <section class="header">
+            <div>
+                <div class="header__left"></div>
+                <h1 class="header__title">{% translate "My Projects" %}</h1>
+                <div class="header__back"></div>
+            </div>
+        </section>
+
+        {% for project in project_list %}
+
+            <section class="project" id="project-{{ project.id }}">
+                <div>
+                    <div class="project__top">
+                        <h2 class="name">
+                            {{ project.name }}
+                        </h2>
+                        <a href="{% url 'not_implemented' %}?url={{ request.get_full_path }}" class="location">
+                            <span class="icon-pin" aria-hidden="true"></span>
+                            {{ project.country }}
+                        </a>
+                    </div>
+                    <div class="project__details">
+                        <div class="details">
+                            <div class="detail">
+                                <span class="detail__property">{% translate "Created" %}</span>
+                                <span class="detail__value">{{ project.date_created }}</span>
+                            </div>
+                            <!--<div class="detail">
+                                <span class="detail__property">Interest rate</span>
+                                <span class="detail__value">{{ project.economic_data.currency }}</span>
+                            </div>-->
+                            <div class="detail">
+                                <span class="detail__property">{% translate "Lifetime" %}</span>
+                                <span class="detail__value">{{ project.economic_data.duration }} {% translate "years" %}</span>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <a class="btn btn--action btn--hollow action" href="{% url 'scenario_visualize_results' %}">
+                                <span class="icon icon-results" aria-hidden="true"></span>
+                                {% translate "Results" %}
+                            </a>
+                            <a class="btn btn--action action" href="{% url 'project_update' project.pk %}">
+                                <span class="icon icon-edit" aria-hidden="true"></span>
+                                {% translate "Edit" %}
+                            </a>
+                            <form action="{% url 'project_duplicate' project.pk %}"
+                                  method="POST">
+                                {% csrf_token %}
+                                <!-- TODO change the ugly inline style-->
+                                <button style="margin-top:0.25rem;" class="btn btn--action action" type="submit" value="Duplicate">
+                                    <span class="icon icon-duplicate" aria-hidden="true"></span>
+                                    {% translate "Duplicate" %}
+                                </button>
+                            </form>
+                            <form action="{% url 'project_delete' project.pk %}"
+                                  method="POST">
+                                {% csrf_token %}
+                                <!-- TODO change the ugly inline style-->
+                                <button style="margin-top:0.25rem;" class="btn btn--action action" type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete?' + '\n' +'This will also delete all related project data.')">
+                                    <span class="icon icon-delete" aria-hidden="true"></span>
+                                    {% translate "Delete" %}
+                                </button>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <!--
+                    return render(request, 'scenario/scenario_search.html',
+                    {'comment_list': project.comment_set.all(),
+                    'scenarios_list': project.scenario_set.all(),
+                    'project': project,
+                    'show_comments':show_comments
+                    })-->
+
+
+                    <div class="project__scenarios">
+                        <div class="toggle" class="js-toggle-scenario">
+                            <button class="btn btn--action" type="button" data-bs-toggle="collapse" data-bs-target="#collapseScenarios{{ project.id }}" aria-expanded="false" aria-controls="collapseScenarios{{ project.id }}">
+                                <span class="icon-i_arrow_down icon icon--small js-toggle-scenario-icon" aria-hidden="true"></span>
+                                <span class="js-toggle-scenario-name">{% translate "Show scenarios" %}</span>
+                            </button>
+                        </div>
+                        <div class="collapse" id="collapseScenarios{{ project.id }}">
+
+                                <div class="card card-body">
+                                    <ul class="list-group">
+
+                                        {% for scenario in project|scenario_list %}
+                                        <form>
+                                            {% csrf_token %}
+                                        <li class="list-group-item">
+                                            <div class="details">
+                                                <input class="form-check-input project-{{ project.id }}" id="project{{ project.id }}scenario-{{ scenario.id }}" type="checkbox" value="{{ scenario.id }}" aria-label="">
+                                                <label class="form-check-label" for="project{{ project.id }}scenario-{{ scenario.id }}">
+                                                    <a class= "form-check-label" href="{% url 'scenario_steps_edit' proj_id=project.id scen_id=scenario.id step_id=1 %}"> {{ scenario }} </a>
+                                                </label>
+                                                <div class="detail">
+                                                    <span class="detail__property">{% translate "Created" %}</span>
+                                                    <span class="detail__value">{{ project.date_created }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="actions">
+                                                <a class="btn btn--action results" href="{% url 'scenario_visualize_results' scenario.id %}">
+                                                    <span class="icon icon-results" aria-hidden="true"></span>
+                                                    {% translate "Results" %}
+                                                </a>
+                                                <a class="btn btn--action action" href="{% url 'scenario_steps_edit' proj_id=project.id scen_id=scenario.id step_id=1 %}"> <!-- "scenario-creation-1.html" in B design -->
+                                                    <span class="icon icon-edit" aria-hidden="true"></span>
+                                                </a>
+                                                <a class="btn btn--action action" href="{% url 'scenario_duplicate' scenario.id %}">
+                                                    <span class="icon icon-duplicate" aria-hidden="true"></span>
+                                                </a>
+                                                <button class="btn btn--action action" type="submit" formaction="{% url 'scenario_delete' scenario.id %}" formmethod="post">
+                                                    <span class="icon icon-delete" aria-hidden="true"></span>
+                                                </button>
+
+                                            </div>
+                                        </li>
+                                        </form>
+                                        {% empty %}
+                                            {% translate "There are no scenarios" %}
+                                        {% endfor %}
+
+
+                                    </ul>
+                                </div>
+                                <button class="btn btn--action action export" type="button" onclick="javascript:export_btn_clicked({{ project.id }})">
+                                    <span class="icon icon-export" aria-hidden="true"></span>
+                                    {% translate "Export selected" %}
+                                </button>
+
+                        </div>
+                        <div class="add-scenario">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownCreateScenario{{ project.id }}" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="icon icon-add" aria-hidden="true"></span>
+                                    {% translate "Create scenario" %}
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownCreateScenario{{ project.id }}">
+
+                                    {% if project.user == request.user %}
+                                        <li><a class="dropdown-item" href="{% url 'scenario_steps' project.id %}">{% translate "New scenario" %}</a></li>
+                                    {% endif %}
+                                    <li><a class="dropdown-item" href="{% url 'not_implemented' %}?url={{ request.get_full_path }}">{% translate "From file" %}</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+        {% empty %}
+            <section class="projects-empty">
+                <div>
+                    <div class="projects-empty__img">
+                        <img src="{% static '/assets/illustrations/empty_folder.svg' %}" alt="Empty folder">
+                    </div>
+                    <div class="projects-empty__text">
+                        {% translate "There are no projects yet" %}
+                    </div>
+                </div>
+            </section>
+
+        {% endfor %}
+
+        <section class="projects-new">
+            <div class="dropdown">
+                <button class="btn btn--medium btn--transparent btn--icon dropdown-toggle" type="button" id="newProjectButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    {% translate "Create project" %}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="newProjectButton">
+                    <li><a class="dropdown-item" href="{% url 'project_create' %}">{% translate "Empty project" %}</a></li>
+                    <li><a class="dropdown-item" href="{% url 'not_implemented' %}?url={{ request.get_full_path }}">{% translate "From use case" %}</a></li>
+                </ul>
+            </div>
+        </section>
+
+
+    </main>
+
+{% endblock content %}
+
+
+{% block end_body_scripts %}
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script>
+
+    const satellite = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: '<a href="http://www.intracom-telecom.com/">Intracom Telecom S.A.</a>',
+        maxZoom: 8,
+        minZoom: 2,
+        id: 'mapbox/satellite-streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoidmFsa2FsYWlzIiwiYSI6ImNrZGhpZ29peTFnMjIycG5ybWR3aG4yeHIifQ.L4y4PQjkIdO1c7pvzOr2kw',
+    });
+
+    const streets = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: '<a href="http://www.intracom-telecom.com/">Intracom Telecom S.A.</a>',
+        maxZoom: 12,
+        minZoom: 2,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoidmFsa2FsYWlzIiwiYSI6ImNrZGhpZ29peTFnMjIycG5ybWR3aG4yeHIifQ.L4y4PQjkIdO1c7pvzOr2kw',
+    });
+
+    const baseMaps = {
+        "<span style='font-family:Century Gothic; font-size:12px;'>Sattelite View</span>": satellite,
+        "<span style='font-family:Century Gothic; font-size:12px;'>Street View</span>": streets
+    };
+
+    gridMap = L.map('project_map', {layers: [streets, satellite], scrollWheelZoom: false}).setView([38, 23.5], 5);
+    L.control.layers(baseMaps).addTo(gridMap);
+    markerGroup = new L.featureGroup().addTo(gridMap);
+
+    var markerList = [];
+    {% for project in project_list %}
+        var marker = L.marker([{{project.latitude}}, {{project.longitude}}]).addTo(gridMap);
+        marker.bindPopup("<b>Name: {{project.name}}</b><br>Country: {{project.country}}<br>Latitude: {{project.latitude}}<br>Longitude: {{project.longitude}}").openPopup();
+        markerList.push(marker);
+    {% endfor %}
+
+    var group = new L.featureGroup(markerList);
+    gridMap.panInsideBounds(group.getBounds().pad(0.5));
+
+    gridMap.on('click', function () {
+        if (gridMap.scrollWheelZoom.enabled()) {
+            gridMap.scrollWheelZoom.disable();
+        } else {
+            gridMap.scrollWheelZoom.enable();
+        }
+    });
+</script>
+
+<script>
+    function shareProject (e, projectShareUrl) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Share the Project',
+            html: "<h5>Provide the email of the user you would like to share your project.</h5>",
+            input: 'email',
+            showLoaderOnConfirm: true,
+            showCancelButton: true,
+            confirmButtonText: 'Share',
+            cancelButtonText: 'Cancel',
+            allowOutsideClick: () => !Swal.isLoading(),
+            preConfirm: (userEmail) => 
+                fetch(projectShareUrl, 
+                {
+                    method: "POST",
+                    headers: {"X-CSRFToken": `{{ csrf_token }}`},
+                    body: JSON.stringify({ userEmail: userEmail })
+                })
+                .then(response => {
+                    if (!response.ok)
+                        throw new Error(response.statusText)
+                    return response.json()
+                })
+                .catch(error => Swal.showValidationMessage(`Request failed: ${error}`)),
+        })
+        .then(result => result.value &&
+            Swal.fire({
+                icon: 'success',
+                html: 'If there is a user with this email, they will be able to see the project.'
+            })
+            .then(result=>result.value && location.reload())
+        )
+        .catch(error =>
+            Swal.fire({
+                icon: 'error',
+                html: 'Could not share project: ' + error
+            })
+        );
+    }
+</script>
+
+<script>
+    function showMembers(e, getProjectMembersUrl, revokeAccessUrl) {
+        fetch(getProjectMembersUrl)
+        .then(response => {
+            if (!response.ok)
+                throw new Error(response.statusText)
+            return response.json()
+        })
+        .then(async (json)=> {
+            Swal.fire({
+                title: 'Project Members',
+                html: 
+                    '<ul class="list-group">'+
+                        json.viewers.map(viewer=>
+                            `<li class="list-group-item" email="${viewer}">
+                                <text>${viewer}</text>
+                                <button onclick="removeMember(event,'${revokeAccessUrl}')" type="button" class="close" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </li>`
+                        )+
+                    '</ul>'
+            })
+            .then(result=>result.value && location.reload());
+        })
+        .catch(error => Swal.showValidationMessage(`Request failed: ${error}`))
+    }
+
+
+    function removeMember(ev, revokeAccessUrl) {
+        const listItem = ev.target.closest('li');
+        const userEmail = listItem.querySelector('text').innerText;
+        fetch(revokeAccessUrl, {
+            method: "POST",
+            headers: {"X-CSRFToken": `{{ csrf_token }}`},
+            body: JSON.stringify({ userEmail: userEmail })
+        })
+        .then(response => {
+            if (!response.ok)
+                throw new Error(response.statusText)
+            return response.status
+        })
+        .then(status=>{
+            const ulItem = ev.target.closest('ul');
+            ulItem.removeChild(listItem);
+        })
+        .catch(error => Swal.showValidationMessage(`Request failed: ${error}`));
+    }
+
+</script>
+
+<script>
+    (function () {
+        var dropdownMenu;
+        // show it and move it to the body
+        $(window).on('show.bs.dropdown', function (e) {
+            // grab the menu
+            dropdownMenu = $(e.target).find('.dropdown-menu');
+            // detach it and append it to the body
+            $('body').append(dropdownMenu.detach());
+            // grab the new offset position
+            var eOffset = $(e.target).offset();
+            // make sure to place it where it would normally go (this could be improved)
+            dropdownMenu.css({
+                'display': 'block',
+                'top': eOffset.top + $(e.target).outerHeight(),
+                'left': eOffset.left
+            });
+        });
+
+        // and when you hide it, reattach the drop down, and hide it normally
+        $(window).on('hide.bs.dropdown', function (e) {
+            $(e.target).append(dropdownMenu.detach());
+            dropdownMenu.hide();
+        });
+    })();
+</script>
+
+<script>
+
+
+    function export_btn_clicked(project_id){
+        // collect the ids of the scenarios checked by the user under one project
+        var scenario_ids=[];
+        var cb = $('.form-check-input.project-'+project_id);
+        const cb_checked = cb.map((i, obj) => {
+            if(obj.checked === true){
+                scenario_ids.push(obj.value)
+            }
+        });
+        // send the scenario ids to an endpoint which will return files with the scenarios
+        $.ajax({
+            headers: {'X-CSRFToken': '{{ csrf_token }}'},
+            type: "POST",
+            url: "{% url 'scenario_export' %}",
+            data: JSON.stringify(scenario_ids),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+        });
+    };
+
+</script>
+{% endblock end_body_scripts %}

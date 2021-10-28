@@ -1,0 +1,182 @@
+msgid ""
+msgstr ""
+
+msgid "The number of years the asset has already been in operation."
+msgstr "Die Anzahl der Jahre, die die Anlage bereits in Betrieb ist."
+
+msgid "Year"
+msgstr "Jahr"
+
+msgid "Factor"
+msgstr "Faktor"
+
+msgid "€/kWh"
+msgstr "€/kWh"
+
+msgid "Ratio of energy output/energy input. The battery efficiency is the ratio of the energy taken out from the battery, to the energy put into the battery. It means that it is not possible to retrieve as much energy as provided to the battery due to the discharge losses. The efficiency of the 'input power' and 'ouput power' columns should be set equal to the charge and dischage efficiencies respectively, while the 'storage capacity' efficiency should be equal to the storage's efficiency/ability to hold charge over time (`= 1 - self-discharge/decay`), which is usually in the range of 0.95 to 1 for electrical storages."
+msgstr "Verhältnis von Energieausbeute/Energieeintrag. Der Batteriewirkungsgrad ist das Verhältnis zwischen der aus der Batterie entnommenen Energie und der in die Batterie eingebrachten Energie. Das bedeutet, dass aufgrund der Entladeverluste nicht so viel Energie entnommen werden kann, wie der Batterie zugeführt wird. Der Wirkungsgrad der Spalten 'Eingangsleistung' und 'Ausgangsleistung' sollte gleich dem Lade- bzw. Entladewirkungsgrad gesetzt werden, während der Wirkungsgrad der 'Speicherkapazität' gleich dem Wirkungsgrad des Speichers/der Fähigkeit, die Ladung über die Zeit zu halten (`= 1 - Selbstentladung/Zerfall`), sein sollte, was bei elektrischen Speichern normalerweise im Bereich von 0,95 bis 1 liegt."
+
+msgid "Emissions per unit dispatch of an asset."
+msgstr "Emissionen pro Versandeinheit einer Anlage."
+
+msgid "kgCO2eq/asset unit"
+msgstr "kgCO2eq/Anlageneinheit"
+
+msgid "Price of energy carrier sourced from the utility grid."
+msgstr "Preis des aus dem Versorgungsnetz bezogenen Energieträgers."
+
+msgid "€/energy carrier unit"
+msgstr "€/Energieträgereinheit"
+
+msgid "Energy vector/commodity. Convention: For an energy conversion asset define energyVector of the output. For a sink define based on inflow. For a source define based on output flow. For a storage, define based on stored energy carrier."
+msgstr "Energievektor/Rohstoff. Konvention: Für eine Energieumwandlungsanlage definieren Sie energyVector des Ausgangs. Für eine Senke definieren Sie auf Basis des Zuflusses. Für eine Quelle definieren Sie auf der Basis des Ausgangsflusses. Für einen Speicher definieren Sie basierend auf dem gespeicherten Energieträger."
+
+msgid "The number of days simulated with the energy system model."
+msgstr "Die Anzahl der Tage, die mit dem Energiesystemmodell simuliert wurden."
+
+msgid "Day"
+msgstr "Tag"
+
+msgid "Name of a csv file containing the input generation or demand timeseries."
+msgstr "Name einer csv-Datei, die die Zeitreihe für die Erzeugung oder den Bedarf enthält."
+
+msgid "Thermal losses of storage independent of state of charge and independent of nominal storage capacity between two consecutive timesteps."
+msgstr "Thermische Verluste des Speichers unabhängig vom Ladezustand und unabhängig von der nominalen Speicherkapazität zwischen zwei aufeinanderfolgenden Zeitschritten."
+
+msgid "factor"
+msgstr "Faktor"
+
+msgid "Thermal losses of storage independent of state of charge between two consecutive timesteps relative to nominal storage capacity."
+msgstr "Thermische Verluste des Speichers unabhängig vom Ladezustand zwischen zwei aufeinanderfolgenden Zeitschritten relativ zur nominalen Speicherkapazität."
+
+msgid "The label of the bus/component from which the energyVector is arriving into the asset."
+msgstr "Die Bezeichnung des Busses/der Komponente, von dem/der der Energievektor in die Anlage eintrifft."
+
+msgid "The already existing installed capacity in-place. If the project lasts longer than its remaining lifetime, its replacement costs will be taken into account."
+msgstr "Die bereits vorhandene installierte Kapazität an Ort und Stelle. Wenn das Projekt länger als die verbleibende Lebensdauer dauert, werden die Ersatzkosten berücksichtigt."
+
+msgid "kWp"
+msgstr "kWp"
+
+msgid "Name of the asset for display purposes"
+msgstr "Name der Anlage für Anzeigezwecke"
+
+msgid "The maximum amount of total emissions in the optimized energy system."
+msgstr "Die maximale Menge an Gesamtemissionen in der optimierten Energieanlage."
+
+msgid "kgCO2eq/a"
+msgstr "kgCO2eq/a"
+
+msgid "The maximum total capacity of an asset that can be installed at the project site. This includes the installed and the also the maximum additional capacity possible. An example would be that a roof can only carry 50 kWp PV (maximumCap), whereas the installed capacity is already 10 kWp. The optimization would only be allowed to add 40 kWp PV at maximum."
+msgstr "Die maximale Gesamtkapazität einer Anlage, die am Projektstandort installiert werden kann. Dies beinhaltet sowohl die installierte als auch die maximal mögliche zusätzliche Kapazität. Ein Beispiel wäre, dass ein Dach nur 50 kWp PV tragen kann (maximumCap), während die installierte Leistung bereits 10 kWp beträgt. Die Optimierung würde dann nur maximal 40 kWp PV zulassen."
+
+msgid "The minimal degree of autonomy that needs to be met by the optimization."
+msgstr "Der minimale Grad der Autonomie, der von der Optimierung erfüllt werden muss."
+
+msgid "The minimum share of energy supplied by renewable generation in the optimized energy system. Insert the value 0 to deactivate this constraint."
+msgstr "Der minimale Anteil an Energie, der durch erneuerbare Erzeugung im optimierten Energiesystem geliefert wird. Geben Sie den Wert 0 ein, um diese Einschränkung zu deaktivieren."
+
+msgid "Specifies whether optimization needs to result into a net zero energy system (True) or not (False)."
+msgstr "Gibt an, ob die Optimierung zu einem Netto-Null-Energiesystem führen muss (True) oder nicht (False)."
+
+msgid "Allow the user to perform capacity optimization for an asset."
+msgstr "Erlaubt dem Benutzer, eine Kapazitätsoptimierung für eine Anlage durchzuführen."
+
+msgid "The label of bus/component towards which the energyVector is leaving from the asset."
+msgstr "Die Bezeichnung des Busses/der Komponente, zu dem/der der Energievektor von der Anlage abgeht."
+
+msgid "Enable the generation of a file with the linear equation system describing the simulation, ie., with the objective function and all the constraints. This lp file enables the user look at the underlying equations of the optimization."
+msgstr "Aktivieren Sie die Erzeugung einer Datei mit dem linearen Gleichungssystem, das die Simulation beschreibt, d. h. mit der Zielfunktion und allen Nebenbedingungen. Diese lp-Datei ermöglicht es dem Benutzer, die zugrundeliegenden Gleichungen der Optimierung zu betrachten."
+
+msgid "Price to be paid additionally for energy-consumption based on the peak demand of a given period."
+msgstr "Preis, der zusätzlich für den Energieverbrauch zu zahlen ist, basierend auf dem Spitzenbedarf einer bestimmten Periode."
+
+msgid "€/kW"
+msgstr "€/kW"
+
+msgid "Number of reference periods in one year for the peak demand pricing."
+msgstr "Anzahl der Bezugszeiträume in einem Jahr für den Spitzenbedarfspreis."
+
+msgid "times per year (1,2,3,4,6,12)"
+msgstr "mal pro Jahr (1,2,3,4,6,12)"
+
+msgid "Years"
+msgstr "Jahre"
+
+msgid "Users can assign a project ID as per their preference."
+msgstr "Benutzer können eine Projekt-ID nach ihren Wünschen zuweisen."
+
+msgid "Users can assign a project name as per their preference."
+msgstr "Benutzer können einen Projektnamen nach ihren Wünschen vergeben."
+
+msgid "Allow the user to tag as asset as renewable."
+msgstr "Erlaube dem Benutzer, ein Asset als erneuerbar zu kennzeichnen."
+
+msgid "Brief description of the scenario being simulated."
+msgstr "Kurze Beschreibung des zu simulierenden Szenarios."
+
+msgid "Users can assign a scenario id as per their preference."
+msgstr "Benutzer können eine Szenario-ID nach ihren Wünschen zuweisen."
+
+msgid "Users can assign a scenario name as per their preference."
+msgstr "Benutzer können einen Szenariennamen nach ihren Wünschen vergeben."
+
+msgid "The level of charge (as a factor of the actual capacity) in the storage in the zeroth time-step."
+msgstr "Der Ladezustand (als Faktor der tatsächlichen Kapazität) des Speichers im nullten Zeitschritt."
+
+msgid "None or factor"
+msgstr "Keine oder Faktor"
+
+msgid "Actual CAPEX of an asset, i.e., specific investment costs"
+msgstr "Tatsächliche CAPEX einer Anlage, d.h. spezifische Investitionskosten"
+
+msgid "€/unit"
+msgstr "€/Einheit"
+
+msgid "Actual OPEX of an asset, i.e., specific operational and maintenance costs."
+msgstr "Tatsächliche OPEX einer Anlage, d.h. spezifische Betriebs- und Wartungskosten."
+
+msgid "€/unit/year"
+msgstr "€/Einheit/Jahr"
+
+msgid "The data and time on which the simulation starts at the first step."
+msgstr "Die Daten und der Zeitpunkt, an dem die Simulation im ersten Schritt beginnt."
+
+msgid "Name of a csv file containing the properties of a storage component"
+msgstr "Name einer csv-Datei, die die Eigenschaften einer Speicherkomponente enthält"
+
+msgid "Minutes"
+msgstr "Minuten"
+
+msgid "Input the type of OEMOF component. For example, a PV plant would be a source, a solar inverter would be a transformer, etc.  The `type_oemof` will later on be determined through the EPA."
+msgstr "Geben Sie den Typ der OEMOF-Komponente ein. Zum Beispiel wäre eine PV-Anlage eine Quelle, ein Solarwechselrichter ein Transformator, usw.  Der `Typ_oemof` wird später durch die EPA bestimmt."
+
+msgid "Unit associated with the capacity of the component."
+msgstr "Einheit, die mit der Kapazität der Komponente verbunden ist."
+
+msgid "Scenario Setup"
+msgstr "Szenario-Einstellung"
+
+msgid "Energy system design"
+msgstr "Auslegung des Energiesystems"
+
+msgid "Constraints"
+msgstr "Randbedingungen"
+
+msgid "Simulation"
+msgstr "Simulation"
+
+msgid "providers"
+msgstr "Anbieter"
+
+msgid "production"
+msgstr "Produktion"
+
+msgid "conversion"
+msgstr "Umwandlung"
+
+msgid "storage"
+msgstr "Lagerung"
+
+msgid "demand"
+msgstr "Bedarf"

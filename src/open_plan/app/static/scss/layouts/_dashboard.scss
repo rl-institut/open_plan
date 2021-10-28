@@ -1,0 +1,123 @@
+.dashboard {
+  @include flex-row-justify-center;
+  background-color: $primary-gray-color-1;
+  min-height: calc(100vh - #{$main-padding-top} - #{$header-dashboard-height} - #{$header-dashboard-margin-bottom} - #{$footer-height});
+  padding: 3rem 0 4rem;
+
+  &> div {
+    @include section-width;
+  }
+
+  &__scenarios {
+    h2 {
+      font-size: $font-size-normal;
+      font-weight: 700;
+      color: $primary-gray-color-4;
+    }
+  }
+
+  .scenario-select {
+    @include flex-row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+
+    &__item {
+      background-color: $primary-gray-color-2;
+      border-radius:3px;
+      color: $primary-gray-color-4;
+      padding: 0.25rem 0.5rem;
+      margin-top: .75rem;
+      margin-right: .75rem;
+      cursor: pointer;
+      font-size: $font-size-small;
+
+      &.selected {
+        border: 1px solid $primary-color-1;
+        background-color: $white;
+        color: $primary-color-1;
+        transform: translateY(-3px);
+        box-shadow: 0px 4px 8px rgba(31, 86, 125, 0.16);
+      }
+    }
+  }
+
+  .chart {
+    background-color: $white;
+    border-radius: $button-border-radius;
+    box-shadow: $box-shadow-frame;
+    height: $dashboard-chart-height;
+    margin-bottom: $dashboard-space-between-charts;
+
+    &__header {
+      @include flex-row-space-between;
+      border-bottom: $gray-border;
+      padding: .75rem 1rem .5rem;
+
+      .view {
+        padding-left: $space-between-project-elements;
+        font-weight: 700;
+        color: $primary-color-1;
+        text-decoration: none;
+        cursor: pointer;
+
+        .icon {
+          font-size: .75rem;
+        }
+      }
+    }
+
+    .dropdown {
+      .dropdown-toggle {
+        padding: 0 .35rem;
+
+        &::after {
+          display: none;
+        }
+
+        .icon {
+          padding: 0;
+        }
+      }
+    }
+
+    &--small {
+      height: calc((#{$dashboard-chart-height} / 3) - ((2 * #{$dashboard-space-between-charts}) / 3));
+
+      &:not(:last-of-type) {
+        margin-bottom: $dashboard-space-between-charts;
+      }
+
+      .chart__content {
+        @include flex-row;
+        height: calc((#{$dashboard-chart-height} / 3) - ((2 * #{$dashboard-space-between-charts}) / 3) - 3.25rem);
+        align-items: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
+    .item {
+      flex: 1;
+
+      &__name {
+        font-size: $font-size-small;
+        color: $primary-gray-color-4;
+        padding-bottom: .25rem;
+      }
+
+      &__value {
+        font-size: $font-size-medium;
+      }
+
+      &--best .item__value {
+        font-weight: 700;
+        color: $dashboard-profitable-value;
+      }
+
+      &--worst .item__value {
+        color: $dashboard-inadequate-value;
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %} {% translate "Imprint - open_plan" %} {% endblock title%}
+
+<!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
+{% block content %}
+<main>
+    <section class="header">
+        <div>
+            <div class="header__left"></div>
+            <h1 class="header__title">{% translate "Imprint" %}</h1>
+            <div class="header__back"></div>
+        </div>
+    </section>
+    <section class="standard-layout">
+        <div>
+            <div class="row">
+                <div class="col">
+
+                    <p>
+                        {% translate "Herausgegeben von:" %}<br>
+                        {% translate "Diese Internetseite wird betrieben von der Reiner Lemoine Institut gGmbH" %}<br><br>
+
+                        {% translate "Geschäftsführung:" %}<br>
+                        Dr. Kathrin Goldammer <br><br>
+
+                        {% translate "Postanschrift:" %}<br>
+                        {% translate "Reiner Lemoine Institut gGmbH" %}<br>
+                        Rudower Chaussee 12<br>
+                        12489 Berlin<br><br>
+
+                        {% translate "Telefon" %} +49 (0)30 1208 434 0<br>
+                        Fax +49 (0)30 1208 434 99<br><br>
+
+                        {% translate "Handelsregister" %} Berlin – HRB 124659 B<br><br>
+
+                        {% translate "Steuernummer" %}: 27/602/55211<br><br>
+
+                        {% translate "USt-IdNr." %}: DE274491408<br><br>
+
+                        {% translate "Disclaimer" %}:<br><br>
+
+                        1. {% translate "Haftungshinweis" %}<br>
+                        {% blocktrans %}Die Inhalte sind mit größter Sorgfalt recherchiert. Dennoch übernehmen die Autor*innen keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen die Autor*innen, welche sich auf Schäden materieller oder ideeller Art beziehen die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens der Autor*innen kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich. Die Autor*innen behalten es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.{% endblocktrans %}
+                        <br><br>
+                        2. {% translate "Verweise und Links" %}<br>
+                        {% blocktrans %}Bei direkten oder indirekten Verweisen auf fremde Internetseiten („Links”), die außerhalb des Verantwortungsbereiches der Autor*innen liegen, würde eine Haftungsverpflichtung ausschließlich in dem Fall in Kraft treten, in dem die Autor*innen von den Inhalten Kenntnis hat und es ihm technisch möglich und zumutbar wäre, die Nutzung im Falle rechtswidriger Inhalte zu verhindern. Die Autor*innen erklären daher ausdrücklich, dass zum Zeitpunkt der Linksetzung die entsprechenden verlinkten Seiten frei von illegalen Inhalten waren. Die Autor*innen haben keinerlei Einfluss auf die aktuelle und zukünftige Gestaltung und auf die Inhalte der gelinkten/verknüpften Seiten. Deshalb distanzieren sie sich hiermit ausdrücklich von allen Inhalten aller gelinkten /verknüpften Seiten, die nach der Linksetzung verändert wurden. Diese Feststellung gilt für alle innerhalb des eigenen Internetangebotes gesetzten Links und Verweise sowie für Fremdeinträge in von Autor*innen eingerichteten Gästebüchern, Diskussionsforen und Mailinglisten. Für illegale, fehlerhafte oder unvollständige Inhalte und insbesondere für Schäden, die aus der Nutzung oder Nichtnutzung solcherart dargebotener Informationen entstehen, haften allein die Anbieter*innen der Seite, auf welche verwiesen wurde, nicht der- oder diejenige, der/die über Links auf die jeweilige Veröffentlichung lediglich verweist.{% endblocktrans %}
+                        <br><br>
+                        3. {% translate "Urheber- und Kennzeichenrecht" %}<br>
+                        {% blocktrans %}Die Autor*innen sind bestrebt, in allen Publikationen die Urheberrechte der verwendeten Grafiken, Tondokumente, Videosequenzen und Texte zu beachten, von ihnen selbst erstellte Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente, Videosequenzen und Texte zurückzugreifen. Alle innerhalb des Internetangebotes genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer*innen. Allein aufgrund der bloßen Nennung ist nicht der Schluss zu ziehen, dass Markenzeichen nicht durch Rechte Dritter geschützt sind! Das Copyright für veröffentlichte, von Autor*innen selbst erstellte Objekte bleibt allein bei den Autor*innen der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen ist ohne ausdrückliche Zustimmung der Autor*innen nicht gestattet.{% endblocktrans %}
+                        <br><br>
+                        4. {% translate "Rechtswirksamkeit dieses Haftungsausschlusses" %}<br>
+                        {% blocktrans %}Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.{% endblocktrans %}
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock content %}
+

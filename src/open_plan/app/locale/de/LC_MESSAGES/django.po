@@ -1,0 +1,1110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-19 16:06+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: dashboard/views.py:156
+msgid ""
+"Your scenario was never simulated, the results are still pending or there is "
+"an error in the simulation. Please click on 'Run simulation', 'Update "
+"results' or 'Check status' button "
+msgstr ""
+"Ihr Szenario wurde nie simuliert, die Ergebnisse stehen noch aus oder es gibt "
+" einen Fehler in der Simulation. Bitte klicken Sie auf 'Simulation ausführen', "
+"'Ergebnisse aktualisieren' oder 'Status prüfen' "
+
+#: op_templates/asset/asset_create_form.html:16
+msgid "uploaded data"
+msgstr "hochgeladene Daten"
+
+#: op_templates/asset/storage_asset_create_form.html:14
+msgid "Charging Power"
+msgstr "Ladeleistung"
+
+#: op_templates/asset/storage_asset_create_form.html:30
+msgid "Discharging Power"
+msgstr "Entladeleistung"
+
+#: op_templates/asset/storage_asset_create_form.html:46
+msgid "Capacity"
+msgstr "Kapazität"
+
+#: op_templates/base.html:68 op_templates/navbar.html:48
+#: op_templates/navbar.html:117
+msgid "Contact"
+msgstr "Kontakt"
+
+#: op_templates/base.html:69 op_templates/navbar.html:41
+#: op_templates/navbar.html:51
+msgid "Documentation"
+msgstr "Dokumentation"
+
+#: op_templates/base.html:70 op_templates/navbar.html:54
+#: op_templates/navbar.html:115
+msgid "Use cases"
+msgstr "Anwendungsbeispiele"
+
+#: op_templates/base.html:71 op_templates/navbar.html:57
+#: op_templates/navbar.html:116
+msgid "License"
+msgstr "Lizenz"
+
+#: op_templates/base.html:72
+msgid "Imprint"
+msgstr "Impressum"
+
+#: op_templates/base.html:73
+msgid "Privacy"
+msgstr "Datenschutz"
+
+#: op_templates/error_400.html:59
+msgid "Error! Your request resulted in an error."
+msgstr "Fehler! Ihre Anfrage führte zu einem Fehler."
+
+#: op_templates/error_400.html:63 op_templates/error_403.html:63
+#: op_templates/error_404.html:64
+msgid "Go to Home Page"
+msgstr "Gehe zur Startseite"
+
+#: op_templates/error_403.html:59
+msgid "Error! You don't have permission to access the requested resource."
+msgstr ""
+"Fehler! Sie haben keine Berechtigung, auf die angeforderte Ressource "
+"zuzugreifen."
+
+#: op_templates/error_404.html:60
+msgid "Error! The page you requested could not be found."
+msgstr "Fehler! Die von Ihnen angeforderte Seite konnte nicht gefunden werden."
+
+#: op_templates/error_500.html:62
+msgid ""
+"Server Error! The server is currently unable to handle this request. Try to "
+"refresh this page."
+msgstr ""
+"Server Error! Der Server ist derzeit nicht in der Lage, diese Anfrage zu "
+"bearbeiten. Versuchen Sie diese Seite zu aktualisieren."
+
+#: op_templates/error_500.html:66
+msgid "Refresh Page"
+msgstr "Seite aktualisieren"
+
+#: op_templates/index.html:12
+msgid "Model your local energy system"
+msgstr "Modellieren Sie Ihr lokales Energiesystem"
+
+#: op_templates/index.html:15
+msgid ""
+"Use the GUI to include sector-coupling and optimize the energy system model "
+"subject to equality constraints"
+msgstr ""
+"Verwenden Sie die GUI, um die Sektorkopplung einzubeziehen und das "
+"Energiesystemmodellunter Berücksichtigung von Gleichheitsbedingungen zu "
+"optimieren"
+
+#: op_templates/index.html:18
+msgid "Try out"
+msgstr "Ausprobieren"
+
+#: op_templates/legal/imprint.html:8 op_templates/legal/privacy.html:8
+#: op_templates/scenario/export.html:8
+msgid "Export scenario"
+msgstr "Szenario exportieren"
+
+#: op_templates/navbar.html:30
+#: op_templates/scenario/scenario_results_page.html:18
+msgid "Simulation results"
+msgstr "Simulationsergebnisse"
+
+#: op_templates/navbar.html:34 op_templates/project/project_search.html:165
+msgid "New scenario"
+msgstr "Neues Szenario"
+
+#: op_templates/navbar.html:38 op_templates/project/project_create.html:25
+#: op_templates/project/project_update.html:26
+#: op_templates/scenario/scenario_results_page.html:20
+msgid "My projects"
+msgstr "Meine Projekte"
+
+#: op_templates/navbar.html:101
+msgid "User Info"
+msgstr "Benutzerinfo"
+
+#: op_templates/navbar.html:102
+msgid "Change Password"
+msgstr "Passwort ändern"
+
+#: op_templates/navbar.html:107
+msgid "Project List"
+msgstr "Projektliste"
+
+#: op_templates/navbar.html:118
+msgid "Feedback"
+msgstr "Rückmeldung"
+
+#: op_templates/navbar.html:119
+msgid "Account"
+msgstr "Konto"
+
+#: op_templates/navbar.html:121
+msgid "Log out"
+msgstr "Abmelden"
+
+#: op_templates/navbar.html:129 op_templates/registration/signup.html:24
+msgid "Log in"
+msgstr "Anmelden"
+
+#: op_templates/navbar.html:133 op_templates/registration/login.html:21
+#: op_templates/registration/signup.html:43
+msgid "Sign up"
+msgstr "Registrieren"
+
+#: op_templates/project/project_create.html:23
+#: op_templates/project/project_update.html:24
+msgid "Project Setup"
+msgstr "Projekt einrichten"
+
+#: op_templates/project/project_create.html:34
+#: op_templates/project/project_update.html:35
+msgid "Fill in the following parameters:"
+msgstr "Geben Sie die folgenden Parameter ein:"
+
+#: op_templates/project/project_create.html:38
+#: op_templates/project/project_update.html:39
+msgid "Load parameters from file"
+msgstr "Parameter aus Datei laden"
+
+#: op_templates/project/project_create.html:40
+#: op_templates/project/project_update.html:41
+msgid "For more details about the parameters, please check the documentation"
+msgstr "Weitere Details zu den Parametern finden Sie in der Dokumentation"
+
+#: op_templates/project/project_create.html:73
+msgid "Save project"
+msgstr "Projekt speichern"
+
+#: op_templates/project/project_delete.html:6
+msgid "Are you sure you want to delete"
+msgstr "Sind Sie sicher, dass Sie löschen wollen"
+
+#: op_templates/project/project_delete.html:7
+msgid "Confirm"
+msgstr "Bestätigen"
+
+#: op_templates/project/project_list_item.html:25
+#: op_templates/project/project_search.html:25
+msgid "My Projects"
+msgstr "Meine Projekte"
+
+#: op_templates/project/project_list_item.html:35
+#: op_templates/project/project_search.html:186
+msgid "There are no projects yet"
+msgstr "Es sind noch keine Projekte vorhanden"
+
+#: op_templates/project/project_list_item.html:40
+#: op_templates/project/project_search.html:196
+msgid "Create project"
+msgstr "Projekt erstellen"
+
+#: op_templates/project/project_list_item.html:43
+#: op_templates/project/project_search.html:199
+msgid "Empty project"
+msgstr "Leeres Projekt"
+
+#: op_templates/project/project_list_item.html:44
+#: op_templates/project/project_search.html:200
+msgid "From use case"
+msgstr "Aus Anwendungsfall"
+
+#: op_templates/project/project_search.html:18
+msgid "Projects"
+msgstr "Projekte"
+
+#: op_templates/project/project_search.html:46
+#: op_templates/project/project_search.html:121
+msgid "Created"
+msgstr "Erstellt"
+
+#: op_templates/project/project_search.html:54
+msgid "Lifetime"
+msgstr "Lebenszeit"
+
+#: op_templates/project/project_search.html:55
+msgid "years"
+msgstr "Jahre"
+
+#: op_templates/project/project_search.html:61
+#: op_templates/project/project_search.html:128
+#: op_templates/scenario/scenario_results_page.html:11
+msgid "Results"
+msgstr "Ergebnisse"
+
+#: op_templates/project/project_search.html:65
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: op_templates/project/project_search.html:73
+msgid "Duplicate"
+msgstr "Duplizieren"
+
+#: op_templates/project/project_search.html:82
+msgid "Delete"
+msgstr "Löschen"
+
+#: op_templates/project/project_search.html:103
+msgid "Show scenarios"
+msgstr "Szenarien anzeigen"
+
+#: op_templates/project/project_search.html:144
+msgid "There are no scenarios"
+msgstr "Es gibt keine Szenarien"
+
+#: op_templates/project/project_search.html:152
+msgid "Export selected"
+msgstr "Export ausgewählt"
+
+#: op_templates/project/project_search.html:160
+msgid "Create scenario"
+msgstr "Szenario erstellen"
+
+#: op_templates/project/project_search.html:167
+msgid "From file"
+msgstr "Aus Datei"
+
+#: op_templates/project/project_update.html:74
+msgid "Update project"
+msgstr "Projekt aktualisieren"
+
+#: op_templates/registration/login.html:7
+msgid "Log In"
+msgstr "Anmelden"
+
+#: op_templates/registration/login.html:18
+#: op_templates/registration/signup.html:21
+msgid "Welcome to the open_plan tool"
+msgstr "Willkommen im open_plan-Tool"
+
+#: op_templates/registration/login.html:27
+#: op_templates/registration/signup.html:30
+msgid "Email address"
+msgstr "E-Mail Adresse"
+
+#: op_templates/registration/login.html:31
+#: op_templates/registration/signup.html:34
+msgid "Password"
+msgstr "Passwort"
+
+#: op_templates/registration/login.html:34
+msgid "Login"
+msgstr "Anmeldung"
+
+#: op_templates/registration/signup.html:24
+msgid "Do you already have an account?"
+msgstr "Besitzen Sie bereits ein Konto?"
+
+#: op_templates/registration/signup.html:41
+msgid ""
+"I have read and accept the <a href=\"%(registration_url)s\">registration</a> "
+"and <a href=\"%(privacy_url)s\">privacy statements</a> from open_plan."
+msgstr ""
+"Ich habe die <a href=\"%(registration_url)s\">Registrierungs </a> und "
+"<a href=\"%(privacy_url)s\">Datenschutzbestimmungen</a> von open_plan "
+"gelesen und akzeptiert."
+
+#: op_templates/scenario/scenario_progression.html:8
+msgid "Scenario step"
+msgstr "Schritt des Szenarios"
+
+#: op_templates/scenario/scenario_progression.html:46
+#: op_templates/scenario/scenario_step2.html:226
+#: op_templates/scenario/scenario_step3.html:73
+#: op_templates/scenario/scenario_step4.html:50
+msgid "Previous"
+msgstr "Vorherige"
+
+#: op_templates/scenario/scenario_progression.html:49
+#: op_templates/scenario/scenario_step1.html:66
+#: op_templates/scenario/scenario_step2.html:230
+#: op_templates/scenario/scenario_step3.html:74
+msgid "Next"
+msgstr "Weiter"
+
+#: op_templates/scenario/scenario_results_page.html:28 projects/forms.py:228
+msgid "Project"
+msgstr "Projekt"
+
+#: op_templates/scenario/scenario_results_page.html:40
+msgid "Export results"
+msgstr "Ergebnisse exportieren"
+
+#: op_templates/scenario/scenario_step2.html:34
+msgid "Energy components"
+msgstr "Energiekomponenten"
+
+#: op_templates/scenario/scenario_step2.html:64
+msgid "Load system design from existing scenario"
+msgstr "Systemauslegung aus bestehendem Szenario laden"
+
+#: op_templates/scenario/scenario_step2.html:69
+msgid "Clear design"
+msgstr "Entwurf löschen"
+
+#: op_templates/scenario/scenario_step2.html:72
+msgid "Drag and drop components to build your energy system"
+msgstr "Ziehen und Ablegen von Komponenten zum Aufbau Ihres Energiesystems"
+
+#: op_templates/scenario/scenario_step2.html:228
+msgid "Save"
+msgstr "Speichern"
+
+#: op_templates/scenario/scenario_step4.html:51
+
+msgid "Proof parameters JSON file"
+msgstr "Prüfe Parameter JSON Datei "
+
+#: op_templates/scenario/scenario_step4.html:52
+msgid "Check dashboard"
+msgstr "Dashboard prüfen"
+
+#: op_templates/scenario/scenario_step4.html:53
+msgid "Update results"
+msgstr "Ergebnisse aktualisieren"
+
+#: op_templates/scenario/scenario_step4.html:56
+msgid "Check status"
+msgstr "Status prüfen"
+
+#: op_templates/scenario/scenario_step4.html:60
+msgid "Run simulation"
+msgstr "Simulation ausführen"
+
+#: projects/forms.py:146
+msgid "eg. 0.1"
+msgstr "z. B. 0.1"
+
+#: projects/forms.py:147
+msgid "Investment Discount factor."
+msgstr "Investitionsabzinsungsfaktor."
+
+#: projects/forms.py:159
+msgid "Project Name"
+msgstr "Projektname"
+
+#: projects/forms.py:159
+msgid "A self explanatory name for the project."
+msgstr "Ein selbsterklärender Name für das Projekt."
+
+#: projects/forms.py:160
+msgid "Project Description"
+msgstr "Projektbeschreibung"
+
+#: projects/forms.py:161
+msgid "A description of what this project objectives or test cases."
+msgstr "Eine Beschreibung der Ziele oder Testfälle dieses Projekts."
+
+#: projects/forms.py:162
+msgid "Country"
+msgstr "Land"
+
+#: projects/forms.py:163
+msgid "Name of the country where the project is being deployed"
+msgstr "Name des Landes, in dem das Projekt eingesetzt werden soll"
+
+#: projects/forms.py:164
+msgid "Location's longitude"
+msgstr "Standort, Längengrad"
+
+msgid "Location, longitude"
+msgstr "Standort, Längengrad"
+
+#: projects/forms.py:166
+msgid "Longitude coordinate of the project's geographical location."
+msgstr "Längengradkoordinate des geografischen Standorts des Projekts."
+
+#: projects/forms.py:167
+msgid "Location's latitude"
+msgstr "Standort Breitengrad"
+
+msgid "Location, latitude"
+msgstr "Standort Breitengrad"
+
+#: projects/forms.py:169
+msgid "Latitude coordinate of the project's geographical location."
+msgstr "Breitengrad-Koordinate des geografischen Standorts des Projekts."
+
+#: projects/forms.py:170
+msgid "Project Duration"
+msgstr "Projektdauer"
+
+#: projects/forms.py:172
+msgid ""
+"The number of years the project is intended to be operational. The project "
+"duration also sets the installation time of the assets used in the "
+"simulation. After the project ends these assets are 'sold' and the refund is "
+"charged against the initial investment costs."
+msgstr ""
+" Die Anzahl der Jahre, die das Projekt in Betrieb sein soll. Die "
+"Projektdauer legt auch die Installationszeit der in der Simulation "
+"verwendeten Anlagen fest.Nach Beendigung des Projekts werden diese Anlagen "
+"'verkauft' und die Rückerstattung wird mit den ursprünglichen "
+"Investitionskosten verrechnet."
+
+#: projects/forms.py:173
+msgid "Currency"
+msgstr "Währung"
+
+#: projects/forms.py:174
+msgid "The currency of the country where the project is implemented."
+msgstr "Die Währung des Landes, in dem das Projekt durchgeführt wird."
+
+#: projects/forms.py:175
+msgid "Discount factor"
+msgstr "Abzinsungsfaktor"
+
+#: projects/forms.py:177
+msgid ""
+"Discount factor is the factor which accounts for the depreciation in the "
+"value of money in the future, compared to the current value of the same "
+"money. The common method is to calculate the weighted average cost of "
+"capital (WACC) and use it as the discount rate."
+msgstr ""
+"Der Abzinsungsfaktor ist der Faktor, der den Wertverlust des Geldes in der "
+"Zukunft, verglichen mit dem aktuellen Wert der gleichen Menge des Geldes "
+"berücksichtigt. Die übliche Methode ist die Berechnung der gewichteten "
+"durchschnittlichen Kapitalkosten (WACC) und diese als Abzinsungsfaktor zu "
+"verwenden."
+
+#: projects/forms.py:178
+msgid "Tax"
+msgstr "Steuer"
+
+#: projects/forms.py:180
+msgid "Tax factor"
+msgstr "Steuerfaktor"
+
+#: projects/forms.py:214
+msgid "Length of the time-steps."
+msgstr "Länge der Zeitschritte."
+
+#: projects/forms.py:114
+msgid "The number of days for which the simulation is to be run."
+msgstr "Die Anzahl der Tage, für die die Simulation ausgeführt werden soll."
+
+#: projects/forms.py:218
+msgid ""
+"A fixed cost to implement the asset, eg. planning costs which do not depend "
+"on the (optimized) asset capacity."
+msgstr ""
+"Fixe Kosten für die Implementierung der Anlage, z.B. Planungskosten, die "
+"nicht von der (optimierten) Anlagenkapazität abhängen."
+
+#: projects/forms.py:220 projects/forms.py:485 projects/forms.py:565
+#: projects/forms.py:646
+msgid " Actual CAPEX of the asset, i.e., specific investment costs"
+msgstr " Tatsächliche CAPEX der Anlage, d.h. spezifische Investitionskosten"
+
+#: projects/forms.py:222 projects/forms.py:377 projects/forms.py:493
+#: projects/forms.py:573 projects/forms.py:654
+msgid ""
+"Actual OPEX of the asset, i.e., specific operational and maintenance costs."
+msgstr ""
+"Tatsächliche OPEX der Anlage, d.h. spezifische Betriebs- und Wartungskosten."
+
+#: projects/forms.py:224 projects/forms.py:380 projects/forms.py:501
+#: projects/forms.py:581 projects/forms.py:662
+msgid "Variable cost associated with a flow through/from the asset."
+msgstr ""
+"Variable Kosten, die mit einem Durchfluss durch/von der Anlage verbunden "
+"sind."
+
+#: projects/forms.py:229
+msgid "Scenario name"
+msgstr "Name des Szenarios"
+
+#: projects/forms.py:230
+msgid "Evaluated Period"
+msgstr "Ausgewerteter Zeitraum"
+
+#: projects/forms.py:231
+msgid "Time Step"
+msgstr "Zeitschritt"
+
+#: projects/forms.py:232
+msgid "Start Date"
+msgstr "Startdatum"
+
+#: projects/forms.py:233 projects/forms.py:431 projects/forms.py:474
+#: projects/forms.py:554 projects/forms.py:635
+msgid "Development costs"
+msgstr "Entwicklungskosten"
+
+#: projects/forms.py:234 projects/forms.py:432 projects/forms.py:482
+#: projects/forms.py:562 projects/forms.py:643
+msgid "Specific costs"
+msgstr "Spezifische Kosten"
+
+#: projects/forms.py:235 projects/forms.py:433 projects/forms.py:490
+#: projects/forms.py:570 projects/forms.py:651
+msgid "Specific OM costs"
+msgstr "Spezifische OM-Kosten"
+
+#: projects/forms.py:236 projects/forms.py:434 projects/forms.py:498
+#: projects/forms.py:578 projects/forms.py:659
+msgid "Dispatch price"
+msgstr "Dispatch-Preis"
+
+#: projects/forms.py:322
+msgid "The energy Vector of the connected assets."
+msgstr "Der Energievektor der angeschlossenen Anlagen."
+
+#: projects/forms.py:326 projects/forms.py:427
+msgid "Name"
+msgstr "Name"
+
+#: projects/forms.py:327
+msgid "Energy carrier"
+msgstr "Energieträger"
+
+#: projects/forms.py:353
+msgid ""
+"File not properly formatted. Please ensure you upload a comma seperated "
+"array of values, e.g. [1,2,0.32]"
+msgstr ""
+"Datei nicht korrekt formatiert. Bitte stellen Sie sicher, dass Sie ein "
+"kommagetrenntes Array von Werten hochladen, z. B. [1,2,0.32]"
+
+#: projects/forms.py:355
+msgid "Could not parse a file. Did you upload one?"
+msgstr "Konnte keine Datei einlesen. Haben Sie eine hochgeladen?"
+
+#: projects/forms.py:362 projects/forms.py:698
+msgid ""
+"True if the user wants to perform capacity optimization for various "
+"components as part of the simulation."
+msgstr ""
+"Wahr, wenn der Benutzer eine Kapazitätsoptimierung für verschiedene "
+"Komponenten als Teil der Simulation durchführen möchte."
+
+#: projects/forms.py:366
+msgid "Indicate if the asset is renewable or not."
+msgstr "Geben Sie an, ob die Anlage erneuerbar ist oder nicht."
+
+#: projects/forms.py:371 projects/forms.py:477 projects/forms.py:557
+#: projects/forms.py:638
+msgid ""
+" A fixed cost to implement the asset, eg. planning costs which do not depend "
+"on the (optimized) asset capacity."
+msgstr ""
+" Fixe Kosten für die Implementierung der Anlage, z.B. Planungskosten, die "
+"nicht von der (optimierten) Anlagenkapazität abhängen."
+
+#: projects/forms.py:374
+msgid " Actual CAPEX of the asset, i.e., specific investment costs."
+msgstr " Tatsächliche CAPEX der Anlage, d.h. spezifische Investitionskosten."
+
+#: projects/forms.py:383 projects/forms.py:509 projects/forms.py:589
+#: projects/forms.py:670
+msgid "Number of operational years of the asset until it has to be replaced."
+msgstr "Anzahl der Betriebsjahre des Assets, bis es ersetzt werden muss."
+
+#: projects/forms.py:390 projects/forms.py:517 projects/forms.py:597
+#: projects/forms.py:678
+msgid ""
+"C-rate is the rate at which the storage can charge or discharge relative to "
+"the nominal capacity of the storage. A c-rate of 1 implies that the battery "
+"can discharge or charge completely in a single timestep."
+msgstr ""
+"Die C-Rate ist die Rate, mit der der Speicher im Verhältnis zur "
+"Nennkapazität des Speichers geladen oder entladen werden kann. Eine C-Rate "
+"von 1 bedeutet, dass die Batteriein einem einzigen Zeitschritt vollständig "
+"entladen oder geladen werden kann."
+
+#: projects/forms.py:393 projects/forms.py:524 projects/forms.py:604
+#: projects/forms.py:685
+msgid "Ratio of energy output/energy input."
+msgstr "Verhältnis von Energieoutput/Energieeinsatz."
+
+#: projects/forms.py:396 projects/forms.py:704
+msgid ""
+"The maximum permissible level of charge in the battery (generally, it is "
+"when the battery is filled to its nominal capacity), represented by the "
+"value 1.0. Users can  also specify a certain value as a factor of the actual "
+"capacity."
+msgstr ""
+"Der maximal zulässige Ladezustand der Batterie (in der Regel ist er wenn die "
+"Batterie bis zu ihrer Nennkapazität gefüllt ist), dargestellt durch den Wert "
+"1.0. Benutzer können auch einen bestimmten Wert als Faktor der "
+"tatsächlichenKapazität angeben."
+
+#: projects/forms.py:399 projects/forms.py:711
+msgid ""
+"The minimum permissible level of charge in the battery as a factor of the "
+"nominal capacity of the battery."
+msgstr ""
+"Der minimal zulässige Ladezustand der Batterie als Faktor der Nennkapazität "
+"der Batterie."
+
+#: projects/forms.py:402
+msgid "The maximum installable capacity."
+msgstr "Die maximal installierbare Kapazität."
+
+#: projects/forms.py:405
+msgid "Price of electricity sourced from the utility grid."
+msgstr "Preis für Strom aus dem Versorgungsnetz."
+
+#: projects/forms.py:408
+msgid "Price received for feeding electricity into the grid."
+msgstr "Preis für die Einspeisung von Strom in das Stromnetz."
+
+#: projects/forms.py:411
+msgid ""
+"Price to be paid additionally for energy-consumption based on the peak "
+"demand of a period."
+msgstr ""
+"Zusätzlich zu zahlender Preis für den Energieverbrauch basierend auf "
+"demSpitzenbedarf einer Periode."
+
+#: projects/forms.py:414
+msgid ""
+"Number of reference periods in one year for the peak demand pricing. Only "
+"one of the following are acceptable values: 1 (yearly), 2, 3 ,4, 6, 12 "
+"(monthly)."
+msgstr ""
+"Anzahl der Referenzperioden in einem Jahr für den Spitzenbedarfspreis. Nur "
+"einer der folgenden Werte wird akzeptiert: 1 (jährlich), 2, 3 ,4, 6, 12 "
+"(monatlich)."
+
+#: projects/forms.py:328
+msgid ""
+"The share of renewables in the generation mix of the energy supplied by the "
+"DSO (utility)."
+msgstr ""
+"Der Anteil der erneuerbaren Energien am Erzeugungsmix der vom "
+"DSO (Versorgungsunternehmen) gelieferten Energie."
+
+#: projects/forms.py:420 projects/forms.py:461 projects/forms.py:541
+#: projects/forms.py:622
+msgid ""
+"The already existing installed capacity in-place, which will also be "
+"replaced after its lifetime."
+msgstr ""
+"Die bereits installierte Kapazität vor Ort, die auch nach ihrer Lebensdauer "
+"ersetzt wird."
+
+#: projects/forms.py:423 projects/forms.py:469 projects/forms.py:549
+#: projects/forms.py:630
+msgid "The number of years the asset has already been in operation."
+msgstr "Die Anzahl der Jahre, die die Anlage bereits in Betrieb ist."
+
+#: projects/forms.py:428 projects/forms.py:695
+msgid "Optimize cap"
+msgstr "Kapazität optimieren"
+
+#: projects/forms.py:429 projects/forms.py:528 projects/forms.py:608
+#: projects/forms.py:689
+msgid "Dispatchable"
+msgstr "Versendbar"
+
+#: projects/forms.py:430
+msgid "Renewable asset"
+msgstr "Erneuerbare Anlage"
+
+#: projects/forms.py:435 projects/forms.py:506 projects/forms.py:586
+#: projects/forms.py:667
+msgid "Asset Lifetime"
+msgstr "Anlagenlebensdauer"
+
+#: projects/forms.py:436
+msgid "Timeseries vector"
+msgstr "Zeitreihenvektor"
+
+#: projects/forms.py:348 projects/forms.py:425 projects/forms.py:505
+#: projects/forms.py:586
+msgid "C-Rate"
+msgstr "Ladegeschwindigkeit"
+
+#: projects/forms.py:437 projects/forms.py:514 projects/forms.py:594
+#: projects/forms.py:675
+msgid "Crate"
+msgstr "Ladegeschwindigkeit"
+
+#: projects/forms.py:438 projects/forms.py:521 projects/forms.py:601
+#: projects/forms.py:682
+msgid "Efficiency"
+msgstr "Wirkungsgrad"
+
+#: projects/forms.py:439 projects/forms.py:701
+msgid "SoC max"
+msgstr "SoC max"
+
+#: projects/forms.py:440 projects/forms.py:708
+msgid "SoC min"
+msgstr "SoC min"
+
+#: projects/forms.py:441
+msgid "Maximum capacity"
+msgstr "Maximale Kapazität"
+
+#: projects/forms.py:442
+msgid "Energy price"
+msgstr "Energiepreis"
+
+#: projects/forms.py:443
+msgid "Feedin tariff"
+msgstr "Einspeisetarif"
+
+#: projects/forms.py:444
+msgid "Peak demand pricing"
+msgstr "Spitzenlasttarif"
+
+#: projects/forms.py:445
+msgid "Peak demand pricing period (times/year)"
+msgstr "Zeitraum der Spitzenlastbepreisung (Zeiten/Jahr)"
+
+#: projects/forms.py:446
+msgid "Renewable share"
+msgstr "Erneuerbarer Anteil"
+
+#: projects/forms.py:447 projects/forms.py:458 projects/forms.py:538
+#: projects/forms.py:619
+msgid "installed capacity (kW)"
+msgstr "installierte Leistung (kW)"
+
+#: projects/forms.py:448 projects/forms.py:466 projects/forms.py:546
+#: projects/forms.py:627
+msgid "Age installed"
+msgstr "Alter der Anlage"
+
+#: projects/forms.py:454
+msgid "ESS Name"
+msgstr "ESS Name"
+
+#: projects/forms.py:454
+msgid "A mnemonic name for the ESS unit."
+msgstr "Ein mnemonischer Name für die ESS Einheit."
+
+#: projects/views.py:346
+msgid "Scenario Setup"
+msgstr "Szenario-Einstellung"
+
+#: projects/views.py:347
+msgid "Energy system design"
+msgstr "Auslegung des Energiesystems"
+
+#: projects/views.py:348
+msgid "Constraints"
+msgstr "Randbedingungen"
+
+#: projects/views.py:349
+msgid "Simulation"
+msgstr "Simulation"
+
+#: projects/views.py:414
+msgid "Electricity DSO"
+msgstr "Elektrizitätsversorger"
+
+#: projects/views.py:415
+msgid "Gas DSO"
+msgstr "Gasversorger"
+
+#: projects/views.py:416
+msgid "H2 DSO"
+msgstr "H2-Versorger"
+
+#: projects/views.py:417
+msgid "Heat DSO"
+msgstr "Wärmeversorger"
+
+#: projects/views.py:420
+msgid "PV Plant"
+msgstr "PV-Anlage"
+
+#: projects/views.py:421
+msgid "Wind Plant"
+msgstr "Windkraftanlage"
+
+#: projects/views.py:422
+msgid "Biogas Plant"
+msgstr "Biogasanlage"
+
+#: projects/views.py:423
+msgid "Geothermal Conversion"
+msgstr "Geothermische Umwandlung"
+
+#: projects/views.py:424
+msgid "Solar Thermal Plant"
+msgstr "Thermische Solaranlage"
+
+#: projects/views.py:427
+msgid "Transformer Station (in)"
+msgstr "Trafostation (in)"
+
+#: projects/views.py:428
+msgid "Transformer Station (out)"
+msgstr "Trafostation (aus)"
+
+#: projects/views.py:429
+msgid "Storage Charge Controller (in)"
+msgstr "Speicherladeregler (in)"
+
+#: projects/views.py:430
+msgid "Storage Charge Controller (out)"
+msgstr "Speicherladeregler (out)"
+
+#: projects/views.py:431
+msgid "Solar Inverter"
+msgstr "Solar-Wechselrichter"
+
+#: projects/views.py:432
+msgid "Diesel Generator"
+msgstr "Diesel-Generator"
+
+#: projects/views.py:433
+msgid " Fuel Cell"
+msgstr " Brennstoffzelle"
+
+#: projects/views.py:434
+msgid "Gas Boiler"
+msgstr "Gasboiler"
+
+#: projects/views.py:435
+msgid "Electrolyzer"
+msgstr "Elektrolyseur"
+
+#: projects/views.py:436
+msgid "Heat Pump"
+msgstr "Wärmepumpe"
+
+#: projects/views.py:439
+msgid "Electricity Storage"
+msgstr "Elektrizitätsspeicher"
+
+#: projects/views.py:440
+msgid "Gas Storage"
+msgstr "Gasspeicher"
+
+#: projects/views.py:441
+msgid "H2 Storage"
+msgstr "Wasserstoffspeicher"
+
+#: projects/views.py:442
+msgid "Heat Storage"
+msgstr "Wärmespeicher"
+
+#: projects/views.py:445
+msgid "Electricity Demand"
+msgstr "Elektrizitätsnachfrage"
+
+#: projects/views.py:446
+msgid "Gas Demand"
+msgstr "Gasnachfrage"
+
+#: projects/views.py:447
+msgid "H2 Demand"
+msgstr "Wasserstoffbedarf"
+
+#: projects/views.py:448
+msgid "Heat Demand"
+msgstr "Wärmebedarf"
+
+#: projects/views.py:450
+msgid "Bus"
+msgstr "Bus"
+
+#: projects/views.py:508
+msgid "Minimal degree of autonomy"
+msgstr "Kleinster Autarkiegrad"
+
+#: projects/views.py:509
+msgid "Minimal share of renewables"
+msgstr "Kleinster Anteil Erneuerbarer Energien"
+
+#: projects/views.py:510
+msgid "Maximal CO2 emissions"
+msgstr "Maximale CO2-Emissionen"
+
+#: projects/views.py:511
+msgid "Net zero energy system"
+msgstr "Netto-Nullenergie-System"
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "Year"
+msgstr "Jahr"
+
+msgid "Factor"
+msgstr "Faktor"
+
+msgid "€/kWh"
+msgstr "€/kWh"
+
+msgid "Ratio of energy output/energy input. The battery efficiency is the ratio of the energy taken out from the battery, to the energy put into the battery. It means that it is not possible to retrieve as much energy as provided to the battery due to the discharge losses. The efficiency of the 'input power' and 'ouput power' columns should be set equal to the charge and dischage efficiencies respectively, while the 'storage capacity' efficiency should be equal to the storage's efficiency/ability to hold charge over time (`= 1 - self-discharge/decay`), which is usually in the range of 0.95 to 1 for electrical storages."
+msgstr "Verhältnis von Energieausbeute/Energieeintrag. Der Batteriewirkungsgrad ist das Verhältnis zwischen der aus der Batterie entnommenen Energie und der in die Batterie eingebrachten Energie. Das bedeutet, dass aufgrund der Entladeverluste nicht so viel Energie entnommen werden kann, wie der Batterie zugeführt wird. Der Wirkungsgrad der Spalten 'Eingangsleistung' und 'Ausgangsleistung' sollte gleich dem Lade- bzw. Entladewirkungsgrad gesetzt werden, während der Wirkungsgrad der 'Speicherkapazität' gleich dem Wirkungsgrad des Speichers/der Fähigkeit, die Ladung über die Zeit zu halten (`= 1 - Selbstentladung/Zerfall`), sein sollte, was bei elektrischen Speichern normalerweise im Bereich von 0,95 bis 1 liegt."
+
+msgid "Emissions per unit dispatch of an asset."
+msgstr "Emissionen pro Versandeinheit einer Anlage."
+
+msgid "kgCO2eq/asset unit"
+msgstr "kgCO2eq/Anlageneinheit"
+
+msgid "Price of energy carrier sourced from the utility grid."
+msgstr "Preis des aus dem Versorgungsnetz bezogenen Energieträgers."
+
+msgid "€/energy carrier unit"
+msgstr "€/Energieträgereinheit"
+
+msgid "Energy vector/commodity. Convention: For an energy conversion asset define energyVector of the output. For a sink define based on inflow. For a source define based on output flow. For a storage, define based on stored energy carrier."
+msgstr "Energievektor/Rohstoff. Konvention: Für eine Energieumwandlungsanlage definieren Sie energyVector des Ausgangs. Für eine Senke definieren Sie auf Basis des Zuflusses. Für eine Quelle definieren Sie auf der Basis des Ausgangsflusses. Für einen Speicher definieren Sie basierend auf dem gespeicherten Energieträger."
+
+msgid "The number of days simulated with the energy system model."
+msgstr "Die Anzahl der Tage, die mit dem Energiesystemmodell simuliert wurden."
+
+msgid "Day"
+msgstr "Tag"
+
+msgid "Name of a csv file containing the input generation or demand timeseries."
+msgstr "Name einer csv-Datei, die die Zeitreihe für die Erzeugung oder den Bedarf enthält."
+
+msgid "Thermal losses of storage independent of state of charge and independent of nominal storage capacity between two consecutive timesteps."
+msgstr "Thermische Verluste des Speichers unabhängig vom Ladezustand und unabhängig von der nominalen Speicherkapazität zwischen zwei aufeinanderfolgenden Zeitschritten."
+
+msgid "factor"
+msgstr "Faktor MOISOSISSHSHIS"
+
+msgid "Thermal losses of storage independent of state of charge between two consecutive timesteps relative to nominal storage capacity."
+msgstr "Thermische Verluste des Speichers unabhängig vom Ladezustand zwischen zwei aufeinanderfolgenden Zeitschritten relativ zur nominalen Speicherkapazität."
+
+msgid "The label of the bus/component from which the energyVector is arriving into the asset."
+msgstr "Die Bezeichnung des Busses/der Komponente, von dem/der der Energievektor in die Anlage eintrifft."
+
+msgid "The already existing installed capacity in-place. If the project lasts longer than its remaining lifetime, its replacement costs will be taken into account."
+msgstr "Die bereits vorhandene installierte Kapazität an Ort und Stelle. Wenn das Projekt länger als die verbleibende Lebensdauer dauert, werden die Ersatzkosten berücksichtigt."
+
+msgid "kWp"
+msgstr "kWp"
+
+msgid "Name of the asset for display purposes"
+msgstr "Name der Anlage für Anzeigezwecke"
+
+msgid "The maximum amount of total emissions in the optimized energy system."
+msgstr "Die maximale Menge an Gesamtemissionen in der optimierten Energieanlage."
+
+msgid "kgCO2eq/a"
+msgstr "kgCO2eq/a"
+
+msgid "The maximum total capacity of an asset that can be installed at the project site. This includes the installed and the also the maximum additional capacity possible. An example would be that a roof can only carry 50 kWp PV (maximumCap), whereas the installed capacity is already 10 kWp. The optimization would only be allowed to add 40 kWp PV at maximum."
+msgstr "Die maximale Gesamtkapazität einer Anlage, die am Projektstandort installiert werden kann. Dies beinhaltet sowohl die installierte als auch die maximal mögliche zusätzliche Kapazität. Ein Beispiel wäre, dass ein Dach nur 50 kWp PV tragen kann (maximumCap), während die installierte Leistung bereits 10 kWp beträgt. Die Optimierung würde dann nur maximal 40 kWp PV zulassen."
+
+msgid "The minimal degree of autonomy that needs to be met by the optimization."
+msgstr "Der minimale Grad der Autonomie, der von der Optimierung erfüllt werden muss."
+
+msgid "The minimum share of energy supplied by renewable generation in the optimized energy system. Insert the value 0 to deactivate this constraint."
+msgstr "Der minimale Anteil an Energie, der durch erneuerbare Erzeugung im optimierten Energiesystem geliefert wird. Geben Sie den Wert 0 ein, um diese Einschränkung zu deaktivieren."
+
+msgid "Specifies whether optimization needs to result into a net zero energy system (True) or not (False)."
+msgstr "Gibt an, ob die Optimierung zu einem Netto-Null-Energiesystem führen muss (True) oder nicht (False)."
+
+msgid "Allow the user to perform capacity optimization for an asset."
+msgstr "Erlaubt dem Benutzer, eine Kapazitätsoptimierung für eine Anlage durchzuführen."
+
+msgid "The label of bus/component towards which the energyVector is leaving from the asset."
+msgstr "Die Bezeichnung des Busses/der Komponente, zu dem/der der Energievektor von der Anlage abgeht."
+
+msgid "Enable the generation of a file with the linear equation system describing the simulation, ie., with the objective function and all the constraints. This lp file enables the user look at the underlying equations of the optimization."
+msgstr "Aktivieren Sie die Erzeugung einer Datei mit dem linearen Gleichungssystem, das die Simulation beschreibt, d. h. mit der Zielfunktion und allen Nebenbedingungen. Diese lp-Datei ermöglicht es dem Benutzer, die zugrundeliegenden Gleichungen der Optimierung zu betrachten."
+
+msgid "Price to be paid additionally for energy-consumption based on the peak demand of a given period."
+msgstr "Preis, der zusätzlich für den Energieverbrauch zu zahlen ist, basierend auf dem Spitzenbedarf einer bestimmten Periode."
+
+msgid "€/kW"
+msgstr "€/kW"
+
+msgid "Number of reference periods in one year for the peak demand pricing."
+msgstr "Anzahl der Bezugszeiträume in einem Jahr für den Spitzenbedarfspreis."
+
+msgid "times per year (1,2,3,4,6,12)"
+msgstr "mal pro Jahr (1,2,3,4,6,12)"
+
+msgid "Years"
+msgstr "Jahre"
+
+msgid "Users can assign a project ID as per their preference."
+msgstr "Benutzer können eine Projekt-ID nach ihren Wünschen zuweisen."
+
+msgid "Users can assign a project name as per their preference."
+msgstr "Benutzer können einen Projektnamen nach ihren Wünschen vergeben."
+
+msgid "Allow the user to tag as asset as renewable."
+msgstr "Erlaube dem Benutzer, ein Asset als erneuerbar zu kennzeichnen."
+
+msgid "Brief description of the scenario being simulated."
+msgstr "Kurze Beschreibung des zu simulierenden Szenarios."
+
+msgid "Users can assign a scenario id as per their preference."
+msgstr "Benutzer können eine Szenario-ID nach ihren Wünschen zuweisen."
+
+msgid "Users can assign a scenario name as per their preference."
+msgstr "Benutzer können einen Szenariennamen nach ihren Wünschen vergeben."
+
+msgid "The level of charge (as a factor of the actual capacity) in the storage in the zeroth time-step."
+msgstr "Der Ladezustand (als Faktor der tatsächlichen Kapazität) des Speichers im nullten Zeitschritt."
+
+msgid "None or factor"
+msgstr "Keine oder Faktor"
+
+msgid "Actual CAPEX of an asset, i.e., specific investment costs"
+msgstr "Tatsächliche CAPEX einer Anlage, d.h. spezifische Investitionskosten"
+
+msgid "€/unit"
+msgstr "€/Einheit"
+
+msgid "Actual OPEX of an asset, i.e., specific operational and maintenance costs."
+msgstr "Tatsächliche OPEX einer Anlage, d.h. spezifische Betriebs- und Wartungskosten."
+
+msgid "€/unit/year"
+msgstr "€/Einheit/Jahr"
+
+msgid "The data and time on which the simulation starts at the first step."
+msgstr "Die Daten und der Zeitpunkt, an dem die Simulation im ersten Schritt beginnt."
+
+msgid "Name of a csv file containing the properties of a storage component"
+msgstr "Name einer csv-Datei, die die Eigenschaften einer Speicherkomponente enthält"
+
+msgid "Minutes"
+msgstr "Minuten"
+
+msgid "Input the type of OEMOF component. For example, a PV plant would be a source, a solar inverter would be a transformer, etc.  The `type_oemof` will later on be determined through the EPA."
+msgstr "Geben Sie den Typ der OEMOF-Komponente ein. Zum Beispiel wäre eine PV-Anlage eine Quelle, ein Solarwechselrichter ein Transformator, usw.  Der `Typ_oemof` wird später durch die EPA bestimmt."
+
+msgid "Unit associated with the capacity of the component."
+msgstr "Einheit, die mit der Kapazität der Komponente verbunden ist."
+
+msgid "providers"
+msgstr "Anbieter"
+
+msgid "production"
+msgstr "Produktion"
+
+msgid "conversion"
+msgstr "Umwandlung"
+
+msgid "storage"
+msgstr "Lagerung"
+
+msgid "demand"
+msgstr "Bedarf"

@@ -1,0 +1,42 @@
+.footer {
+	background-color: $primary-gray-color-1;
+	height: $footer-height;
+	@include flex-column-align-justify-center;
+	flex-shrink: 0;
+
+	&> div {
+		@include flex-row-space-between;
+		@include section-width;
+	}
+
+	&__logo {
+		img {
+			height: $logo-height;
+		}
+	}
+
+	&__links {
+		@include flex-column-justify-center;
+
+		ul {
+			@include ul-horizontal;
+		}
+
+		li {
+			display: inline-block;
+			padding-left: 1rem;
+		}
+	}
+}
+
+.step-footer {
+	background-color: $white;
+	height: $footer-scenario-height;
+	border-top: $gray-border;
+	@include flex-column-align-justify-center;
+	flex-shrink: 0;
+
+	.btn--previous {
+		border: none;
+	}
+}

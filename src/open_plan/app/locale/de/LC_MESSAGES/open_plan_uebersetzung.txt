@@ -1,0 +1,153 @@
+msgid "The number of years the asset has already been in operation."
+msgstr ""
+
+msgid "Year"
+msgstr ""
+
+msgid "Factor"
+msgstr ""
+
+msgid "€/kWh"
+msgstr ""
+
+msgid "Ratio of energy output/energy input. The battery efficiency is the ratio of the energy taken out from the battery, to the energy put into the battery. It means that it is not possible to retrieve as much energy as provided to the battery due to the discharge losses. The efficiency of the 'input power' and 'ouput power' columns should be set equal to the charge and dischage efficiencies respectively, while the 'storage capacity' efficiency should be equal to the storage's efficiency/ability to hold charge over time (`= 1 - self-discharge/decay`), which is usually in the range of 0.95 to 1 for electrical storages."
+msgstr ""
+
+msgid "Emissions per unit dispatch of an asset."
+msgstr ""
+
+msgid "kgCO2eq/asset unit"
+msgstr ""
+
+msgid "Price of energy carrier sourced from the utility grid."
+msgstr ""
+
+msgid "€/energy carrier unit"
+msgstr ""
+
+msgid "Energy vector/commodity. Convention: For an energy conversion asset define energyVector of the output. For a sink define based on inflow. For a source define based on output flow. For a storage, define based on stored energy carrier."
+msgstr ""
+
+msgid "The number of days simulated with the energy system model."
+msgstr ""
+
+msgid "Day"
+msgstr ""
+
+msgid "Name of a csv file containing the input generation or demand timeseries."
+msgstr ""
+
+msgid "Thermal losses of storage independent of state of charge and independent of nominal storage capacity between two consecutive timesteps."
+msgstr ""
+
+msgid "factor"
+msgstr ""
+
+msgid "Thermal losses of storage independent of state of charge between two consecutive timesteps relative to nominal storage capacity."
+msgstr ""
+
+msgid "The label of the bus/component from which the energyVector is arriving into the asset."
+msgstr ""
+
+msgid "The already existing installed capacity in-place. If the project lasts longer than its remaining lifetime, its replacement costs will be taken into account."
+msgstr ""
+
+msgid "kWp"
+msgstr ""
+
+msgid "Name of the asset for display purposes"
+msgstr ""
+
+msgid "The maximum amount of total emissions in the optimized energy system."
+msgstr ""
+
+msgid "kgCO2eq/a"
+msgstr ""
+
+msgid "The maximum total capacity of an asset that can be installed at the project site. This includes the installed and the also the maximum additional capacity possible. An example would be that a roof can only carry 50 kWp PV (maximumCap), whereas the installed capacity is already 10 kWp. The optimization would only be allowed to add 40 kWp PV at maximum."
+msgstr ""
+
+msgid "The minimal degree of autonomy that needs to be met by the optimization."
+msgstr ""
+
+msgid "The minimum share of energy supplied by renewable generation in the optimized energy system. Insert the value 0 to deactivate this constraint."
+msgstr ""
+
+msgid "Specifies whether optimization needs to result into a net zero energy system (True) or not (False)."
+msgstr ""
+
+msgid "Allow the user to perform capacity optimization for an asset."
+msgstr ""
+
+msgid "The label of bus/component towards which the energyVector is leaving from the asset."
+msgstr ""
+
+msgid "Enable the generation of a file with the linear equation system describing the simulation, ie., with the objective function and all the constraints. This lp file enables the user look at the underlying equations of the optimization."
+msgstr ""
+
+msgid "Price to be paid additionally for energy-consumption based on the peak demand of a given period."
+msgstr ""
+
+msgid "€/kW"
+msgstr ""
+
+msgid "Number of reference periods in one year for the peak demand pricing."
+msgstr ""
+
+msgid "times per year (1,2,3,4,6,12)"
+msgstr ""
+
+msgid "Years"
+msgstr ""
+
+msgid "Users can assign a project ID as per their preference."
+msgstr ""
+
+msgid "Users can assign a project name as per their preference."
+msgstr ""
+
+msgid "Allow the user to tag as asset as renewable."
+msgstr ""
+
+msgid "Brief description of the scenario being simulated."
+msgstr ""
+
+msgid "Users can assign a scenario id as per their preference."
+msgstr ""
+
+msgid "Users can assign a scenario name as per their preference."
+msgstr ""
+
+msgid "The level of charge (as a factor of the actual capacity) in the storage in the zeroth time-step."
+msgstr ""
+
+msgid "None or factor"
+msgstr ""
+
+msgid "Actual CAPEX of an asset, i.e., specific investment costs"
+msgstr ""
+
+msgid "€/unit"
+msgstr ""
+
+msgid "Actual OPEX of an asset, i.e., specific operational and maintenance costs."
+msgstr ""
+
+msgid "€/unit/year"
+msgstr ""
+
+msgid "The data and time on which the simulation starts at the first step."
+msgstr ""
+
+msgid "Name of a csv file containing the properties of a storage component"
+msgstr ""
+
+
+msgid "Minutes"
+msgstr ""
+
+msgid "Input the type of OEMOF component. For example, a PV plant would be a source, a solar inverter would be a transformer, etc.  The `type_oemof` will later on be determined through the EPA."
+msgstr ""
+
+msgid "Unit associated with the capacity of the component."
+msgstr ""

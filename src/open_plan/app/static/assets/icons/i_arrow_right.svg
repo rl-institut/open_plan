@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:ns0="http://ns.adobe.com/SaveForWeb/1.0/"
+   xmlns:ns="http://ns.adobe.com/Variables/1.0/"
+   xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/"
+   xmlns:x="adobe:ns:meta/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg12"
+   version="1.1"
+   overflow="visible"
+   y="0px"
+   x="0px"
+   xml:space="preserve"
+   style="enable-background:new 0 0 10.5 16;"
+   viewBox="0 0 10.5 16"
+   i:pageBounds="0 16 16 0"
+   i:rulerOrigin="0 0"
+   i:viewOrigin="3 16"
+   fill="#000000"
+   width="100px"
+   height="100px"><defs
+     id="defs16" /><metadata
+     id="metadata2"><ns:variableSets><ns:variableSet
+         locked="none"
+         varSetName="binding1"><ns:variables /><ns:sampleDataSets /></ns:variableSet></ns:variableSets><ns0:sfw><ns0:slices /><ns0:sliceSourceBounds
+         bottomLeftOrigin="true"
+         height="16"
+         width="10.5"
+         x="3"
+         y="0" /></ns0:sfw><?xpacket begin='&#65279;' id='W5M0MpCehiHzreSzNTczkc9d'?><x:xmpmeta
+       x:xmptk="XMP toolkit 3.0-29, framework 1.6" /><?xpacket end='w'?><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><g
+     id="g10"><g
+       id="g8"
+       i:extraneous="self"><g
+         id="g6"
+         i:rgbTrio="#4F008000FFFF"
+         i:dimmedPercent="50"
+         i:layer="yes"><polygon
+           style="fill:#1f567d;fill-opacity:1"
+           id="polygon4"
+           points="2.5,0 0,2.5 5.5,8 0,13.5 2.5,16 10.5,8 "
+           i:knockout="Off" /></g></g></g></svg>
