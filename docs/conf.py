@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath(".."))
 
 
 def generate_parameter_description(input_csv_file, output_rst_file):
-    """Read the input parameter description and generate a .rst formatted document
+    """Read the MVS parameter description and generate a .rst formatted document
 
     Parameters
     ----------
@@ -32,14 +32,15 @@ def generate_parameter_description(input_csv_file, output_rst_file):
     None
 
     """
-    df = pd.read_csv(input_csv_file + ".csv")
-
+    df = pd.read_csv(input_csv_file)
+    df = df.loc[df.category != "hidden"]
     parameter_properties = [
         ":Definition:",
+        ":Type:",
         ":Unit:",
-        ":Default:",
-        ":Category:",
+        ":Example:",
         ":Restrictions:",
+        ":Default:",
     ]
 
     lines = []
@@ -51,67 +52,286 @@ def generate_parameter_description(input_csv_file, output_rst_file):
     #
     # :Definition:
     # :Type:
-    # :Category:
     # :Unit:
     # :Example:
     # :Restrictions:
     # :Default:
     #
+    # This parameter is used within the following categories: [List of categories]
+    #
     # ----
     #
-    n_param = len(df.index)
-
-    for i, row in enumerate(df.iterrows()):
+    for row in df.iterrows():
         props = row[1]
-        reference = str(props.ref)
-        if reference == "nan":
-            reference = str(props.label).lower().replace(" ", "_")
+
+        if isinstance(props.see_also, str):
+            see_also = [
+                "",
+                "",
+                "See also: "
+                + ", ".join([f":ref:`{ref}`" for ref in props.see_also.split(";")]),
+            ]
+        else:
+            see_also = []
         lines = (
             lines
-            + [f".. _{reference}:", "", props.label, "^" * len(props.label), "",]
+            + [f".. _{props.ref}:", "", props.label, "^" * len(props.label), "",]
             + [f"{p} {props[p]}" for p in parameter_properties]
+            + [""]
+            + [
+                "This parameter is used within the following categories: "
+                + ", ".join([f":ref:`{cat}`" for cat in props.category.split(";")])
+            ]
+            + see_also
+            + ["", "",]
         )
 
-        # do not print this on the last iteration
-        if i + 1 < n_param:
-            lines = lines + [
-                "",
-                "----",
-                "",
-            ]
-
-    # Change name of the index column
-    df = df.rename(columns={"label": ":Name:"}).set_index(":Name:")
-    df[[
-        ":Unit:",
-        ":Default:",
-        ":Category:",
-        ":Restrictions:",
-        ":Definition:",
-    ]].to_csv(output_rst_file + "_short.inc")
-
-    with open(output_rst_file + ".inc", "w") as ofs:
+    with open(output_rst_file, "w") as ofs:
         ofs.write("\n".join(lines))
 
 
-generate_parameter_description(
-    "_files/input_parameters_list", "_files/input_parameters_list"
-)
+def generate_parameter_categories(
+    input_param_csv_file, input_cat_csv_file, output_rst_file
+):
+    """Rassemble the MVS parameter categories from csv file and generate a .rst formatted document
+
+    Parameters
+    ----------
+    input_param_csv_file: str
+        path of the file with extensive description of all mvs parameters
+    input_cat_csv_file: str
+        path of the file with extensive description of all mvs parameters categories
+    output_rst_file: str
+        path of the rst file with RTD formatted mvs parameter categories
+
+    Returns
+    -------
+    None
+
+    """
+    df_param = pd.read_csv(input_param_csv_file)
+    df_cat = pd.read_csv(input_cat_csv_file)
+
+    lines = []
+    # formats following the template:
+    # .._<ref_name>:
+    #
+    # <name>
+    # ^^^^^^
+    #
+    # * :ref:`param1`
+    # * :ref:`param2`
+    #
+    # ----
+    #
+
+    for row in df_cat.iterrows():
+        props = row[1]
+
+        cat_label = props.csv_file_name + ".csv"
+
+        # lookup all parameters for which the category is tagged
+        df_param["in_category"] = df_param.category.apply(
+            lambda x: True if props.ref in x.split(";") else False
+        )
+
+        parameter_per_cat = df_param.loc[df_param.in_category == True, "ref"].to_list()
+
+        lines = (
+            lines
+            + [f".. _{props.ref}:", "", cat_label, "^" * len(cat_label), "",]
+            + props.description.split("\\n")
+            + ["",]
+            + [f"* :ref:`{p}`" for p in parameter_per_cat]
+            + ["", "",]
+        )
+
+    with open(output_rst_file, "w") as ofs:
+        ofs.write("\n".join(lines))
 
 
+def generate_kpi_categories(input_param_csv_file, input_cat_csv_file, output_rst_file):
+    """Reassemble the MVS parameter categories from csv file and generate a .rst formatted document
+
+    Parameters
+    ----------
+    input_param_csv_file: str
+        path of the file with extensive description of all mvs parameters
+    input_cat_csv_file: str
+        path of the file with extensive description of all mvs parameters categories
+    output_rst_file: str
+        path of the rst file with RTD formatted mvs parameter categories
+
+    Returns
+    -------
+    None
+
+    """
+    df_param = pd.read_csv(input_param_csv_file)
+    df_cat = pd.read_csv(input_cat_csv_file)
+
+    lines = []
+    # formats following the template:
+    #
+    # <Description>
+    #
+    # * :ref:`param1`
+    # * :ref:`param2`
+    #
+
+    for row in df_cat.iterrows():
+        props = row[1]
+
+        cat_label = props.category
+        df_param["in_category"] = df_param.category == props.category
+
+        parameter_per_cat = df_param.loc[df_param.in_category == True, "ref"].to_list()
+        parameter_names = df_param.loc[df_param.in_category == True, "label"].to_list()
+
+        parameters = {}
+        for i in range(0, len(parameter_per_cat)):
+            parameters.update({parameter_per_cat[i]: parameter_names[i]})
+
+        lines = (
+            lines
+            + [f"{props.description} These are the calculated {props.category} KPI:",]
+            + ["",]
+            + [f"* :ref:`{parameters[p]} <{p}>`" for p in parameter_per_cat]
+            + ["", "",]
+        )
+
+    with open(output_rst_file, "w") as ofs:
+        ofs.write("\n".join(lines))
+
+
+def generate_parameter_table(input_csv_file, output_csv_file):
+    df = pd.read_csv(input_csv_file)
+    df = df.loc[df.category != "hidden"]
+
+    parameter_properties = [
+        ":Type:",
+        ":Unit:",
+        ":Default:",
+    ]
+
+    name_mapping = {c: c.replace(":", "") for c in parameter_properties}
+    name_mapping["label"] = "Parameter"
+
+    # replace the label by a RTD reference
+    df["label"] = df["ref"].apply(lambda x: f":ref:`{x}`")
+
+    df[["label"] + parameter_properties].rename(columns=name_mapping).to_csv(
+        output_csv_file, index=False
+    )
+
+
+# def copy_readme():
+    # with open("../README.rst", "r", encoding="utf8") as fp:
+        # data = fp.readlines()
+    # with open("readme.inc", "w") as fp:
+        # fp.writelines(data[data.index("Setup\n") :])
+
+
+def generate_kpi_description(input_csv_file, output_path):
+    """Generate a .rst formatted document for each kpi in a given csv file
+
+    Parameters
+    ----------
+    input_csv_file: str
+        path of the file with extensive description of all mvs kpis
+    output_path: str
+        path of where the .inc files should be saved for each parameter
+
+    Returns
+    -------
+    None
+
+    """
+    df = pd.read_csv(input_csv_file)
+    df = df.loc[df.category != "hidden"]
+    parameter_properties = [
+        ":Definition:",
+        ":Type:",
+        ":Unit:",
+        ":Valid Interval:",
+    ]
+
+    # formats following the template:
+    # .._<ref_name>:
+    #
+    # <name>
+    # ^^^^^^
+    #
+    # :Definition:
+    # :Type:
+    # :Unit:
+    # :Valid Interval:
+    # :Connected indicators: List of indicators that are connected to the described indicator, to ease referencing
+    #
+
+    df = df.replace("None", "NA")
+    for row in df.iterrows():
+        props = row[1]
+        # Create a string with references to all the indicators connected to the current indicator
+        if isinstance(props.see_also, str):
+            see_also = " | ".join(
+                [f":ref:`{ref.replace(' ', '')}`" for ref in props.see_also.split(",")]
+            )
+        else:
+            see_also = "None"
+
+        # Define the title of the *.inc files
+        if props.category == "files":
+            # For files, only show the readable label
+            title = props.label
+        else:
+            # For other KPI show both the readable label (name) as well as the constant variable name as defined in `constants_json_strings.py`
+            title = props.label + " (" + props.ref + ")"
+
+        # Write lines based on definitions to an *.inc file
+        lines = (
+            [f".. _{props.ref}:", "", title, "^" * len(title), "",]
+            + [f"{p} {props[p]}" for p in parameter_properties]
+            + [f":Related indicators: {see_also}"]
+            + ["", "",]
+        )
+
+        with open(os.path.join(output_path, props.ref + ".inc"), "w") as ofs:
+            ofs.write("\n".join(lines))
+
+
+# Input parameters
 generate_parameter_description(
-    "_files/output_parameters_list", "_files/output_parameters_list"
+    "MVS_parameters_list.csv", "model/parameters/MVS_parameters_list.inc"
 )
+generate_parameter_table(
+    "MVS_parameters_list.csv", "model/parameters/MVS_parameters_list.tbl"
+)
+generate_parameter_categories(
+    "MVS_parameters_list.csv",
+    "MVS_parameters_categories.csv",
+    "model/parameters/MVS_parameters_categories.inc",
+)
+
+# Output parameters
+generate_kpi_description("MVS_kpis_list.csv", "model/outputs")
+
+generate_kpi_categories(
+    "MVS_kpis_list.csv",
+    "MVS_kpi_categories.csv",
+    "model/outputs/MVS_kpi_categories.inc",
+)
+# copy_readme()
 
 # -- Project information -----------------------------------------------------
 
 project = "open_plan"
-copyright = "2020, Reiner Lemoine Institut"
-author = "Reiner Lemoine Institut"
+copyright = "2019, Reiner Lemoine Institut and Martha M. Hoffmann"
+author = "Reiner Lemoine Institut and Martha M. Hoffmann"
 
-# The full version, including alpha/beta/rc tags
-release = "0.0.1"
+# from multi_vector_simulator.version import version_num
 
+# release = version_num
 
 # -- General configuration ---------------------------------------------------
 
@@ -126,8 +346,10 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.imgmath",
     "sphinx.ext.autosummary",
+    # "sphinxcontrib.rsvgconverter",
     "numpydoc",
 ]
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
@@ -136,6 +358,9 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
+# generate autosummary even if no references
+autosummary_generate = True
+autosummary_imported_members = True
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -144,9 +369,9 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 #
 import sphinx_rtd_theme
 
-html_theme = "sphinx_rtd_theme"
+numpydoc_show_class_members = False
 
-html_favicon = "logos/favicon.ico"
+html_theme = "sphinx_rtd_theme"
 
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
@@ -154,3 +379,9 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
+
+# These paths are either relative to html_static_path
+# or fully qualified paths (eg. https://...)
+html_css_files = [
+    'table-style.css',
+]
