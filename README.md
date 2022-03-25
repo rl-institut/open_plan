@@ -1,7 +1,7 @@
 # open_plan
 
 **The development of this repository has been moved to its own [organisation](https://github.com/open-plan-tool)**
-Please visit https://github.com/open-plan-tool for most up-to-date code version.
+Please visit https://github.com/open-plan-tool/gui for most up-to-date gui code version.
 
 The link to the official webpages below are still valid
 
