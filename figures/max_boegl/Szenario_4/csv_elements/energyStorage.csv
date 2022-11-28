@@ -1,0 +1,8 @@
+;unit;
+label;str;Battery
+optimizeCap;bool;True
+outflow_direction;str;AC bus
+inflow_direction;str;AC bus
+storage_filename;str;storage_01.csv
+energyVector;str;Electricity
+type_oemof;str;storage

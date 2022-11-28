@@ -1,0 +1,8 @@
+;unit;project_data
+country;str;Germany
+latitude;str;49.215057
+longitude;str;11.457326
+project_id;str;1
+project_name;str;Max Boegl
+scenario_id;str;2
+scenario_name;str;Current State + PV

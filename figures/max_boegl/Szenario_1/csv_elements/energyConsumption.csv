@@ -1,0 +1,8 @@
+;unit;Industriepark
+unit;str;kW
+inflow_direction;str;AC bus
+file_name;str;demand_Industriepark.csv
+energyVector;str;Electricity
+type_oemof;str;sink
+type_asset;str;demand
+dsm;str;False
